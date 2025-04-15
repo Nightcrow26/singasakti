@@ -1,0 +1,305 @@
+{
+  "RECORDS": [
+    {
+      "id": "1",
+      "slug": "urusan-pemerintahan-bidang-pendidikan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PENDIDIKAN",
+      "created_at": "9/11/2021 08:13:42",
+      "updated_at": "9/11/2021 08:13:42"
+    },
+    {
+      "id": "2",
+      "slug": "urusan-pemerintahan-bidang-kesehatan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KESEHATAN",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "3",
+      "slug": "urusan-pemerintahan-bidang-pekerjaan-umum-dan-penataan-ruang",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PEKERJAAN UMUM DAN PENATAAN RUANG",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "4",
+      "slug": "urusan-pemerintahan-bidang-perumahan-dan-kawasan-permukiman",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERUMAHAN DAN KAWASAN PERMUKIMAN",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "5",
+      "slug": "urusan-pemerintahan-bidang-ketenteraman-dan-ketertiban-umum-serta-perlindungan-masyarakat",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KETENTERAMAN DAN KETERTIBAN UMUM SERTA PERLINDUNGAN MASYARAKAT",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "6",
+      "slug": "urusan-pemerintahan-bidang-sosial",
+      "nama": "URUSAN PEMERINTAHAN BIDANG SOSIAL",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "7",
+      "slug": "urusan-pemerintahan-bidang-tenaga-kerja",
+      "nama": "URUSAN PEMERINTAHAN BIDANG TENAGA KERJA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "8",
+      "slug": "urusan-pemerintahan-bidang-pemberdayaan-perempuan-dan-perlindungan-anak",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "9",
+      "slug": "urusan-pemerintahan-bidang-pangan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PANGAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "10",
+      "slug": "urusan-pemerintahan-bidang-pertanahan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERTANAHAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "11",
+      "slug": "urusan-pemerintahan-bidang-lingkungan-hidup",
+      "nama": "URUSAN PEMERINTAHAN BIDANG LINGKUNGAN HIDUP",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "12",
+      "slug": "urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil",
+      "nama": "URUSAN PEMERINTAHAN BIDANG ADMINISTRASI KEPENDUDUKAN DAN PENCATATAN SIPIL",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "13",
+      "slug": "urusan-pemerintahan-bidang-pemberdayaan-masyarakat-dan-desa",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PEMBERDAYAAN MASYARAKAT DAN DESA",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "14",
+      "slug": "urusan-pemerintahan-bidang-pengendalian-penduduk-dan-keluarga-berencana",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "15",
+      "slug": "urusan-pemerintahan-bidang-perhubungan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERHUBUNGAN",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "16",
+      "slug": "urusan-pemerintahan-bidang-komunikasi-dan-informatika",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KOMUNIKASI DAN INFORMATIKA",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "17",
+      "slug": "urusan-pemerintahan-bidang-koperasi-usaha-kecil-dan-menengah",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KOPERASI USAHA KECIL DAN MENENGAH",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "18",
+      "slug": "urusan-pemerintahan-bidang-penanaman-modal",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "19",
+      "slug": "urusan-pemerintahan-bidang-kepemudaan-dan-olahraga",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KEPEMUDAAN DAN OLAHRAGA",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "20",
+      "slug": "urusan-pemerintahan-bidang-statistik",
+      "nama": "URUSAN PEMERINTAHAN BIDANG STATISTIK",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "21",
+      "slug": "urusan-pemerintahan-bidang-persandian",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERSANDIAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "22",
+      "slug": "urusan-pemerintahan-bidang-kebudayaan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KEBUDAYAAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "23",
+      "slug": "urusan-pemerintahan-bidang-perpustakaan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERPUSTAKAAN",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "24",
+      "slug": "urusan-pemerintahan-bidang-kearsipan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KEARSIPAN",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "25",
+      "slug": "urusan-pemerintahan-bidang-kelautan-dan-perikanan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KELAUTAN DAN PERIKANAN",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "26",
+      "slug": "urusan-pemerintahan-bidang-pariwisata",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PARIWISATA",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "27",
+      "slug": "urusan-pemerintahan-bidang-pertanian",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERTANIAN",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "28",
+      "slug": "urusan-pemerintahan-bidang-kehutanan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG KEHUTANAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "29",
+      "slug": "urusan-pemerintahan-bidang-energi-dan-sumber-daya-mineral",
+      "nama": "URUSAN PEMERINTAHAN BIDANG ENERGI DAN SUMBER DAYA MINERAL",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "30",
+      "slug": "urusan-pemerintahan-bidang-perdagangan",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERDAGANGAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "31",
+      "slug": "urusan-pemerintahan-bidang-perindustrian",
+      "nama": "URUSAN PEMERINTAHAN BIDANG PERINDUSTRIAN",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "32",
+      "slug": "urusan-pemerintahan-bidang-transmigrasi",
+      "nama": "URUSAN PEMERINTAHAN BIDANG TRANSMIGRASI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "33",
+      "slug": "sekretariat-daerah",
+      "nama": "SEKRETARIAT DAERAH",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "34",
+      "slug": "sekretariat-dprd",
+      "nama": "SEKRETARIAT DPRD",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "35",
+      "slug": "perencanaan",
+      "nama": "PERENCANAAN",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "36",
+      "slug": "keuangan",
+      "nama": "KEUANGAN",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "37",
+      "slug": "kepegawaian",
+      "nama": "KEPEGAWAIAN",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "38",
+      "slug": "pendidikan-dan-pelatihan",
+      "nama": "PENDIDIKAN DAN PELATIHAN",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "39",
+      "slug": "penelitian-dan-pengembangan",
+      "nama": "PENELITIAN DAN PENGEMBANGAN",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "40",
+      "slug": "pengelolaan-perbatasan",
+      "nama": "PENGELOLAAN PERBATASAN",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "41",
+      "slug": "inspektorat-daerah",
+      "nama": "INSPEKTORAT DAERAH",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "42",
+      "slug": "kecamatan",
+      "nama": "KECAMATAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "43",
+      "slug": "kesatuan-bangsa-dan-politik",
+      "nama": "KESATUAN BANGSA DAN POLITIK",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    }
+  ]
+}

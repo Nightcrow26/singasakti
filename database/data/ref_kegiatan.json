@@ -1,0 +1,3000 @@
+{
+  "RECORDS": [
+    {
+      "id": "1",
+      "slug": "pengelolaan-pendidikan-sekolah-dasar",
+      "nama": "pengelolaan pendidikan sekolah dasar",
+      "created_at": "9/11/2021 08:13:42",
+      "updated_at": "9/11/2021 08:13:42"
+    },
+    {
+      "id": "2",
+      "slug": "pengelolaan-pendidikan-sekolah-menengah-pertama",
+      "nama": "pengelolaan pendidikan sekolah menengah pertama",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "3",
+      "slug": "pengelolaan-pendidikan-anak-usia-dini-paud",
+      "nama": "pengelolaan pendidikan anak usia dini paud",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "4",
+      "slug": "pengelolaan-pendidikan-nonformalkesetaraan",
+      "nama": "pengelolaan pendidikan nonformalkesetaraan",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "5",
+      "slug": "penetapan-kurikulum-muatan-lokal-pendidikan-dasar",
+      "nama": "penetapan kurikulum muatan lokal pendidikan dasar",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "6",
+      "slug": "penetapan-kurikulum-muatan-lokal-pendidikan-anak-usia-dini-dan-pendidikan-nonformal",
+      "nama": "penetapan kurikulum muatan lokal pendidikan anak usia dini dan pendidikan nonformal",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "7",
+      "slug": "pemerataan-kuantitas-dan-kualitas-pendidik-dan-tenaga-kependidikan-bagi-satuan-pendidikan-dasar-paud-dan-pendidikan-nonformalkesetaraan",
+      "nama": "pemerataan kuantitas dan kualitas pendidik dan tenaga kependidikan bagi satuan pendidikan dasar paud dan pendidikan nonformalkesetaraan",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "8",
+      "slug": "penerbitan-izin-pendidikan-dasar-yang-diselenggarakan-oleh-masyarakat",
+      "nama": "penerbitan izin pendidikan dasar yang diselenggarakan oleh masyarakat",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "9",
+      "slug": "penerbitan-izin-paud-dan-pendidikan-nonformal-yang-diselenggarakan-oleh-masyarakat",
+      "nama": "penerbitan izin paud dan pendidikan nonformal yang diselenggarakan oleh masyarakat",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "10",
+      "slug": "pembinaan-pengembangan-dan-perlindungan-bahasa-dan-sastra-yang-penuturannya-dalam-daerah-kabupatenkota",
+      "nama": "pembinaan pengembangan dan perlindungan bahasa dan sastra yang penuturannya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "11",
+      "slug": "penyediaan-fasilitas-pelayanan-kesehatan-untuk-ukm-dan-ukp-kewenangan-daerah-kabupatenkota",
+      "nama": "penyediaan fasilitas pelayanan kesehatan untuk ukm dan ukp kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "12",
+      "slug": "penyediaan-layanan-kesehatan-untuk-ukm-dan-ukp-rujukan-tingkat-daerah-kabupatenkota",
+      "nama": "penyediaan layanan kesehatan untuk ukm dan ukp rujukan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "13",
+      "slug": "penyelenggaraan-sistem-informasi-kesehatan-secara-terintegrasi",
+      "nama": "penyelenggaraan sistem informasi kesehatan secara terintegrasi",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "14",
+      "slug": "penerbitan-izin-rumah-sakit-kelas-c-dan-d-serta-fasilitas-pelayanan-kesehatan-tingkat-daerah-kabupatenkota",
+      "nama": "penerbitan izin rumah sakit kelas c dan d serta fasilitas pelayanan kesehatan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "15",
+      "slug": "pemberian-izin-praktik-tenaga-kesehatan-di-wilayah-kabupatenkota",
+      "nama": "pemberian izin praktik tenaga kesehatan di wilayah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "16",
+      "slug": "perencanaan-kebutuhan-dan-pendayagunaan-sumberdaya-manusia-kesehatan-untuk-ukp-dan-ukm-di-wilayah-kabupatenkota",
+      "nama": "perencanaan kebutuhan dan pendayagunaan sumberdaya manusia kesehatan untuk ukp dan ukm di wilayah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "17",
+      "slug": "pengembangan-mutu-dan-peningkatan-kompetensi-teknis-sumber-daya-manusia-kesehatan-tingkat-daerah-kabupatenkota",
+      "nama": "pengembangan mutu dan peningkatan kompetensi teknis sumber daya manusia kesehatan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "18",
+      "slug": "pemberian-izin-apotek-toko-obat-toko-alat-kesehatan-dan-optikal-usaha-mikro-obat-tradisional-umot",
+      "nama": "pemberian izin apotek toko obat toko alat kesehatan dan optikal usaha mikro obat tradisional umot",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "19",
+      "slug": "pemberian-sertifikat-produksi-untuk-sarana-produksi-alat-kesehatan-kelas-1-tertentu-dan-perbekalan-kesehatan-rumah-tangga-kelas-1-tertentu-perusahaan-rumah-tangga",
+      "nama": "pemberian sertifikat produksi untuk sarana produksi alat kesehatan kelas 1 tertentu dan perbekalan kesehatan rumah tangga kelas 1 tertentu perusahaan rumah tangga",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "20",
+      "slug": "penerbitan-sertifikat-produksi-pangan-industri-rumah-tangga-dan-nomor-p-irt-sebagai-izin-produksi-untuk-produk-makanan-minuman-tertentu-yang-dapat-diproduksi-oleh-industri-rumah-tangga",
+      "nama": "penerbitan sertifikat produksi pangan industri rumah tangga dan nomor p irt sebagai izin produksi untuk produk makanan minuman tertentu yang dapat diproduksi oleh industri rumah tangga",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "21",
+      "slug": "penerbitan-sertifikat-laik-higiene-sanitasi-tempat-pengelolaan-makanan-tpm-antara-lain-jasa-boga-rumah-makanrestoran-dan-depot-air-minum-dam",
+      "nama": "penerbitan sertifikat laik higiene sanitasi tempat pengelolaan makanan tpm antara lain jasa boga rumah makanrestoran dan depot air minum dam",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "22",
+      "slug": "penerbitan-stiker-pembinaan-pada-makanan-jajanan-dan-sentra-makanan-jajanan",
+      "nama": "penerbitan stiker pembinaan pada makanan jajanan dan sentra makanan jajanan",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "23",
+      "slug": "pemeriksaan-dan-tindak-lanjut-hasil-pemeriksaan-post-market-pada-produksi-dan-produk-makanan-minuman-industri-rumah-tangga",
+      "nama": "pemeriksaan dan tindak lanjut hasil pemeriksaan post market pada produksi dan produk makanan minuman industri rumah tangga",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "24",
+      "slug": "advokasi-pemberdayaan-kemitraan-peningkatan-peran-serta-masyarakat-dan-lintas-sektor-tingkat-daerah-kabupatenkota",
+      "nama": "advokasi pemberdayaan kemitraan peningkatan peran serta masyarakat dan lintas sektor tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "25",
+      "slug": "pelaksanaan-sehat-dalam-rangka-promotif-preventif-tingkat-daerah-kabupatenkota",
+      "nama": "pelaksanaan sehat dalam rangka promotif preventif tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "26",
+      "slug": "pengembangan-dan-pelaksanaan-upaya-kesehatan-bersumber-daya-masyarakat-ukbm-tingkat-daerah-kabupatenkota",
+      "nama": "pengembangan dan pelaksanaan upaya kesehatan bersumber daya masyarakat ukbm tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "27",
+      "slug": "pengelolaan-sda-dan-bangunan-pengaman-pantai-pada-wilayah-sungai-ws-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pengelolaan sda dan bangunan pengaman pantai pada wilayah sungai ws dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "28",
+      "slug": "pengembangan-dan-pengelolaan-sistem-irigasi-primer-dan-sekunder-pada-daerah-irigasi-yang-luasnya-dibawah-1000-ha-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pengembangan dan pengelolaan sistem irigasi primer dan sekunder pada daerah irigasi yang luasnya dibawah 1000 ha dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "29",
+      "slug": "pengelolaan-dan-pengembangan-sistem-penyediaan-air-minum-spam-di-daerah-kabupatenkota",
+      "nama": "pengelolaan dan pengembangan sistem penyediaan air minum spam di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "30",
+      "slug": "pengembangan-sistem-dan-pengelolaan-persampahan-di-daerah-kabupatenkota",
+      "nama": "pengembangan sistem dan pengelolaan persampahan di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "31",
+      "slug": "pengelolaan-dan-pengembangan-sistem-air-limbah-domestik-dalam-daerah-kabupatenkota",
+      "nama": "pengelolaan dan pengembangan sistem air limbah domestik dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "32",
+      "slug": "pengelolaan-dan-pengembangan-sistem-drainase-yang-terhubung-langsung-dengan-sungai-dalam-daerah-kabupatenkota",
+      "nama": "pengelolaan dan pengembangan sistem drainase yang terhubung langsung dengan sungai dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "33",
+      "slug": "penyelenggaraan-infrastruktur-pada-permukiman-di-kawasan-strategis-daerah-kabupatenkota",
+      "nama": "penyelenggaraan infrastruktur pada permukiman di kawasan strategis daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "34",
+      "slug": "penyelenggaraan-bangunan-gedung-di-wilayah-daerah-kabupatenkota-pemberian-izin-mendirikan-bangunan-imb-dan-sertifikat-laik-fungsi-bangunan-gedung",
+      "nama": "penyelenggaraan bangunan gedung di wilayah daerah kabupatenkota pemberian izin mendirikan bangunan imb dan sertifikat laik fungsi bangunan gedung",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "35",
+      "slug": "penyelenggaraan-penataan-bangunan-dan-lingkungannya-di-daerah-kabupatenkota",
+      "nama": "penyelenggaraan penataan bangunan dan lingkungannya di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "36",
+      "slug": "penyelenggaraan-jalan-kabupatenkota",
+      "nama": "penyelenggaraan jalan kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "37",
+      "slug": "penyelenggaraan-pelatihan-tenaga-terampil-konstruksi",
+      "nama": "penyelenggaraan pelatihan tenaga terampil konstruksi",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "38",
+      "slug": "penyelenggaraan-sistem-informasi-jasa-konstruksi-cakupan-daerah-kabupatenkota",
+      "nama": "penyelenggaraan sistem informasi jasa konstruksi cakupan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "39",
+      "slug": "penerbitan-izin-usaha-jasa-konstruksi-nasional-non-kecil-dan-kecil",
+      "nama": "penerbitan izin usaha jasa konstruksi nasional non kecil dan kecil",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "40",
+      "slug": "pengawasan-tertib-usaha-tertib-penyelenggaraan-dan-tertib-pemanfaatan-jasa-konstruksi",
+      "nama": "pengawasan tertib usaha tertib penyelenggaraan dan tertib pemanfaatan jasa konstruksi",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "41",
+      "slug": "penetapan-rencana-tata-ruang-wilayah-rtrw-dan-rencana-rinci-tata-ruang-rrtr-kabupatenkota",
+      "nama": "penetapan rencana tata ruang wilayah rtrw dan rencana rinci tata ruang rrtr kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "42",
+      "slug": "koordinasi-dan-sinkronisasi-perencanaan-tata-ruang-daerah-kabupatenkota",
+      "nama": "koordinasi dan sinkronisasi perencanaan tata ruang daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "43",
+      "slug": "koordinasi-dan-sinkronisasi-pemanfaatan-ruang-daerah-kabupatenkota",
+      "nama": "koordinasi dan sinkronisasi pemanfaatan ruang daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "44",
+      "slug": "koordinasi-dan-sinkronisasi-pengendalian-pemanfaatan-ruang-daerah-kabupatenkota",
+      "nama": "koordinasi dan sinkronisasi pengendalian pemanfaatan ruang daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "45",
+      "slug": "pendataan-penyediaan-dan-rehabilitasi-rumah-korban-bencana-atau-relokasi-program-kabupatenkota",
+      "nama": "pendataan penyediaan dan rehabilitasi rumah korban bencana atau relokasi program kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "46",
+      "slug": "sosialisasi-dan-persiapan-penyediaan-dan-rehabilitasi-rumah-korban-bencana-atau-relokasi-program-kabupatenkota",
+      "nama": "sosialisasi dan persiapan penyediaan dan rehabilitasi rumah korban bencana atau relokasi program kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "47",
+      "slug": "pembangunan-dan-rehabilitasi-rumah-korban-bencana-atau-relokasi-program-kabupatenkota",
+      "nama": "pembangunan dan rehabilitasi rumah korban bencana atau relokasi program kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "48",
+      "slug": "pendistribusian-dan-serah-terima-rumah-bagi-korban-bencana-atau-relokasi-program-kabupatenkota",
+      "nama": "pendistribusian dan serah terima rumah bagi korban bencana atau relokasi program kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "49",
+      "slug": "pembinaan-pengelolaan-rumah-susun-umum-danatau-rumah-khusus",
+      "nama": "pembinaan pengelolaan rumah susun umum danatau rumah khusus",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "50",
+      "slug": "penerbitan-izin-pembangunan-dan-pengembangan-perumahan",
+      "nama": "penerbitan izin pembangunan dan pengembangan perumahan",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "51",
+      "slug": "penerbitan-sertifikat-kepemilikan-bangunan-gedung-skgb",
+      "nama": "penerbitan sertifikat kepemilikan bangunan gedung skgb",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "52",
+      "slug": "penerbitan-izin-pembangunan-dan-pengembangan-kawasan-permukiman",
+      "nama": "penerbitan izin pembangunan dan pengembangan kawasan permukiman",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "53",
+      "slug": "penataan-dan-peningkatan-kualitas-kawasan-permukiman-kumuh-dengan-luas-di-bawah-10-sepuluh-ha",
+      "nama": "penataan dan peningkatan kualitas kawasan permukiman kumuh dengan luas di bawah 10 sepuluh ha",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "54",
+      "slug": "peningkatan-kualitas-kawasan-permukiman-kumuh-dengan-luas-di-bawah-10-sepuluh-ha",
+      "nama": "peningkatan kualitas kawasan permukiman kumuh dengan luas di bawah 10 sepuluh ha",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "55",
+      "slug": "pencegahan-perumahan-dan-kawasan-permukiman-kumuh-pada-daerah-kabupatenkota",
+      "nama": "pencegahan perumahan dan kawasan permukiman kumuh pada daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "56",
+      "slug": "urusan-penyelenggaraan-psu-perumahan",
+      "nama": "urusan penyelenggaraan psu perumahan",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "57",
+      "slug": "sertifikasi-dan-registrasi-bagi-orang-atau-badan-hukum-yang-melaksanakan-perancangan-dan-perencanaan-rumah-serta-perencanaan-prasarana-sarana-dan-utilitas-umum-psu-tingkat-kemampuan-kecil",
+      "nama": "sertifikasi dan registrasi bagi orang atau badan hukum yang melaksanakan perancangan dan perencanaan rumah serta perencanaan prasarana sarana dan utilitas umum psu tingkat kemampuan kecil",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "58",
+      "slug": "penanganan-gangguan-ketenteraman-dan-ketertiban-umum-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penanganan gangguan ketenteraman dan ketertiban umum dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "59",
+      "slug": "penegakan-peraturan-daerah-kabupatenkota-dan-peraturan-bupatiwali-kota",
+      "nama": "penegakan peraturan daerah kabupatenkota dan peraturan bupatiwali kota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "60",
+      "slug": "pembinaan-penyidik-pegawai-negeri-sipil-ppns-kabupatenkota",
+      "nama": "pembinaan penyidik pegawai negeri sipil ppns kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "61",
+      "slug": "pelayanan-informasi-rawan-bencana-kabupatenkota",
+      "nama": "pelayanan informasi rawan bencana kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "62",
+      "slug": "pelayanan-pencegahan-dan-kesiapsiagaan-terhadap-bencana",
+      "nama": "pelayanan pencegahan dan kesiapsiagaan terhadap bencana",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "63",
+      "slug": "pelayanan-penyelamatan-dan-evakuasi-korban-bencana",
+      "nama": "pelayanan penyelamatan dan evakuasi korban bencana",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "64",
+      "slug": "penataan-sistem-dasar-penanggulangan-bencana",
+      "nama": "penataan sistem dasar penanggulangan bencana",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "65",
+      "slug": "pencegahan-pengendalian-pemadaman-penyelamatan-dan-penanganan-bahan-berbahaya-dan-beracun-kebakaran-dalam-daerah-kabupatenkota",
+      "nama": "pencegahan pengendalian pemadaman penyelamatan dan penanganan bahan berbahaya dan beracun kebakaran dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "66",
+      "slug": "inspeksi-peralatan-proteksi-kebakaran",
+      "nama": "inspeksi peralatan proteksi kebakaran",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "67",
+      "slug": "investigasi-kejadian-kebakaran",
+      "nama": "investigasi kejadian kebakaran",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "68",
+      "slug": "pemberdayaan-masyarakat-dalam-pencegahan-kebakaran",
+      "nama": "pemberdayaan masyarakat dalam pencegahan kebakaran",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "69",
+      "slug": "penyelenggaraan-operasi-pencarian-dan-pertolongan-terhadap-kondisi-membahayakan-manusia",
+      "nama": "penyelenggaraan operasi pencarian dan pertolongan terhadap kondisi membahayakan manusia",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "70",
+      "slug": "pemberdayaan-sosial-komunitas-adat-terpencil-kat",
+      "nama": "pemberdayaan sosial komunitas adat terpencil kat",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "71",
+      "slug": "pengumpulan-sumbangan-dalam-daerah-kabupatenkota",
+      "nama": "pengumpulan sumbangan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "72",
+      "slug": "pengembangan-potensi-sumber-kesejahteraan-sosial-daerah-kabupatenkota",
+      "nama": "pengembangan potensi sumber kesejahteraan sosial daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "73",
+      "slug": "pemulangan-warga-negara-migran-korban-tindak-kekerasan-dari-titik-debarkasi-di-daerah-kabupatenkota-untuk-dipulangkan-ke-desakelurahan-asal",
+      "nama": "pemulangan warga negara migran korban tindak kekerasan dari titik debarkasi di daerah kabupatenkota untuk dipulangkan ke desakelurahan asal",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "74",
+      "slug": "rehabilitasi-sosial-dasar-penyandang-disabilitas-terlantar-anak-terlantar-lanjut-usia-terlantar-serta-gelandangan-pengemis-di-luar-panti-sosial",
+      "nama": "rehabilitasi sosial dasar penyandang disabilitas terlantar anak terlantar lanjut usia terlantar serta gelandangan pengemis di luar panti sosial",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "75",
+      "slug": "rehabilitasi-sosial-penyandang-masalah-kesejahteraan-sosial-pmks-lainnya-bukan-korban-hivaids-dan-napza-di-luar-panti-sosial",
+      "nama": "rehabilitasi sosial penyandang masalah kesejahteraan sosial pmks lainnya bukan korban hivaids dan napza di luar panti sosial",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "76",
+      "slug": "pemeliharaan-anak-anak-terlantar",
+      "nama": "pemeliharaan anak anak terlantar",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "77",
+      "slug": "pengelolaan-data-fakir-miskin-cakupan-daerah-kabupatenkota",
+      "nama": "pengelolaan data fakir miskin cakupan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "78",
+      "slug": "perlindungan-sosial-korban-bencana-alam-dan-sosial-kabupatenkota",
+      "nama": "perlindungan sosial korban bencana alam dan sosial kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "79",
+      "slug": "penyelenggaraan-pemberdayaan-masyarakat-terhadap-kesiapsiagaan-bencana-kabupatenkota",
+      "nama": "penyelenggaraan pemberdayaan masyarakat terhadap kesiapsiagaan bencana kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "80",
+      "slug": "pemeliharaan-taman-makam-pahlawan-nasional-kabupatenkota",
+      "nama": "pemeliharaan taman makam pahlawan nasional kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "81",
+      "slug": "penyusunan-rencana-tenaga-kerja-rtk",
+      "nama": "penyusunan rencana tenaga kerja rtk",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "82",
+      "slug": "pelaksanaan-pelatihan-berdasarkan-unit-kompetensi",
+      "nama": "pelaksanaan pelatihan berdasarkan unit kompetensi",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "83",
+      "slug": "pembinaan-lembaga-pelatihan-kerja-swasta",
+      "nama": "pembinaan lembaga pelatihan kerja swasta",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "84",
+      "slug": "perizinan-dan-pendaftaran-lembaga-pelatihan-kerja",
+      "nama": "perizinan dan pendaftaran lembaga pelatihan kerja",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "85",
+      "slug": "konsultansi-produktivitas-pada-perusahaan-kecil",
+      "nama": "konsultansi produktivitas pada perusahaan kecil",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "86",
+      "slug": "pengukuran-produktivitas-tingkat-daerah-kabupatenkota",
+      "nama": "pengukuran produktivitas tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "87",
+      "slug": "pelayanan-antarkerja-di-daerah-kabupatenkota",
+      "nama": "pelayanan antarkerja di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "88",
+      "slug": "penerbitan-izin-lembaga-penempatan-tenaga-kerja-swasta-lptks-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin lembaga penempatan tenaga kerja swasta lptks dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "89",
+      "slug": "pengelolaan-informasi-pasar-kerja",
+      "nama": "pengelolaan informasi pasar kerja",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "90",
+      "slug": "pelindungan-pmi-pra-dan-purna-penempatan-di-daerah-kabupatenkota",
+      "nama": "pelindungan pmi pra dan purna penempatan di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "91",
+      "slug": "penerbitan-perpanjangan-imta-yang-lokasi-kerja-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan perpanjangan imta yang lokasi kerja dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "92",
+      "slug": "pengesahan-peraturan-perusahaan-dan-pendaftaran-perjanjian-kerja-bersama-untuk-perusahaan-yang-hanya-beroperasi-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pengesahan peraturan perusahaan dan pendaftaran perjanjian kerja bersama untuk perusahaan yang hanya beroperasi dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "93",
+      "slug": "pencegahan-dan-penyelesaian-perselisihan-hubungan-industrial-mogok-kerja-dan-penutupan-perusahaan-di-daerah-kabupatenkota",
+      "nama": "pencegahan dan penyelesaian perselisihan hubungan industrial mogok kerja dan penutupan perusahaan di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "94",
+      "slug": "pelembagaan-pengarusutamaan-gender-pug-pada-lembaga-pemerintah-kewenangan-kabupatenkota",
+      "nama": "pelembagaan pengarusutamaan gender pug pada lembaga pemerintah kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "95",
+      "slug": "pemberdayaan-perempuan-bidang-politik-hukum-sosial-dan-ekonomi-pada-organisasi-kemasyarakatan-kewenangan-kabupatenkota",
+      "nama": "pemberdayaan perempuan bidang politik hukum sosial dan ekonomi pada organisasi kemasyarakatan kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "96",
+      "slug": "penguatan-dan-pengembangan-lembaga-penyedia-layanan-pemberdayaan-perempuan-kewenangan-kabupatenkota",
+      "nama": "penguatan dan pengembangan lembaga penyedia layanan pemberdayaan perempuan kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "97",
+      "slug": "pencegahan-kekerasan-terhadap-perempuan-lingkup-daerah-kabupatenkota",
+      "nama": "pencegahan kekerasan terhadap perempuan lingkup daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "98",
+      "slug": "penyediaan-layanan-rujukan-lanjutan-bagi-perempuan-korban-kekerasan-yang-memerlukan-koordinasi-kewenangan-kabupatenkota",
+      "nama": "penyediaan layanan rujukan lanjutan bagi perempuan korban kekerasan yang memerlukan koordinasi kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "99",
+      "slug": "penguatan-dan-pengembangan-lembaga-penyedia-layanan-perlindungan-perempuan-tingkat-daerah-kabupatenkota",
+      "nama": "penguatan dan pengembangan lembaga penyedia layanan perlindungan perempuan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "100",
+      "slug": "peningkatan-kualitas-keluarga-dalam-mewujudkan-kesetaraan-gender-kg-dan-hak-anak-tingkat-daerah-kabupatenkota",
+      "nama": "peningkatan kualitas keluarga dalam mewujudkan kesetaraan gender kg dan hak anak tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "101",
+      "slug": "penguatan-dan-pengembangan-lembaga-penyedia-layanan-peningkatan-kualitas-keluarga-dalam-mewujudkan-kg-dan-hak-anak-yang-wilayah-kerjanya-dalam-daerah-kabupatenkota",
+      "nama": "penguatan dan pengembangan lembaga penyedia layanan peningkatan kualitas keluarga dalam mewujudkan kg dan hak anak yang wilayah kerjanya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "102",
+      "slug": "penyediaan-layanan-bagi-keluarga-dalam-mewujudkan-kg-dan-hak-anak-yang-wilayah-kerjanya-dalam-daerah-kabupatenkota",
+      "nama": "penyediaan layanan bagi keluarga dalam mewujudkan kg dan hak anak yang wilayah kerjanya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "103",
+      "slug": "pengumpulan-pengolahan-analisis-dan-penyajian-data-gender-dan-anak-dalam-kelembagaan-data-di-tingkat-daerah-kabupatenkota",
+      "nama": "pengumpulan pengolahan analisis dan penyajian data gender dan anak dalam kelembagaan data di tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "104",
+      "slug": "pelembagaan-pha-pada-lembaga-pemerintah-nonpemerintah-dan-dunia-usaha-kewenangan-kabupatenkota",
+      "nama": "pelembagaan pha pada lembaga pemerintah nonpemerintah dan dunia usaha kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "105",
+      "slug": "penguatan-dan-pengembangan-lembaga-penyedia-layanan-peningkatan-kualitas-hidup-anak-kewenangan-kabupatenkota",
+      "nama": "penguatan dan pengembangan lembaga penyedia layanan peningkatan kualitas hidup anak kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "106",
+      "slug": "pencegahan-kekerasan-terhadap-anak-yang-melibatkan-para-pihak-lingkup-daerah-kabupatenkota",
+      "nama": "pencegahan kekerasan terhadap anak yang melibatkan para pihak lingkup daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "107",
+      "slug": "penyediaan-layanan-bagi-anak-yang-memerlukan-perlindungan-khusus-yang-memerlukan",
+      "nama": "penyediaan layanan bagi anak yang memerlukan perlindungan khusus yang memerlukan",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "108",
+      "slug": "penguatan-dan-pengembangan-lembaga-penyedia-layanan-bagi-anak-yang-memerlukan-perlindungan-khusus-tingkat-daerah-kabupatenkota",
+      "nama": "penguatan dan pengembangan lembaga penyedia layanan bagi anak yang memerlukan perlindungan khusus tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "109",
+      "slug": "penyediaan-infrastruktur-dan-seluruh-pendukung-kemandirian-pangan-sesuai-kewenangan-daerah-kabupatenkota",
+      "nama": "penyediaan infrastruktur dan seluruh pendukung kemandirian pangan sesuai kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "110",
+      "slug": "penyediaan-dan-penyaluran-pangan-pokok-atau-pangan-lainnya-sesuai-dengan-kebutuhan-daerah-kabupatenkota-dalam-rangka-stabilisasi-pasokan-dan-harga-pangan",
+      "nama": "penyediaan dan penyaluran pangan pokok atau pangan lainnya sesuai dengan kebutuhan daerah kabupatenkota dalam rangka stabilisasi pasokan dan harga pangan",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "111",
+      "slug": "pengelolaan-dan-keseimbangan-cadangan-pangan-kabupatenkota",
+      "nama": "pengelolaan dan keseimbangan cadangan pangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "112",
+      "slug": "penentuan-harga-minimum-daerah-untuk-pangan-lokal-yang-tidak-ditetapkan-oleh-pemerintah-pusat-dan-pemerintah-provinsi",
+      "nama": "penentuan harga minimum daerah untuk pangan lokal yang tidak ditetapkan oleh pemerintah pusat dan pemerintah provinsi",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "113",
+      "slug": "pelaksanaan-pencapaian-target-konsumsi-pangan-perkapitatahun-sesuai-dengan-angka-kecukupan-gizi",
+      "nama": "pelaksanaan pencapaian target konsumsi pangan perkapitatahun sesuai dengan angka kecukupan gizi",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "114",
+      "slug": "penyusunan-peta-kerentanan-dan-ketahanan-pangan-kecamatan",
+      "nama": "penyusunan peta kerentanan dan ketahanan pangan kecamatan",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "115",
+      "slug": "penanganan-kerawanan-pangan-kewenangan-kabupatenkota",
+      "nama": "penanganan kerawanan pangan kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "116",
+      "slug": "pelaksanaan-pengawasan-keamanan-pangan-segar-daerah-kabupatenkota",
+      "nama": "pelaksanaan pengawasan keamanan pangan segar daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "117",
+      "slug": "pemberian-izin-lokasi-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pemberian izin lokasi dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "118",
+      "slug": "penyelesaian-sengketa-tanah-garapan-dalam-daerah-kabupatenkota",
+      "nama": "penyelesaian sengketa tanah garapan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "119",
+      "slug": "penyelesaian-masalah-ganti-kerugian-dan-santunan-tanah-untuk-pembangunan-oleh-pemerintah-daerah-kabupatenkota",
+      "nama": "penyelesaian masalah ganti kerugian dan santunan tanah untuk pembangunan oleh pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "120",
+      "slug": "penetapan-subjek-dan-objek-redistribusi-tanah-serta-ganti-kerugian-tanah-kelebihan-maksimum-dan-tanah-absentee-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan subjek dan objek redistribusi tanah serta ganti kerugian tanah kelebihan maksimum dan tanah absentee dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "121",
+      "slug": "penetapan-ganti-kerugian-tanah-kelebihan-maksimum-dan-tanah-absentee-lintas-daerah-kabupatenkota-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan ganti kerugian tanah kelebihan maksimum dan tanah absentee lintas daerah kabupatenkota dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "122",
+      "slug": "penetapan-tanah-ulayat-yang-lokasinya-dalam-daerah-kabupatenkota",
+      "nama": "penetapan tanah ulayat yang lokasinya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "123",
+      "slug": "penyelesaian-masalah-tanah-kosong",
+      "nama": "penyelesaian masalah tanah kosong",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "124",
+      "slug": "inventarisasi-dan-pemanfaatan-tanah-kosong",
+      "nama": "inventarisasi dan pemanfaatan tanah kosong",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "125",
+      "slug": "penerbitan-izin-membuka-tanah",
+      "nama": "penerbitan izin membuka tanah",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "126",
+      "slug": "penggunaan-tanah-yang-hamparannya-dalam-satu-daerah-kabupatenkota",
+      "nama": "penggunaan tanah yang hamparannya dalam satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "127",
+      "slug": "koordinasi-perencanaan-penggunaan-dan-pemanfaatan-tanah-pasca-reklamasi",
+      "nama": "koordinasi perencanaan penggunaan dan pemanfaatan tanah pasca reklamasi",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "128",
+      "slug": "pengelolaan-tanah-kasultanan-dan-tanah-kadipaten",
+      "nama": "pengelolaan tanah kasultanan dan tanah kadipaten",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "129",
+      "slug": "pemanfaatan-tanah-kasultanan-dan-tanah-kadipaten",
+      "nama": "pemanfaatan tanah kasultanan dan tanah kadipaten",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "130",
+      "slug": "sarana-dan-prasarana-keistimewaan",
+      "nama": "sarana dan prasarana keistimewaan",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "131",
+      "slug": "fasilitasi-inventarisasi-dan-pengurusan-hak-atas-tanah-aset-pemerintah",
+      "nama": "fasilitasi inventarisasi dan pengurusan hak atas tanah aset pemerintah",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "132",
+      "slug": "fasilitasi-inventarisasi-dan-pengurusan-hak-atas-tanah-milik-masyarakat-miskin",
+      "nama": "fasilitasi inventarisasi dan pengurusan hak atas tanah milik masyarakat miskin",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "133",
+      "slug": "survei-pengukuran-dan-pemetaan-tanah-instansi-pemerintah-swasta-dan-masyarakat-gampong",
+      "nama": "survei pengukuran dan pemetaan tanah instansi pemerintah swasta dan masyarakat gampong",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "134",
+      "slug": "pembinaan-dan-kerjasama-kelembagaan-pertanahan-kabupaten",
+      "nama": "pembinaan dan kerjasama kelembagaan pertanahan kabupaten",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "135",
+      "slug": "peningkatan-kapasitas-dan-pembinaan-sdm-pertanahan",
+      "nama": "peningkatan kapasitas dan pembinaan sdm pertanahan",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "136",
+      "slug": "koordinasi-dan-sinkronisasi-penggunaan-dan-pemanfaatan-tanah-di-wilayah-pesisir-laut-dan-pulau-kecil-sempadan-pantai-wilayah-perbatasan-dan-pulau-terpencil",
+      "nama": "koordinasi dan sinkronisasi penggunaan dan pemanfaatan tanah di wilayah pesisir laut dan pulau kecil sempadan pantai wilayah perbatasan dan pulau terpencil",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "137",
+      "slug": "pengelolaan-sistem-informasi-manajemen-pertanahan-simtanah",
+      "nama": "pengelolaan sistem informasi manajemen pertanahan simtanah",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "138",
+      "slug": "fasilitasi-penyelesaian-konflik-konflik-pertanahan",
+      "nama": "fasilitasi penyelesaian konflik konflik pertanahan",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "139",
+      "slug": "rencana-perlindungan-dan-pengelolaan-lingkungan-hidup-rpplh-kabupatenkota",
+      "nama": "rencana perlindungan dan pengelolaan lingkungan hidup rpplh kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "140",
+      "slug": "penyelenggaraan-kajian-lingkungan-hidup-strategis-klhs-kabupatenkota",
+      "nama": "penyelenggaraan kajian lingkungan hidup strategis klhs kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "141",
+      "slug": "pencegahan-pencemaran-danatau-kerusakan-lingkungan-hidup-kabupatenkota",
+      "nama": "pencegahan pencemaran danatau kerusakan lingkungan hidup kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "142",
+      "slug": "penanggulangan-pencemaran-danatau-kerusakan-lingkungan-hidup-kabupatenkota",
+      "nama": "penanggulangan pencemaran danatau kerusakan lingkungan hidup kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "143",
+      "slug": "pemulihan-pencemaran-danatau-kerusakan-lingkungan-hidup-kabupatenkota",
+      "nama": "pemulihan pencemaran danatau kerusakan lingkungan hidup kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "144",
+      "slug": "pengelolaan-keanekaragaman-hayati-kabupatenkota",
+      "nama": "pengelolaan keanekaragaman hayati kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "145",
+      "slug": "penyimpanan-sementara-limbah-b3",
+      "nama": "penyimpanan sementara limbah b3",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "146",
+      "slug": "pengumpulan-limbah-b3-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pengumpulan limbah b3 dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "147",
+      "slug": "pembinaan-dan-pengawasan-terhadap-usaha-danatau-kegiatan-yang-izin-lingkungan-dan-izin-pplh-diterbitkan-oleh-pemerintah-daerah-kabupatenkota",
+      "nama": "pembinaan dan pengawasan terhadap usaha danatau kegiatan yang izin lingkungan dan izin pplh diterbitkan oleh pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "148",
+      "slug": "pengakuan-mha-kearifan-lokal-pengetahuan-tradisional-dan-hak-mha-yang-terkait-dengan-pplh",
+      "nama": "pengakuan mha kearifan lokal pengetahuan tradisional dan hak mha yang terkait dengan pplh",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "149",
+      "slug": "peningkatan-kapasitas-mha-dan-kearifan-lokal-pengetahuan-tradisional-dan-hak-mha-yang-terkait-dengan-pplh",
+      "nama": "peningkatan kapasitas mha dan kearifan lokal pengetahuan tradisional dan hak mha yang terkait dengan pplh",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "150",
+      "slug": "penyelenggaraan-pendidikan-pelatihan-dan-penyuluhan-lingkungan-hidup-untuk-lembaga-kemasyarakatan-tingkat-daerah-kabupatenkota",
+      "nama": "penyelenggaraan pendidikan pelatihan dan penyuluhan lingkungan hidup untuk lembaga kemasyarakatan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "151",
+      "slug": "pemberian-penghargaan-lingkungan-hidup-tingkat-daerah-kabupatenkota",
+      "nama": "pemberian penghargaan lingkungan hidup tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "152",
+      "slug": "penyelesaian-pengaduan-masyarakat-di-bidang-perlindungan-dan-pengelolaan-lingkungan-hidup-pplh-kabupatenkota",
+      "nama": "penyelesaian pengaduan masyarakat di bidang perlindungan dan pengelolaan lingkungan hidup pplh kabupatenkota",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "153",
+      "slug": "pengelolaan-sampah",
+      "nama": "pengelolaan sampah",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "154",
+      "slug": "penerbitan-izin-pendaurulangan-sampahpengelolaan-sampah-pengangkutan-sampah-dan-pemrosesan-akhir-sampah-yang-diselenggarakan-oleh-swasta",
+      "nama": "penerbitan izin pendaurulangan sampahpengelolaan sampah pengangkutan sampah dan pemrosesan akhir sampah yang diselenggarakan oleh swasta",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "155",
+      "slug": "pembinaan-dan-pengawasan-pengelolaan-sampah-yang-diselenggarakan-oleh-pihak-swasta",
+      "nama": "pembinaan dan pengawasan pengelolaan sampah yang diselenggarakan oleh pihak swasta",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "156",
+      "slug": "pelayanan-pendaftaran-penduduk",
+      "nama": "pelayanan pendaftaran penduduk",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "157",
+      "slug": "penataan-pendaftaran-penduduk",
+      "nama": "penataan pendaftaran penduduk",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "158",
+      "slug": "penyelenggaraan-pendaftaran-penduduk",
+      "nama": "penyelenggaraan pendaftaran penduduk",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "159",
+      "slug": "pembinaan-dan-pengawasan-penyelenggaraan-pendaftaran-penduduk",
+      "nama": "pembinaan dan pengawasan penyelenggaraan pendaftaran penduduk",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "160",
+      "slug": "pelayanan-pencatatan-sipil",
+      "nama": "pelayanan pencatatan sipil",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "161",
+      "slug": "penyelenggaraan-pencatatan-sipil",
+      "nama": "penyelenggaraan pencatatan sipil",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "162",
+      "slug": "pembinaan-dan-pengawasan-penyelenggaraan-pencatatan-sipil",
+      "nama": "pembinaan dan pengawasan penyelenggaraan pencatatan sipil",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "163",
+      "slug": "pengumpulan-data-kependudukan-dan-pemanfaatan-dan-penyajian-database-kependudukan",
+      "nama": "pengumpulan data kependudukan dan pemanfaatan dan penyajian database kependudukan",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "164",
+      "slug": "penataan-pengelolaan-informasi-administrasi-kependudukan",
+      "nama": "penataan pengelolaan informasi administrasi kependudukan",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "165",
+      "slug": "penyelenggaraan-pengelolaan-informasi-administrasi-kependudukan",
+      "nama": "penyelenggaraan pengelolaan informasi administrasi kependudukan",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "166",
+      "slug": "pembinaan-dan-pengawasan-pengelolaan-informasi-administrasi-kependudukan",
+      "nama": "pembinaan dan pengawasan pengelolaan informasi administrasi kependudukan",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "167",
+      "slug": "penyusunan-profil-kependudukan",
+      "nama": "penyusunan profil kependudukan",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "168",
+      "slug": "penyelenggaraan-penataan-desa",
+      "nama": "penyelenggaraan penataan desa",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "169",
+      "slug": "fasilitasi-kerja-sama-antar-desa",
+      "nama": "fasilitasi kerja sama antar desa",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "170",
+      "slug": "pembinaan-dan-pengawasan-penyelenggaraan-administrasi-pemerintahan-desa",
+      "nama": "pembinaan dan pengawasan penyelenggaraan administrasi pemerintahan desa",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "171",
+      "slug": "pemberdayaan-lembaga-kemasyarakatan-yang-bergerak-di-bidang-pemberdayaan-desa-dan-lembaga-adat-tingkat-daerah-kabupatenkota-serta-pemberdayaan-masyarakat-hukum-adat-yang-masyarakat-pelakunya-hukum-adat-yang-sama-dalam-daerah-kabupatenkota",
+      "nama": "pemberdayaan lembaga kemasyarakatan yang bergerak di bidang pemberdayaan desa dan lembaga adat tingkat daerah kabupatenkota serta pemberdayaan masyarakat hukum adat yang masyarakat pelakunya hukum adat yang sama dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "172",
+      "slug": "pemaduan-dan-sinkronisasi-kebijakan-pemerintah-daerah-provinsi-dengan-pemerintah-daerah-kabupatenkota-dalam-rangka-pengendalian-kuantitas-penduduk",
+      "nama": "pemaduan dan sinkronisasi kebijakan pemerintah daerah provinsi dengan pemerintah daerah kabupatenkota dalam rangka pengendalian kuantitas penduduk",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "173",
+      "slug": "pemetaan-perkiraan-pengendalian-penduduk-cakupan-daerah-kabupatenkota",
+      "nama": "pemetaan perkiraan pengendalian penduduk cakupan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "174",
+      "slug": "pelaksanaan-advokasi-komunikasi-informasi-dan-edukasi-kie-pengendalian-penduduk-dan-kb-sesuai-kearifan-budaya-lokal",
+      "nama": "pelaksanaan advokasi komunikasi informasi dan edukasi kie pengendalian penduduk dan kb sesuai kearifan budaya lokal",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "175",
+      "slug": "pendayagunaan-tenaga-penyuluh-kbpetugas-lapangan-kb-pkbplkb",
+      "nama": "pendayagunaan tenaga penyuluh kbpetugas lapangan kb pkbplkb",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "176",
+      "slug": "pengendalian-dan-pendistribusian-kebutuhan-alat-dan-obat-kontrasepsi-serta-pelaksanaan-pelayanan-kb-di-daerah-kabupatenkota",
+      "nama": "pengendalian dan pendistribusian kebutuhan alat dan obat kontrasepsi serta pelaksanaan pelayanan kb di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "177",
+      "slug": "pemberdayaan-dan-peningkatan-peran-serta-organisasi-kemasyarakatan-tingkat-daerah-kabupatenkota-dalam-pelaksanaan-pelayanan-dan-pembinaan-kesertaan-ber-kb",
+      "nama": "pemberdayaan dan peningkatan peran serta organisasi kemasyarakatan tingkat daerah kabupatenkota dalam pelaksanaan pelayanan dan pembinaan kesertaan ber kb",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "178",
+      "slug": "pelaksanaan-pembangunan-keluarga-melalui-pembinaan-ketahanan-dan-kesejahteraan-keluarga",
+      "nama": "pelaksanaan pembangunan keluarga melalui pembinaan ketahanan dan kesejahteraan keluarga",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "179",
+      "slug": "pelaksanaan-dan-peningkatan-peran-serta-organisasi-kemasyarakatan-tingkat-daerah-kabupaten-kota-dalam-pembangunan-keluarga-melalui-pembinaan-ketahanan-dan-kesejahteraan-keluarga",
+      "nama": "pelaksanaan dan peningkatan peran serta organisasi kemasyarakatan tingkat daerah kabupaten kota dalam pembangunan keluarga melalui pembinaan ketahanan dan kesejahteraan keluarga",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "180",
+      "slug": "penetapan-rencana-induk-jaringan-llaj-kabupatenkota",
+      "nama": "penetapan rencana induk jaringan llaj kabupatenkota",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "181",
+      "slug": "penyediaan-perlengkapan-jalan-di-jalan-kabupatenkota",
+      "nama": "penyediaan perlengkapan jalan di jalan kabupatenkota",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "182",
+      "slug": "pengelolaan-terminal-penumpang-tipe-c",
+      "nama": "pengelolaan terminal penumpang tipe c",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "183",
+      "slug": "penerbitan-izin-penyelenggaraan-dan-pembangunan-fasilitas-parkir",
+      "nama": "penerbitan izin penyelenggaraan dan pembangunan fasilitas parkir",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "184",
+      "slug": "pengujian-berkala-kendaraan-bermotor",
+      "nama": "pengujian berkala kendaraan bermotor",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "185",
+      "slug": "pelaksanaan-manajemen-dan-rekayasa-lalu-lintas-untuk-jaringan-jalan-kabupatenkota",
+      "nama": "pelaksanaan manajemen dan rekayasa lalu lintas untuk jaringan jalan kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "186",
+      "slug": "persetujuan-hasil-analisis-dampak-lalu-lintas-andalalin-untuk-jalan-kabupatenkota",
+      "nama": "persetujuan hasil analisis dampak lalu lintas andalalin untuk jalan kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "187",
+      "slug": "audit-dan-inspeksi-keselamatan-llaj-di-jalan",
+      "nama": "audit dan inspeksi keselamatan llaj di jalan",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "188",
+      "slug": "penyediaan-angkutan-umum-untuk-jasa-angkutan-orang-danatau-barang-antar-kota-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penyediaan angkutan umum untuk jasa angkutan orang danatau barang antar kota dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "189",
+      "slug": "penetapan-kawasan-perkotaan-untuk-pelayanan-angkutan-perkotaan-yang-melampaui-batas-1-satu-daerah-kabupatenkota-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan kawasan perkotaan untuk pelayanan angkutan perkotaan yang melampaui batas 1 satu daerah kabupatenkota dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "190",
+      "slug": "penetapan-rencana-umum-jaringan-trayek-perkotaan-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan rencana umum jaringan trayek perkotaan dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "191",
+      "slug": "penetapan-rencana-umum-jaringan-trayek-pedesaan-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan rencana umum jaringan trayek pedesaan dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "192",
+      "slug": "penetapan-wilayah-operasi-angkutan-orang-dengan-menggunakan-taksi-dalam-kawasan-perkotaan-yang-wilayah-operasinya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan wilayah operasi angkutan orang dengan menggunakan taksi dalam kawasan perkotaan yang wilayah operasinya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "193",
+      "slug": "penerbitan-izin-penyelenggaraan-angkutan-orang-dalam-trayek-lintas-daerah-kabupatenkota-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin penyelenggaraan angkutan orang dalam trayek lintas daerah kabupatenkota dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "194",
+      "slug": "penerbitan-izin-penyelenggaraan-angkutan-taksi-yang-wilayah-operasinya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin penyelenggaraan angkutan taksi yang wilayah operasinya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "195",
+      "slug": "penetapan-tarif-kelas-ekonomi-untuk-angkutan-orang-yang-melayani-trayek-serta-angkutan-perkotaan-dan-perdesaan-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan tarif kelas ekonomi untuk angkutan orang yang melayani trayek serta angkutan perkotaan dan perdesaan dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "196",
+      "slug": "penerbitan-izin-usaha-angkutan-laut-bagi-badan-usaha-yang-berdomisili-dalam-daerah-kabupatenkota-dan-beroperasi-pada-lintas-pelabuhan-di-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha angkutan laut bagi badan usaha yang berdomisili dalam daerah kabupatenkota dan beroperasi pada lintas pelabuhan di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "197",
+      "slug": "penerbitan-izin-usaha-angkutan-laut-pelayaran-rakyat-bagi-orang-perorangan-atau-badan-usaha-yang-berdomisili-dan-yang-beroperasi-pada-lintas-pelabuhan-dalam-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha angkutan laut pelayaran rakyat bagi orang perorangan atau badan usaha yang berdomisili dan yang beroperasi pada lintas pelabuhan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "198",
+      "slug": "penerbitan-izin-usaha-penyelenggaraan-angkutan-sungai-dan-danau-sesuai-dengan-domisili-orang-perseorangan-warga-negara-indonesia-atau-badan-usaha",
+      "nama": "penerbitan izin usaha penyelenggaraan angkutan sungai dan danau sesuai dengan domisili orang perseorangan warga negara indonesia atau badan usaha",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "199",
+      "slug": "pembangunan-dan-penerbitan-izin-pelabuhan-sungai-dan-danau-yang-melayani-trayek-dalam-1-daerah-kabupatenkota",
+      "nama": "pembangunan dan penerbitan izin pelabuhan sungai dan danau yang melayani trayek dalam 1 daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "200",
+      "slug": "penerbitan-izin-usaha-penyelenggaraan-angkutan-penyeberangan-sesuai-dengan-domisili-badan-usaha",
+      "nama": "penerbitan izin usaha penyelenggaraan angkutan penyeberangan sesuai dengan domisili badan usaha",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "201",
+      "slug": "penetapan-lintas-penyeberangan-dan-persetujuan-pengoperasian-kapal-dalam-daerah-kabupatenkota-yang-terletak-pada-jaringan-jalan-kabupatenkota-danatau-jaringan-jalur-kereta-api-kabupatenkota",
+      "nama": "penetapan lintas penyeberangan dan persetujuan pengoperasian kapal dalam daerah kabupatenkota yang terletak pada jaringan jalan kabupatenkota danatau jaringan jalur kereta api kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "202",
+      "slug": "penetapan-lintas-penyeberangan-dan-persetujuan-pengoperasian-untuk-kapal-yang-melayani-penyeberangan-dalam-daerah-kabupatenkota",
+      "nama": "penetapan lintas penyeberangan dan persetujuan pengoperasian untuk kapal yang melayani penyeberangan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "203",
+      "slug": "penerbitan-izin-usaha-jasa-terkait-dengan-perawatan-dan-perbaikan-kapal",
+      "nama": "penerbitan izin usaha jasa terkait dengan perawatan dan perbaikan kapal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "204",
+      "slug": "penetapan-tarif-angkutan-penyeberangan-penumpang-kelas-ekonomi-dan-kendaraan-beserta-muatannya-pada-lintas-penyeberangan-dalam-daerah-kabupatenkota",
+      "nama": "penetapan tarif angkutan penyeberangan penumpang kelas ekonomi dan kendaraan beserta muatannya pada lintas penyeberangan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "205",
+      "slug": "penetapan-rencana-induk-dan-daerah-lingkungan-kerja-dlkrdaerah-lingkungan-kepentingan-dlkp-pelabuhan-pengumpan-lokal",
+      "nama": "penetapan rencana induk dan daerah lingkungan kerja dlkrdaerah lingkungan kepentingan dlkp pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "206",
+      "slug": "penetapan-rencana-induk-dan-dlkrdlkp-untuk-pelabuhan-sungai-dan-danau",
+      "nama": "penetapan rencana induk dan dlkrdlkp untuk pelabuhan sungai dan danau",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "207",
+      "slug": "pembangunan-penerbitan-izin-pembangunan-dan-pengoperasian-pelabuhan-pengumpan-lokal",
+      "nama": "pembangunan penerbitan izin pembangunan dan pengoperasian pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "208",
+      "slug": "pembangunan-dan-penerbitan-izin-pembangunan-dan-pengoperasian-pelabuhan-sungai-dan-danau",
+      "nama": "pembangunan dan penerbitan izin pembangunan dan pengoperasian pelabuhan sungai dan danau",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "209",
+      "slug": "penerbitan-izin-usaha-untuk-badan-usaha-pelabuhan-di-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin usaha untuk badan usaha pelabuhan di pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "210",
+      "slug": "penerbitan-izin-pengembangan-pelabuhan-untuk-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin pengembangan pelabuhan untuk pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "211",
+      "slug": "penerbitan-izin-pengoperasian-pelabuhan-selama-24-jam-untuk-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin pengoperasian pelabuhan selama 24 jam untuk pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "212",
+      "slug": "penerbitan-izin-pekerjaan-pengerukan-di-wilayah-perairan-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin pekerjaan pengerukan di wilayah perairan pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "213",
+      "slug": "penerbitan-izin-reklamasi-di-wilayah-perairan-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin reklamasi di wilayah perairan pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "214",
+      "slug": "penerbitan-izin-pengelolaan-terminal-untuk-kepentingan-sendiri-tuks-di-dalam-dlkrdlkp-pelabuhan-pengumpan-lokal",
+      "nama": "penerbitan izin pengelolaan terminal untuk kepentingan sendiri tuks di dalam dlkrdlkp pelabuhan pengumpan lokal",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "215",
+      "slug": "penerbitan-izin-mendirikan-bangunan-tempat-pendaratan-dan-lepas-landas-helikopter",
+      "nama": "penerbitan izin mendirikan bangunan tempat pendaratan dan lepas landas helikopter",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "216",
+      "slug": "penyediaan-sarana-dan-prasarana-serta-pengelolaan-transportasi",
+      "nama": "penyediaan sarana dan prasarana serta pengelolaan transportasi",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "217",
+      "slug": "penetapan-rencana-induk-perkeretaapian",
+      "nama": "penetapan rencana induk perkeretaapian",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "218",
+      "slug": "penerbitan-izin-usaha-izin-pembangunan-dan-izin-operasi-prasarana-perkeretaapian-umum-yang-jaringan-jalurnya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha izin pembangunan dan izin operasi prasarana perkeretaapian umum yang jaringan jalurnya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "219",
+      "slug": "penetapan-jaringan-jalur-kereta-api-yang-jaringannya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penetapan jaringan jalur kereta api yang jaringannya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "220",
+      "slug": "penetapan-kelas-stasiun-untuk-stasiun-pada-jaringan-jalur-kereta-api-kabupatenkota",
+      "nama": "penetapan kelas stasiun untuk stasiun pada jaringan jalur kereta api kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "221",
+      "slug": "penerbitan-izin-operasi-sarana-perkeretaapian-umum-yang-jaringan-jalurnya-melintasi-batas-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin operasi sarana perkeretaapian umum yang jaringan jalurnya melintasi batas dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "222",
+      "slug": "penetapan-jaringan-pelayanan-perkeretaapian-pada-jaringan-jalur-perkeretaapian-kabupatenkota",
+      "nama": "penetapan jaringan pelayanan perkeretaapian pada jaringan jalur perkeretaapian kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "223",
+      "slug": "penerbitan-izin-pengadaan-atau-pembangunan-perkeretapian-khusus-izin-operasi-dan-penetapan-jalur-kereta-api-khusus-yang-jaringannya-dalam-daerah-kabupatenkota",
+      "nama": "penerbitan izin pengadaan atau pembangunan perkeretapian khusus izin operasi dan penetapan jalur kereta api khusus yang jaringannya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "224",
+      "slug": "pengelolaan-informasi-dan-komunikasi-publik-pemerintah-daerah-kabupatenkota",
+      "nama": "pengelolaan informasi dan komunikasi publik pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "225",
+      "slug": "pengelolaan-nama-domain-yang-telah-ditetapkan-oleh-pemerintah-pusat-dan-sub-domain-di-lingkup-pemerintah-daerah-kabupatenkota",
+      "nama": "pengelolaan nama domain yang telah ditetapkan oleh pemerintah pusat dan sub domain di lingkup pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "226",
+      "slug": "pengelolaan-e-government-di-lingkup-pemerintah-daerah-kabupatenkota",
+      "nama": "pengelolaan e government di lingkup pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "227",
+      "slug": "penerbitan-izin-usaha-simpan-pinjam-untuk-koperasi-dengan-wilayah-keanggotaan-dalam-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha simpan pinjam untuk koperasi dengan wilayah keanggotaan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "228",
+      "slug": "penerbitan-izin-pembukaan-kantor-cabang-cabang-pembantu-dan-kantor-kas-koperasi-simpan-pinjam-untuk-koperasi-dengan-wilayah-keanggotaan-dalam-daerah-kabupatenkota",
+      "nama": "penerbitan izin pembukaan kantor cabang cabang pembantu dan kantor kas koperasi simpan pinjam untuk koperasi dengan wilayah keanggotaan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "229",
+      "slug": "pemeriksaan-dan-pengawasan-koperasi-koperasi-simpan-pinjamunit-simpan-pinjam-koperasi-yang-wilayah-keanggotaannya-dalam-daerah-kabupaten-kota",
+      "nama": "pemeriksaan dan pengawasan koperasi koperasi simpan pinjamunit simpan pinjam koperasi yang wilayah keanggotaannya dalam daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "230",
+      "slug": "penilaian-kesehatan-koperasi-simpan-pinjamunit-simpan-pinjam-koperasi-yang-wilayah-keanggotaannya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penilaian kesehatan koperasi simpan pinjamunit simpan pinjam koperasi yang wilayah keanggotaannya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "231",
+      "slug": "pendidikan-dan-latihan-perkoperasian-bagi-koperasi-yang-wilayah-keanggotaan-dalam-daerah-kabupatenkota",
+      "nama": "pendidikan dan latihan perkoperasian bagi koperasi yang wilayah keanggotaan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "232",
+      "slug": "pemberdayaan-dan-perlindungan-koperasi-yang-keanggotaannya-dalam-daerah-kabupatenkota",
+      "nama": "pemberdayaan dan perlindungan koperasi yang keanggotaannya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "233",
+      "slug": "pemberdayaan-usaha-mikro-yang-dilakukan-melalui-pendataan-kemitraan-kemudahan-perizinan-penguatan-kelembagaan-dan-koordinasi-dengan-para-pemangku-kepentingan",
+      "nama": "pemberdayaan usaha mikro yang dilakukan melalui pendataan kemitraan kemudahan perizinan penguatan kelembagaan dan koordinasi dengan para pemangku kepentingan",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "234",
+      "slug": "pengembangan-usaha-mikro-dengan-orientasi-peningkatan-skala-usaha-menjadi-usaha-kecil",
+      "nama": "pengembangan usaha mikro dengan orientasi peningkatan skala usaha menjadi usaha kecil",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "235",
+      "slug": "penetapan-pemberian-fasilitasinsentif-dibidang-penanaman-modal-yang-menjadi-kewenangan-daerah-kabupatenkota",
+      "nama": "penetapan pemberian fasilitasinsentif dibidang penanaman modal yang menjadi kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "236",
+      "slug": "pembuatan-peta-potensi-investasi-kabupatenkota",
+      "nama": "pembuatan peta potensi investasi kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "237",
+      "slug": "penyelenggaraan-promosi-penanaman-modal-yang-menjadi-kewenangan-daerah-kabupatenkota",
+      "nama": "penyelenggaraan promosi penanaman modal yang menjadi kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "238",
+      "slug": "pelayanan-perizinan-dan-non-perizinan-secara-terpadu-satu-pintu-dibidang-penanaman-modal-yang-menjadi-kewenangan-daerah-kabupaten-kota",
+      "nama": "pelayanan perizinan dan non perizinan secara terpadu satu pintu dibidang penanaman modal yang menjadi kewenangan daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "239",
+      "slug": "pengendalian-pelaksanaan-penanaman-modal-yang-menjadi-kewenangan-daerah-kabupatenkota",
+      "nama": "pengendalian pelaksanaan penanaman modal yang menjadi kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "240",
+      "slug": "pengelolaan-data-dan-informasi-perizinan-dan-non-perizinan-yang-terintegrasi-pada-tingkat-daerah-kabupatenkota",
+      "nama": "pengelolaan data dan informasi perizinan dan non perizinan yang terintegrasi pada tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "241",
+      "slug": "penyadaran-pemberdayaan-dan-pengembangan-pemuda-dan-kepemudaan-terhadap-pemuda-pelopor-kabupatenkota-wirausaha-muda-pemula-dan-pemuda-kader-kabupatenkota",
+      "nama": "penyadaran pemberdayaan dan pengembangan pemuda dan kepemudaan terhadap pemuda pelopor kabupatenkota wirausaha muda pemula dan pemuda kader kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "242",
+      "slug": "pemberdayaan-dan-pengembangan-organisasi-kepemudaan-tingkat-daerah-kabupatenkota",
+      "nama": "pemberdayaan dan pengembangan organisasi kepemudaan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "243",
+      "slug": "pembinaan-dan-pengembangan-olahraga-pendidikan-pada-jenjang-pendidikan-yang-menjadi-kewenangan-daerah-kabupatenkota",
+      "nama": "pembinaan dan pengembangan olahraga pendidikan pada jenjang pendidikan yang menjadi kewenangan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "244",
+      "slug": "penyelenggaraan-kejuaraan-olahraga-tingkat-daerah-kabupatenkota",
+      "nama": "penyelenggaraan kejuaraan olahraga tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "245",
+      "slug": "pembinaan-dan-pengembangan-olahraga-prestasi-tingkat-daerah-provinsi",
+      "nama": "pembinaan dan pengembangan olahraga prestasi tingkat daerah provinsi",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "246",
+      "slug": "pembinaan-dan-pengembangan-organisasi-olahraga",
+      "nama": "pembinaan dan pengembangan organisasi olahraga",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "247",
+      "slug": "pembinaan-dan-pengembangan-olahraga-rekreasi",
+      "nama": "pembinaan dan pengembangan olahraga rekreasi",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "248",
+      "slug": "pembinaan-dan-pengembangan-organisasi-kepramukaan",
+      "nama": "pembinaan dan pengembangan organisasi kepramukaan",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "249",
+      "slug": "penyelenggaraan-statistik-sektoral-di-lingkup-daerah-kabupatenkota",
+      "nama": "penyelenggaraan statistik sektoral di lingkup daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "250",
+      "slug": "penyelenggaraan-persandian-untuk-pengamanan-informasi-pemerintah-daerah-kabupatenkota",
+      "nama": "penyelenggaraan persandian untuk pengamanan informasi pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "251",
+      "slug": "penetapan-pola-hubungan-komunikasi-sandi-antar-perangkat-daerah-kabupatenkota",
+      "nama": "penetapan pola hubungan komunikasi sandi antar perangkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "252",
+      "slug": "pengelolaan-kebudayaan-yang-masyarakat-pelakunya-dalam-daerah-kabupatenkota",
+      "nama": "pengelolaan kebudayaan yang masyarakat pelakunya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "253",
+      "slug": "pelestarian-kesenian-tradisional-yang-masyarakat-pelakunya-dalam-daerah-kabupatenkota",
+      "nama": "pelestarian kesenian tradisional yang masyarakat pelakunya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "254",
+      "slug": "pembinaan-lembaga-adat-yang-penganutnya-dalam-daerah-kabupatenkota",
+      "nama": "pembinaan lembaga adat yang penganutnya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "255",
+      "slug": "pembinaan-kesenian-yang-masyarakat-pelakunya-dalam-daerah-kabupatenkota",
+      "nama": "pembinaan kesenian yang masyarakat pelakunya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "256",
+      "slug": "pembinaan-sejarah-lokal-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pembinaan sejarah lokal dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "257",
+      "slug": "penetapan-cagar-budaya-peringkat-kabupatenkota",
+      "nama": "penetapan cagar budaya peringkat kabupatenkota",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "258",
+      "slug": "pengelolaan-cagar-budaya-peringkat-kabupatenkota",
+      "nama": "pengelolaan cagar budaya peringkat kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "259",
+      "slug": "penerbitan-izin-membawa-cagar-budaya-ke-luar-daerah-kabupatenkota-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin membawa cagar budaya ke luar daerah kabupatenkota dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "260",
+      "slug": "pengelolaan-museum-kabupatenkota",
+      "nama": "pengelolaan museum kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "261",
+      "slug": "pelestarian-dan-pembinaan-adat-istiadat",
+      "nama": "pelestarian dan pembinaan adat istiadat",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "262",
+      "slug": "pembinaan-dan-pengembangan-hukum-adat",
+      "nama": "pembinaan dan pengembangan hukum adat",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "263",
+      "slug": "pembinaan-lembaga-adat-dan-tokoh-adat",
+      "nama": "pembinaan lembaga adat dan tokoh adat",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "264",
+      "slug": "sejarah-bahasa-sastra-dan-permuseuman",
+      "nama": "sejarah bahasa sastra dan permuseuman",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "265",
+      "slug": "pelestarian-cagar-budaya-dan-warisan-budaya",
+      "nama": "pelestarian cagar budaya dan warisan budaya",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "266",
+      "slug": "pengelolaan-taman-budaya",
+      "nama": "pengelolaan taman budaya",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "267",
+      "slug": "sarana-prasarana-keistimewaan-urusan-kebudayaan",
+      "nama": "sarana prasarana keistimewaan urusan kebudayaan",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "268",
+      "slug": "perencanaan-dan-pengendalian-urusan-kebudayaan",
+      "nama": "perencanaan dan pengendalian urusan kebudayaan",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "269",
+      "slug": "pengembangan-kearifan-lokal-dan-potensi-budaya",
+      "nama": "pengembangan kearifan lokal dan potensi budaya",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "270",
+      "slug": "adat-seni-tradisi-dan-lembaga-budaya",
+      "nama": "adat seni tradisi dan lembaga budaya",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "271",
+      "slug": "pendidikan-berbasis-budaya",
+      "nama": "pendidikan berbasis budaya",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "272",
+      "slug": "pengelolaan-perpustakaan-tingkat-daerah-kabupatenkota",
+      "nama": "pengelolaan perpustakaan tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "273",
+      "slug": "pembudayaan-gemar-membaca-tingkat-daerah-kabupatenkota",
+      "nama": "pembudayaan gemar membaca tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "274",
+      "slug": "pelestarian-naskah-kuno-milik-daerah-kabupatenkota",
+      "nama": "pelestarian naskah kuno milik daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "275",
+      "slug": "pengembangan-koleksi-budaya-etnis-nusantara-yang-ditemukan-oleh-pemerintah-daerah-kabupatenkota",
+      "nama": "pengembangan koleksi budaya etnis nusantara yang ditemukan oleh pemerintah daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "276",
+      "slug": "pengelolaan-arsip-dinamis-daerah-kabupatenkota",
+      "nama": "pengelolaan arsip dinamis daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "277",
+      "slug": "pengelolaan-arsip-statis-daerah-kabupatenkota",
+      "nama": "pengelolaan arsip statis daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "278",
+      "slug": "pengelolaan-simpul-jaringan-informasi-kearsipan-nasional-tingkat-kabupatenkota",
+      "nama": "pengelolaan simpul jaringan informasi kearsipan nasional tingkat kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "279",
+      "slug": "pemusnahan-arsip-dilingkungan-pemerintah-daerah-kabupatenkota-yang-memiliki-retensi-di-bawah-10-sepuluh-tahun",
+      "nama": "pemusnahan arsip dilingkungan pemerintah daerah kabupatenkota yang memiliki retensi di bawah 10 sepuluh tahun",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "280",
+      "slug": "perlindungan-dan-penyelamatan-arsip-akibat-bencana-yang-berskala-kabupatenkota",
+      "nama": "perlindungan dan penyelamatan arsip akibat bencana yang berskala kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "281",
+      "slug": "penyelamatan-arsip-perangkat-daerah-kabupatenkota-yang-digabung-danatau-dibubarkan-dan-pemekaran-daerah-kecamatan-dan-desakelurahan",
+      "nama": "penyelamatan arsip perangkat daerah kabupatenkota yang digabung danatau dibubarkan dan pemekaran daerah kecamatan dan desakelurahan",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "282",
+      "slug": "autentikasi-arsip-statis-dan-arsip-hasil-alih-media-kabupatenkota",
+      "nama": "autentikasi arsip statis dan arsip hasil alih media kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "283",
+      "slug": "pencarian-arsip-statis-kabupatenkota-yang-dinyatakan-hilang",
+      "nama": "pencarian arsip statis kabupatenkota yang dinyatakan hilang",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "284",
+      "slug": "pelayanan-izin-penggunaan-arsip-yang-bersifat-tertutup-di-kabupatenkota",
+      "nama": "pelayanan izin penggunaan arsip yang bersifat tertutup di kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "285",
+      "slug": "pengelolaan-penangkapan-ikan-di-wilayah-sungai-danau-waduk-rawa-dan-genangan-air-lainnya-yang-dapat-diusahakan-dalam-1-satu-daerah-kabupaten-kota",
+      "nama": "pengelolaan penangkapan ikan di wilayah sungai danau waduk rawa dan genangan air lainnya yang dapat diusahakan dalam 1 satu daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "286",
+      "slug": "pemberdayaan-nelayan-kecil-dalam-daerah-kabupatenkota",
+      "nama": "pemberdayaan nelayan kecil dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "287",
+      "slug": "pengelolaan-dan-penyelenggaraan-tempat-pelelangan-ikan-tpi",
+      "nama": "pengelolaan dan penyelenggaraan tempat pelelangan ikan tpi",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "288",
+      "slug": "penerbitan-tanda-daftar-kapal-perikanan-berukuran-sampai-dengan-10-gt-di-wilayah-sungai-danau-waduk-rawa-dan-genangan-air-lainnya-yang-dapat-diusahakan-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan tanda daftar kapal perikanan berukuran sampai dengan 10 gt di wilayah sungai danau waduk rawa dan genangan air lainnya yang dapat diusahakan dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "289",
+      "slug": "penerbitan-izin-pengadaan-kapal-penangkap-ikan-dan-kapal-pengangkut-ikan-dengan-ukuran-sampai-dengan-10-gt-di-wilayah-sungai-danau-waduk-rawa-dan-genangan-air-lainnya-yang-dapat-diusahakan-dalam-1-satu-daerah-kabupaten-kota",
+      "nama": "penerbitan izin pengadaan kapal penangkap ikan dan kapal pengangkut ikan dengan ukuran sampai dengan 10 gt di wilayah sungai danau waduk rawa dan genangan air lainnya yang dapat diusahakan dalam 1 satu daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "290",
+      "slug": "pendaftaran-kapal-perikanan-berukuran-sampai-dengan-10-gt-yang-beroperasi-di-sungai-danau-waduk-rawa-dan-genangan-air-lainnya-yang-dapat-diusahakan-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "pendaftaran kapal perikanan berukuran sampai dengan 10 gt yang beroperasi di sungai danau waduk rawa dan genangan air lainnya yang dapat diusahakan dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "291",
+      "slug": "penerbitan-izin-usaha-perikanan-di-bidang-pembudidayaan-ikan-yang-usahanya-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha perikanan di bidang pembudidayaan ikan yang usahanya dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "292",
+      "slug": "pemberdayaan-pembudi-daya-ikan-kecil",
+      "nama": "pemberdayaan pembudi daya ikan kecil",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "293",
+      "slug": "penerbitan-tanda-daftar-bagi-pembudi-daya-ikan-kecil-tdpik-dalam-1-satu-daerah-kabupatenkota",
+      "nama": "penerbitan tanda daftar bagi pembudi daya ikan kecil tdpik dalam 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "294",
+      "slug": "pengelolaan-pembudidayaan-ikan",
+      "nama": "pengelolaan pembudidayaan ikan",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "295",
+      "slug": "pengawasan-sumber-daya-perikanan-di-wilayah-sungai-danau-waduk-rawa-dan-genangan-air",
+      "nama": "pengawasan sumber daya perikanan di wilayah sungai danau waduk rawa dan genangan air",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "296",
+      "slug": "penerbitan-tanda-daftar-usaha-pengolahan-hasil-perikanan-bagi-usaha-skala-mikro-dan-kecil",
+      "nama": "penerbitan tanda daftar usaha pengolahan hasil perikanan bagi usaha skala mikro dan kecil",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "297",
+      "slug": "pembinaan-mutu-dan-keamanan-hasil-perikanan-bagi-usaha-pengolahan-dan-pemasaran-skala-mikro-dan-kecil",
+      "nama": "pembinaan mutu dan keamanan hasil perikanan bagi usaha pengolahan dan pemasaran skala mikro dan kecil",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "298",
+      "slug": "penyediaan-dan-penyaluran-bahan-baku-industri-pengolahan-ikan-dalam-1-satu-daerah-kabupaten-kota",
+      "nama": "penyediaan dan penyaluran bahan baku industri pengolahan ikan dalam 1 satu daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "299",
+      "slug": "pengelolaan-daya-tarik-wisata-kabupatenkota",
+      "nama": "pengelolaan daya tarik wisata kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "300",
+      "slug": "pengelolaan-kawasan-strategis-pariwisata-kabupatenkota",
+      "nama": "pengelolaan kawasan strategis pariwisata kabupatenkota",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "301",
+      "slug": "pengelolaan-destinasi-pariwisata-kabupatenkota",
+      "nama": "pengelolaan destinasi pariwisata kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "302",
+      "slug": "penetapan-tanda-daftar-usaha-pariwisata-daerah-kabupatenkota",
+      "nama": "penetapan tanda daftar usaha pariwisata daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "303",
+      "slug": "pemasaran-pariwisata-dalam-dan-luar-negeri-daya-tarik-destinasi-dan-kawasan-strategis-pariwisata-kabupatenkota",
+      "nama": "pemasaran pariwisata dalam dan luar negeri daya tarik destinasi dan kawasan strategis pariwisata kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "304",
+      "slug": "penyediaan-prasarana-zona-kreatifruang-kreatifkota-kreatif-sebagai-ruang-berekspresi-berpromosi-dan-berinteraksi-bagi-insan-kreatif-di-daerah-kabupatenkota",
+      "nama": "penyediaan prasarana zona kreatifruang kreatifkota kreatif sebagai ruang berekspresi berpromosi dan berinteraksi bagi insan kreatif di daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "305",
+      "slug": "pengembangan-ekosistem-ekonomi-kreatif",
+      "nama": "pengembangan ekosistem ekonomi kreatif",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "306",
+      "slug": "pelaksanaan-peningkatan-kapasitas-sumber-daya-manusia-pariwisata-dan-ekonomi-kreatif-tingkat-dasar",
+      "nama": "pelaksanaan peningkatan kapasitas sumber daya manusia pariwisata dan ekonomi kreatif tingkat dasar",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "307",
+      "slug": "pengembangan-kapasitas-pelaku-ekonomi-kreatif",
+      "nama": "pengembangan kapasitas pelaku ekonomi kreatif",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "308",
+      "slug": "pengawasan-penggunaan-sarana-pertanian",
+      "nama": "pengawasan penggunaan sarana pertanian",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "309",
+      "slug": "pengelolaan-sumber-daya-genetik-sdg-hewan-tumbuhan-dan-mikro-organisme-kewenangan-kabupatenkota",
+      "nama": "pengelolaan sumber daya genetik sdg hewan tumbuhan dan mikro organisme kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "310",
+      "slug": "peningkatan-mutu-dan-peredaran-benihbibit-ternak-dan-tanaman-pakan-ternak-serta-pakan-dalam-daerah-kabupatenkota",
+      "nama": "peningkatan mutu dan peredaran benihbibit ternak dan tanaman pakan ternak serta pakan dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "311",
+      "slug": "pengawasan-obat-hewan-di-tingkat-pengecer",
+      "nama": "pengawasan obat hewan di tingkat pengecer",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "312",
+      "slug": "pengendalian-dan-pengawasan-penyediaan-dan-peredaran-benihbibit-ternak-dan-hijauan-pakan-ternak-dalam-daerah-kabupatenkota",
+      "nama": "pengendalian dan pengawasan penyediaan dan peredaran benihbibit ternak dan hijauan pakan ternak dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "313",
+      "slug": "penyediaan-benihbibit-ternak-dan-hijauan-pakan-ternak-yang-sumbernya-dalam-1-satu-daerah-kabupatenkota-lain",
+      "nama": "penyediaan benihbibit ternak dan hijauan pakan ternak yang sumbernya dalam 1 satu daerah kabupatenkota lain",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "314",
+      "slug": "pengembangan-prasarana-pertanian",
+      "nama": "pengembangan prasarana pertanian",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "315",
+      "slug": "pembangunan-prasarana-pertanian",
+      "nama": "pembangunan prasarana pertanian",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "316",
+      "slug": "pengelolaan-wilayah-sumber-bibit-ternak-dan-rumpungalur-ternak-dalam-daerah-kabupaten-kota",
+      "nama": "pengelolaan wilayah sumber bibit ternak dan rumpungalur ternak dalam daerah kabupaten kota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "317",
+      "slug": "pengembangan-lahan-penggembalaan-umum",
+      "nama": "pengembangan lahan penggembalaan umum",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "318",
+      "slug": "penjaminan-kesehatan-hewan-penutupan-dan-pembukaan-daerah-wabah-penyakit-hewan-menular-dalam-daerah-kabupatenkota",
+      "nama": "penjaminan kesehatan hewan penutupan dan pembukaan daerah wabah penyakit hewan menular dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "319",
+      "slug": "pengawasan-pemasukan-dan-pengeluaran-hewan-dan-produk-hewan-daerah-kabupatenkota",
+      "nama": "pengawasan pemasukan dan pengeluaran hewan dan produk hewan daerah kabupatenkota",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "320",
+      "slug": "pengelolaan-pelayanan-jasa-laboratorium-dan-jasa-medik-veteriner-dalam-daerah-kabupatenkota",
+      "nama": "pengelolaan pelayanan jasa laboratorium dan jasa medik veteriner dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "321",
+      "slug": "penerapan-dan-pengawasaan-persyaratan-teknis-kesehatan-masyarakat-veteriner",
+      "nama": "penerapan dan pengawasaan persyaratan teknis kesehatan masyarakat veteriner",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "322",
+      "slug": "penerapan-dan-pengawasan-persyaratan-teknis-kesejahteraan-hewan",
+      "nama": "penerapan dan pengawasan persyaratan teknis kesejahteraan hewan",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "323",
+      "slug": "pengendalian-dan-penanggulangan-bencana-pertanian-kabupatenkota",
+      "nama": "pengendalian dan penanggulangan bencana pertanian kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "324",
+      "slug": "penerbitan-izin-usaha-pertanian-yang-kegiatan-usahanya-dalam-daerah-kabupatenkota",
+      "nama": "penerbitan izin usaha pertanian yang kegiatan usahanya dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "325",
+      "slug": "penerbitan-izin-usaha-produksi-benihbibit-ternak-dan-pakan-fasilitas-pemeliharaan-hewan-rumah-sakit-hewanpasar-hewan-rumah-potong-hewan",
+      "nama": "penerbitan izin usaha produksi benihbibit ternak dan pakan fasilitas pemeliharaan hewan rumah sakit hewanpasar hewan rumah potong hewan",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "326",
+      "slug": "izin-usaha-pengecer-toko-retail-sub-distributor-obat-hewan",
+      "nama": "izin usaha pengecer toko retail sub distributor obat hewan",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "327",
+      "slug": "pelaksanaan-penyuluhan-pertanian",
+      "nama": "pelaksanaan penyuluhan pertanian",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "328",
+      "slug": "pengelolaan-taman-hutan-raya-tahura-kabupatenkota",
+      "nama": "pengelolaan taman hutan raya tahura kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "329",
+      "slug": "penatausahaan-izin-pemanfaatan-langsung-panas-bumi-dalam-daerah-kabupatenkota",
+      "nama": "penatausahaan izin pemanfaatan langsung panas bumi dalam daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "330",
+      "slug": "penerbitan-izin-pengelolaan-pasar-rakyat-pusat-perbelanjaan-dan-izin-usaha-toko-swalayan",
+      "nama": "penerbitan izin pengelolaan pasar rakyat pusat perbelanjaan dan izin usaha toko swalayan",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "331",
+      "slug": "penerbitan-tanda-daftar-gudang",
+      "nama": "penerbitan tanda daftar gudang",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "332",
+      "slug": "penerbitan-surat-tanda-pendaftaran-waralaba-stpw-untuk-penerima-waralaba-dari-waralaba-dalam-negeri",
+      "nama": "penerbitan surat tanda pendaftaran waralaba stpw untuk penerima waralaba dari waralaba dalam negeri",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "333",
+      "slug": "penerbitan-surat-tanda-pendaftaran-waralaba-stpw-untuk-penerima-waralaba-lanjutan-dari-waralaba-luar-negeri",
+      "nama": "penerbitan surat tanda pendaftaran waralaba stpw untuk penerima waralaba lanjutan dari waralaba luar negeri",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "334",
+      "slug": "penerbitan-surat-izin-usaha-perdagangan-minuman-beralkohol-golongan-b-dan-c-untuk-pengecer-dan-penjual-langsung-minum-di-tempat",
+      "nama": "penerbitan surat izin usaha perdagangan minuman beralkohol golongan b dan c untuk pengecer dan penjual langsung minum di tempat",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "335",
+      "slug": "pengendalian-fasilitas-penyimpanan-bahan-berbahaya-dan-pengawasan-distribusi-pengemasan-dan-pelabelan-bahan-berbahaya-di-tingkat-daerah-kabupaten-kota",
+      "nama": "pengendalian fasilitas penyimpanan bahan berbahaya dan pengawasan distribusi pengemasan dan pelabelan bahan berbahaya di tingkat daerah kabupaten kota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "336",
+      "slug": "penerbitan-surat-keterangan-asal-bagi-daerah-kabupatenkota-yang-telah-ditetapkan-sebagai-instansi-penerbit-surat-keterangan-asal",
+      "nama": "penerbitan surat keterangan asal bagi daerah kabupatenkota yang telah ditetapkan sebagai instansi penerbit surat keterangan asal",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "337",
+      "slug": "pembangunan-dan-pengelolaan-sarana-distribusi-perdagangan",
+      "nama": "pembangunan dan pengelolaan sarana distribusi perdagangan",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "338",
+      "slug": "pembinaan-terhadap-pengelola-sarana-distribusi-perdagangan-masyarakat-di-wilayah-kerjanya",
+      "nama": "pembinaan terhadap pengelola sarana distribusi perdagangan masyarakat di wilayah kerjanya",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "339",
+      "slug": "menjamin-ketersediaan-barang-kebutuhan-pokok-dan-barang-penting-di-tingkat-daerah-kabupaten-kota",
+      "nama": "menjamin ketersediaan barang kebutuhan pokok dan barang penting di tingkat daerah kabupaten kota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "340",
+      "slug": "pengendalian-harga-dan-stok-barang-kebutuhan-pokok-dan-barang-penting-di-tingkat-pasar-kabupatenkota",
+      "nama": "pengendalian harga dan stok barang kebutuhan pokok dan barang penting di tingkat pasar kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "341",
+      "slug": "pengawasan-pupuk-dan-pestisida-bersubsidi-di-tingkat-daerah-kabupatenkota",
+      "nama": "pengawasan pupuk dan pestisida bersubsidi di tingkat daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "342",
+      "slug": "penyelenggaraan-promosi-dagang-melalui-pameran-dagang-dan-misi-dagang-bagi-produk-ekspor-unggulan-yang-terdapat-pada-1-satu-daerah-kabupatenkota",
+      "nama": "penyelenggaraan promosi dagang melalui pameran dagang dan misi dagang bagi produk ekspor unggulan yang terdapat pada 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "343",
+      "slug": "pelaksanaan-metrologi-legal-berupa-tera-tera-ulang-dan-pengawasan",
+      "nama": "pelaksanaan metrologi legal berupa tera tera ulang dan pengawasan",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "344",
+      "slug": "pelaksanaan-promosi-pemasaran-dan-peningkatan-penggunaan-produk-dalam-negeri",
+      "nama": "pelaksanaan promosi pemasaran dan peningkatan penggunaan produk dalam negeri",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "345",
+      "slug": "penyusunan-penerapan-dan-evaluasi-rencana-pembangunan-industri-kabupatenkota",
+      "nama": "penyusunan penerapan dan evaluasi rencana pembangunan industri kabupatenkota",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "346",
+      "slug": "penerbitan-izin-usaha-industri-iui-izin-perluasan-usaha-industri-ipui-izin-usaha-kawasan-industri-iuki-dan-izin-perluasan-kawasan-industri-ipki-kewenangan-kabupatenkota-berbasis-sistem-informasi-industri-nasional-siinas",
+      "nama": "penerbitan izin usaha industri iui izin perluasan usaha industri ipui izin usaha kawasan industri iuki dan izin perluasan kawasan industri ipki kewenangan kabupatenkota berbasis sistem informasi industri nasional siinas",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "347",
+      "slug": "penyediaan-informasi-industri-untuk-informasi-industri-untuk-iui-ipui-iuki-dan-ipki-kewenangan-kabupatenkota",
+      "nama": "penyediaan informasi industri untuk informasi industri untuk iui ipui iuki dan ipki kewenangan kabupatenkota",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "348",
+      "slug": "pencadangan-tanah-untuk-kawasan-transmigrasi",
+      "nama": "pencadangan tanah untuk kawasan transmigrasi",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "349",
+      "slug": "penataan-persebaran-penduduk-yang-berasal-dari-1-satu-daerah-kabupatenkota",
+      "nama": "penataan persebaran penduduk yang berasal dari 1 satu daerah kabupatenkota",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "350",
+      "slug": "pengembangan-satuan-permukiman-pada-tahap-kemandirian",
+      "nama": "pengembangan satuan permukiman pada tahap kemandirian",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "351",
+      "slug": "administrasi-keuangan-dan-operasional-kepala-daerah-dan-wakil-kepala-daerah",
+      "nama": "administrasi keuangan dan operasional kepala daerah dan wakil kepala daerah",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "352",
+      "slug": "fasilitasi-kerumahtanggaan-sekretariat-daerah",
+      "nama": "fasilitasi kerumahtanggaan sekretariat daerah",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "353",
+      "slug": "penataan-organisasi",
+      "nama": "penataan organisasi",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "354",
+      "slug": "pelaksanaan-protokol-dan-komunikasi-pimpinan",
+      "nama": "pelaksanaan protokol dan komunikasi pimpinan",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "355",
+      "slug": "administrasi-tata-pemerintahan",
+      "nama": "administrasi tata pemerintahan",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "356",
+      "slug": "pelaksanaan-kebijakan-kesejahteraan-rakyat",
+      "nama": "pelaksanaan kebijakan kesejahteraan rakyat",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "357",
+      "slug": "fasilitasi-dan-koordinasi-hukum",
+      "nama": "fasilitasi dan koordinasi hukum",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "358",
+      "slug": "fasilitasi-kerjasama-daerah",
+      "nama": "fasilitasi kerjasama daerah",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "359",
+      "slug": "pelaksanaan-kebijakan-perekonomian",
+      "nama": "pelaksanaan kebijakan perekonomian",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "360",
+      "slug": "pelaksanaan-administrasi-pembangunan",
+      "nama": "pelaksanaan administrasi pembangunan",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "361",
+      "slug": "pengelolaan-pengadaan-barang-dan-jasa",
+      "nama": "pengelolaan pengadaan barang dan jasa",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "362",
+      "slug": "pemantauan-kebijakan-sumber-daya-alam",
+      "nama": "pemantauan kebijakan sumber daya alam",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "363",
+      "slug": "layanan-keuangan-dan-kesejahteraan-dprd",
+      "nama": "layanan keuangan dan kesejahteraan dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "364",
+      "slug": "layanan-administrasi-dprd",
+      "nama": "layanan administrasi dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "365",
+      "slug": "pembentukan-peraturan-daerah-dan-peraturan-dprd",
+      "nama": "pembentukan peraturan daerah dan peraturan dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "366",
+      "slug": "pembahasan-kebijakan-anggaran",
+      "nama": "pembahasan kebijakan anggaran",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "367",
+      "slug": "pengawasan-penyelenggaraan-pemerintahan",
+      "nama": "pengawasan penyelenggaraan pemerintahan",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "368",
+      "slug": "peningkatan-kapasitas-dprd",
+      "nama": "peningkatan kapasitas dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "369",
+      "slug": "penyerapan-dan-penghimpunan-aspirasi-masyarakat",
+      "nama": "penyerapan dan penghimpunan aspirasi masyarakat",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "370",
+      "slug": "pelaksanaan-dan-pengawasan-kode-etik-dprd",
+      "nama": "pelaksanaan dan pengawasan kode etik dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "371",
+      "slug": "pembahasan-kerja-sama-daerah",
+      "nama": "pembahasan kerja sama daerah",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "372",
+      "slug": "fasilitasi-tugas-dprd",
+      "nama": "fasilitasi tugas dprd",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "373",
+      "slug": "penyusunan-perencanaan-dan-pendanaan",
+      "nama": "penyusunan perencanaan dan pendanaan",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "374",
+      "slug": "analisis-data-dan-informasi-pemerintahan-daerah-bidang-perencanaan-pembangunan-daerah",
+      "nama": "analisis data dan informasi pemerintahan daerah bidang perencanaan pembangunan daerah",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "375",
+      "slug": "pengendalian-evaluasi-dan-pelaporan-bidang-perencanaan-pembangunan-daerah",
+      "nama": "pengendalian evaluasi dan pelaporan bidang perencanaan pembangunan daerah",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "376",
+      "slug": "koordinasi-perencanaan-bidang-pemerintahan-dan-pembangunan-manusia",
+      "nama": "koordinasi perencanaan bidang pemerintahan dan pembangunan manusia",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "377",
+      "slug": "koordinasi-perencanaan-bidang-perekonomian-dan-sda-sumber-daya-alam",
+      "nama": "koordinasi perencanaan bidang perekonomian dan sda sumber daya alam",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "378",
+      "slug": "koordinasi-perencanaan-bidang-infrastruktur-dan-kewilayahan",
+      "nama": "koordinasi perencanaan bidang infrastruktur dan kewilayahan",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "379",
+      "slug": "koordinasi-dan-penyusunan-rencana-anggaran-daerah",
+      "nama": "koordinasi dan penyusunan rencana anggaran daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "380",
+      "slug": "koordinasi-dan-pengelolaan-perbendaharaan-daerah",
+      "nama": "koordinasi dan pengelolaan perbendaharaan daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "381",
+      "slug": "koordinasi-dan-pelaksanaan-akuntansi-dan-pelaporan-keuangan-daerah",
+      "nama": "koordinasi dan pelaksanaan akuntansi dan pelaporan keuangan daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "382",
+      "slug": "penunjang-urusan-kewenangan-pengelolaan-keuangan-daerah",
+      "nama": "penunjang urusan kewenangan pengelolaan keuangan daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "383",
+      "slug": "pengelolaan-data-dan-implementasi-sistem-informasi-pemerintah-daerah-lingkup-keuangan-daerah",
+      "nama": "pengelolaan data dan implementasi sistem informasi pemerintah daerah lingkup keuangan daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "384",
+      "slug": "pengelolaan-barang-milik-daerah",
+      "nama": "pengelolaan barang milik daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "385",
+      "slug": "kegiatan-pengelolaan-pendapatan-daerah",
+      "nama": "kegiatan pengelolaan pendapatan daerah",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "386",
+      "slug": "pengadaan-pemberhentian-dan-informasi-kepegawaian-asn",
+      "nama": "pengadaan pemberhentian dan informasi kepegawaian asn",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "387",
+      "slug": "mutasi-dan-promosi-asn",
+      "nama": "mutasi dan promosi asn",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "388",
+      "slug": "pengembangan-kompetensi-asn",
+      "nama": "pengembangan kompetensi asn",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "389",
+      "slug": "penilaian-dan-evaluasi-kinerja-aparatur",
+      "nama": "penilaian dan evaluasi kinerja aparatur",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "390",
+      "slug": "pengembangan-kompetensi-teknis",
+      "nama": "pengembangan kompetensi teknis",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "391",
+      "slug": "sertifikasi-kelembagaan-pengembangan-kompetensi-manajerial-dan-fungsional",
+      "nama": "sertifikasi kelembagaan pengembangan kompetensi manajerial dan fungsional",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "392",
+      "slug": "penelitian-dan-pengembangan-bidang-penyelenggaraan-pemerintahan-dan-pengkajian-peraturan",
+      "nama": "penelitian dan pengembangan bidang penyelenggaraan pemerintahan dan pengkajian peraturan",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "393",
+      "slug": "penelitian-dan-pengembangan-bidang-sosial-dan-kependudukan",
+      "nama": "penelitian dan pengembangan bidang sosial dan kependudukan",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "394",
+      "slug": "penelitian-dan-pengembangan-bidang-ekonomi-dan-pembangunan",
+      "nama": "penelitian dan pengembangan bidang ekonomi dan pembangunan",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "395",
+      "slug": "pengembangan-inovasi-dan-teknologi",
+      "nama": "pengembangan inovasi dan teknologi",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "396",
+      "slug": "perencanaan-dan-fasilitasi-kerja-sama",
+      "nama": "perencanaan dan fasilitasi kerja sama",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "397",
+      "slug": "pelaksanaan-kewilayahan-perbatasan",
+      "nama": "pelaksanaan kewilayahan perbatasan",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "398",
+      "slug": "monitoring-dan-evaluasi",
+      "nama": "monitoring dan evaluasi",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "399",
+      "slug": "penyelenggaraan-pengawasan-internal",
+      "nama": "penyelenggaraan pengawasan internal",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "400",
+      "slug": "penyelenggaraan-pengawasan-dengan-tujuan-tertentu",
+      "nama": "penyelenggaraan pengawasan dengan tujuan tertentu",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "401",
+      "slug": "perumusan-kebijakan-teknis-di-bidang-pengawasan-dan-fasilitasi-pengawasan",
+      "nama": "perumusan kebijakan teknis di bidang pengawasan dan fasilitasi pengawasan",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "402",
+      "slug": "pendampingan-dan-asistensi",
+      "nama": "pendampingan dan asistensi",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "403",
+      "slug": "koordinasi-penyelenggaraan-kegiatan-pemerintahan-di-tingkat-kecamatan",
+      "nama": "koordinasi penyelenggaraan kegiatan pemerintahan di tingkat kecamatan",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "404",
+      "slug": "penyelenggaraan-urusan-pemerintahan-yang-tidak-dilaksanakan-oleh-unit-kerja-perangkat-daerah-yang-ada-di-kecamatan",
+      "nama": "penyelenggaraan urusan pemerintahan yang tidak dilaksanakan oleh unit kerja perangkat daerah yang ada di kecamatan",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "405",
+      "slug": "koordinasi-pemeliharaan-prasarana-dan-sarana-pelayanan-umum",
+      "nama": "koordinasi pemeliharaan prasarana dan sarana pelayanan umum",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "406",
+      "slug": "pelaksanaan-urusan-pemerintahan-yang-dilimpahkan-kepada-camat",
+      "nama": "pelaksanaan urusan pemerintahan yang dilimpahkan kepada camat",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "407",
+      "slug": "koordinasi-kegiatan-pemberdayaan-desa",
+      "nama": "koordinasi kegiatan pemberdayaan desa",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "408",
+      "slug": "kegiatan-pemberdayaan-kelurahan",
+      "nama": "kegiatan pemberdayaan kelurahan",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "409",
+      "slug": "pemberdayaan-lembaga-kemasyarakatan-tingkat-kecamatan-urusan-pemberdayaan-masyarakat-dilaksanakan-oleh-kecamatan-bagi-pemerintah-kota-yang-tidak-memiliki-desa",
+      "nama": "pemberdayaan lembaga kemasyarakatan tingkat kecamatan urusan pemberdayaan masyarakat dilaksanakan oleh kecamatan bagi pemerintah kota yang tidak memiliki desa",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "410",
+      "slug": "koordinasi-upaya-penyelenggaraan-ketenteraman-dan-ketertiban-umum",
+      "nama": "koordinasi upaya penyelenggaraan ketenteraman dan ketertiban umum",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "411",
+      "slug": "koordinasi-penerapan-dan-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah",
+      "nama": "koordinasi penerapan dan penegakan peraturan daerah dan peraturan kepala daerah",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "412",
+      "slug": "penyelenggaraan-urusan-pemerintahan-umum-sesuai-penugasan-kepala-daerah",
+      "nama": "penyelenggaraan urusan pemerintahan umum sesuai penugasan kepala daerah",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "413",
+      "slug": "fasilitasi-rekomendasi-dan-koordinasi-pembinaan-dan-pengawasan-pemerintahan-desa",
+      "nama": "fasilitasi rekomendasi dan koordinasi pembinaan dan pengawasan pemerintahan desa",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "414",
+      "slug": "perumusan-kebijakan-teknis-dan-pemantapan-pelaksanaan-bidang-ideologi-pancasila-dan-karakter-kebangsaan",
+      "nama": "perumusan kebijakan teknis dan pemantapan pelaksanaan bidang ideologi pancasila dan karakter kebangsaan",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "415",
+      "slug": "perumusan-kebijakan-teknis-dan-pemantapan-pelaksanaan-bidang-pendidikan-politik-etika-budaya-politik-peningkatan-demokrasi-fasilitasi-kelembagaan-pemerintahan-perwakilan-dan-partai-politik-pemilihan-umumpemilihan-umum-kepala-daerah-serta-pemantauan-situasi-politik",
+      "nama": "perumusan kebijakan teknis dan pemantapan pelaksanaan bidang pendidikan politik etika budaya politik peningkatan demokrasi fasilitasi kelembagaan pemerintahan perwakilan dan partai politik pemilihan umumpemilihan umum kepala daerah serta pemantauan situasi politik",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "416",
+      "slug": "perumusan-kebijakan-teknis-dan-pemantapan-pelaksanaan-bidang-pemberdayaan-dan-pengawasan-organisasi-kemasyarakatan",
+      "nama": "perumusan kebijakan teknis dan pemantapan pelaksanaan bidang pemberdayaan dan pengawasan organisasi kemasyarakatan",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "417",
+      "slug": "perumusan-kebijakan-teknis-dan-pemantapan-pelaksanaan-bidang-ketahanan-ekonomi-sosial-dan-budaya",
+      "nama": "perumusan kebijakan teknis dan pemantapan pelaksanaan bidang ketahanan ekonomi sosial dan budaya",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "418",
+      "slug": "perumusan-kebijakan-teknis-dan-pelaksanaan-pemantapan-kewaspadaan-nasional-dan-penanganan-konflik-sosial",
+      "nama": "perumusan kebijakan teknis dan pelaksanaan pemantapan kewaspadaan nasional dan penanganan konflik sosial",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "419",
+      "slug": "perencanaan-penganggaran-dan-evaluasi-kinerja-perangkat-daerah",
+      "nama": "perencanaan penganggaran dan evaluasi kinerja perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "420",
+      "slug": "administrasi-keuangan-perangkat-daerah",
+      "nama": "administrasi keuangan perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "421",
+      "slug": "administrasi-barang-milik-daerah-pada-perangkat-daerah",
+      "nama": "administrasi barang milik daerah pada perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "422",
+      "slug": "administrasi-pendapatan-daerah-kewenangan-perangkat-daerah",
+      "nama": "administrasi pendapatan daerah kewenangan perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "423",
+      "slug": "administrasi-kepegawaian-perangkat-daerah",
+      "nama": "administrasi kepegawaian perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "424",
+      "slug": "administrasi-umum-perangkat-daerah",
+      "nama": "administrasi umum perangkat daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "425",
+      "slug": "pengadaan-barang-milik-daerah-penunjang-urusan-pemerintah-daerah",
+      "nama": "pengadaan barang milik daerah penunjang urusan pemerintah daerah",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "426",
+      "slug": "penyediaan-jasa-penunjang-urusan-pemerintahan-daerah",
+      "nama": "penyediaan jasa penunjang urusan pemerintahan daerah",
+      "created_at": "9/11/2021 08:14:07",
+      "updated_at": "9/11/2021 08:14:07"
+    },
+    {
+      "id": "427",
+      "slug": "pemeliharaan-barang-milik-daerah-penunjang-urusan-pemerintahan-daerah",
+      "nama": "pemeliharaan barang milik daerah penunjang urusan pemerintahan daerah",
+      "created_at": "9/11/2021 08:14:07",
+      "updated_at": "9/11/2021 08:14:07"
+    },
+    {
+      "id": "428",
+      "slug": "peningkatan-pelayanan-blud",
+      "nama": "peningkatan pelayanan blud",
+      "created_at": "9/11/2021 08:14:07",
+      "updated_at": "9/11/2021 08:14:07"
+    }
+  ]
+}

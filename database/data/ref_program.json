@@ -1,0 +1,1285 @@
+{
+  "RECORDS": [
+    {
+      "id": "1",
+      "slug": "program-pengelolaan-pendidikan",
+      "nama": "PROGRAM PENGELOLAAN PENDIDIKAN",
+      "created_at": "9/11/2021 08:13:42",
+      "updated_at": "9/11/2021 08:13:42"
+    },
+    {
+      "id": "2",
+      "slug": "program-pengembangan-kurikulum",
+      "nama": "PROGRAM PENGEMBANGAN KURIKULUM",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "3",
+      "slug": "program-pendidik-dan-tenaga-kependidikan",
+      "nama": "PROGRAM PENDIDIK DAN TENAGA KEPENDIDIKAN",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "4",
+      "slug": "program-pengendalian-perizinan-pendidikan",
+      "nama": "PROGRAM PENGENDALIAN PERIZINAN PENDIDIKAN",
+      "created_at": "9/11/2021 08:13:43",
+      "updated_at": "9/11/2021 08:13:43"
+    },
+    {
+      "id": "5",
+      "slug": "program-pengembangan-bahasa-dan-sastra",
+      "nama": "PROGRAM PENGEMBANGAN BAHASA DAN SASTRA",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "6",
+      "slug": "program-pemenuhan-upaya-kesehatan-perorangan-dan-upaya-kesehatan-masyarakat",
+      "nama": "PROGRAM PEMENUHAN UPAYA KESEHATAN PERORANGAN DAN UPAYA KESEHATAN MASYARAKAT",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "7",
+      "slug": "program-peningkatan-kapasitas-sumber-daya-manusia-kesehatan",
+      "nama": "PROGRAM PENINGKATAN KAPASITAS SUMBER DAYA MANUSIA KESEHATAN",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "8",
+      "slug": "program-sediaan-farmasi-alat-kesehatan-dan-makanan-minuman",
+      "nama": "PROGRAM SEDIAAN FARMASI ALAT KESEHATAN DAN MAKANAN MINUMAN",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "9",
+      "slug": "program-pemberdayaan-masyarakat-bidang-kesehatan",
+      "nama": "PROGRAM PEMBERDAYAAN MASYARAKAT BIDANG KESEHATAN",
+      "created_at": "9/11/2021 08:13:44",
+      "updated_at": "9/11/2021 08:13:44"
+    },
+    {
+      "id": "10",
+      "slug": "program-pengelolaan-sumber-daya-air-sda",
+      "nama": "PROGRAM PENGELOLAAN SUMBER DAYA AIR SDA",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "11",
+      "slug": "program-pengelolaan-dan-pengembangan-sistem-penyediaan-air-minum",
+      "nama": "PROGRAM PENGELOLAAN DAN PENGEMBANGAN SISTEM PENYEDIAAN AIR MINUM",
+      "created_at": "9/11/2021 08:13:45",
+      "updated_at": "9/11/2021 08:13:45"
+    },
+    {
+      "id": "12",
+      "slug": "program-pengembangan-sistem-dan-pengelolaan-persampahan-regional",
+      "nama": "PROGRAM PENGEMBANGAN SISTEM DAN PENGELOLAAN PERSAMPAHAN REGIONAL",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "13",
+      "slug": "program-pengelolaan-dan-pengembangan-sistem-air-limbah",
+      "nama": "PROGRAM PENGELOLAAN DAN PENGEMBANGAN SISTEM AIR LIMBAH",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "14",
+      "slug": "program-pengelolaan-dan-pengembangan-sistem-drainase",
+      "nama": "PROGRAM PENGELOLAAN DAN PENGEMBANGAN SISTEM DRAINASE",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "15",
+      "slug": "program-pengembangan-permukiman",
+      "nama": "PROGRAM PENGEMBANGAN PERMUKIMAN",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "16",
+      "slug": "program-penataan-bangunan-gedung",
+      "nama": "PROGRAM PENATAAN BANGUNAN GEDUNG",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "17",
+      "slug": "program-penataan-bangunan-dan-lingkungannya",
+      "nama": "PROGRAM PENATAAN BANGUNAN DAN LINGKUNGANNYA",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "18",
+      "slug": "program-penyelenggaraan-jalan",
+      "nama": "PROGRAM PENYELENGGARAAN JALAN",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "19",
+      "slug": "program-pengembangan-jasa-konstruksi",
+      "nama": "PROGRAM PENGEMBANGAN JASA KONSTRUKSI",
+      "created_at": "9/11/2021 08:13:46",
+      "updated_at": "9/11/2021 08:13:46"
+    },
+    {
+      "id": "20",
+      "slug": "program-penyelenggaraan-penataan-ruang",
+      "nama": "PROGRAM PENYELENGGARAAN PENATAAN RUANG",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "21",
+      "slug": "program-pengembangan-perumahan",
+      "nama": "PROGRAM PENGEMBANGAN PERUMAHAN",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "22",
+      "slug": "program-kawasan-permukiman",
+      "nama": "PROGRAM KAWASAN PERMUKIMAN",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "23",
+      "slug": "program-perumahan-dan-kawasan-permukiman-kumuh",
+      "nama": "PROGRAM PERUMAHAN DAN KAWASAN PERMUKIMAN KUMUH",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "24",
+      "slug": "program-peningkatan-prasarana-sarana-dan-utilitas-umum-psu",
+      "nama": "PROGRAM PENINGKATAN PRASARANA SARANA DAN UTILITAS UMUM PSU",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "25",
+      "slug": "program-peningkatan-pelayanan-sertifikasi-kualifikasi-klasifikasi-dan-registrasi-bidang-perumahan-dan-kawasan-permukiman",
+      "nama": "PROGRAM PENINGKATAN PELAYANAN SERTIFIKASI KUALIFIKASI KLASIFIKASI DAN REGISTRASI BIDANG PERUMAHAN DAN KAWASAN PERMUKIMAN",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "26",
+      "slug": "program-peningkatan-ketenteraman-dan-ketertiban-umum",
+      "nama": "PROGRAM PENINGKATAN KETENTERAMAN DAN KETERTIBAN UMUM",
+      "created_at": "9/11/2021 08:13:47",
+      "updated_at": "9/11/2021 08:13:47"
+    },
+    {
+      "id": "27",
+      "slug": "program-penanggulangan-bencana",
+      "nama": "PROGRAM PENANGGULANGAN BENCANA",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "28",
+      "slug": "program-pencegahan-penanggulangan-penyelamatan-kebakaran-dan-penyelamatan-non-kebakaran",
+      "nama": "PROGRAM PENCEGAHAN PENANGGULANGAN PENYELAMATAN KEBAKARAN DAN PENYELAMATAN NON KEBAKARAN",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "29",
+      "slug": "program-pemberdayaan-sosial",
+      "nama": "PROGRAM PEMBERDAYAAN SOSIAL",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "30",
+      "slug": "program-penanganan-warga-negara-migran-korban-tindak-kekerasan",
+      "nama": "PROGRAM PENANGANAN WARGA NEGARA MIGRAN KORBAN TINDAK KEKERASAN",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "31",
+      "slug": "program-rehabilitasi-sosial",
+      "nama": "PROGRAM REHABILITASI SOSIAL",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "32",
+      "slug": "program-perlindungan-dan-jaminan-sosial",
+      "nama": "PROGRAM PERLINDUNGAN DAN JAMINAN SOSIAL",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "33",
+      "slug": "program-penanganan-bencana",
+      "nama": "PROGRAM PENANGANAN BENCANA",
+      "created_at": "9/11/2021 08:13:48",
+      "updated_at": "9/11/2021 08:13:48"
+    },
+    {
+      "id": "34",
+      "slug": "program-pengelolaan-taman-makam-pahlawan",
+      "nama": "PROGRAM PENGELOLAAN TAMAN MAKAM PAHLAWAN",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "35",
+      "slug": "program-perencanaan-tenaga-kerja",
+      "nama": "PROGRAM PERENCANAAN TENAGA KERJA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "36",
+      "slug": "program-pelatihan-kerja-dan-produktivitas-tenaga-kerja",
+      "nama": "PROGRAM PELATIHAN KERJA DAN PRODUKTIVITAS TENAGA KERJA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "37",
+      "slug": "program-penempatan-tenaga-kerja",
+      "nama": "PROGRAM PENEMPATAN TENAGA KERJA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "38",
+      "slug": "program-hubungan-industrial",
+      "nama": "PROGRAM HUBUNGAN INDUSTRIAL",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "39",
+      "slug": "program-pengawasan-ketenagakerjaan",
+      "nama": "PROGRAM PENGAWASAN KETENAGAKERJAAN",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "40",
+      "slug": "program-pengarus-utamaan-gender-dan-pemberdayaan-perempuan",
+      "nama": "PROGRAM PENGARUS UTAMAAN GENDER DAN PEMBERDAYAAN PEREMPUAN",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "41",
+      "slug": "program-perlindungan-perempuan",
+      "nama": "PROGRAM PERLINDUNGAN PEREMPUAN",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "42",
+      "slug": "program-peningkatan-kualitas-keluarga",
+      "nama": "PROGRAM PENINGKATAN KUALITAS KELUARGA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "43",
+      "slug": "program-pengelolaan-sistem-data-gender-dan-anak",
+      "nama": "PROGRAM PENGELOLAAN SISTEM DATA GENDER DAN ANAK",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "44",
+      "slug": "program-pemenuhan-hak-anak-pha",
+      "nama": "PROGRAM PEMENUHAN HAK ANAK PHA",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "45",
+      "slug": "program-perlindungan-khusus-anak",
+      "nama": "PROGRAM PERLINDUNGAN KHUSUS ANAK",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "46",
+      "slug": "program-pengelolaan-sumber-daya-ekonomi-untuk-kedaulatan-dan-kemandirian-pangan",
+      "nama": "PROGRAM PENGELOLAAN SUMBER DAYA EKONOMI UNTUK KEDAULATAN DAN KEMANDIRIAN PANGAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "47",
+      "slug": "program-peningkatan-diversifikasi-dan-ketahanan-pangan-masyarakat",
+      "nama": "PROGRAM PENINGKATAN DIVERSIFIKASI DAN KETAHANAN PANGAN MASYARAKAT",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "48",
+      "slug": "program-penanganan-kerawanan-pangan",
+      "nama": "PROGRAM PENANGANAN KERAWANAN PANGAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "49",
+      "slug": "program-pengawasan-keamanan-pangan",
+      "nama": "PROGRAM PENGAWASAN KEAMANAN PANGAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "50",
+      "slug": "program-pengelolaan-izin-lokasi",
+      "nama": "PROGRAM PENGELOLAAN IZIN LOKASI",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "51",
+      "slug": "program-pengadaan-tanah-untuk-kepentingan-umum",
+      "nama": "PROGRAM PENGADAAN TANAH UNTUK KEPENTINGAN UMUM",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "52",
+      "slug": "program-penyelesaian-sengketa-tanah-garapan",
+      "nama": "PROGRAM PENYELESAIAN SENGKETA TANAH GARAPAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "53",
+      "slug": "program-penyelesaian-ganti-kerugian-dan-santunan-tanah-untuk-pembangunan",
+      "nama": "PROGRAM PENYELESAIAN GANTI KERUGIAN DAN SANTUNAN TANAH UNTUK PEMBANGUNAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "54",
+      "slug": "program-redistribusi-tanah-dan-ganti-kerugian-program-tanah-kelebihan-maksimum-dan-tanah-absentee",
+      "nama": "PROGRAM REDISTRIBUSI TANAH DAN GANTI KERUGIAN PROGRAM TANAH KELEBIHAN MAKSIMUM DAN TANAH ABSENTEE",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "55",
+      "slug": "program-penetapan-tanah-ulayat",
+      "nama": "PROGRAM PENETAPAN TANAH ULAYAT",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "56",
+      "slug": "program-pengelolaan-tanah-kosong",
+      "nama": "PROGRAM PENGELOLAAN TANAH KOSONG",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "57",
+      "slug": "program-pengelolaan-izin-membuka-tanah",
+      "nama": "PROGRAM PENGELOLAAN IZIN MEMBUKA TANAH",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "58",
+      "slug": "program-penatagunaan-tanah",
+      "nama": "PROGRAM PENATAGUNAAN TANAH",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "59",
+      "slug": "program-penyelenggaraan-keistimewaan-yogyakarta-urusan-pertanahan",
+      "nama": "PROGRAM PENYELENGGARAAN KEISTIMEWAAN YOGYAKARTA URUSAN PERTANAHAN",
+      "created_at": "9/11/2021 08:13:50",
+      "updated_at": "9/11/2021 08:13:50"
+    },
+    {
+      "id": "60",
+      "slug": "program-pengurusan-hak-hak-atas-tanah",
+      "nama": "PROGRAM PENGURUSAN HAK HAK ATAS TANAH",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "61",
+      "slug": "program-survei-pengukuran-dan-pemetaan",
+      "nama": "PROGRAM SURVEI PENGUKURAN DAN PEMETAAN",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "62",
+      "slug": "program-pengembangan-dan-pembinaan-sumber-daya-manusia-dan-kelembagaan-pertanahan",
+      "nama": "PROGRAM PENGEMBANGAN DAN PEMBINAAN SUMBER DAYA MANUSIA DAN KELEMBAGAAN PERTANAHAN",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "63",
+      "slug": "program-pengaturan-pertanahan-di-wilayah-pesisir-laut-dan-pulau",
+      "nama": "PROGRAM PENGATURAN PERTANAHAN DI WILAYAH PESISIR LAUT DAN PULAU",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "64",
+      "slug": "program-pengelolaan-sistem-informasi-pertanahan",
+      "nama": "PROGRAM PENGELOLAAN SISTEM INFORMASI PERTANAHAN",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "65",
+      "slug": "program-penanganan-konflik-sengketa-dan-perkara-pertanahan",
+      "nama": "PROGRAM PENANGANAN KONFLIK SENGKETA DAN PERKARA PERTANAHAN",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "66",
+      "slug": "program-perencanaan-lingkungan-hidup",
+      "nama": "PROGRAM PERENCANAAN LINGKUNGAN HIDUP",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "67",
+      "slug": "program-pengendalian-pencemaran-danatau-kerusakan-lingkungan-hidup",
+      "nama": "PROGRAM PENGENDALIAN PENCEMARAN DANATAU KERUSAKAN LINGKUNGAN HIDUP",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "68",
+      "slug": "program-pengelolaan-keanekaragaman-hayati-kehati",
+      "nama": "PROGRAM PENGELOLAAN KEANEKARAGAMAN HAYATI KEHATI",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "69",
+      "slug": "program-pengendalian-bahan-berbahaya-dan-beracun-b3-dan-limbah-bahan-berbahaya-dan-beracun-limbah-b3",
+      "nama": "PROGRAM PENGENDALIAN BAHAN BERBAHAYA DAN BERACUN B3 DAN LIMBAH BAHAN BERBAHAYA DAN BERACUN LIMBAH B3",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "70",
+      "slug": "program-pembinaan-dan-pengawasan-terhadap-izin-lingkungan-dan-izin-perlindungan-dan-pengelolaan-lingkungan-hidup-pplh",
+      "nama": "PROGRAM PEMBINAAN DAN PENGAWASAN TERHADAP IZIN LINGKUNGAN DAN IZIN PERLINDUNGAN DAN PENGELOLAAN LINGKUNGAN HIDUP PPLH",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "71",
+      "slug": "program-pengakuan-keberadaan-masyarakat-hukum-adat-mha-kearifan-lokal-dan-hak-mha-yang-terkait-dengan-pplh",
+      "nama": "PROGRAM PENGAKUAN KEBERADAAN MASYARAKAT HUKUM ADAT MHA KEARIFAN LOKAL DAN HAK MHA YANG TERKAIT DENGAN PPLH",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "72",
+      "slug": "program-peningkatan-pendidikan-pelatihan-dan-penyuluhan-lingkungan-hidup-untuk-masyarakat",
+      "nama": "PROGRAM PENINGKATAN PENDIDIKAN PELATIHAN DAN PENYULUHAN LINGKUNGAN HIDUP UNTUK MASYARAKAT",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "73",
+      "slug": "program-penghargaan-lingkungan-hidup-untuk-masyarakat",
+      "nama": "PROGRAM PENGHARGAAN LINGKUNGAN HIDUP UNTUK MASYARAKAT",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "74",
+      "slug": "program-penanganan-pengaduan-lingkungan-hidup",
+      "nama": "PROGRAM PENANGANAN PENGADUAN LINGKUNGAN HIDUP",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "75",
+      "slug": "program-pengelolaan-persampahan",
+      "nama": "PROGRAM PENGELOLAAN PERSAMPAHAN",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "76",
+      "slug": "program-pendaftaran-penduduk",
+      "nama": "PROGRAM PENDAFTARAN PENDUDUK",
+      "created_at": "9/11/2021 08:13:51",
+      "updated_at": "9/11/2021 08:13:51"
+    },
+    {
+      "id": "77",
+      "slug": "program-pencatatan-sipil",
+      "nama": "PROGRAM PENCATATAN SIPIL",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "78",
+      "slug": "program-pengelolaan-informasi-administrasi-kependudukan",
+      "nama": "PROGRAM PENGELOLAAN INFORMASI ADMINISTRASI KEPENDUDUKAN",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "79",
+      "slug": "program-pengelolaan-profil-kependudukan",
+      "nama": "PROGRAM PENGELOLAAN PROFIL KEPENDUDUKAN",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "80",
+      "slug": "program-penataan-desa",
+      "nama": "PROGRAM PENATAAN DESA",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "81",
+      "slug": "program-peningkatan-kerjasama-desa",
+      "nama": "PROGRAM PENINGKATAN KERJASAMA DESA",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "82",
+      "slug": "program-administrasi-pemerintahan-desa",
+      "nama": "PROGRAM ADMINISTRASI PEMERINTAHAN DESA",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "83",
+      "slug": "program-pemberdayaan-lembaga-kemasyarakatan-lembaga-adat-dan-masyarakat-hukum-adat",
+      "nama": "PROGRAM PEMBERDAYAAN LEMBAGA KEMASYARAKATAN LEMBAGA ADAT DAN MASYARAKAT HUKUM ADAT",
+      "created_at": "9/11/2021 08:13:52",
+      "updated_at": "9/11/2021 08:13:52"
+    },
+    {
+      "id": "84",
+      "slug": "program-pengendalian-penduduk",
+      "nama": "PROGRAM PENGENDALIAN PENDUDUK",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "85",
+      "slug": "program-pembinaan-keluarga-berencana-kb",
+      "nama": "PROGRAM PEMBINAAN KELUARGA BERENCANA KB",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "86",
+      "slug": "program-pemberdayaan-dan-peningkatan-keluarga-sejahtera-ks",
+      "nama": "PROGRAM PEMBERDAYAAN DAN PENINGKATAN KELUARGA SEJAHTERA KS",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "87",
+      "slug": "program-penyelenggaraan-lalu-lintas-dan-angkutan-jalan-llaj",
+      "nama": "PROGRAM PENYELENGGARAAN LALU LINTAS DAN ANGKUTAN JALAN LLAJ",
+      "created_at": "9/11/2021 08:13:53",
+      "updated_at": "9/11/2021 08:13:53"
+    },
+    {
+      "id": "88",
+      "slug": "program-pengelolaan-pelayaran",
+      "nama": "PROGRAM PENGELOLAAN PELAYARAN",
+      "created_at": "9/11/2021 08:13:54",
+      "updated_at": "9/11/2021 08:13:54"
+    },
+    {
+      "id": "89",
+      "slug": "program-pengelolaan-penerbangan",
+      "nama": "PROGRAM PENGELOLAAN PENERBANGAN",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "90",
+      "slug": "program-pengelolaan-perkeretaapian",
+      "nama": "PROGRAM PENGELOLAAN PERKERETAAPIAN",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "91",
+      "slug": "program-pengelolaan-informasi-dan-komunikasi-publik",
+      "nama": "PROGRAM PENGELOLAAN INFORMASI DAN KOMUNIKASI PUBLIK",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "92",
+      "slug": "program-pengelolaan-aplikasi-informatika",
+      "nama": "PROGRAM PENGELOLAAN APLIKASI INFORMATIKA",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "93",
+      "slug": "program-pelayanan-izin-usaha-simpan-pinjam",
+      "nama": "PROGRAM PELAYANAN IZIN USAHA SIMPAN PINJAM",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "94",
+      "slug": "program-pengawasan-dan-pemeriksaan-koperasi",
+      "nama": "PROGRAM PENGAWASAN DAN PEMERIKSAAN KOPERASI",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "95",
+      "slug": "program-penilaian-kesehatan-kspusp-koperasi",
+      "nama": "PROGRAM PENILAIAN KESEHATAN KSPUSP KOPERASI",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "96",
+      "slug": "program-pendidikan-dan-latihan-perkoperasian",
+      "nama": "PROGRAM PENDIDIKAN DAN LATIHAN PERKOPERASIAN",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "97",
+      "slug": "program-pemberdayaan-dan-perlindungan-koperasi",
+      "nama": "PROGRAM PEMBERDAYAAN DAN PERLINDUNGAN KOPERASI",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "98",
+      "slug": "program-pemberdayaan-usaha-menengah-usaha-kecil-dan-usaha-mikro-umkm",
+      "nama": "PROGRAM PEMBERDAYAAN USAHA MENENGAH USAHA KECIL DAN USAHA MIKRO UMKM",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "99",
+      "slug": "program-pengembangan-umkm",
+      "nama": "PROGRAM PENGEMBANGAN UMKM",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "100",
+      "slug": "program-pengembangan-iklim-penanaman-modal",
+      "nama": "PROGRAM PENGEMBANGAN IKLIM PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "101",
+      "slug": "program-promosi-penanaman-modal",
+      "nama": "PROGRAM PROMOSI PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:55",
+      "updated_at": "9/11/2021 08:13:55"
+    },
+    {
+      "id": "102",
+      "slug": "program-pelayanan-penanaman-modal",
+      "nama": "PROGRAM PELAYANAN PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "103",
+      "slug": "program-pengendalian-pelaksanaan-penanaman-modal",
+      "nama": "PROGRAM PENGENDALIAN PELAKSANAAN PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "104",
+      "slug": "program-pengelolaan-data-dan-sistem-informasi-penanaman-modal",
+      "nama": "PROGRAM PENGELOLAAN DATA DAN SISTEM INFORMASI PENANAMAN MODAL",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "105",
+      "slug": "program-pengembangan-kapasitas-daya-saing-kepemudaan",
+      "nama": "PROGRAM PENGEMBANGAN KAPASITAS DAYA SAING KEPEMUDAAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "106",
+      "slug": "program-pengembangan-kapasitas-daya-saing-keolahragaan",
+      "nama": "PROGRAM PENGEMBANGAN KAPASITAS DAYA SAING KEOLAHRAGAAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "107",
+      "slug": "program-pengembangan-kapasitas-kepramukaan",
+      "nama": "PROGRAM PENGEMBANGAN KAPASITAS KEPRAMUKAAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "108",
+      "slug": "program-penyelenggaraan-statistik-sektoral",
+      "nama": "PROGRAM PENYELENGGARAAN STATISTIK SEKTORAL",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "109",
+      "slug": "program-penyelenggaraan-persandian-untuk-pengamanan-informasi",
+      "nama": "PROGRAM PENYELENGGARAAN PERSANDIAN UNTUK PENGAMANAN INFORMASI",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "110",
+      "slug": "program-pengembangan-kebudayaan",
+      "nama": "PROGRAM PENGEMBANGAN KEBUDAYAAN",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "111",
+      "slug": "program-pengembangan-kesenian-tradisional",
+      "nama": "PROGRAM PENGEMBANGAN KESENIAN TRADISIONAL",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "112",
+      "slug": "program-pembinaan-sejarah",
+      "nama": "PROGRAM PEMBINAAN SEJARAH",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "113",
+      "slug": "program-pelestarian-dan-pengelolaan-cagar-budaya",
+      "nama": "PROGRAM PELESTARIAN DAN PENGELOLAAN CAGAR BUDAYA",
+      "created_at": "9/11/2021 08:13:56",
+      "updated_at": "9/11/2021 08:13:56"
+    },
+    {
+      "id": "114",
+      "slug": "program-pengelolaan-permuseuman",
+      "nama": "PROGRAM PENGELOLAAN PERMUSEUMAN",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "115",
+      "slug": "program-majelis-adat-aceh-maa",
+      "nama": "PROGRAM MAJELIS ADAT ACEH MAA",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "116",
+      "slug": "program-penyelenggaraan-keistimewaan-yogyakarta-urusan-kebudayaan",
+      "nama": "PROGRAM PENYELENGGARAAN KEISTIMEWAAN YOGYAKARTA URUSAN KEBUDAYAAN",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "117",
+      "slug": "program-pembinaan-perpustakaan",
+      "nama": "PROGRAM PEMBINAAN PERPUSTAKAAN",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "118",
+      "slug": "program-pelestarian-koleksi-nasional-dan-naskah-kuno",
+      "nama": "PROGRAM PELESTARIAN KOLEKSI NASIONAL DAN NASKAH KUNO",
+      "created_at": "9/11/2021 08:13:57",
+      "updated_at": "9/11/2021 08:13:57"
+    },
+    {
+      "id": "119",
+      "slug": "program-pengelolaan-arsip",
+      "nama": "PROGRAM PENGELOLAAN ARSIP",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "120",
+      "slug": "program-perlindungan-dan-penyelamatan-arsip",
+      "nama": "PROGRAM PERLINDUNGAN DAN PENYELAMATAN ARSIP",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "121",
+      "slug": "program-perizinan-penggunaan-arsip",
+      "nama": "PROGRAM PERIZINAN PENGGUNAAN ARSIP",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "122",
+      "slug": "program-pengelolaan-kelautan-pesisir-dan-pulau-pulau-kecil",
+      "nama": "PROGRAM PENGELOLAAN KELAUTAN PESISIR DAN PULAU PULAU KECIL",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "123",
+      "slug": "program-pengelolaan-perikanan-tangkap",
+      "nama": "PROGRAM PENGELOLAAN PERIKANAN TANGKAP",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "124",
+      "slug": "program-pengelolaan-perikanan-budidaya",
+      "nama": "PROGRAM PENGELOLAAN PERIKANAN BUDIDAYA",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "125",
+      "slug": "program-pengawasan-sumber-daya-kelautan-dan-perikanan",
+      "nama": "PROGRAM PENGAWASAN SUMBER DAYA KELAUTAN DAN PERIKANAN",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "126",
+      "slug": "program-pengolahan-dan-pemasaran-hasil-perikanan",
+      "nama": "PROGRAM PENGOLAHAN DAN PEMASARAN HASIL PERIKANAN",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "127",
+      "slug": "program-peningkatan-daya-tarik-destinasi-pariwisata",
+      "nama": "PROGRAM PENINGKATAN DAYA TARIK DESTINASI PARIWISATA",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "128",
+      "slug": "program-pemasaran-pariwisata",
+      "nama": "PROGRAM PEMASARAN PARIWISATA",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "129",
+      "slug": "program-pengembangan-ekonomi-kreatif-melalui-pemanfaatan-dan-perlindungan-hak-kekayaan-intelektual",
+      "nama": "PROGRAM PENGEMBANGAN EKONOMI KREATIF MELALUI PEMANFAATAN DAN PERLINDUNGAN HAK KEKAYAAN INTELEKTUAL",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "130",
+      "slug": "program-pengembangan-sumber-daya-pariwisata-dan-ekonomi-kreatif",
+      "nama": "PROGRAM PENGEMBANGAN SUMBER DAYA PARIWISATA DAN EKONOMI KREATIF",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "131",
+      "slug": "program-penyediaan-dan-pengembangan-sarana-pertanian",
+      "nama": "PROGRAM PENYEDIAAN DAN PENGEMBANGAN SARANA PERTANIAN",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "132",
+      "slug": "program-penyediaan-dan-pengembangan-prasarana-pertanian",
+      "nama": "PROGRAM PENYEDIAAN DAN PENGEMBANGAN PRASARANA PERTANIAN",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "133",
+      "slug": "program-pengendalian-kesehatan-hewan-dan-kesehatan-masyarakat-veteriner",
+      "nama": "PROGRAM PENGENDALIAN KESEHATAN HEWAN DAN KESEHATAN MASYARAKAT VETERINER",
+      "created_at": "9/11/2021 08:13:59",
+      "updated_at": "9/11/2021 08:13:59"
+    },
+    {
+      "id": "134",
+      "slug": "program-pengendalian-dan-penanggulangan-bencana-pertanian",
+      "nama": "PROGRAM PENGENDALIAN DAN PENANGGULANGAN BENCANA PERTANIAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "135",
+      "slug": "program-perizinan-usaha-pertanian",
+      "nama": "PROGRAM PERIZINAN USAHA PERTANIAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "136",
+      "slug": "program-penyuluhan-pertanian",
+      "nama": "PROGRAM PENYULUHAN PERTANIAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "137",
+      "slug": "program-perencanaan-hutan",
+      "nama": "PROGRAM PERENCANAAN HUTAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "138",
+      "slug": "program-pengelolaan-hutan",
+      "nama": "PROGRAM PENGELOLAAN HUTAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "139",
+      "slug": "program-konservasi-sumber-daya-alam-hayati-dan-ekosistemnya",
+      "nama": "PROGRAM KONSERVASI SUMBER DAYA ALAM HAYATI DAN EKOSISTEMNYA",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "140",
+      "slug": "program-pendidikan-dan-pelatihan-penyuluhan-dan-pemberdayaan-masyarakat-di-bidang-kehutanan",
+      "nama": "PROGRAM PENDIDIKAN DAN PELATIHAN PENYULUHAN DAN PEMBERDAYAAN MASYARAKAT DI BIDANG KEHUTANAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "141",
+      "slug": "program-pengelolaan-daerah-aliran-sungai-das",
+      "nama": "PROGRAM PENGELOLAAN DAERAH ALIRAN SUNGAI DAS",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "142",
+      "slug": "program-pengelolaan-aspek-geologi",
+      "nama": "PROGRAM PENGELOLAAN ASPEK GEOLOGI",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "143",
+      "slug": "program-mineral-dan-batubara",
+      "nama": "PROGRAM MINERAL DAN BATUBARA",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "144",
+      "slug": "program-pengelolaan-minyak-dan-gas-bumi",
+      "nama": "PROGRAM PENGELOLAAN MINYAK DAN GAS BUMI",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "145",
+      "slug": "program-pengelolaan-energi-baru-terbarukan",
+      "nama": "PROGRAM PENGELOLAAN ENERGI BARU TERBARUKAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "146",
+      "slug": "program-ketenagalistrikan",
+      "nama": "PROGRAM KETENAGALISTRIKAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "147",
+      "slug": "program-perizinan-dan-pendaftaran-perusahaan",
+      "nama": "PROGRAM PERIZINAN DAN PENDAFTARAN PERUSAHAAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "148",
+      "slug": "program-peningkatan-sarana-distribusi-perdagangan",
+      "nama": "PROGRAM PENINGKATAN SARANA DISTRIBUSI PERDAGANGAN",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "149",
+      "slug": "program-stabilisasi-harga-barang-kebutuhan-pokok-dan-barang-penting",
+      "nama": "PROGRAM STABILISASI HARGA BARANG KEBUTUHAN POKOK DAN BARANG PENTING",
+      "created_at": "9/11/2021 08:14:00",
+      "updated_at": "9/11/2021 08:14:00"
+    },
+    {
+      "id": "150",
+      "slug": "program-pengembangan-ekspor",
+      "nama": "PROGRAM PENGEMBANGAN EKSPOR",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "151",
+      "slug": "program-standardisasi-dan-perlindungan-konsumen",
+      "nama": "PROGRAM STANDARDISASI DAN PERLINDUNGAN KONSUMEN",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "152",
+      "slug": "program-penggunaan-dan-pemasaran-produk-dalam-negeri",
+      "nama": "PROGRAM PENGGUNAAN DAN PEMASARAN PRODUK DALAM NEGERI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "153",
+      "slug": "program-perencanaan-dan-pembangunan-industri",
+      "nama": "PROGRAM PERENCANAAN DAN PEMBANGUNAN INDUSTRI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "154",
+      "slug": "program-pengendalian-izin-usaha-industri",
+      "nama": "PROGRAM PENGENDALIAN IZIN USAHA INDUSTRI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "155",
+      "slug": "program-pengelolaan-sistem-informasi-industri-nasional",
+      "nama": "PROGRAM PENGELOLAAN SISTEM INFORMASI INDUSTRI NASIONAL",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "156",
+      "slug": "program-perencanaan-kawasan-transmigrasi",
+      "nama": "PROGRAM PERENCANAAN KAWASAN TRANSMIGRASI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "157",
+      "slug": "program-pembangunan-kawasan-transmigrasi",
+      "nama": "PROGRAM PEMBANGUNAN KAWASAN TRANSMIGRASI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "158",
+      "slug": "program-pengembangan-kawasan-transmigrasi",
+      "nama": "PROGRAM PENGEMBANGAN KAWASAN TRANSMIGRASI",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "159",
+      "slug": "program-penunjang-urusan-pemerintahan-daerah-kabupatenkota",
+      "nama": "PROGRAM PENUNJANG URUSAN PEMERINTAHAN DAERAH KABUPATENKOTA",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "160",
+      "slug": "program-pemerintahan-dan-kesejahteraan-rakyat",
+      "nama": "PROGRAM PEMERINTAHAN DAN KESEJAHTERAAN RAKYAT",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "161",
+      "slug": "program-perekonomian-dan-pembangunan",
+      "nama": "PROGRAM PEREKONOMIAN DAN PEMBANGUNAN",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "162",
+      "slug": "program-dukungan-pelaksanaan-tugas-dan-fungsi-dprd",
+      "nama": "PROGRAM DUKUNGAN PELAKSANAAN TUGAS DAN FUNGSI DPRD",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "163",
+      "slug": "program-perencanaan-pengendalian-dan-evaluasi-pembangunan-daerah",
+      "nama": "PROGRAM PERENCANAAN PENGENDALIAN DAN EVALUASI PEMBANGUNAN DAERAH",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "164",
+      "slug": "program-koordinasi-dan-sinkronisasi-perencanaan-pembangunan-daerah",
+      "nama": "PROGRAM KOORDINASI DAN SINKRONISASI PERENCANAAN PEMBANGUNAN DAERAH",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "165",
+      "slug": "program-pengelolaan-keuangan-daerah",
+      "nama": "PROGRAM PENGELOLAAN KEUANGAN DAERAH",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "166",
+      "slug": "program-pengelolaan-barang-milik-daerah",
+      "nama": "PROGRAM PENGELOLAAN BARANG MILIK DAERAH",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "167",
+      "slug": "program-pengelolaan-pendapatan-daerah",
+      "nama": "PROGRAM PENGELOLAAN PENDAPATAN DAERAH",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "168",
+      "slug": "program-kepegawaian-daerah",
+      "nama": "PROGRAM KEPEGAWAIAN DAERAH",
+      "created_at": "9/11/2021 08:14:03",
+      "updated_at": "9/11/2021 08:14:03"
+    },
+    {
+      "id": "169",
+      "slug": "program-pengembangan-sumber-daya-manusia",
+      "nama": "PROGRAM PENGEMBANGAN SUMBER DAYA MANUSIA",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "170",
+      "slug": "program-penelitian-dan-pengembangan-daerah",
+      "nama": "PROGRAM PENELITIAN DAN PENGEMBANGAN DAERAH",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "171",
+      "slug": "program-pengelolaan-perbatasan",
+      "nama": "PROGRAM PENGELOLAAN PERBATASAN",
+      "created_at": "9/11/2021 08:14:04",
+      "updated_at": "9/11/2021 08:14:04"
+    },
+    {
+      "id": "172",
+      "slug": "program-penyelenggaraan-pengawasan",
+      "nama": "PROGRAM PENYELENGGARAAN PENGAWASAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "173",
+      "slug": "program-perumusan-kebijakan-pendampingan-dan-asistensi",
+      "nama": "PROGRAM PERUMUSAN KEBIJAKAN PENDAMPINGAN DAN ASISTENSI",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "174",
+      "slug": "program-penyelenggaraan-pemerintahan-dan-pelayanan-publik",
+      "nama": "PROGRAM PENYELENGGARAAN PEMERINTAHAN DAN PELAYANAN PUBLIK",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "175",
+      "slug": "program-pemberdayaan-masyarakat-desa-dan-kelurahan",
+      "nama": "PROGRAM PEMBERDAYAAN MASYARAKAT DESA DAN KELURAHAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "176",
+      "slug": "program-koordinasi-ketentraman-dan-ketertiban-umum",
+      "nama": "PROGRAM KOORDINASI KETENTRAMAN DAN KETERTIBAN UMUM",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "177",
+      "slug": "program-penyelenggaraan-urusan-pemerintahan-umum",
+      "nama": "PROGRAM PENYELENGGARAAN URUSAN PEMERINTAHAN UMUM",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "178",
+      "slug": "program-pembinaan-dan-pengawasan-pemerintahan-desa",
+      "nama": "PROGRAM PEMBINAAN DAN PENGAWASAN PEMERINTAHAN DESA",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "179",
+      "slug": "program-penguatan-ideologi-pancasila-dan-karakter-kebangsaan",
+      "nama": "PROGRAM PENGUATAN IDEOLOGI PANCASILA DAN KARAKTER KEBANGSAAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "180",
+      "slug": "program-peningkatan-peran-partai-politik-dan-lembaga-pendidikan-melalui-pendidikan-politik-dan-pengembangan-etika-serta-budaya-politik",
+      "nama": "PROGRAM PENINGKATAN PERAN PARTAI POLITIK DAN LEMBAGA PENDIDIKAN MELALUI PENDIDIKAN POLITIK DAN PENGEMBANGAN ETIKA SERTA BUDAYA POLITIK",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "181",
+      "slug": "program-pemberdayaan-dan-pengawasan-organisasi-kemasyarakatan",
+      "nama": "PROGRAM PEMBERDAYAAN DAN PENGAWASAN ORGANISASI KEMASYARAKATAN",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "182",
+      "slug": "program-pembinaan-dan-pengembangan-ketahanan-ekonomi-sosial-dan-budaya",
+      "nama": "PROGRAM PEMBINAAN DAN PENGEMBANGAN KETAHANAN EKONOMI SOSIAL DAN BUDAYA",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    },
+    {
+      "id": "183",
+      "slug": "program-peningkatan-kewaspadaan-nasional-dan-peningkatan-kualitas-dan-fasilitasi-penanganan-konflik-sosial",
+      "nama": "PROGRAM PENINGKATAN KEWASPADAAN NASIONAL DAN PENINGKATAN KUALITAS DAN FASILITASI PENANGANAN KONFLIK SOSIAL",
+      "created_at": "9/11/2021 08:14:06",
+      "updated_at": "9/11/2021 08:14:06"
+    }
+  ]
+}

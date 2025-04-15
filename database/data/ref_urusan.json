@@ -1,0 +1,60 @@
+{
+  "RECORDS": [
+    {
+      "id": "1",
+      "slug": "urusan-pemerintahan-wajib-yang-berkaitan-dengan-pelayanan-dasar",
+      "nama": "URUSAN PEMERINTAHAN WAJIB YANG BERKAITAN DENGAN PELAYANAN DASAR",
+      "created_at": "9/11/2021 08:13:42",
+      "updated_at": "9/11/2021 08:13:42"
+    },
+    {
+      "id": "2",
+      "slug": "urusan-pemerintahan-wajib-yang-tidak-berkaitan-dengan-pelayanan-dasar",
+      "nama": "URUSAN PEMERINTAHAN WAJIB YANG TIDAK BERKAITAN DENGAN PELAYANAN DASAR",
+      "created_at": "9/11/2021 08:13:49",
+      "updated_at": "9/11/2021 08:13:49"
+    },
+    {
+      "id": "3",
+      "slug": "urusan-pemerintahan-pilihan",
+      "nama": "URUSAN PEMERINTAHAN PILIHAN",
+      "created_at": "9/11/2021 08:13:58",
+      "updated_at": "9/11/2021 08:13:58"
+    },
+    {
+      "id": "4",
+      "slug": "unsur-pendukung-urusan-pemerintahan",
+      "nama": "UNSUR PENDUKUNG URUSAN PEMERINTAHAN",
+      "created_at": "9/11/2021 08:14:01",
+      "updated_at": "9/11/2021 08:14:01"
+    },
+    {
+      "id": "5",
+      "slug": "unsur-penunjang-urusan-pemerintahan",
+      "nama": "UNSUR PENUNJANG URUSAN PEMERINTAHAN",
+      "created_at": "9/11/2021 08:14:02",
+      "updated_at": "9/11/2021 08:14:02"
+    },
+    {
+      "id": "6",
+      "slug": "unsur-pengawasan-urusan-pemerintahan",
+      "nama": "UNSUR PENGAWASAN URUSAN PEMERINTAHAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "7",
+      "slug": "unsur-kewilayahan",
+      "nama": "UNSUR KEWILAYAHAN",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    },
+    {
+      "id": "8",
+      "slug": "unsur-pemerintahan-umum",
+      "nama": "UNSUR PEMERINTAHAN UMUM",
+      "created_at": "9/11/2021 08:14:05",
+      "updated_at": "9/11/2021 08:14:05"
+    }
+  ]
+}
