@@ -100,7 +100,10 @@
                     <tbody>
                         <!-- Example Row -->
                         <tr>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;"></td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                <button data-bs-toggle="modal" data-bs-target="#modal-edit" class="btn btn-sm btn-flat btn-primary my-2"><i class="bx bx-edit-alt"></i></button>
+                                <button class="btn btn-sm btn-flat btn-danger my-2"><i class="bx bx-trash" ></i></button>
+                            </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">1</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Paket A</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">12345</td>
@@ -123,7 +126,6 @@
     <br>
     <div class="card">
         <div class="card-body ">
-           
             <div class="table-responsive">
                 <table class="table table-striped" id="table2">
                     <thead class="bg bg-primary">
@@ -146,7 +148,10 @@
                     <tbody>
                         <!-- Example Row -->
                         <tr>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;"></td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                <button data-bs-toggle="modal" data-bs-target="#modal-edit2" class="btn btn-sm btn-flat btn-primary my-2"><i class="bx bx-edit-alt"></i></button>
+                                <button class="btn btn-sm btn-flat btn-danger my-2"><i class="bx bx-trash" ></i></button>
+                            </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">1</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Paket A</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">12345</td>
@@ -167,7 +172,7 @@
     </div>
 
 
-
+    {{-- Tambah --}}
     <div class="modal fade" role="dialog" id="modal-tambah-foto" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -182,7 +187,7 @@
                     <div class="alert alert-primary" role="alert">
                         REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN 
                     </div>
-                    <form method="post" id="form-tambah-foto" action="{{ route('admin.monev.pengawasan.storefile') }}"
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k02.index') }}"
                         enctype="multipart/form-data">
                         @csrf
                         
@@ -349,40 +354,250 @@
     </div>
 
    
-
-    <div class="modal fade" role="dialog" id="modal-detail" tabindex="-1" aria-labelledby="exampleModalLabel"
+    {{-- Edit Tabel Atas --}}
+    <div class="modal fade" role="dialog" id="modal-edit" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Surat Keterangan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    <form method="post" id="form-tambah-foto" action="{{ route('admin.monev.pengawasan.storefile') }}"
+                    <div class="alert alert-primary" role="alert">
+                        REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN 
+                    </div>
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k02.index') }}"
                         enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" id="id_foto" name="id_foto">
-                        <div id="pdf-container" style="display: none;">
-                            <iframe id="pdf-frame" width="100%" height="500px"></iframe>
+                        
+                        <div>
+                            <input type="hidden" id="skpd_id_foto" name="skpd_id"
+                                value="{{ auth()->user()->skpd_id }}">
+                            <input type="hidden" id="tahun" name="tahun" value="{{ auth()->user()->tahun }}">
+                            <div class="col-md-12 mt-4">
+                                <small class="text-light fw-semibold">Upload :</small>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Kegiatan Konstruksi (Nama Paket)</dt>
+                                <dd><input type="text" class="form-control" id="kegiatan_konstruksi" name="kegiatan_konstruksi" placeholder="Kegiatan Konstruksi (Nama Paket)"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Nomer Kontrak</dt>
+                                <dd><input type="text" class="form-control" id="no_kontrak" name="no_kontrak" placeholder="Nomer Kontrak"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Nama BUJK</dt>
+                                <dd><input type="text" class="form-control" id="nm_bujk" name="nm_bujk" placeholder="Nama BUJK"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Proses pemilihan Penyedia Jasa</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Penerapan standar kontrak </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Penggunaan tenaga kerja konstruksi bersertifikat  </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Pemberian pekerjaan utama dan/atau penunjang kepada subpenyedia jasa  </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>ketersediaan dokumen standar K4 </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>penerapan SMKK </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>kegiatan antisipasi kecelakaan kerja </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            
+                            
+                            <div class="col-md-12 mt-4">
+                                <dt>Update Data Dukung</dt>
+                                <dd><input type="file" class="form-control" id="data_dukung" name="data_dukung" placeholder="Upload Data Dukung"></dd>
+                            </div>
                         </div>
                 </div>
-                {{-- <div class="modal-footer bg-whitesmoke br">
-                    <button type="submit" id="tombol" class="btn btn-primary">SIMPAN</button>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="submit" id="tombol" class="btn btn-primary">UPDATE</button>
                     <button type="submit" id="loading" class="btn btn-warning" style="display: none;" readonly>
                         LOADING......
                     </button>
-                </div> --}}
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{-- Edit Tabel Bawah --}}
+    <div class="modal fade" role="dialog" id="modal-edit2" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-primary" role="alert">
+                        REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN 
+                    </div>
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k02.index') }}"
+                        enctype="multipart/form-data">
+                        @csrf
+                        
+                        <div>
+                            <input type="hidden" id="skpd_id_foto" name="skpd_id"
+                                value="{{ auth()->user()->skpd_id }}">
+                            <input type="hidden" id="tahun" name="tahun" value="{{ auth()->user()->tahun }}">
+                            <div class="col-md-12 mt-4">
+                                <small class="text-light fw-semibold">Upload :</small>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Kegiatan Konstruksi (Nama Paket)</dt>
+                                <dd><input type="text" class="form-control" id="kegiatan_konstruksi" name="kegiatan_konstruksi" placeholder="Kegiatan Konstruksi (Nama Paket)"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Nomer Kontrak</dt>
+                                <dd><input type="text" class="form-control" id="no_kontrak" name="no_kontrak" placeholder="Nomer Kontrak"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Nama BUJK</dt>
+                                <dd><input type="text" class="form-control" id="nm_bujk" name="nm_bujk" placeholder="Nama BUJK"></dd>
+                            </div>
+                            
+                            <div class="col-md-12 mt-4">
+                                <dt>pemenuhan penyediaan peralatan dalam pelaksanaan proyek konstruksi </dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>penggunaan produk dalam negeri untuk teknologi dan MPK (material, peralatan konstruksi) sesuai dengan ketentuan perundang-undangan tentang pemberdayaan industri nasional</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>pemenuhan terhadap standar mutu material</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>pemenuhan terhadap standar teknis lingkungan</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>pemenuhan terhadap standar keselamatan dan kesehatan kerja</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="" name="">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+                            
+                            <div class="col-md-12 mt-4">
+                                <dt>Update Data Dukung</dt>
+                                <dd><input type="file" class="form-control" id="data_dukung" name="data_dukung" placeholder="Upload Data Dukung"></dd>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="submit" id="tombol" class="btn btn-primary">UPDATE</button>
+                    <button type="submit" id="loading" class="btn btn-warning" style="display: none;" readonly>
+                        LOADING......
+                    </button>
+                </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-
-    {{-- @include('admin.master.skpd.form') --}}
 @endsection
 
 @section('custom_js')
