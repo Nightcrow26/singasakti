@@ -148,6 +148,12 @@
                   </a>
               </li>
 
+              <li class="menu-item {{ set_active('admin.monev.k02.index') }}">
+                <a href="{{ route('admin.monev.k02.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <div data-i18n="Basic">Rekapitulasi K.02</div>
+                </a>
+              </li>
               {{-- <li class="menu-header small text-uppercase">
                   <span class="menu-header-text">Master</span>
               </li> --}}

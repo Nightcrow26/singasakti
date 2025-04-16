@@ -69,6 +69,11 @@ Route::prefix('/admin')->group(function () {
         }
         );
 
+        Route::prefix('/k02')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
+        }
+        );
+
         Route::get('/under-construction', function () {
             return view('admin.monev.under_construction.index');
         }
