@@ -69,6 +69,17 @@ Route::prefix('/admin')->group(function () {
         }
         );
 
+
+        //Rekapitulasi
+        Route::prefix('/k01a')->group(function () {
+            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01a'])->name('admin.monev.k01a.index');
+        }
+        );
+        Route::prefix('/k01b')->group(function () {
+            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01b'])->name('admin.monev.k01b.index');
+        }
+        );
+
         Route::get('/under-construction', function () {
             return view('admin.monev.under_construction.index');
         }
