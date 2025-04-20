@@ -625,4 +625,5 @@
     </script>
      
     {{-- <script src="{{ asset('js/master/skpd/main.js') }}"></script> --}}
+
 @endsection

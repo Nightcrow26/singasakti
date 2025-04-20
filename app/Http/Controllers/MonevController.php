@@ -584,6 +584,7 @@ class MonevController extends Controller
         // dd($data['data']);
         return view('admin.monev.k04.index');
     }
+  
     // public function data(Request $request)
     // {
     //     if (auth()->user()->hasRole('admin')) {
