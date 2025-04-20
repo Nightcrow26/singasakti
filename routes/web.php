@@ -70,6 +70,7 @@ Route::prefix('/admin')->group(function () {
         );
 
 
+
         //Rekapitulasi
         Route::prefix('/k01a')->group(function () {
             Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01a'])->name('admin.monev.k01a.index');
@@ -77,6 +78,20 @@ Route::prefix('/admin')->group(function () {
         );
         Route::prefix('/k01b')->group(function () {
             Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01b'])->name('admin.monev.k01b.index');
+
+        Route::prefix('/k02')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
+        }
+        );
+        
+        Route::prefix('/k03')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k03'])->name('admin.monev.k03.index');
+        }
+        );
+
+        Route::prefix('/k04')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k04'])->name('admin.monev.k04.index');
+
         }
         );
 
