@@ -567,6 +567,24 @@ class MonevController extends Controller
         return view('admin.monev.k02.index');
     }
 
+    public function k03()
+    {
+        // $data['urusan'] = $this->service->getDataUrusan();
+        // $data['skpd'] = $this->service->getDataSkpd();
+
+        // dd($data['data']);
+        return view('admin.monev.k03.index');
+    }
+
+    public function k04()
+    {
+        // $data['urusan'] = $this->service->getDataUrusan();
+        // $data['skpd'] = $this->service->getDataSkpd();
+
+        // dd($data['data']);
+        return view('admin.monev.k04.index');
+    }
+  
     // public function data(Request $request)
     // {
     //     if (auth()->user()->hasRole('admin')) {

@@ -72,6 +72,15 @@ Route::prefix('/admin')->group(function () {
         Route::prefix('/k02')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
         }
+        
+        Route::prefix('/k03')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k03'])->name('admin.monev.k03.index');
+        }
+        );
+
+        Route::prefix('/k04')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k04'])->name('admin.monev.k04.index');
+        }
         );
 
         Route::get('/under-construction', function () {

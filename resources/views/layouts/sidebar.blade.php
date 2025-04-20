@@ -154,6 +154,21 @@
                     <div data-i18n="Basic">Rekapitulasi K.02</div>
                 </a>
               </li>
+
+              <li class="menu-item {{ set_active('admin.monev.k03.index') }}">
+                <a href="{{ route('admin.monev.k03.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <div data-i18n="Basic">Rekapitulasi K.03</div>
+                </a>
+              </li>
+
+              <li class="menu-item {{ set_active('admin.monev.k04.index') }}">
+                <a href="{{ route('admin.monev.k04.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <div data-i18n="Basic">Rekapitulasi K.04</div>
+                </a>
+              </li>
+
               {{-- <li class="menu-header small text-uppercase">
                   <span class="menu-header-text">Master</span>
               </li> --}}
