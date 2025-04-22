@@ -78,7 +78,7 @@ Route::prefix('/admin')->group(function () {
         );
         Route::prefix('/k01b')->group(function () {
             Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01b'])->name('admin.monev.k01b.index');
-
+        });
         Route::prefix('/k02')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
         }
