@@ -782,8 +782,8 @@ class MonevController extends Controller
         $pdf->setPaper('A4', 'landscape');
 
         // Download langsung
-        return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
-        // return $pdf->download('k02_skpd_'.$skpd_id.'.pdf');
+        // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
+        return $pdf->download('k02_skpd_'.$skpd_id.'.pdf');
     }
 
     public function k03()
