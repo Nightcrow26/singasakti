@@ -60,15 +60,24 @@
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
                         REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN 
-                        <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
-                            data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
-                            Tambah
-                        </button>
-                        <a href="{{ route('admin.monev.k02.download', auth()->user()->skpd_id) }}" 
+                        @if (auth()->user()->hasRole('admin'))
+                        <a href="{{ route('admin.monev.k02.download') }}" 
                             style="float: right; margin-right:10px;" 
                             class="btn btn-sm btn-secondary" target="_blank">
                             Download
                          </a>
+                        @else 
+                        <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
+                            Tambah
+                        </button>
+                        <a href="{{ route('admin.monev.k02.download') }}" 
+                            style="float: right; margin-right:10px;" 
+                            class="btn btn-sm btn-secondary" target="_blank">
+                            Download
+                         </a>
+                        @endif
+                        
                         {{-- @if (auth()->user()->hasRole('admin'))
                             <a href="{{ route('excel.rutin') }}" style="float: right;margin-right:10px;" type="button"
                                 class="btn btn-sm btn-success">
