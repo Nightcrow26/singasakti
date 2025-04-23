@@ -562,8 +562,11 @@ class MonevController extends Controller
     public function k02()
     {
         // Mengambil semua data K02
-        $dataK02 = K02::all(); 
-
+        if (auth()->user()->hasRole('admin')){
+            $dataK02 = K02::all(); 
+        }else{
+            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+        }
         // Kirim data ke view
         return view('admin.monev.k02.index', compact('dataK02'));
     }
@@ -769,11 +772,15 @@ class MonevController extends Controller
             return redirect()->back()->with('admin.monev.k02.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
     } //DONE
-   
-    public function downloadk02($skpd_id)
+    public function downloadk02()
     {
         // Ambil data K02 berdasarkan skpd_id
-        $dataK02 = K02::where('skpd_id', $skpd_id)->get();
+        // Mengambil semua data K02
+        if (auth()->user()->hasRole('admin')){
+            $dataK02 = K02::all(); 
+        }else{
+            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+        }
 
         // Load view untuk PDF
         $pdf = PDF::loadView('admin.monev.k02.pdf', compact('dataK02'));
@@ -783,7 +790,7 @@ class MonevController extends Controller
 
         // Download langsung
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
-        return $pdf->download('k02_skpd_'.$skpd_id.'.pdf');
+        return $pdf->download('k02_skpd_'.auth()->user()->skpd_id.'.pdf');
     }
 
     public function k03()
