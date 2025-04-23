@@ -18,7 +18,7 @@ use App\Models\trx_monev_foto;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\trx_upload;
 use App\Models\K02;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 class MonevController extends Controller
 {
     public function __construct()
@@ -769,11 +769,22 @@ class MonevController extends Controller
             return redirect()->back()->with('admin.monev.k02.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
     } //DONE
+   
+    public function downloadk02($skpd_id)
+    {
+        // Ambil data K02 berdasarkan skpd_id
+        $dataK02 = K02::where('skpd_id', $skpd_id)->get();
 
+        // Load view untuk PDF
+        $pdf = PDF::loadView('admin.monev.k02.pdf', compact('dataK02'));
 
+        // Atur ukuran kertas ke A4 portrait
+        $pdf->setPaper('A4', 'landscape');
 
-
-    
+        // Download langsung
+        return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
+        // return $pdf->download('k02_skpd_'.$skpd_id.'.pdf');
+    }
 
     public function k03()
     {

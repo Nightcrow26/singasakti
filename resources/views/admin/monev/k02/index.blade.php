@@ -64,10 +64,11 @@
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                        <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
-                            data-bs-target="#modal-download" class="btn btn-sm btn-secondary">
+                        <a href="{{ route('admin.monev.k02.download', auth()->user()->skpd_id) }}" 
+                            style="float: right; margin-right:10px;" 
+                            class="btn btn-sm btn-secondary" target="_blank">
                             Download
-                        </button>
+                         </a>
                         {{-- @if (auth()->user()->hasRole('admin'))
                             <a href="{{ route('excel.rutin') }}" style="float: right;margin-right:10px;" type="button"
                                 class="btn btn-sm btn-success">

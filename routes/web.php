@@ -85,6 +85,7 @@ Route::prefix('/admin')->group(function () {
             Route::put('/updatek02', [App\Http\Controllers\MonevController::class, 'updatek02'])->name('admin.monev.k02.update');
             Route::put('/updatek02bawah', [App\Http\Controllers\MonevController::class, 'updatek02bawah'])->name('admin.monev.k02.updatebawah');
             Route::delete('/admin/monev/k02/{id}', [App\Http\Controllers\MonevController::class, 'destroyk02'])->name('admin.monev.k02.destroy');
+            Route::get('/downloadk02/{skpd_id}', [App\Http\Controllers\MonevController::class, 'downloadk02'])->name('admin.monev.k02.download');
         }
         );
         
