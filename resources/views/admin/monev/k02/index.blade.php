@@ -106,6 +106,7 @@
                             <th style="color: white; text-align:center; vertical-align: top;">Ketersediaan dokumen standar K4</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Penerapan SMKK</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Kegiatan antisipasi kecelakaan kerja</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Status</th>
                             
                         </tr>
                         
@@ -113,6 +114,17 @@
                     <tbody>
                        
                         @foreach ($dataK02 as $index => $k02)
+                        @php
+                            $statusAkhir = (
+                                $k02->proses_pemilihan_penyedia_jasa == 'Tertib' &&
+                                $k02->penerapan_standar_kontrak == 'Tertib' &&
+                                $k02->penggunaan_tenaga_kerja_bersertifikat == 'Tertib' &&
+                                $k02->pemberian_pekerjaan_utama_subpenyedia == 'Tertib' &&
+                                $k02->ketersediaan_dokumen_standar_k4 == 'Tertib' &&
+                                $k02->penerapan_smkk == 'Tertib' &&
+                                $k02->kegiatan_antisipasi_kecelakaan_kerja == 'Tertib'
+                            ) ? 'Tertib' : 'Tidak Tertib';
+                        @endphp
                         <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
                                 <button data-bs-toggle="modal" 
@@ -144,13 +156,100 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->kegiatan_konstruksi }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->no_kontrak }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->nm_bujk }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->proses_pemilihan_penyedia_jasa }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penerapan_standar_kontrak }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->ketersediaan_dokumen_standar_k4 }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penerapan_smkk }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->proses_pemilihan_penyedia_jasa == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penerapan_standar_kontrak == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penggunaan_tenaga_kerja_bersertifikat == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->pemberian_pekerjaan_utama_subpenyedia == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->ketersediaan_dokumen_standar_k4 == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penerapan_smkk == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->kegiatan_antisipasi_kecelakaan_kerja == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            <td style="text-align:center;vertical-align: top;">
+                                @if ($statusAkhir == 'Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i> {{ $statusAkhir }}
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i> {{ $statusAkhir }}
+                                    </button>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
 
@@ -180,11 +279,24 @@
                             <th style="color: white; text-align:center; vertical-align: top;">Pemenuhan standar mutu material</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Pemenuhan standar teknis lingkungan</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Pemenuhan standar K3</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Status</th>
                         </tr>
                         
                     </thead>
                     <tbody>
                         @foreach ($dataK02 as $index => $k02)
+                        @php
+                            $statusAkhir2 = (
+                                $k02->penerapan_sistem_manajemen_mutu_konstruksi == 'Tertib' &&
+                                $k02->pemenuhan_peralatan_pelaksanaan_proyek == 'Tertib' &&
+                                $k02->penggunaan_material_standar == 'Tertib' &&
+                                $k02->penggunaan_produk_dalam_negeri == 'Tertib' &&
+                                $k02->pemenuhan_standar_mutu_material == 'Tertib' &&
+                                $k02->pemenuhan_standar_teknis_lingkungan == 'Tertib' &&
+                                $k02->pemenuhan_standar_k3 == 'Tertib'
+                            ) ? 'Tertib' : 'Tidak Tertib';
+                        @endphp
+
                         <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
                                 <button data-bs-toggle="modal" 
@@ -216,13 +328,101 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->kegiatan_konstruksi }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->no_kontrak }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->nm_bujk }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penggunaan_material_standar }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->penggunaan_produk_dalam_negeri }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->pemenuhan_standar_mutu_material }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->pemenuhan_standar_teknis_lingkungan }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->pemenuhan_standar_k3 }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penerapan_sistem_manajemen_mutu_konstruksi == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->pemenuhan_peralatan_pelaksanaan_proyek == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penggunaan_material_standar == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->penggunaan_produk_dalam_negeri == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->pemenuhan_standar_mutu_material == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->pemenuhan_standar_teknis_lingkungan == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k02->pemenuhan_standar_k3 == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            <td style="text-align:center;vertical-align: top;">
+                                @if ($statusAkhir2 == 'Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i> {{ $statusAkhir2 }}
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i> {{ $statusAkhir2 }}
+                                    </button>
+                                @endif
+                            </td>
+                            
                         </tr>
                         @endforeach
                     </tbody>
