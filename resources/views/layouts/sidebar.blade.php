@@ -157,14 +157,14 @@
               <li class="menu-item {{ set_active('admin.monev.k01a.index') }}">
                 <a href="{{ route('admin.monev.k01a.index') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">K.01.A</div>
+                    <div data-i18n="Basic">Rekapitulasi K.01.A</div>
                 </a>
             </li>
 
             <li class="menu-item {{ set_active('admin.monev.k01b.index') }}">
                 <a href="{{ route('admin.monev.k01b.index') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">K.01.B</div>
+                    <div data-i18n="Basic">Rekapitulasi K.01.B</div>
                 </a>
             </li>
             

@@ -94,20 +94,39 @@
                         
                     </thead>
                     <tbody>
-                        <!-- Example Row -->
-                        <tr>
+                        
+                        @foreach ($dataK01a as $index => $k01a)
+                            <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                <button data-bs-toggle="modal" data-bs-target="#modal-edit" class="btn btn-sm btn-flat btn-primary my-2"><i class="bx bx-edit-alt"></i></button>
-                                <button class="btn btn-sm btn-flat btn-danger my-2"><i class="bx bx-trash" ></i></button>
+                                <button data-bs-toggle="modal" data-bs-target="#modal-edit" class="btn btn-sm btn-flat btn-primary my-2" 
+                                        data-id="{{ $k01a->id }}" 
+                                        data-nib="{{ $k01a->nib }}" 
+                                        data-nm_usaha_rantai_pasok="{{ $k01a->nm_usaha_rantai_pasok }}" 
+                                        data-pjbu="{{ $k01a->pjbu }}" 
+                                        data-kepemilikan_dan_keabsahan_perizinan_berusaha="{{ $k01a->kepemilikan_dan_keabsahan_perizinan_berusaha }}" 
+                                        data-penggunaan_material_peralatan_dan_teknologi="{{ $k01a->penggunaan_material_peralatan_dan_teknologi }}" 
+                                        data-pencatatan_dalam_simpk="{{ $k01a->pencatatan_dalam_simpk }}" 
+                                        data-data_dukung="{{ $k01a->data_dukung }}">
+                                        <i class="bx bx-edit-alt"></i>
+                                    </button>
+                                    <form action="{{ route('admin.monev.k01a.destroy', $k01a->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k01a->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-sm btn-flat btn-danger my-2" onclick="deleteData({{ $k01a->id }})">
+                                            <i class="bx bx-trash"></i>
+                                        </button>
+                                    </form>
                             </td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">1</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Paket A</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">12345</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">PT. BUJK Abadi</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tertib</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tertib</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tertib</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $index + 1 }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k01a->nib }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k01a->nm_usaha_rantai_pasok }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{$k01a->pjbu}}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{$k01a->kepemilikan_dan_keabsahan_perizinan_berusaha}}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{$k01a->penggunaan_material_peralatan_dan_teknologi}}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{$k01a->pencatatan_dalam_simpk}}</td>
                         </tr>
+                        @endforeach
+
                     </tbody>
                 
                 </table>
@@ -131,7 +150,7 @@
                     <div class="alert alert-primary" role="alert">
                         REKAPITULASI PENGAWASAN TERTIB USAHA JASA KONSTRUKSI TAHUNAN (USAHA RANTAI PASOK) 
                     </div>
-                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k01a.index') }}"
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k01a.insert') }}"
                         enctype="multipart/form-data">
                         @csrf
                         
@@ -157,7 +176,7 @@
                             <div class="col-md-12 mt-4">
                                 <dt>Kepemilikan  dan Keabsahan  Perizinan  Berusaha </dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="kepemilikan_dan_keabsahan_perizinan_berusaha" name="kepemilikan_dan_keabsahan_perizinan_berusaha">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -168,7 +187,7 @@
                             <div class="col-md-12 mt-4">
                                 <dt>Kepemilikan Keabsahan Penggunaan Material,Peralatan dan Teknologi  </dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="penggunaan_material_peralatan_dan_teknologi" name="penggunaan_material_peralatan_dan_teknologi">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -179,7 +198,7 @@
                             <div class="col-md-12 mt-4">
                                 <dt>Pencatatan Dalam  SIMPK  </dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="pencatatan_dalam_simpk" name="pencatatan_dalam_simpk">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -311,6 +330,72 @@
             $('#range').daterangepicker();
         });
 
+    </script>
+
+    {{-- Data Edit Tabel --}}
+    <script>
+        $('#modal-edit').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Tombol yang diklik
+            var modal = $(this);
+        
+            // Ambil data dari tombol
+            var id = button.data('id') || '';
+            var kegiatan_konstruksi = button.data('kegiatan_konstruksi') || '';
+            var no_kontrak = button.data('no_kontrak') || '';
+            var nm_bujk = button.data('nm_bujk') || '';
+            var proses_pemilihan_penyedia_jasa = button.data('proses_pemilihan_penyedia_jasa') || '';
+            var penerapan_standar_kontrak = button.data('penerapan_standar_kontrak') || '';
+            var penggunaan_tenaga_kerja_bersertifikat = button.data('penggunaan_tenaga_kerja_bersertifikat') || '';
+            var pemberian_pekerjaan_utama_subpenyedia = button.data('pemberian_pekerjaan_utama_subpenyedia') || '';
+            var ketersediaan_dokumen_standar_k4 = button.data('ketersediaan_dokumen_standar_k4') || '';
+            var penerapan_smkk = button.data('penerapan_smkk') || '';
+            var kegiatan_antisipasi_kecelakaan_kerja = button.data('kegiatan_antisipasi_kecelakaan_kerja') || '';
+            var file_pdf = button.data('data_dukung') ? '/uploads/data_dukung/' + button.data('data_dukung') : '';
+
+        
+            // Masukkan data ke dalam form modal
+            modal.find('input[name="kegiatan_konstruksi"]').val(kegiatan_konstruksi);
+            modal.find('input[name="no_kontrak"]').val(no_kontrak);
+            modal.find('input[name="nm_bujk"]').val(nm_bujk);
+            modal.find('select[name="proses_pemilihan_penyedia_jasa"]').val(proses_pemilihan_penyedia_jasa);
+            modal.find('select[name="penerapan_standar_kontrak"]').val(penerapan_standar_kontrak);
+            modal.find('select[name="penggunaan_tenaga_kerja_bersertifikat"]').val(penggunaan_tenaga_kerja_bersertifikat);
+            modal.find('select[name="pemberian_pekerjaan_utama_subpenyedia"]').val(pemberian_pekerjaan_utama_subpenyedia);
+            modal.find('select[name="ketersediaan_dokumen_standar_k4"]').val(ketersediaan_dokumen_standar_k4);
+            modal.find('select[name="penerapan_smkk"]').val(penerapan_smkk);
+            modal.find('select[name="kegiatan_antisipasi_kecelakaan_kerja"]').val(kegiatan_antisipasi_kecelakaan_kerja);
+            modal.find('input[name="id"]').val(id); // hidden input
+        
+            // Tampilkan file PDF kalau ada
+            if(file_pdf !== ''){
+                $('#pdf-frame').attr('src', file_pdf);
+                $('#pdf-preview').show();
+            } else {
+                $('#pdf-frame').attr('src', '');
+                $('#pdf-preview').hide();
+            }
+        });
+    </script>
+
+    <script>
+        function deleteData(id) {
+            // Menggunakan SweetAlert untuk konfirmasi
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data ini akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna mengonfirmasi, kirimkan form
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            })
+        }
     </script>
      
     {{-- <script src="{{ asset('js/master/skpd/main.js') }}"></script> --}}
