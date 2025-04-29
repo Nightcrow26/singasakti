@@ -59,23 +59,150 @@
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
-                        REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN 
+                        PENGAWASAN PENYELENGARAAN JASA KONSTRUKSI 
                         @if (auth()->user()->hasRole('admin'))
-                        <a href="{{ route('admin.monev.k02.download') }}" 
-                            style="float: right; margin-right:10px;" 
-                            class="btn btn-sm btn-secondary" target="_blank">
-                            Download
-                         </a>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <button id="btnGroupDrop1" type="button"
+                                class="btn btn-sm btn-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download (K.02)
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'APBD', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'k02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                APBD
+                                </a>
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'MASYARAKAT', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'k02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                MASYARAKAT
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'SWASTA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'k02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                SWASTA
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'BADAN USAHA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'k02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                BADAN USAHA
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <button id="btnGroupDrop1" type="button"
+                                class="btn btn-sm btn-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download (P.02)
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'APBD', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'p02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                APBD
+                                </a>
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'MASYARAKAT', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'p02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                MASYARAKAT
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'SWASTA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'p02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                SWASTA
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'BADAN USAHA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'p02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                BADAN USAHA
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <button id="btnGroupDrop1" type="button"
+                                class="btn btn-sm btn-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download (RK.02)
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'APBD', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'rk02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                APBD
+                                </a>
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'MASYARAKAT', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'rk02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                MASYARAKAT
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'SWASTA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'rk02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                SWASTA
+                                </a>
+
+                                <a class="dropdown-item"
+                                href="{{ route('admin.monev.k02.download', ['anggaran' => 'BADAN USAHA', 'skpd_id' => $selectedSkpdId ?? 'all','status'=>'rk02']) }}"
+                                style="float: right; margin-right:10px;"
+                                target="_blank">
+                                BADAN USAHA
+                                </a>
+
+                            </div>
+                        </div>
                         @else 
                         <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                        <a href="{{ route('admin.monev.k02.download') }}" 
-                            style="float: right; margin-right:10px;" 
-                            class="btn btn-sm btn-secondary" target="_blank">
-                            Download
-                         </a>
+                         <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <button id="btnGroupDrop1" type="button"
+                                class="btn btn-sm btn-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download (K.02)
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                <a  class="dropdown-item" href="{{ route('admin.monev.k02.download', ['anggaran' => 'APBD', 'status'=>'k02']) }}" 
+                                    style="float: right; margin-right:10px;" 
+                                    class="btn btn-sm btn-secondary" target="_blank">
+                                    APBD
+                                </a>
+                                <a  class="dropdown-item" href="{{ route('admin.monev.k02.download',['anggaran' => 'MASYARAKAT', 'status'=>'k02']) }}" 
+                                    style="float: right; margin-right:10px;" 
+                                    class="btn btn-sm btn-secondary" target="_blank">
+                                    MASYARAKAT
+                                </a>
+                                <a  class="dropdown-item" href="{{ route('admin.monev.k02.download',['anggaran' => 'SWASTA', 'status'=>'k02']) }}" 
+                                    style="float: right; margin-right:10px;" 
+                                    class="btn btn-sm btn-secondary" target="_blank">
+                                    SWASTA
+                                </a>
+                                <a  class="dropdown-item" href="{{ route('admin.monev.k02.download',['anggaran' => 'BADAN USAHA', 'status'=>'k02']) }}" 
+                                    style="float: right; margin-right:10px;" 
+                                    class="btn btn-sm btn-secondary" target="_blank">
+                                    BADAN USAHA
+                                </a>
+                            </div>
+                        </div>
                         @endif
                         
                         {{-- @if (auth()->user()->hasRole('admin'))
@@ -89,7 +216,18 @@
             </div>
         </div>
         <div class="card-body ">
-         
+            @if (auth()->user()->hasRole('admin'))
+                <label for="skpdFilter">Filter SOPD:</label>
+                <select id="skpdFilter" class="form-control select2" onchange="filterBySkpd(this.value)">
+                    <option value="">Pilih SOPD</option>
+                    @foreach ($skpd as $skpd2)
+                        <option value="{{ $skpd2->id }}" {{ $selectedSkpdId == $skpd2->id ? 'selected' : '' }}>
+                            {{ $skpd2->nama }}
+                        </option>
+                    @endforeach
+                </select>
+                <br>
+            @endif
             <div class="table-responsive">
                 <table class="table  table-striped" id="table">
                     <thead class="bg bg-primary">
@@ -127,30 +265,40 @@
                         @endphp
                         <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                <button data-bs-toggle="modal" 
-                                        data-bs-target="#modal-edit" 
-                                        class="btn btn-sm btn-flat btn-primary my-2"
-                                        data-id="{{ $k02->id }}"
-                                        data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
-                                        data-no_kontrak="{{ $k02->no_kontrak }}"
-                                        data-nm_bujk="{{ $k02->nm_bujk }}"
-                                        data-proses_pemilihan_penyedia_jasa="{{ $k02->proses_pemilihan_penyedia_jasa }}"
-                                        data-penerapan_standar_kontrak="{{ $k02->penerapan_standar_kontrak }}"
-                                        data-penggunaan_tenaga_kerja_bersertifikat="{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}"
-                                        data-pemberian_pekerjaan_utama_subpenyedia="{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}"
-                                        data-ketersediaan_dokumen_standar_k4="{{ $k02->ketersediaan_dokumen_standar_k4 }}"
-                                        data-penerapan_smkk="{{ $k02->penerapan_smkk }}"
-                                        data-kegiatan_antisipasi_kecelakaan_kerja="{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}"
-                                        data-data_dukung="{{ $k02->data_dukung }}">
-                                    <i class="bx bx-edit-alt"></i>
-                                </button>
-                                <form action="{{ route('admin.monev.k02.destroy', $k02->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k02->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-sm btn-flat btn-danger my-2" onclick="deleteData({{ $k02->id }})">
-                                        <i class="bx bx-trash"></i>
+                               
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button"
+                                        class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="menu-icon tf-icons bx bx-cog"></i>
                                     </button>
-                                </form>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                        <button class="dropdown-item" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-edit" 
+                                                data-id="{{ $k02->id }}"
+                                                data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
+                                                data-no_kontrak="{{ $k02->no_kontrak }}"
+                                                data-nm_bujk="{{ $k02->nm_bujk }}"
+                                                data-proses_pemilihan_penyedia_jasa="{{ $k02->proses_pemilihan_penyedia_jasa }}"
+                                                data-penerapan_standar_kontrak="{{ $k02->penerapan_standar_kontrak }}"
+                                                data-penggunaan_tenaga_kerja_bersertifikat="{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}"
+                                                data-pemberian_pekerjaan_utama_subpenyedia="{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}"
+                                                data-ketersediaan_dokumen_standar_k4="{{ $k02->ketersediaan_dokumen_standar_k4 }}"
+                                                data-penerapan_smkk="{{ $k02->penerapan_smkk }}"
+                                                data-kegiatan_antisipasi_kecelakaan_kerja="{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}"
+                                                data-data_dukung="{{ $k02->data_dukung }}">
+                                            <i class="bx bx-edit-alt"> Edit</i>
+                                        </button>
+                            
+                                        <form action="{{ route('admin.monev.k02.destroy', $k02->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k02->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="dropdown-item" onclick="deleteData({{ $k02->id }})">
+                                                <i class="bx bx-trash"> Hapus</i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $index + 1 }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->kegiatan_konstruksi }}</td>
@@ -299,30 +447,40 @@
 
                         <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                <button data-bs-toggle="modal" 
-                                        data-bs-target="#modal-edit2" 
-                                        class="btn btn-sm btn-flat btn-primary my-2"
-                                        data-id="{{ $k02->id }}"
-                                        data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
-                                        data-no_kontrak="{{ $k02->no_kontrak }}"
-                                        data-nm_bujk="{{ $k02->nm_bujk }}"
-                                        data-penerapan_sistem_manajemen_mutu_konstruksi="{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}"
-                                        data-pemenuhan_peralatan_pelaksanaan_proyek="{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}"
-                                        data-penggunaan_material_standar="{{ $k02->penggunaan_material_standar }}"
-                                        data-penggunaan_produk_dalam_negeri="{{ $k02->penggunaan_produk_dalam_negeri }}"
-                                        data-pemenuhan_standar_mutu_material="{{ $k02->pemenuhan_standar_mutu_material }}"
-                                        data-pemenuhan_standar_teknis_lingkungan="{{ $k02->pemenuhan_standar_teknis_lingkungan }}"
-                                        data-pemenuhan_standar_k3="{{ $k02->pemenuhan_standar_k3 }}"
-                                        data-data_dukung="{{ $k02->data_dukung }}">
-                                    <i class="bx bx-edit-alt"></i>
-                                </button>
-                                <form action="{{ route('admin.monev.k02.destroy', $k02->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k02->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-sm btn-flat btn-danger my-2" onclick="deleteData({{ $k02->id }})">
-                                        <i class="bx bx-trash"></i>
+                               
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button"
+                                        class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="menu-icon tf-icons bx bx-cog"></i>
                                     </button>
-                                </form>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                        
+                                        <button class="dropdown-item" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-edit2" 
+                                                data-id="{{ $k02->id }}"
+                                                data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
+                                                data-no_kontrak="{{ $k02->no_kontrak }}"
+                                                data-nm_bujk="{{ $k02->nm_bujk }}"
+                                                data-penerapan_sistem_manajemen_mutu_konstruksi="{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}"
+                                                data-pemenuhan_peralatan_pelaksanaan_proyek="{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}"
+                                                data-penggunaan_material_standar="{{ $k02->penggunaan_material_standar }}"
+                                                data-penggunaan_produk_dalam_negeri="{{ $k02->penggunaan_produk_dalam_negeri }}"
+                                                data-pemenuhan_standar_mutu_material="{{ $k02->pemenuhan_standar_mutu_material }}"
+                                                data-pemenuhan_standar_teknis_lingkungan="{{ $k02->pemenuhan_standar_teknis_lingkungan }}"
+                                                data-pemenuhan_standar_k3="{{ $k02->pemenuhan_standar_k3 }}"
+                                                data-data_dukung="{{ $k02->data_dukung }}">
+                                            <i class="bx bx-edit-alt"> Edit</i>
+                                        </button>
+                                        <form action="{{ route('admin.monev.k02.destroy', $k02->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k02->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="dropdown-item" onclick="deleteData({{ $k02->id }})">
+                                                <i class="bx bx-trash"> Hapus</i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $index + 1 }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->kegiatan_konstruksi }}</td>
@@ -898,9 +1056,19 @@
             $('#range2').daterangepicker();
         });
 
-      
     </script>
-     
+     {{-- filter SKPD --}}
+     <script>
+        function filterBySkpd(skpdId) {
+            // Redirect ke URL yang sesuai, misal dengan query string
+            let url = "{{ url()->current() }}"; // tetap di halaman ini
+            if (skpdId) {
+                window.location.href = url + '?skpd_id=' + skpdId;
+            } else {
+                window.location.href = url; // kembali tanpa filter
+            }
+        }
+    </script>
     {{-- Data Edit Tabel Atas --}}
     <script>
         $('#modal-edit').on('show.bs.modal', function (event) {
