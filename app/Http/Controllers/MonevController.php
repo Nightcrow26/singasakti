@@ -18,6 +18,7 @@ use App\Models\trx_monev_foto;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\trx_upload;
 use App\Models\K02;
+use App\Models\Skpd;
 use Barryvdh\DomPDF\Facade\Pdf;
 class MonevController extends Controller
 {
@@ -559,16 +560,23 @@ class MonevController extends Controller
         return view('admin.monev.table.index', $data);
     }
 
-    public function k02()
-    {
+    public function k02(Request $request)
+    {   
+        
+        $selectedSkpdId = $request->input('skpd_id') ?? '';
+        $skpd = Skpd::all();
         // Mengambil semua data K02
         if (auth()->user()->hasRole('admin')){
-            $dataK02 = K02::all(); 
+            if($selectedSkpdId !=''){
+                $dataK02 = K02::where('skpd_id', $selectedSkpdId)->get();
+            }else{
+                $dataK02 = K02::all(); 
+            }
         }else{
             $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
         }
         // Kirim data ke view
-        return view('admin.monev.k02.index', compact('dataK02'));
+        return view('admin.monev.k02.index', compact('dataK02','skpd','selectedSkpdId'));
     }
     public function insertDatak02(Request $request)
     {
@@ -772,18 +780,25 @@ class MonevController extends Controller
             return redirect()->back()->with('admin.monev.k02.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
     } //DONE
-    public function downloadk02()
+    public function downloadk02($anggaran, Request $request)
     {
-        // Ambil data K02 berdasarkan skpd_id
-        // Mengambil semua data K02
+        
+
         if (auth()->user()->hasRole('admin')){
-            $dataK02 = K02::all(); 
+            $skpdId = $request->query('skpd_id', 'all');
+            if ($skpdId == 'all'){
+                $dataK02 = K02::all(); 
+            }else{
+                $dataK02 = K02::where('skpd_id', $skpdId)->get(); 
+            }
+            
         }else{
             $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
         }
-
+        $anggaran = $anggaran;
+        $status = $request->query('status');
         // Load view untuk PDF
-        $pdf = PDF::loadView('admin.monev.k02.pdf', compact('dataK02'));
+        $pdf = PDF::loadView('admin.monev.k02.pdf', compact('dataK02','anggaran','status'));
 
         // Atur ukuran kertas ke A4 portrait
         $pdf->setPaper('A4', 'landscape');
