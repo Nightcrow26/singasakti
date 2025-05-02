@@ -17,7 +17,9 @@ use App\Services\MonevService;
 use App\Models\trx_monev_foto;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\trx_upload;
-<<<<<<< Updated upstream
+use App\Models\K02;
+use App\Models\Skpd;
+use Barryvdh\DomPDF\Facade\Pdf;<<<<<<< Updated upstream
 
 =======
 use App\Models\K02;
@@ -565,13 +567,252 @@ class MonevController extends Controller
         return view('admin.monev.table.index', $data);
     }
 
-    public function k02()
+    public function k02(Request $request)
+    {   
+        
+        $selectedSkpdId = $request->input('skpd_id') ?? '';
+        $skpd = Skpd::all();
+        // Mengambil semua data K02
+        if (auth()->user()->hasRole('admin')){
+            if($selectedSkpdId !=''){
+                $dataK02 = K02::where('skpd_id', $selectedSkpdId)->get();
+            }else{
+                $dataK02 = K02::all(); 
+            }
+        }else{
+            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+        }
+        // Kirim data ke view
+        return view('admin.monev.k02.index', compact('dataK02','skpd','selectedSkpdId'));
+    }
+    public function insertDatak02(Request $request)
     {
-        // $data['urusan'] = $this->service->getDataUrusan();
-        // $data['skpd'] = $this->service->getDataSkpd();
+        // Validasi data dulu
+        $data = $request->validate([
+            'skpd_id' => 'required|integer',
+            'kegiatan_konstruksi' => 'required|string|max:255',
+            'no_kontrak' => 'required|string|max:255',
+            'nm_bujk' => 'required|string|max:255',
+            'proses_pemilihan_penyedia_jasa' => 'required|string',
+            'penerapan_standar_kontrak' => 'required|string',
+            'penggunaan_tenaga_kerja_bersertifikat' => 'required|string',
+            'pemberian_pekerjaan_utama_subpenyedia' => 'required|string',
+            'ketersediaan_dokumen_standar_k4' => 'required|string',
+            'penerapan_smkk' => 'required|string',
+            'kegiatan_antisipasi_kecelakaan_kerja' => 'required|string',
+            'penerapan_sistem_manajemen_mutu_konstruksi' => 'required|string',
+            'pemenuhan_peralatan_pelaksanaan_proyek' => 'required|string',
+            'penggunaan_material_standar' => 'required|string',
+            'penggunaan_produk_dalam_negeri' => 'required|string',
+            'pemenuhan_standar_mutu_material' => 'required|string',
+            'pemenuhan_standar_teknis_lingkungan' => 'required|string',
+            'pemenuhan_standar_k3' => 'required|string',
+            'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
+        ]);
+        // Mulai transaksi
+        DB::beginTransaction();
 
-        // dd($data['data']);
-        return view('admin.monev.k02.index');
+        try {
+            // Upload file dulu
+            if ($request->hasFile('data_dukung')) {
+                $file = $request->file('data_dukung');
+            
+                // Bikin nama file unik
+                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            
+                // Pindahkan file ke folder public/uploads/data_dukung
+                $file->move(public_path('uploads/data_dukung'), $namaFile);
+            
+                // Simpan path untuk ke database (tanpa "public/")
+                $data['data_dukung'] = $namaFile;
+            } else {
+                $data['data_dukung'] = null;
+            }
+            
+
+            // Insert ke database
+            $k02 = K02::create($data);
+            // Commit transaksi jika sukses
+            DB::commit();
+            
+            return redirect()->back()->with('success', 'Data berhasil disimpan!');
+
+        } catch (\Exception $e) {
+            // Rollback transaksi jika ada error
+            DB::rollBack();
+            // Kalau ada error apapun
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    } //DONE
+    public function updatek02(Request $request)
+    {
+        try {
+            // Validasi form
+            $data = $request->validate([
+                'id' => 'required|integer',
+                'kegiatan_konstruksi' => 'required|string|max:255',
+                'no_kontrak' => 'required|string|max:255',
+                'nm_bujk' => 'required|string|max:255',
+                'proses_pemilihan_penyedia_jasa' => 'required|string',
+                'penerapan_standar_kontrak' => 'required|string',
+                'penggunaan_tenaga_kerja_bersertifikat' => 'required|string',
+                'pemberian_pekerjaan_utama_subpenyedia' => 'required|string',
+                'ketersediaan_dokumen_standar_k4' => 'required|string',
+                'penerapan_smkk' => 'required|string',
+                'kegiatan_antisipasi_kecelakaan_kerja' => 'required|string',
+                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // Max 5MB
+            ]);
+
+            DB::beginTransaction(); // Mulai transaksi database
+
+            // Cari data lama berdasarkan ID
+            $item = K02::findOrFail($request->input('id'));
+
+            // Jika ada file baru di-upload
+            if ($request->hasFile('data_dukung')) {
+                // Hapus file lama jika ada
+                if ($item->data_dukung) {
+                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
+                    if (file_exists($oldFilePath)) {
+                        unlink($oldFilePath);
+                    }
+                }
+
+                // Simpan file baru
+                $file = $request->file('data_dukung');
+                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/data_dukung'), $namaFile);
+
+                $data['data_dukung'] = $namaFile;
+            } else {
+                // Kalau tidak upload file baru, jangan timpa file lama
+                unset($data['data_dukung']);
+            }
+
+            // Update data ke database
+            $item->update($data);
+
+            DB::commit(); // Simpan transaksi
+
+            // Redirect dengan pesan sukses
+            return redirect()->back()->with('success', 'Data berhasil diperbarui');
+
+        } catch (\Exception $e) {
+            DB::rollBack(); // Gagal, rollback transaksi
+            // Redirect dengan pesan error
+            return redirect()->back()->with('error', 'Gagal memperbarui data.'. $e->getMessage());
+        }
+    } //DONE
+    public function updatek02bawah(Request $request)
+    {
+        try {
+            // Validasi form
+            $data = $request->validate([
+                'id' => 'required|integer',
+                'kegiatan_konstruksi' => 'required|string|max:255',
+                'no_kontrak' => 'required|string|max:255',
+                'nm_bujk' => 'required|string|max:255',	
+                'penerapan_sistem_manajemen_mutu_konstruksi' => 'required|string',
+                'pemenuhan_peralatan_pelaksanaan_proyek' => 'required|string',
+                'penggunaan_material_standar' => 'required|string',
+                'penggunaan_produk_dalam_negeri' => 'required|string',
+                'pemenuhan_standar_mutu_material' => 'required|string',
+                'pemenuhan_standar_teknis_lingkungan' => 'required|string',
+                'pemenuhan_standar_k3' => 'required|string',
+                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // Max 5MB
+            ]);
+
+            DB::beginTransaction(); // Mulai transaksi database
+
+            // Cari data lama berdasarkan ID
+            $item = K02::findOrFail($request->input('id'));
+
+            // Jika ada file baru di-upload
+            if ($request->hasFile('data_dukung')) {
+                // Hapus file lama jika ada
+                if ($item->data_dukung) {
+                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
+                    if (file_exists($oldFilePath)) {
+                        unlink($oldFilePath);
+                    }
+                }
+
+                // Simpan file baru
+                $file = $request->file('data_dukung');
+                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/data_dukung'), $namaFile);
+
+                $data['data_dukung'] = $namaFile;
+            } else {
+                // Kalau tidak upload file baru, jangan timpa file lama
+                unset($data['data_dukung']);
+            }
+
+            // Update data ke database
+            $item->update($data);
+
+            DB::commit(); // Simpan transaksi
+
+            // Redirect dengan pesan sukses
+            return redirect()->back()->with('success', 'Data berhasil diperbarui');
+
+        } catch (\Exception $e) {
+            DB::rollBack(); // Gagal, rollback transaksi
+            // Redirect dengan pesan error
+            return redirect()->back()->with('error', 'Gagal memperbarui data.'. $e->getMessage());
+        }
+    } //DONE
+    public function destroyk02($id)
+    {
+        try {
+            $k02 = K02::findOrFail($id); // Mencari data berdasarkan ID
+
+            // Cek apakah ada file yang terhubung dengan data ini
+            if ($k02->data_dukung) {
+                $filePath = public_path('uploads/data_dukung/' . $k02->data_dukung);
+                
+                // Jika file ada, hapus file tersebut
+                if (file_exists($filePath)) {
+                    unlink($filePath); // Menghapus file
+                }
+            }
+
+            // Hapus data jika ditemukan
+            $k02->delete();
+
+            // Redirect dengan pesan sukses
+            return redirect()->back()->with('admin.monev.k02.index')->with('success', 'Data berhasil dihapus!');
+        } catch (\Exception $e) {
+            // Jika terjadi kesalahan
+            return redirect()->back()->with('admin.monev.k02.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+        }
+    } //DONE
+    public function downloadk02($anggaran, Request $request)
+    {
+        
+
+        if (auth()->user()->hasRole('admin')){
+            $skpdId = $request->query('skpd_id', 'all');
+            if ($skpdId == 'all'){
+                $dataK02 = K02::all(); 
+            }else{
+                $dataK02 = K02::where('skpd_id', $skpdId)->get(); 
+            }
+            
+        }else{
+            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+        }
+        $anggaran = $anggaran;
+        $status = $request->query('status');
+        // Load view untuk PDF
+        $pdf = PDF::loadView('admin.monev.k02.pdf', compact('dataK02','anggaran','status'));
+
+        // Atur ukuran kertas ke A4 portrait
+        $pdf->setPaper('A4', 'landscape');
+
+        // Download langsung
+        // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
+        return $pdf->download('k02_skpd_'.auth()->user()->skpd_id.'.pdf');
     }
 
     public function k03()

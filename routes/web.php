@@ -69,8 +69,23 @@ Route::prefix('/admin')->group(function () {
         }
         );
 
+
+
+        //Rekapitulasi
+        Route::prefix('/k01a')->group(function () {
+            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01a'])->name('admin.monev.k01a.index');
+        }
+        );
+        Route::prefix('/k01b')->group(function () {
+            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01b'])->name('admin.monev.k01b.index');
+        });
         Route::prefix('/k02')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
+            Route::post('/insertDatak02', [App\Http\Controllers\MonevController::class , 'insertDatak02'])->name('admin.monev.k02.insert');
+            Route::put('/updatek02', [App\Http\Controllers\MonevController::class, 'updatek02'])->name('admin.monev.k02.update');
+            Route::put('/updatek02bawah', [App\Http\Controllers\MonevController::class, 'updatek02bawah'])->name('admin.monev.k02.updatebawah');
+            Route::delete('/admin/monev/k02/{id}', [App\Http\Controllers\MonevController::class, 'destroyk02'])->name('admin.monev.k02.destroy');
+            Route::get('/downloadk02/{anggaran}', [App\Http\Controllers\MonevController::class, 'downloadk02'])->name('admin.monev.k02.download');
         }
         );
         
