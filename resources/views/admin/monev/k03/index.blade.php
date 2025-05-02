@@ -30,20 +30,54 @@
 @endsection
 
 @section('content')
+<!-- Pastikan sudah include SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Ini untuk SweetAlert dari session -->
+@if (session('success'))
+    <script>
+        Swal.fire({
+            title: 'Sukses!',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+@endif
+@if (session('error'))
+    <script>
+        Swal.fire({
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+            icon: 'error',
+            confirmButtonText: 'Coba Lagi'
+        });
+    </script>
+@endif
     <div class="card">
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
                         REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN
+                        @if (auth()->user()->hasRole('admin'))
+                        <a href="{{ route('admin.monev.k03.download') }}" 
+                            style="float: right; margin-right:10px;" 
+                            class="btn btn-sm btn-secondary" target="_blank">
+                            Download
+                         </a>
+                        @else 
                         <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                        <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
-                            data-bs-target="#modal-download" class="btn btn-sm btn-secondary">
+                        <a href="{{ route('admin.monev.k03.download') }}" 
+                            style="float: right; margin-right:10px;" 
+                            class="btn btn-sm btn-secondary" target="_blank">
                             Download
-                        </button>
+                         </a>
+                        @endif
+
                         {{-- @if (auth()->user()->hasRole('admin'))
                             <a href="{{ route('excel.rutin') }}" style="float: right;margin-right:10px;" type="button"
                                 class="btn btn-sm btn-success">
@@ -55,28 +89,7 @@
             </div>
         </div>
         <div class="card-body ">
-            @if (auth()->user()->hasRole('admin'))
-                <div>
-                    <form action="{{ route('admin.monev.pengawasan.index') }}" method="GET">
-                        <select name="skpd_id" class="form-control select2 my-3" onchange="this.form.submit()">
-                            <option value="">Pilih SOPD</option>
-                            @foreach ($skpd as $skpdItem)
-                                <option value="{{ $skpdItem->id }}"
-                                    {{ $selectedSkpdId == $skpdItem->id ? 'selected' : '' }}>
-                                    {{ $skpdItem->nama }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </form>
-                    {{-- <label for="skpdFilter">Filter SOPD:</label>
-                    <select id="skpdFilter" class="form-control select2 my-3">
-                        <option value="">Pilih SOPD</option>
-                        @foreach ($skpd2 as $skpd2)
-                            <option value="{{ $skpd2->id }}">{{ $skpd2->nama }}</option>
-                        @endforeach
-                    </select> --}}
-                </div>
-            @endif
+            
             <div class="table-responsive">
                 <table class="table  table-striped" id="table">
                     <thead class="bg bg-primary">
@@ -89,33 +102,150 @@
                             <th style="color: white; text-align:center; vertical-align: top;">Tanggal dan Tahun Pembangunan</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Tanggal dan Tahun Pemamfaatan</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Umur Konstruksi</th>
-                            <th style="color: white; text-align:center; vertical-align: top;">Fungsi Peruntukkannya</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Kesesuaian Fungsi</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Kesesuaian Lokasi</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Rencana Umur Konstruksi</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Kapasitas dan Beban</th>
-                            <th style="color: white; text-align:center; vertical-align: top;">Pemeliharaan Produk Konstruksi</th>
-                            
+                            <th style="color: white; text-align:center; vertical-align: top;">Pemeliharaan Bangunan</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Program Pemeliharaan</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Status</th>
                         </tr>
                         
                     </thead>
                     <tbody>
+                        @foreach ($dataK03 as $index => $k03)
+                        @php
+                            $statusAkhir = (
+                                $k03->kesesuaian_fungsi == 'Tertib' &&
+                                $k03->kesesuaian_lokasi == 'Tertib' &&
+                                $k03->rencana_umur == 'Tertib' &&
+                                $k03->kapasitas_beban == 'Tertib' &&
+                                $k03->pemeliharaan_bangunan == 'Tertib' &&
+                                $k03->program_pemeliharaan == 'Tertib'
+                            ) ? 'Tertib' : 'Tidak Tertib';
+                        @endphp
                         <!-- Example Row -->
                         <tr>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                <button data-bs-toggle="modal" data-bs-target="#modal-edit" class="btn btn-sm btn-flat btn-primary my-2"><i class="bx bx-edit-alt"></i></button>
-                                <button class="btn btn-sm btn-flat btn-danger my-2"><i class="bx bx-trash" ></i></button>
+                            <button data-bs-toggle="modal" 
+                                data-bs-target="#modal-edit" 
+                                class="btn btn-sm btn-flat btn-primary my-2"
+                                data-id="{{ $k03->id }}"
+                                data-nama_bangunan="{{ $k03->nama_bangunan }}"
+                                data-no_kontrak="{{ $k03->no_kontrak }}"
+                                data-lokasi="{{ $k03->lokasi }}"
+                                data-tgl_thn_pembangunan="{{ $k03->tgl_thn_pembangunan }}"
+                                data-tgl_thn_pemanfaatan="{{ $k03->tgl_thn_pemanfaatan }}"
+                                data-umur_konstruksi="{{ $k03->umur_konstruksi }}"
+                                data-kesesuaian_fungsi="{{ $k03->kesesuaian_fungsi }}"
+                                data-kesesuaian_lokasi="{{ $k03->kesesuaian_lokasi }}"
+                                data-rencana_umur="{{ $k03->rencana_umur }}"
+                                data-kapasitas_beban="{{ $k03->kapasitas_beban }}"
+                                data-pemeliharaan_bangunan="{{ $k03->pemeliharaan_bangunan }}"
+                                data-program_pemeliharaan="{{ $k03->program_pemeliharaan }}"
+                                data-data_dukung="{{ $k03->data_dukung }}">
+                                <i class="bx bx-edit-alt"></i>
+                            </button>
+
+                                <form action="{{ route('admin.monev.k03.destroy', $k03->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k03->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" class="btn btn-sm btn-flat btn-danger my-2" onclick="deleteData({{ $k03->id }})">
+                                        <i class="bx bx-trash"></i>
+                                    </button>
+                                </form>
                             </td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">1</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Paket A</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">12345</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Banjarmasin</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">24 April 2024</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">24 April 2024</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">1 Tahun</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tertib</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tidak Tertib</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tidak Tertib</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">Tertib</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $index + 1 }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->nama_bangunan }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->no_kontrak }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->lokasi }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->tgl_thn_pembangunan }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->tgl_thn_pemanfaatan }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->umur_konstruksi }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->kesesuaian_fungsi == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->kesesuaian_lokasi == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->rencana_umur == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->kapasitas_beban == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->pemeliharaan_bangunan == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                                @if ($k03->program_pemeliharaan == 'Tidak Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i>
+                                    </button>
+                                @endif
+                            </td>
+                            <td style="text-align:center;vertical-align: top;">
+                                @if ($statusAkhir == 'Tertib')
+                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                        <i class='bx bx-check'></i> {{ $statusAkhir }}
+                                    </button>
+                                @else
+                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                        <i class='bx bx-x'></i> {{ $statusAkhir }}
+                                    </button>
+                                @endif
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 
                 </table>
@@ -131,7 +261,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tambah</h5>
-                    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
@@ -139,41 +268,43 @@
                     <div class="alert alert-primary" role="alert">
                         REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN 
                     </div>
-                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k02.index') }}"
-                        enctype="multipart/form-data">
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k03.insert') }}" enctype="multipart/form-data">
                         @csrf
                         
                         <div>
-                            <input type="hidden" id="skpd_id_foto" name="skpd_id"
-                                value="{{ auth()->user()->skpd_id }}">
-                            <input type="hidden" id="tahun" name="tahun" value="{{ auth()->user()->tahun }}">
+                            <input type="hidden" id="skpd_id_foto" name="skpd_id"value="{{ auth()->user()->skpd_id }}">
+                            
                             <div class="col-md-12 mt-4">
                                 <small class="text-light fw-semibold">Upload :</small>
                             </div>
                             <div class="col-md-12 mt-4">
                                 <dt>Nama Bangunan Konstruksi</dt>
-                                <dd><input type="text" class="form-control" id="kegiatan_konstruksi" name="kegiatan_konstruksi" placeholder="Kegiatan Konstruksi (Nama Paket)"></dd>
+                                <dd><input type="text" class="form-control" id="nama_bangunan" name="nama_bangunan" placeholder="Nama Bangunan"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
                                 <dt>Nomor Kontrak (Pembangunan)</dt>
-                                <dd><input type="text" class="form-control" id="no_kontrak" name="no_kontrak" placeholder="Nomer Kontrak"></dd>
+                                <dd><input type="text" class="form-control" id="no_kontrak" name="no_kontrak" placeholder="Nomor Kontrak (Pembangunan)"></dd>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Lokasi</dt>
+                                <dd><input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
                                 <dt>Tanggal dan Tahun Pembangunan</dt>
-                                <dd><input type="text" class="form-control" id="nm_bujk" name="nm_bujk" placeholder="Nama BUJK"></dd>
+                                <dd><input type="date" class="form-control" id="tgl_thn_pembangunan" name="tgl_thn_pembangunan" placeholder="Tanggal dan Tahun Pembangunan"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
                                 <dt>Tanggal dan Tahun Pemanfaatan</dt>
-                                <dd><input type="text" class="form-control" id="proses_pemilihan_penyedia_jasa" name="proses_pemilihan_penyedia_jasa" placeholder="Proses pemilihan Penyedia Jasa"></dd>
+                                <dd><input type="date" class="form-control" id="tgl_thn_pemanfaatan" name="tgl_thn_pemanfaatan" placeholder="Tanggal dan Tahun Pemanfaatan"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
                                 <dt>Umur Konstruksi</dt>
-                                <dd><input type="text" class="form-control" id="proses_pemilihan_penyedia_jasa" name="proses_pemilihan_penyedia_jasa" placeholder="Proses pemilihan Penyedia Jasa"></dd>
+                                <dd><input type="text" class="form-control" id="umur_konstruksi" name="umur_konstruksi" placeholder="Umur Konstruksi"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Fungsi Peruntukkannya</dt>
+                                <dt>Kesesuaian Fungsi</dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="kesesuaian_fungsi" name="kesesuaian_fungsi">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -181,10 +312,23 @@
 
                                 </dd>
                             </div>
+
+                            <div class="col-md-12 mt-4">
+                                <dt>Kesesuaian Lokasi</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="kesesuaian_lokasi" name="kesesuaian_lokasi">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
+                            </div>
+
                             <div class="col-md-12 mt-4">
                                 <dt>Rencana Umur Konstruksi</dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="rencana_umur" name="rencana_umur">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -195,7 +339,7 @@
                             <div class="col-md-12 mt-4">
                                 <dt>Kapasitas dan Beban</dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="kapasitas_beban" name="kapasitas_beban">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -204,9 +348,9 @@
                                 </dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Pemeliharaan Produk Konstruksi</dt>
+                                <dt>Pemeliharaan Bangunan</dt>
                                 <dd>
-                                    <select type="text" class="form-control" id="" name="">
+                                    <select type="text" class="form-control" id="pemeliharaan_bangunan" name="pemeliharaan_bangunan">
                                         <option value="">- Pilih</option>
                                         <option value="Tertib">Tertib</option>
                                         <option value="Tidak Tertib">Tidak Tertib</option>
@@ -215,130 +359,150 @@
                                 </dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Upload Data Dukung</dt>
-                                <dd><input type="file" class="form-control" id="data_dukung" name="data_dukung" placeholder="Upload Data Dukung"></dd>
+                                <dt>Program Pemeliharaan</dt>
+                                <dd>
+                                    <select type="text" class="form-control" id="program_pemeliharaan" name="program_pemeliharaan">
+                                        <option value="">- Pilih</option>
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib">Tidak Tertib</option>
+                                    </select>
+
+                                </dd>
                             </div>
+                            <div class="col-md-12 mt-4">
+                                <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
+                            </div>
+                    
                         </div>
-                </div>
-                <div class="modal-footer bg-whitesmoke br">
-                    <button type="submit" id="tombol" class="btn btn-primary">SIMPAN</button>
-                    <button type="submit" id="loading" class="btn btn-warning" style="display: none;" readonly>
-                        LOADING......
-                    </button>
-                </div>
-                </form>
+                    
+                        <div class="modal-footer bg-whitesmoke br">
+                            <button type="submit" id="tombol" class="btn btn-primary">SIMPAN</button>
+                            <button type="button" id="loading" class="btn btn-warning" style="display: none;" disabled>LOADING......</button>
+                        </div>
+                    </form>
             </div>
         </div>
     </div>
 
    
-    {{-- Edit Tabel Atas --}}
-    <div class="modal fade" role="dialog" id="modal-edit" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    {{-- Edit Tabel --}}
+    <div class="modal fade" role="dialog" id="modal-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                    
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
+                    <h5 class="modal-title">Edit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-primary" role="alert">
-                        REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN 
+                        REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN
                     </div>
-                    <form method="post" id="form-tambah" action="{{ route('admin.monev.k02.index') }}"
-                        enctype="multipart/form-data">
+                    <form method="post" id="form-edit" action="{{ route('admin.monev.k03.update') }}" enctype="multipart/form-data">
                         @csrf
+                        @method('POST') {{-- sesuaikan jika pakai PUT/PATCH --}}
                         
-                        <div>
-                            <input type="hidden" id="skpd_id_foto" name="skpd_id"
-                                value="{{ auth()->user()->skpd_id }}">
-                            <input type="hidden" id="tahun" name="tahun" value="{{ auth()->user()->tahun }}">
-                            <div class="col-md-12 mt-4">
-                                <small class="text-light fw-semibold">Upload :</small>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Nama Bangunan Konstruksi</dt>
-                                <dd><input type="text" class="form-control" id="kegiatan_konstruksi" name="kegiatan_konstruksi" placeholder="Kegiatan Konstruksi (Nama Paket)"></dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Nomor Kontrak (Pembangunan)</dt>
-                                <dd><input type="text" class="form-control" id="no_kontrak" name="no_kontrak" placeholder="Nomer Kontrak"></dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Tanggal dan Tahun Pembangunan</dt>
-                                <dd><input type="text" class="form-control" id="nm_bujk" name="nm_bujk" placeholder="Nama BUJK"></dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Tanggal dan Tahun Pemanfaatan</dt>
-                                <dd><input type="text" class="form-control" id="proses_pemilihan_penyedia_jasa" name="proses_pemilihan_penyedia_jasa" placeholder="Proses pemilihan Penyedia Jasa"></dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Umur Konstruksi</dt>
-                                <dd><input type="text" class="form-control" id="proses_pemilihan_penyedia_jasa" name="proses_pemilihan_penyedia_jasa" placeholder="Proses pemilihan Penyedia Jasa"></dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Fungsi Peruntukkannya</dt>
-                                <dd>
-                                    <select type="text" class="form-control" id="" name="">
-                                        <option value="">- Pilih</option>
-                                        <option value="Tertib">Tertib</option>
-                                        <option value="Tidak Tertib">Tidak Tertib</option>
-                                    </select>
+                        <input type="hidden" id="edit-id" name="id">
 
-                                </dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Rencana Umur Konstruksi</dt>
-                                <dd>
-                                    <select type="text" class="form-control" id="" name="">
-                                        <option value="">- Pilih</option>
-                                        <option value="Tertib">Tertib</option>
-                                        <option value="Tidak Tertib">Tidak Tertib</option>
-                                    </select>
-
-                                </dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Kapasitas dan Beban</dt>
-                                <dd>
-                                    <select type="text" class="form-control" id="" name="">
-                                        <option value="">- Pilih</option>
-                                        <option value="Tertib">Tertib</option>
-                                        <option value="Tidak Tertib">Tidak Tertib</option>
-                                    </select>
-
-                                </dd>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Pemeliharaan Produk Konstruksi</dt>
-                                <dd>
-                                    <select type="text" class="form-control" id="" name="">
-                                        <option value="">- Pilih</option>
-                                        <option value="Tertib">Tertib</option>
-                                        <option value="Tidak Tertib">Tidak Tertib</option>
-                                    </select>
-
-                                </dd>
-                            </div>
-                            
-                            <div class="col-md-12 mt-4">
-                                <dt>Update Data Dukung</dt>
-                                <dd><input type="file" class="form-control" id="data_dukung" name="data_dukung" placeholder="Upload Data Dukung"></dd>
-                            </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Nama Bangunan Konstruksi</dt>
+                            <dd><input type="text" class="form-control" id="edit-nama_bangunan" name="nama_bangunan" placeholder="Nama Bangunan"></dd>
                         </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Nomor Kontrak (Pembangunan)</dt>
+                            <dd><input type="text" class="form-control" id="edit-no_kontrak" name="no_kontrak" placeholder="Nomor Kontrak (Pembangunan)"></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Lokasi</dt>
+                            <dd><input type="text" class="form-control" id="edit-lokasi" name="lokasi" placeholder="Lokasi"></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Tanggal dan Tahun Pembangunan</dt>
+                            <dd><input type="text" class="form-control" id="edit-tgl_thn_pembangunan" name="tgl_thn_pembangunan" placeholder="Tanggal dan Tahun Pembangunan"></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Tanggal dan Tahun Pemanfaatan</dt>
+                            <dd><input type="text" class="form-control" id="edit-tgl_thn_pemanfaatan" name="tgl_thn_pemanfaatan" placeholder="Tanggal dan Tahun Pemanfaatan"></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Umur Konstruksi</dt>
+                            <dd><input type="text" class="form-control" id="edit-umur_konstruksi" name="umur_konstruksi" placeholder="Umur Konstruksi"></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Kesesuaian Fungsi</dt>
+                            <dd>
+                                <select class="form-control" id="edit-kesesuaian_fungsi" name="kesesuaian_fungsi">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Kesesuaian Lokasi</dt>
+                            <dd>
+                                <select class="form-control" id="edit-kesesuaian_lokasi" name="kesesuaian_lokasi">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Rencana Umur Konstruksi</dt>
+                            <dd>
+                                <select class="form-control" id="edit-rencana_umur" name="rencana_umur">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Kapasitas dan Beban</dt>
+                            <dd>
+                                <select class="form-control" id="edit-kapasitas_beban" name="kapasitas_beban">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Pemeliharaan Bangunan</dt>
+                            <dd>
+                                <select class="form-control" id="edit-pemeliharaan_bangunan" name="pemeliharaan_bangunan">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Program Pemeliharaan</dt>
+                            <dd>
+                                <select class="form-control" id="edit-program_pemeliharaan" name="program_pemeliharaan">
+                                    <option value="">- Pilih</option>
+                                    <option value="Tertib">Tertib</option>
+                                    <option value="Tidak Tertib">Tidak Tertib</option>
+                                </select>
+                            </dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Update Data Dukung</dt>
+                            <dd><input type="file" class="form-control" id="edit-data_dukung" name="data_dukung" accept=".pdf"></dd>
+                        </div>
+
+                    </form>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
-                    <button type="submit" id="tombol" class="btn btn-primary">UPDATE</button>
-                    <button type="submit" id="loading" class="btn btn-warning" style="display: none;" readonly>
-                        LOADING......
-                    </button>
+                    <button type="submit" form="form-edit" class="btn btn-primary">UPDATE</button>
+                    <button type="button" class="btn btn-warning" id="loading" style="display:none;" disabled>LOADING...</button>
                 </div>
-                </form>
             </div>
         </div>
     </div>
+
 
 @endsection
 
@@ -366,5 +530,62 @@
       
     </script>
      
-    {{-- <script src="{{ asset('js/master/skpd/main.js') }}"></script> --}}
+    {{-- Data Edit Tabel Atas --}}
+    <script>
+    $('#modal-edit').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+
+        // Ambil data
+        var id = button.data('id') || '';
+        var nama_bangunan = button.data('nama_bangunan') || '';
+        var no_kontrak = button.data('no_kontrak') || '';
+        var lokasi = button.data('lokasi') || '';
+        var tgl_thn_pembangunan = button.data('tgl_thn_pembangunan') || '';
+        var tgl_thn_pemanfaatan = button.data('tgl_thn_pemanfaatan') || '';
+        var umur_konstruksi = button.data('umur_konstruksi') || '';
+        var kesesuaian_fungsi = button.data('kesesuaian_fungsi') || '';
+        var kesesuaian_lokasi = button.data('kesesuaian_lokasi') || '';
+        var rencana_umur = button.data('rencana_umur') || '';
+        var kapasitas_beban = button.data('kapasitas_beban') || '';
+        var pemeliharaan_bangunan = button.data('pemeliharaan_bangunan') || '';
+        var program_pemeliharaan = button.data('program_pemeliharaan') || '';
+
+        // Set ke form edit
+        modal.find('#edit-id').val(id);
+        modal.find('#edit-nama_bangunan').val(nama_bangunan);
+        modal.find('#edit-no_kontrak').val(no_kontrak);
+        modal.find('#edit-lokasi').val(lokasi);
+        modal.find('#edit-tgl_thn_pembangunan').val(tgl_thn_pembangunan);
+        modal.find('#edit-tgl_thn_pemanfaatan').val(tgl_thn_pemanfaatan);
+        modal.find('#edit-umur_konstruksi').val(umur_konstruksi);
+        modal.find('#edit-kesesuaian_fungsi').val(kesesuaian_fungsi);
+        modal.find('#edit-kesesuaian_lokasi').val(kesesuaian_lokasi);
+        modal.find('#edit-rencana_umur').val(rencana_umur);
+        modal.find('#edit-kapasitas_beban').val(kapasitas_beban);
+        modal.find('#edit-pemeliharaan_bangunan').val(pemeliharaan_bangunan);
+        modal.find('#edit-program_pemeliharaan').val(program_pemeliharaan);
+    });
+    </script>
+
+    <script>
+        function deleteData(id) {
+            // Menggunakan SweetAlert untuk konfirmasi
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data ini akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna mengonfirmasi, kirimkan form
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            })
+        }
+    </script>
 @endsection
