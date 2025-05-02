@@ -17,8 +17,14 @@ use App\Services\MonevService;
 use App\Models\trx_monev_foto;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\trx_upload;
+<<<<<<< Updated upstream
+
+=======
 use App\Models\K02;
+use App\Models\K03;
+use App\Models\K04;
 use Barryvdh\DomPDF\Facade\Pdf;
+>>>>>>> Stashed changes
 class MonevController extends Controller
 {
     public function __construct()
