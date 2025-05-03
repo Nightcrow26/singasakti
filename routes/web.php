@@ -91,12 +91,19 @@ Route::prefix('/admin')->group(function () {
         
         Route::prefix('/k03')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k03'])->name('admin.monev.k03.index');
+            Route::post('/insertDatak03', [App\Http\Controllers\MonevController::class , 'insertDatak03'])->name('admin.monev.k03.insert');
+            Route::put('/updatek03', [App\Http\Controllers\MonevController::class, 'updatek03'])->name('admin.monev.k03.update');
+            Route::delete('/admin/monev/k03/{id}', [App\Http\Controllers\MonevController::class, 'destroyk03'])->name('admin.monev.k03.destroy');
+            Route::get('/downloadk03', [App\Http\Controllers\MonevController::class, 'downloadk03'])->name('admin.monev.k03.download');
         }
         );
 
         Route::prefix('/k04')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k04'])->name('admin.monev.k04.index');
-
+            Route::post('/insertDatak04', [App\Http\Controllers\MonevController::class , 'insertDatak04'])->name('admin.monev.k04.insert');
+            Route::put('/updatek04', [App\Http\Controllers\MonevController::class, 'updatek04'])->name('admin.monev.k04.update');
+            Route::delete('/admin/monev/k04/{id}', [App\Http\Controllers\MonevController::class, 'destroyk04'])->name('admin.monev.k04.destroy');
+            Route::get('/downloadk04', [App\Http\Controllers\MonevController::class, 'downloadk04'])->name('admin.monev.k04.download');
         }
         );
 
