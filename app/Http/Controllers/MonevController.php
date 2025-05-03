@@ -957,7 +957,7 @@ class MonevController extends Controller
 
         // Download langsung
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
-        return $pdf->stream('k03_skpd_'.auth()->user()->skpd_id.'.pdf');
+        return $pdf->download('k03_skpd_'.auth()->user()->skpd_id.'.pdf');
     }
 
     public function k04(Request $request)
@@ -1095,7 +1095,7 @@ class MonevController extends Controller
 
         // Download langsung
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
-        return $pdf->stream('k04_skpd_'.auth()->user()->skpd_id.'.pdf');
+        return $pdf->download('k04_skpd_'.auth()->user()->skpd_id.'.pdf');
     }
   
     // public function data(Request $request)
