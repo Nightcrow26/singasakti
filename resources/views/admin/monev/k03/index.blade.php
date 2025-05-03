@@ -54,30 +54,49 @@
         });
     </script>
 @endif
+
     <div class="card">
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <div class="alert alert-primary" role="alert">
-                        REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN
+                <div class="alert alert-primary" role="alert">
+                        PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI 
                         @if (auth()->user()->hasRole('admin'))
-                        <a href="{{ route('admin.monev.k03.download') }}" 
-                            style="float: right; margin-right:10px;" 
-                            class="btn btn-sm btn-secondary" target="_blank">
-                            Download
-                         </a>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <a type="button" class="btn btn-sm btn-secondary"
+                                href="{{ route('admin.monev.k03.download', ['skpd_id' => $selectedSkpdId ?? 'all','status'=>'k03']) }}"
+                                target="_blank">
+                                Download (K.03)
+                            </a>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <a type="button" class="btn btn-sm btn-secondary"
+                                href="{{ route('admin.monev.k03.download', ['skpd_id' => $selectedSkpdId ?? 'all','status'=>'p03']) }}"
+                                target="_blank">
+                                Download (P.03)
+                            </a>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <a type="button" class="btn btn-sm btn-secondary"
+                                href="{{ route('admin.monev.k03.download', ['skpd_id' => $selectedSkpdId ?? 'all','status'=>'rk03']) }}"
+                                target="_blank">
+                                Download (RK.03)
+                            </a>
+                        </div>
                         @else 
                         <button style="float: right;margin-right:10px;" type="button" data-bs-toggle="modal"
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                        <a href="{{ route('admin.monev.k03.download') }}" 
-                            style="float: right; margin-right:10px;" 
-                            class="btn btn-sm btn-secondary" target="_blank">
-                            Download
-                         </a>
+                         <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
+                            <a type="button" class="btn btn-sm btn-secondary"
+                                href="{{ route('admin.monev.k03.download', ['skpd_id' => $selectedSkpdId ?? 'all','status'=>'k03']) }}"
+                                target="_blank">
+                                Download (K.03)
+                            </a>
+                        </div>
                         @endif
-
+                        
                         {{-- @if (auth()->user()->hasRole('admin'))
                             <a href="{{ route('excel.rutin') }}" style="float: right;margin-right:10px;" type="button"
                                 class="btn btn-sm btn-success">
@@ -89,7 +108,18 @@
             </div>
         </div>
         <div class="card-body ">
-            
+            @if (auth()->user()->hasRole('admin'))
+                <label for="skpdFilter">Filter SOPD:</label>
+                <select id="skpdFilter" class="form-control select2" onchange="filterBySkpd(this.value)">
+                    <option value="">Pilih SOPD</option>
+                    @foreach ($skpd as $skpd2)
+                        <option value="{{ $skpd2->id }}" {{ $selectedSkpdId == $skpd2->id ? 'selected' : '' }}>
+                            {{ $skpd2->nama }}
+                        </option>
+                    @endforeach
+                </select>
+                <br>
+            @endif
             <div class="table-responsive">
                 <table class="table  table-striped" id="table">
                     <thead class="bg bg-primary">
@@ -126,35 +156,44 @@
                         @endphp
                         <!-- Example Row -->
                         <tr>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                            <button data-bs-toggle="modal" 
-                                data-bs-target="#modal-edit" 
-                                class="btn btn-sm btn-flat btn-primary my-2"
-                                data-id="{{ $k03->id }}"
-                                data-nama_bangunan="{{ $k03->nama_bangunan }}"
-                                data-no_kontrak="{{ $k03->no_kontrak }}"
-                                data-lokasi="{{ $k03->lokasi }}"
-                                data-tgl_thn_pembangunan="{{ $k03->tgl_thn_pembangunan }}"
-                                data-tgl_thn_pemanfaatan="{{ $k03->tgl_thn_pemanfaatan }}"
-                                data-umur_konstruksi="{{ $k03->umur_konstruksi }}"
-                                data-kesesuaian_fungsi="{{ $k03->kesesuaian_fungsi }}"
-                                data-kesesuaian_lokasi="{{ $k03->kesesuaian_lokasi }}"
-                                data-rencana_umur="{{ $k03->rencana_umur }}"
-                                data-kapasitas_beban="{{ $k03->kapasitas_beban }}"
-                                data-pemeliharaan_bangunan="{{ $k03->pemeliharaan_bangunan }}"
-                                data-program_pemeliharaan="{{ $k03->program_pemeliharaan }}"
-                                data-data_dukung="{{ $k03->data_dukung }}">
-                                <i class="bx bx-edit-alt"></i>
-                            </button>
-
-                                <form action="{{ route('admin.monev.k03.destroy', $k03->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k03->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-sm btn-flat btn-danger my-2" onclick="deleteData({{ $k03->id }})">
-                                        <i class="bx bx-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
+                        <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
+                               
+                               <div class="btn-group" role="group">
+                                   <button id="btnGroupDrop1" type="button"
+                                       class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <i class="menu-icon tf-icons bx bx-cog"></i>
+                                   </button>
+                                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                                       <button class="dropdown-item btn btn-sm btn-flat btn-primary my-2" data-bs-toggle="modal" 
+                                            data-bs-target="#modal-edit" 
+                                            data-id="{{ $k03->id }}"
+                                            data-nama_bangunan="{{ $k03->nama_bangunan }}"
+                                            data-no_kontrak="{{ $k03->no_kontrak }}"
+                                            data-lokasi="{{ $k03->lokasi }}"
+                                            data-tgl_thn_pembangunan="{{ $k03->tgl_thn_pembangunan }}"
+                                            data-tgl_thn_pemanfaatan="{{ $k03->tgl_thn_pemanfaatan }}"
+                                            data-umur_konstruksi="{{ $k03->umur_konstruksi }}"
+                                            data-kesesuaian_fungsi="{{ $k03->kesesuaian_fungsi }}"
+                                            data-kesesuaian_lokasi="{{ $k03->kesesuaian_lokasi }}"
+                                            data-rencana_umur="{{ $k03->rencana_umur }}"
+                                            data-kapasitas_beban="{{ $k03->kapasitas_beban }}"
+                                            data-pemeliharaan_bangunan="{{ $k03->pemeliharaan_bangunan }}"
+                                            data-program_pemeliharaan="{{ $k03->program_pemeliharaan }}"
+                                            data-data_dukung="{{ $k03->data_dukung }}">
+                                           <i class="bx bx-edit-alt"> Edit</i>
+                                       </button>
+                           
+                                       <form action="{{ route('admin.monev.k03.destroy', $k03->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k03->id }}">
+                                           @csrf
+                                           @method('DELETE')
+                                           <button type="button" class="dropdown-item" onclick="deleteData({{ $k03->id }})">
+                                               <i class="bx bx-trash"> Hapus</i>
+                                           </button>
+                                       </form>
+                                   </div>
+                               </div>
+                           </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $index + 1 }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->nama_bangunan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->no_kontrak }}</td>
@@ -381,6 +420,7 @@
                             <button type="button" id="loading" class="btn btn-warning" style="display: none;" disabled>LOADING......</button>
                         </div>
                     </form>
+                </div>
             </div>
         </div>
     </div>
@@ -395,12 +435,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-primary" role="alert">
-                        REKAPITULASI PENGAWASAN TERTIB PEMANFAATAN JASA KONSTRUKSI TAHUNAN
-                    </div>
                     <form method="post" id="form-edit" action="{{ route('admin.monev.k03.update') }}" enctype="multipart/form-data">
                         @csrf
-                        @method('POST') {{-- sesuaikan jika pakai PUT/PATCH --}}
+                        @method('PUT') 
                         
                         <input type="hidden" id="edit-id" name="id">
 
@@ -418,11 +455,11 @@
                         </div>
                         <div class="col-md-12 mt-4">
                             <dt>Tanggal dan Tahun Pembangunan</dt>
-                            <dd><input type="text" class="form-control" id="edit-tgl_thn_pembangunan" name="tgl_thn_pembangunan" placeholder="Tanggal dan Tahun Pembangunan"></dd>
+                            <dd><input type="date" class="form-control" id="edit-tgl_thn_pembangunan" name="tgl_thn_pembangunan" placeholder="Tanggal dan Tahun Pembangunan"></dd>
                         </div>
                         <div class="col-md-12 mt-4">
                             <dt>Tanggal dan Tahun Pemanfaatan</dt>
-                            <dd><input type="text" class="form-control" id="edit-tgl_thn_pemanfaatan" name="tgl_thn_pemanfaatan" placeholder="Tanggal dan Tahun Pemanfaatan"></dd>
+                            <dd><input type="date" class="form-control" id="edit-tgl_thn_pemanfaatan" name="tgl_thn_pemanfaatan" placeholder="Tanggal dan Tahun Pemanfaatan"></dd>
                         </div>
                         <div class="col-md-12 mt-4">
                             <dt>Umur Konstruksi</dt>
@@ -489,15 +526,17 @@
                             </dd>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung</dt>
-                            <dd><input type="file" class="form-control" id="edit-data_dukung" name="data_dukung" accept=".pdf"></dd>
+                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
-
+                        <div id="pdf-preview" style="margin-top: 20px;">
+                            <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer bg-whitesmoke br">
-                    <button type="submit" form="form-edit" class="btn btn-primary">UPDATE</button>
-                    <button type="button" class="btn btn-warning" id="loading" style="display:none;" disabled>LOADING...</button>
                 </div>
             </div>
         </div>
@@ -522,50 +561,67 @@
             $('#range').daterangepicker();
         });
 
-        $(document).ready(function() {
-            $('#table2').DataTable();
-            $('#range2').daterangepicker();
-        });
-
       
     </script>
      
-    {{-- Data Edit Tabel Atas --}}
-    <script>
-    $('#modal-edit').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget);
-        var modal = $(this);
+     {{-- filter SKPD --}}
+     <script>
+        function filterBySkpd(skpdId) {
+            // Redirect ke URL yang sesuai, misal dengan query string
+            let url = "{{ url()->current() }}"; // tetap di halaman ini
+            if (skpdId) {
+                window.location.href = url + '?skpd_id=' + skpdId;
+            } else {
+                window.location.href = url; // kembali tanpa filter
+            }
+        }
+    </script>
 
-        // Ambil data
-        var id = button.data('id') || '';
-        var nama_bangunan = button.data('nama_bangunan') || '';
-        var no_kontrak = button.data('no_kontrak') || '';
-        var lokasi = button.data('lokasi') || '';
-        var tgl_thn_pembangunan = button.data('tgl_thn_pembangunan') || '';
-        var tgl_thn_pemanfaatan = button.data('tgl_thn_pemanfaatan') || '';
-        var umur_konstruksi = button.data('umur_konstruksi') || '';
-        var kesesuaian_fungsi = button.data('kesesuaian_fungsi') || '';
-        var kesesuaian_lokasi = button.data('kesesuaian_lokasi') || '';
-        var rencana_umur = button.data('rencana_umur') || '';
-        var kapasitas_beban = button.data('kapasitas_beban') || '';
-        var pemeliharaan_bangunan = button.data('pemeliharaan_bangunan') || '';
-        var program_pemeliharaan = button.data('program_pemeliharaan') || '';
+     <script>
+    $('#modal-edit').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Tombol yang diklik
+            var modal = $(this);
 
-        // Set ke form edit
-        modal.find('#edit-id').val(id);
-        modal.find('#edit-nama_bangunan').val(nama_bangunan);
-        modal.find('#edit-no_kontrak').val(no_kontrak);
-        modal.find('#edit-lokasi').val(lokasi);
-        modal.find('#edit-tgl_thn_pembangunan').val(tgl_thn_pembangunan);
-        modal.find('#edit-tgl_thn_pemanfaatan').val(tgl_thn_pemanfaatan);
-        modal.find('#edit-umur_konstruksi').val(umur_konstruksi);
-        modal.find('#edit-kesesuaian_fungsi').val(kesesuaian_fungsi);
-        modal.find('#edit-kesesuaian_lokasi').val(kesesuaian_lokasi);
-        modal.find('#edit-rencana_umur').val(rencana_umur);
-        modal.find('#edit-kapasitas_beban').val(kapasitas_beban);
-        modal.find('#edit-pemeliharaan_bangunan').val(pemeliharaan_bangunan);
-        modal.find('#edit-program_pemeliharaan').val(program_pemeliharaan);
-    });
+            // Ambil data dari tombol
+            var id = button.data('id') || '';
+            var nama_bangunan = button.data('nama_bangunan') || '';
+            var no_kontrak = button.data('no_kontrak') || '';
+            var lokasi = button.data('lokasi') || '';
+            var tgl_thn_pembangunan = button.data('tgl_thn_pembangunan') || '';
+            var tgl_thn_pemanfaatan = button.data('tgl_thn_pemanfaatan') || '';
+            var umur_konstruksi = button.data('umur_konstruksi') || '';
+            var kesesuaian_fungsi = button.data('kesesuaian_fungsi') || '';
+            var kesesuaian_lokasi = button.data('kesesuaian_lokasi') || '';
+            var rencana_umur = button.data('rencana_umur') || '';
+            var kapasitas_beban = button.data('kapasitas_beban') || '';
+            var pemeliharaan_bangunan = button.data('pemeliharaan_bangunan') || '';
+            var program_pemeliharaan = button.data('program_pemeliharaan') || '';
+            var data_dukung = button.data('data_dukung') || ''; // Untuk file PDF
+
+            // Masukkan data ke dalam form modal
+            modal.find('input[name="nama_bangunan"]').val(nama_bangunan);
+            modal.find('input[name="no_kontrak"]').val(no_kontrak);
+            modal.find('input[name="lokasi"]').val(lokasi);
+            modal.find('input[name="tgl_thn_pembangunan"]').val(tgl_thn_pembangunan);
+            modal.find('input[name="tgl_thn_pemanfaatan"]').val(tgl_thn_pemanfaatan);
+            modal.find('input[name="umur_konstruksi"]').val(umur_konstruksi);
+            modal.find('select[name="kesesuaian_fungsi"]').val(kesesuaian_fungsi);
+            modal.find('select[name="kesesuaian_lokasi"]').val(kesesuaian_lokasi);
+            modal.find('select[name="rencana_umur"]').val(rencana_umur);
+            modal.find('select[name="kapasitas_beban"]').val(kapasitas_beban);
+            modal.find('select[name="pemeliharaan_bangunan"]').val(pemeliharaan_bangunan);
+            modal.find('select[name="program_pemeliharaan"]').val(program_pemeliharaan);
+            modal.find('input[name="id"]').val(id); // hidden input
+
+            // Tampilkan file PDF kalau ada
+            if (data_dukung !== '') {
+                $('#pdf-frame').attr('src', '/uploads/data_dukung/' + data_dukung); // Ganti dengan URL file yang sesuai
+                $('#pdf-preview').show(); // Menampilkan preview PDF
+            } else {
+                $('#pdf-frame').attr('src', '');
+                $('#pdf-preview').hide(); // Menyembunyikan preview PDF jika tidak ada
+            }
+        });
     </script>
 
     <script>
