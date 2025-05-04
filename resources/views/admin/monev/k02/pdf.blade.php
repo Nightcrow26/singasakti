@@ -61,8 +61,9 @@
     <!-- Halaman Judul -->
     <div class="page-title">
         REKAPITULASI PENGAWASAN TERTIB PENYELENGARAAN JASA KONSTRUKSI TAHUNAN <br>
-        KEGIATAN KONSTRUKSI YANG DIBIAYAI DENGAN DANA DARI {{ $anggaran }}<br>
+        KEGIATAN KONSTRUKSI YANG DIBIAYAI DENGAN DANA DARI {{ $anggaran }}
         @if($status != 'k02')
+            <br>
             PROVINSI KALIMANTAN SELATAN
         @endif
     </div>

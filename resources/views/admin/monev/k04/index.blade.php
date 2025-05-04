@@ -147,9 +147,10 @@
                                        <i class="menu-icon tf-icons bx bx-cog"></i>
                                    </button>
                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
-                                       <button class="dropdown-item btn btn-sm btn-flat btn-primary my-2" data-bs-toggle="modal" 
+                                       <button class="dropdown-item btn btn-sm btn-flat my-2" data-bs-toggle="modal" 
                                             data-bs-target="#modal-edit" 
                                             data-id="{{ $k04->id }}"
+                                            data-nib="{{ $k04->nib }}"
                                             data-nama_usaha="{{ $k04->nama_usaha }}"
                                             data-no_sertif="{{ $k04->no_sertif }}"
                                             data-alamat="{{ $k04->alamat }}"

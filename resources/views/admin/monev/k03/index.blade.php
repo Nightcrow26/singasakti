@@ -165,7 +165,7 @@
                                        <i class="menu-icon tf-icons bx bx-cog"></i>
                                    </button>
                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
-                                       <button class="dropdown-item btn btn-sm btn-flat btn-primary my-2" data-bs-toggle="modal" 
+                                       <button class="dropdown-item btn btn-sm btn-flat my-2" data-bs-toggle="modal" 
                                             data-bs-target="#modal-edit" 
                                             data-id="{{ $k03->id }}"
                                             data-nama_bangunan="{{ $k03->nama_bangunan }}"
