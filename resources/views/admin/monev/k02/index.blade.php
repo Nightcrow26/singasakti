@@ -813,103 +813,69 @@
                     <form method="post" id="form-edit" action="{{ route('admin.monev.k02.update') }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')  
-                        <input type="hidden" name="id">
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Kegiatan Konstruksi (Nama Paket)</dt>
-                            <dd><input type="text" class="form-control" name="kegiatan_konstruksi" placeholder="Kegiatan Konstruksi (Nama Paket)"></dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>No. Kontrak</dt>
-                            <dd><input type="text" class="form-control" name="no_kontrak" placeholder="No. Kontrak"></dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Nama BUJK</dt>
-                            <dd><input type="text" class="form-control" name="nm_bujk" placeholder="Nama BUJK"></dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Proses Pemilihan Penyedia Jasa</dt>
-                            <dd>
-                                <select class="form-control" name="proses_pemilihan_penyedia_jasa">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Penerapan Standar Kontrak</dt>
-                            <dd>
-                                <select class="form-control" name="penerapan_standar_kontrak">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Penggunaan Tenaga Kerja Bersertifikat</dt>
-                            <dd>
-                                <select class="form-control" name="penggunaan_tenaga_kerja_bersertifikat">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Pemberian Pekerjaan Utama Subpenyedia</dt>
-                            <dd>
-                                <select class="form-control" name="pemberian_pekerjaan_utama_subpenyedia">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Ketersediaan Dokumen Standar K4</dt>
-                            <dd>
-                                <select class="form-control" name="ketersediaan_dokumen_standar_k4">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Penerapan SMKK</dt>
-                            <dd>
-                                <select class="form-control" name="penerapan_smkk">
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-    
-                        <div class="col-md-12 mt-4">
-                            <dt>Kegiatan Antisipasi Kecelakaan Kerja</dt>
-                            <dd>
-                                <select class="form-control" name="kegiatan_antisipasi_kecelakaan_kerja">
-                                    
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
-                            <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
-                        </div>
-                        <div id="pdf-preview" style="margin-top: 20px;">
-                            <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Update</button>
+                        <div>
+                            <input type="hidden" name="skpd_id" value="{{ auth()->user()->skpd_id }}">
+                            
+                            <div class="col-md-12 mt-4">
+                                <small class="text-light fw-semibold">Upload :</small>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Nomor Izin Berusaha</dt>
+                                <dd><input type="text" class="form-control" name="nib" placeholder="Nomor Izin Berusaha"></dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Nama Usaha Rantai Pasok</dt>
+                                <dd><input type="text" class="form-control" name="nm_usaha_rantai_pasok" placeholder="Nama Usaha Rantai Pasok"></dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Penanggung Jawab Badan Usaha</dt>
+                                <dd><input type="text" class="form-control" name="pjbu" placeholder="Penanggung Jawab Badan Usaha"></dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Kepemilikan  dan Keabsahan  Perizinan  Berusaha</dt>
+                                <dd>
+                                    <select class="form-control" name="kep_keab_perizinan_berusaha">
+                                        
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib" selected>Tidak Tertib</option>
+                                    </select>
+                                </dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Kepemilikan Keabsahan Penggunaan Material,Peralatan dan Teknologik</dt>
+                                <dd>
+                                    <select class="form-control" name="kep_keab_perizinan_teknologi">
+                                        
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib" selected>Tidak Tertib</option>
+                                    </select>
+                                </dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Pencatatan Dalam  SIMPK</dt>
+                                <dd>
+                                    <select class="form-control" name="pencatatan_dalam_simpk">
+                                        
+                                        <option value="Tertib">Tertib</option>
+                                        <option value="Tidak Tertib" selected>Tidak Tertib</option>
+                                    </select>
+                                </dd>
+                            </div>
+                    
+                            <div class="col-md-12 mt-4">
+                                <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
+                            </div>
+                            <div id="pdf-preview2" style="margin-top: 20px;">
+                                <iframe id="pdf-frame2" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                            </div>
+                    
                         </div>
                     </form>
                 </div>
