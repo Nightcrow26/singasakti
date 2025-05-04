@@ -53,36 +53,40 @@
                       <div data-i18n="Basic">Pengawasan Insidental</div>
                   </a>
               </li>
-              <li class="menu-item {{ set_active('admin.monev.k01a.index') }}">
-                <a href="{{ route('admin.monev.k01a.index') }}" class="menu-link">
+              <li class="menu-item {{ set_active(['admin.monev.k01a.index', 'admin.monev.k01b.index', 'admin.monev.k02.index', 'admin.monev.k03.index', 'admin.monev.k04.index']) }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.01.A</div>
+                    <div data-i18n="Rekap Tertib Usaha">Rekap Tertib Usaha</div>
                 </a>
-              </li>
-              <li class="menu-item {{ set_active('admin.monev.k01b.index') }}">
-                <a href="{{ route('admin.monev.k01b.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.01.B</div>
-                </a>
-              </li>
-              <li class="menu-item {{ set_active('admin.monev.k02.index') }}">
-                <a href="{{ route('admin.monev.k02.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.02</div>
-                </a>
-              </li>
-              <li class="menu-item {{ set_active('admin.monev.k03.index') }}">
-                <a href="{{ route('admin.monev.k03.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.03</div>
-                </a>
-              </li>
-              <li class="menu-item {{ set_active('admin.monev.k04.index') }}">
-                <a href="{{ route('admin.monev.k04.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.04</div>
-                </a>
-              </li>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ set_active('admin.monev.k01a.index') }}">
+                        <a href="{{ route('admin.monev.k01a.index') }}" class="menu-link">
+                            <div data-i18n="K.01.A">Rekapitulasi K.01.A</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k01b.index') }}">
+                        <a href="{{ route('admin.monev.k01b.index') }}" class="menu-link">
+                            <div data-i18n="K.01.B">Rekapitulasi K.01.B</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k02.index') }}">
+                        <a href="{{ route('admin.monev.k02.index') }}" class="menu-link">
+                            <div data-i18n="K.02">Rekapitulasi K.02</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k03.index') }}">
+                        <a href="{{ route('admin.monev.k03.index') }}" class="menu-link">
+                            <div data-i18n="K.03">Rekapitulasi K.03</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k04.index') }}">
+                        <a href="{{ route('admin.monev.k04.index') }}" class="menu-link">
+                            <div data-i18n="K.04">Rekapitulasi K.04</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
               <li class="menu-header small text-uppercase">
                   <span class="menu-header-text">Master</span>
               </li>
@@ -178,40 +182,40 @@
               </li>
 
 
-              <li class="menu-item {{ set_active('admin.monev.k01a.index') }}">
-                <a href="{{ route('admin.monev.k01a.index') }}" class="menu-link">
+              <li class="menu-item {{ set_active(['admin.monev.k01a.index', 'admin.monev.k01b.index', 'admin.monev.k02.index', 'admin.monev.k03.index', 'admin.monev.k04.index']) }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.01.A</div>
+                    <div data-i18n="Rekap Tertib Usaha">Rekap Tertib Usaha</div>
                 </a>
-            </li>
-
-            <li class="menu-item {{ set_active('admin.monev.k01b.index') }}">
-                <a href="{{ route('admin.monev.k01b.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.01.B</div>
-                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ set_active('admin.monev.k01a.index') }}">
+                        <a href="{{ route('admin.monev.k01a.index') }}" class="menu-link">
+                            <div data-i18n="K.01.A">Rekapitulasi K.01.A</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k01b.index') }}">
+                        <a href="{{ route('admin.monev.k01b.index') }}" class="menu-link">
+                            <div data-i18n="K.01.B">Rekapitulasi K.01.B</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k02.index') }}">
+                        <a href="{{ route('admin.monev.k02.index') }}" class="menu-link">
+                            <div data-i18n="K.02">Rekapitulasi K.02</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k03.index') }}">
+                        <a href="{{ route('admin.monev.k03.index') }}" class="menu-link">
+                            <div data-i18n="K.03">Rekapitulasi K.03</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.k04.index') }}">
+                        <a href="{{ route('admin.monev.k04.index') }}" class="menu-link">
+                            <div data-i18n="K.04">Rekapitulasi K.04</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
             
-              <li class="menu-item {{ set_active('admin.monev.k02.index') }}">
-                <a href="{{ route('admin.monev.k02.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.02</div>
-                </a>
-              </li>
-
-              <li class="menu-item {{ set_active('admin.monev.k03.index') }}">
-                <a href="{{ route('admin.monev.k03.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.03</div>
-                </a>
-              </li>
-
-              <li class="menu-item {{ set_active('admin.monev.k04.index') }}">
-                <a href="{{ route('admin.monev.k04.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Basic">Rekapitulasi K.04</div>
-                </a>
-              </li>
 
 
               {{-- <li class="menu-header small text-uppercase">
