@@ -69,8 +69,6 @@ Route::prefix('/admin')->group(function () {
         }
         );
 
-
-
         //Rekapitulasi
         Route::prefix('/k01a')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k01a'])->name('admin.monev.k01a.index');
@@ -211,23 +209,21 @@ Route::prefix('/excel')->group(function () {
 );
 // });
 
-Route::middleware('role:skpd')->group(function () {
-    Route::prefix('/skpd')->group(function () {
-            Route::get('home', [App\Http\Controllers\HomeController::class , 'indexskpd'])->name('home.skpd');
-
-            Route::prefix('/spbe')->group(function () {
-                    Route::get('/', [App\Http\Controllers\TrxJawabanController::class , 'indexspbe'])->name('spbe.index');
-                    Route::post('/store', [App\Http\Controllers\TrxJawabanController::class , 'storespbe'])->name('spbe.store');
-                    Route::post('/update', [App\Http\Controllers\TrxJawabanController::class , 'updatespbeskpd'])->name('spbe.update');
-                    Route::post('/add', [App\Http\Controllers\TrxJawabanController::class , 'addspbe'])->name('spbe.add');
-                    Route::post('/detail', [App\Http\Controllers\TrxJawabanController::class , 'detailspbe'])->name('spbe.detail');
-                    Route::post('/delete', [App\Http\Controllers\TrxJawabanController::class , 'deletespbe'])->name('spbe.delete');
-                    Route::post('/deleteupload', [App\Http\Controllers\TrxJawabanController::class , 'deleteupload'])->name('spbe.deleteupload');
-                    Route::post('/verif', [App\Http\Controllers\TrxJawabanController::class , 'verifspbeskpd'])->name('spbe.verif');
-                }
+    Route::middleware('role:skpd')->group(function () {
+        Route::prefix('/skpd')->group(function () {
+                        Route::get('home', [App\Http\Controllers\HomeController::class , 'indexskpd'])->name('home.skpd');
+                        Route::prefix('/spbe')->group(function () {
+                                Route::get('/', [App\Http\Controllers\TrxJawabanController::class , 'indexspbe'])->name('spbe.index');
+                                Route::post('/store', [App\Http\Controllers\TrxJawabanController::class , 'storespbe'])->name('spbe.store');
+                                Route::post('/update', [App\Http\Controllers\TrxJawabanController::class , 'updatespbeskpd'])->name('spbe.update');
+                                Route::post('/add', [App\Http\Controllers\TrxJawabanController::class , 'addspbe'])->name('spbe.add');
+                                Route::post('/detail', [App\Http\Controllers\TrxJawabanController::class , 'detailspbe'])->name('spbe.detail');
+                                Route::post('/delete', [App\Http\Controllers\TrxJawabanController::class , 'deletespbe'])->name('spbe.delete');
+                                Route::post('/deleteupload', [App\Http\Controllers\TrxJawabanController::class , 'deleteupload'])->name('spbe.deleteupload');
+                                Route::post('/verif', [App\Http\Controllers\TrxJawabanController::class , 'verifspbeskpd'])->name('spbe.verif');
+                        });
+                    }
                 );
-            }
-            );
-        });
+    });
 
 Route::any('logout', [App\Http\Controllers\Auth\LoginController::class , 'logout'])->name('logout');
