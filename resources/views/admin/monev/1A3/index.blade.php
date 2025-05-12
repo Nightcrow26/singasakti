@@ -93,7 +93,8 @@
                     <thead class="bg bg-primary">
                         <tr>
                             <th style="color: white; text-align:center; vertical-align: top;">Aksi</th>
-                            <th style="color: white; text-align:center; vertical-align: top;">Pemilik BUJK</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Nama</th>
+                            <th style="color: white; text-align:center; vertical-align: top;">Status</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Tanggal Pengawasan</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Kepemilikan Perizinan Usaha</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Keabsahan Perizinan Berusaha</th>
@@ -114,7 +115,8 @@
                                         <button class="dropdown-item" data-bs-toggle="modal" 
                                                 data-bs-target="#modal-tambah-edit" 
                                                 data-id="{{ $a->id }}"
-                                                data-nama_pemilik_peralatan_bujk="{{ $a->nama_pemilik_peralatan_bujk }}"
+                                                data-nama="{{ $a->nama }}"
+                                                data-status="{{ $a->status }}"
                                                 data-tanggal_pengawasan="{{ $a->tanggal_pengawasan }}"
                                                 data-kepemilikan_perizinan_berusaha="{{ $a->kepemilikan_perizinan_berusaha }}"
                                                 data-keabsahan_perizinan_berusaha="{{ $a->keabsahan_perizinan_berusaha }}"
@@ -146,7 +148,8 @@
                                     </div>
                                 </div>
                             </td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->nama_pemilik_peralatan_bujk }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->nama }}</td>
+                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->status }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->tanggal_pengawasan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->kepemilikan_perizinan_berusaha }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->keabsahan_perizinan_berusaha }}</td>
@@ -178,15 +181,25 @@
                     </div>
                     <form method="post" id="form-tambah" action="{{ route('admin.monev.1A3.insert') }}" enctype="multipart/form-data">
                         @csrf
-                            <input type="text" name="skpd_id" value="{{ auth()->user()->id }}">
+                            <input type="hidden" name="skpd_id" value="{{ auth()->user()->id }}">
                             
                             <div class="col-md-12 mt-4">
                                 <small class="text-light fw-semibold">Upload :</small>
                             </div>
                     
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Pemilik Peralatan BUJK</dt>
-                            <dd><input type="text" class="form-control" name="nama_pemilik_peralatan_bujk" placeholder="Nama Pemilik Peralatan BUJK" required></dd>
+                            <dt>Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan</dt>
+                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan" required></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Status</dt>
+                            <dd>
+                                <select class="form-control" name="status" required>
+                                    <option value="">Pilih</option>
+                                    <option value="Pemilik Peralatan BUJK">Pemilik Peralatan BUJK</option>
+                                    <option value="Usaha Penyewaan Rantai Pasok Peralatan">Usaha Penyewaan Rantai Pasok Peralatan</option>
+                                </select>
+                            </dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
@@ -241,8 +254,18 @@
                         @method('PUT')  
                         <input type="hidden" name="id">
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Pemilik Peralatan BUJK</dt>
-                            <dd><input type="text" class="form-control" name="nama_pemilik_peralatan_bujk" placeholder="Nama Pemilik Peralatan BUJK" required></dd>
+                            <dt>Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan</dt>
+                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan" required></dd>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <dt>Status</dt>
+                            <dd>
+                                <select class="form-control" name="status" required>
+                                    <option value="">Pilih</option>
+                                    <option value="Pemilik Peralatan BUJK">Pemilik Peralatan BUJK</option>
+                                    <option value="Usaha Penyewaan Rantai Pasok Peralatan">Usaha Penyewaan Rantai Pasok Peralatan</option>
+                                </select>
+                            </dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
@@ -347,6 +370,7 @@
             </div>
         </div>
     </div>
+    {{-- detail --}}
     <div class="modal fade" id="modal-detail" tabindex="-1" role="dialog" aria-labelledby="modalDetailLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -506,7 +530,8 @@
 
             // Ambil data dari tombol
             var id = button.data('id') || '';
-            var nama = button.data('nama_pemilik_peralatan_bujk') || '';
+            var nama = button.data('nama') || '';
+            var status = button.data('status') || '';
             var rawTanggal = button.data('tanggal_pengawasan') || '';
             var tgl = rawTanggal.substring(0, 10);
             var kepemilikan = button.data('kepemilikan_perizinan_berusaha') || '';
@@ -515,7 +540,8 @@
 
             // Isi form di dalam modal
             modal.find('input[name="id"]').val(id);
-            modal.find('input[name="nama_pemilik_peralatan_bujk"]').val(nama);
+            modal.find('input[name="nama"]').val(nama);
+            modal.find('select[name="status"]').val(status);
             modal.find('input[name="tanggal_pengawasan"]').val(tgl);
             modal.find('select[name="kepemilikan_perizinan_berusaha"]').val(kepemilikan);
             modal.find('select[name="keabsahan_perizinan_berusaha"]').val(keabsahan);

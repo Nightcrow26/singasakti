@@ -11,7 +11,8 @@ class CreatePengawasanPeralatanTable extends Migration
         Schema::create('pengawasan_peralatan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('skpd_id');
-            $table->string('nama_pemilik_peralatan_bujk');
+            $table->string('nama');
+            $table->string('status');
             $table->date('tanggal_pengawasan');
             $table->string('kepemilikan_perizinan_berusaha');
             $table->string('keabsahan_perizinan_berusaha');
