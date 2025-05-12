@@ -20,7 +20,10 @@ use App\Models\trx_monev_foto;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\trx_upload;
 use App\Models\K02;
+use App\Models\PengawasanPeralatan;
+use App\Models\DetailPengawasanPeralatan;
 use App\Models\Skpd;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\K03;
 use App\Models\K04;
@@ -191,7 +194,7 @@ class MonevController extends Controller
             ]);
 
             $realisasi = DB::table('trx_realisasi')->insertGetId([
-                 'skpd_id' => $request->input('skpd_id'),
+                'skpd_id' => $request->input('skpd_id'),
                 'tahun' => auth()->user()->tahun,
                 'trx_sub_kegiatan_id' => $sub_kegiatan,
                 'ref_urusan_id' => $request->input('ref_urusan_id'),
@@ -929,7 +932,7 @@ class MonevController extends Controller
     {   
         
         $selectedSkpdId = $request->input('skpd_id') ?? '';
-        $skpd = Skpd::all();
+        $skpd = User::where('role', 'penyedia')->get();
         // Mengambil semua data K02
         if (auth()->user()->hasRole('admin')){
             if($selectedSkpdId !=''){
@@ -938,11 +941,11 @@ class MonevController extends Controller
                 $dataK02 = K02::all(); 
             }
         }else{
-            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+            $dataK02 = K02::where('skpd_id', auth()->user()->id)->get();
         }
         // Kirim data ke view
         return view('admin.monev.k02.index', compact('dataK02','skpd','selectedSkpdId'));
-    }
+    } //DONE
     public function insertDatak02(Request $request)
     {
         // Validasi data dulu
@@ -1171,7 +1174,7 @@ class MonevController extends Controller
         // Download langsung
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
         return $pdf->download('k02_skpd_'.auth()->user()->skpd_id.'.pdf');
-    }
+    } //DONE
 
     public function k03(Request $request)
     {
@@ -1249,32 +1252,6 @@ class MonevController extends Controller
             'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // Max 5MB
         ]);
 
-        DB::beginTransaction();
-        try {
-            $item = K03::findOrFail($request->input('id'));
-
-            if ($request->hasFile('data_dukung')) {
-                if ($item->data_dukung) {
-                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
-                    if (file_exists($oldFilePath)) {
-                        unlink($oldFilePath);
-                    }
-                }
-                $file = $request->file('data_dukung');
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
-                $data['data_dukung'] = $namaFile;
-            } else {
-                unset($data['data_dukung']);
-            }
-
-            $item->update($data);
-            DB::commit();
-            return redirect()->back()->with('success', 'Data berhasil diperbarui');
-        } catch (\Exception $e) {
-            DB::rollBack();
-            return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
-        }
     }
 
     public function destroyk03($id)
@@ -1459,7 +1436,143 @@ class MonevController extends Controller
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
         return $pdf->download('k04_skpd_'.auth()->user()->skpd_id.'.pdf');
     }
-  
+    
+    public function tertib1A3(Request $request)
+    {  
+        $selectedSkpdId = $request->input('skpd_id') ?? '';
+        $skpd = User::where('role', 'penyedia')->get();
+        // Mengambil semua data K02
+        if (auth()->user()->hasRole('admin')){
+            if($selectedSkpdId !=''){
+                $data = PengawasanPeralatan::where('skpd_id', $selectedSkpdId)->get();
+            }else{
+                $data = PengawasanPeralatan::all(); 
+            }
+        }else{
+            $data = PengawasanPeralatan::where('skpd_id', auth()->user()->id)->get();
+        }
+        // Kirim data ke view
+        return view('admin.monev.1A3.index', compact('data','skpd','selectedSkpdId'));
+    }
+    public function insertData1A3(Request $request)
+    {
+        $data = $request->validate([
+            'skpd_id' => 'required|integer',
+            'nama_pemilik_peralatan_bujk' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|string|max:255',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            PengawasanPeralatan::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
+    public function insertDataDetail1A3(Request $request)
+    {
+        $data = $request->validate([
+            'pengawasan_peralatan_id' => 'required|integer',
+            'nama_varian_peralatan' => 'required|string|max:255',
+            'nama_sub_varian_peralatan' => 'required|string|max:255',
+            'merk_peralatan' => 'nullable|string|max:255',
+            'jumlah_unit' => 'required|integer|min:0',
+            'surat_keterangan_k3' => 'nullable|string|max:255',
+            'bukti_kepemilikan' => 'nullable|string|max:255',
+            'pencatatan_simpk' => 'required|in:Sudah,Belum',
+            'nomor_registrasi_simpk' => 'nullable|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            DetailPengawasanPeralatan::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
+    public function getDetailData($pengawasanId)
+    {
+        $data = DetailPengawasanPeralatan::where('pengawasan_peralatan_id', $pengawasanId)->get();
+        if ($data->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada data detail untuk ID pengawasan tersebut.'], 404);
+        }
+
+        return response()->json($data);
+    }
+    public function destroy1A3($id)
+    {
+        try {
+            $data = PengawasanPeralatan::findOrFail($id);
+            $data->delete();
+            return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+        }
+    }
+    public function updateDataDetail1A3(Request $request)
+    {
+        $button = $request->input('button');
+        $data = $request->validate([
+            'id' => 'required|integer',
+            'nama_varian_peralatan' => 'required|string|max:255',
+            'nama_sub_varian_peralatan' => 'required|string|max:255',
+            'merk_peralatan' => 'nullable|string|max:255',
+            'jumlah_unit' => 'required|integer|min:0',
+            'surat_keterangan_k3' => 'nullable|string|max:255',
+            'bukti_kepemilikan' => 'nullable|string|max:255',
+            'pencatatan_simpk' => 'required|in:Sudah,Belum',
+            'nomor_registrasi_simpk' => 'nullable|string|max:255',
+        ]);
+        if ($button == "update"){
+             DB::beginTransaction();
+                try {
+                    $item = DetailPengawasanPeralatan::findOrFail($request->input('id'));
+                    $item->update($data);
+                    DB::commit();
+                    return redirect()->back()->with('success', 'Data berhasil diperbarui');
+                } catch (\Exception $e) {
+                    DB::rollBack();
+                    return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
+                }
+        }elseif ($button == "hapus"){
+            try {
+                $data = DetailPengawasanPeralatan::findOrFail($request->input('id'));
+                $data->delete();
+                return redirect()->back()->with('success', 'Data berhasil dihapus!');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+            }
+        }
+    }
+    public function updateData1A3(Request $request)
+    {
+        $data = $request->validate([
+            'nama_pemilik_peralatan_bujk' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|string|max:255',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+             DB::beginTransaction();
+                try {
+                    $item = PengawasanPeralatan::findOrFail($request->input('id'));
+                    $item->update($data);
+                    DB::commit();
+                    return redirect()->back()->with('success', 'Data berhasil diperbarui');
+                } catch (\Exception $e) {
+                    DB::rollBack();
+                    return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
+                }
+        
+    }
+
     // public function data(Request $request)
     // {
     //     if (auth()->user()->hasRole('admin')) {
@@ -1658,8 +1771,7 @@ class MonevController extends Controller
     // }
 
     public function data(Request $request)
-
-{
+    {
         if (auth()->user()->hasRole('admin')) {
             $a = trx_mr::with(['realisasi' => function ($query) {
                 $query->orderBy('tgl_realisasi', 'desc');
@@ -1812,8 +1924,7 @@ class MonevController extends Controller
         })
             ->rawColumns(['button', 'tanggal', 'realisasi', 'realisasi_fisik', 'pagu', 'pagu_kontrak', 'buttonnomen'])
             ->make(true);
-         }
-
+    }
 
       public function storefile(Request $request)
     {
