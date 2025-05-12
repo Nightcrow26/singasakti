@@ -112,6 +112,19 @@ Route::prefix('/admin')->group(function () {
             Route::get('/downloadk04', [App\Http\Controllers\MonevController::class, 'downloadk04'])->name('admin.monev.k04.download');
         }
         );
+        //Rekapitulasi
+        Route::prefix('/pengawasan_peralatan')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A3'])->name('admin.monev.1A3.index');
+            Route::post('/insertData1A3', [App\Http\Controllers\MonevController::class , 'insertData1A3'])->name('admin.monev.1A3.insert');
+            Route::put('/insertDataDetail1A3', [App\Http\Controllers\MonevController::class , 'insertDataDetail1A3'])->name('admin.monev.1A3.tambahdetail');
+            Route::get('/detail-data13A/{pengawasanId}', [App\Http\Controllers\MonevController::class, 'getDetailData']);
+            Route::delete('/admin/monev/1A3/{id}', [App\Http\Controllers\MonevController::class, 'destroy1A3'])->name('admin.monev.1A3.destroy');
+            Route::put('/updateDataDetail1A3', [App\Http\Controllers\MonevController::class , 'updateDataDetail1A3'])->name('admin.monev.1A3.updatedetail');
+            Route::put('/updateData1A3', [App\Http\Controllers\MonevController::class , 'updateData1A3'])->name('admin.monev.1A3.update');
+
+        }
+        );
+        
 
         Route::get('/under-construction', function () {
             return view('admin.monev.under_construction.index');
