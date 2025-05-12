@@ -13,7 +13,8 @@ class PengawasanPeralatan extends Model
 
     protected $fillable = [
         'skpd_id',
-        'nama_pemilik_peralatan_bujk',
+        'nama',
+        'status',
         'tanggal_pengawasan',
         'kepemilikan_perizinan_berusaha',
         'keabsahan_perizinan_berusaha',

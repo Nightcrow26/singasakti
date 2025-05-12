@@ -1458,7 +1458,8 @@ class MonevController extends Controller
     {
         $data = $request->validate([
             'skpd_id' => 'required|integer',
-            'nama_pemilik_peralatan_bujk' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
+            'status' => 'required|string|max:100',
             'tanggal_pengawasan' => 'required|string|max:255',
             'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
             'keabsahan_perizinan_berusaha' => 'required|string|max:255',
@@ -1555,7 +1556,8 @@ class MonevController extends Controller
     public function updateData1A3(Request $request)
     {
         $data = $request->validate([
-            'nama_pemilik_peralatan_bujk' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
+            'status' => 'required|string|max:100',
             'tanggal_pengawasan' => 'required|string|max:255',
             'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
             'keabsahan_perizinan_berusaha' => 'required|string|max:255',
