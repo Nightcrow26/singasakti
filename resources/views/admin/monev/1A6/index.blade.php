@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
-                        PENGAWASAN PERALATAN
+                        PENGAWASAN TEKNOLOGI KONSTRUKSI
                         @if (auth()->user()->hasRole('admin'))
                         <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
                            
@@ -94,7 +94,6 @@
                         <tr>
                             <th style="color: white; text-align:center; vertical-align: top;">Aksi</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Nama</th>
-                            <th style="color: white; text-align:center; vertical-align: top;">Status</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Tanggal Pengawasan</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Kepemilikan Perizinan Usaha</th>
                             <th style="color: white; text-align:center; vertical-align: top;">Keabsahan Perizinan Berusaha</th>
@@ -116,7 +115,6 @@
                                                 data-bs-target="#modal-tambah-edit" 
                                                 data-id="{{ $a->id }}"
                                                 data-nama="{{ $a->nama }}"
-                                                data-status="{{ $a->status }}"
                                                 data-tanggal_pengawasan="{{ $a->tanggal_pengawasan }}"
                                                 data-kepemilikan_perizinan_berusaha="{{ $a->kepemilikan_perizinan_berusaha }}"
                                                 data-keabsahan_perizinan_berusaha="{{ $a->keabsahan_perizinan_berusaha }}"
@@ -138,7 +136,7 @@
                                             <i class="bx bx-list-ul"> Detail</i>
                                         </button>
 
-                                        <form action="{{ route('admin.monev.1A3.destroy', $a->id) }}" method="POST" class="d-inline" id="delete-form-{{ $a->id }}">
+                                        <form action="{{ route('admin.monev.1A6.destroy', $a->id) }}" method="POST" class="d-inline" id="delete-form-{{ $a->id }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="button" class="dropdown-item" onclick="deleteData({{ $a->id }})">
@@ -149,7 +147,6 @@
                                 </div>
                             </td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->nama }}</td>
-                            <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->status }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->tanggal_pengawasan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->kepemilikan_perizinan_berusaha }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->keabsahan_perizinan_berusaha }}</td>
@@ -177,9 +174,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-primary" role="alert">
-                       PENGAWASAN PERALATAN
+                       PENGAWASAN TEKNOLOGI KONSTRUKSI
                     </div>
-                    <form method="post" id="form-tambah" action="{{ route('admin.monev.1A3.insert') }}" enctype="multipart/form-data">
+                    <form method="post" id="form-tambah" action="{{ route('admin.monev.1A6.insert') }}" enctype="multipart/form-data">
                         @csrf
                             <input type="hidden" name="skpd_id" value="{{ auth()->user()->id }}">
                             
@@ -188,19 +185,8 @@
                             </div>
                     
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan" required></dd>
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <dt>Status</dt>
-                            <dd>
-                                <select class="form-control" name="status" required>
-                                    <option value="">Pilih</option>
-                                    <option value="Pemilik Peralatan BUJK">Pemilik Peralatan BUJK</option>
-                                    <option value="Usaha Penyewaan Rantai Pasok Peralatan">Usaha Penyewaan Rantai Pasok Peralatan</option>
-                                    <option value="Distributor atau agen tunggal Rantai Pasok Peralatan">Distributor atau agen tunggal Rantai Pasok Peralatan</option>
-                                </select>
-                            </dd>
+                            <dt>Nama Badan Usaha Rantai Pasok teknologi</dt>
+                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Badan Usaha Rantai Pasok teknologi" required></dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
@@ -250,24 +236,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A3.update') }}" enctype="multipart/form-data">
+                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A6.update') }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')  
                         <input type="hidden" name="id">
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Pemilik Peralatan BUJK / Usaha Penyewaan Rantai Pasok Peralatan" required></dd>
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <dt>Status</dt>
-                            <dd>
-                                <select class="form-control" name="status" required>
-                                    <option value="">Pilih</option>
-                                    <option value="Pemilik Peralatan BUJK">Pemilik Peralatan BUJK</option>
-                                    <option value="Usaha Penyewaan Rantai Pasok Peralatan">Usaha Penyewaan Rantai Pasok Peralatan</option>
-                                    <option value="Distributor atau agen tunggal Rantai Pasok Peralatan">Distributor atau agen tunggal Rantai Pasok Peralatan</option>
-                                </select>
-                            </dd>
+                            <dt>Nama Badan Usaha Rantai Pasok teknologi</dt>
+                            <dd><input type="text" class="form-control" name="nama" placeholder="Nama Badan Usaha Rantai Pasok teknologi" required></dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
@@ -313,54 +288,34 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A3.tambahdetail') }}" enctype="multipart/form-data">
+                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A6.tambahdetail') }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')  
-                        <input type="hidden" name="pengawasan_peralatan_id">
+                        <input type="hidden" name="pengawasan_tek_konstruksi_id">
     
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Varian Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama_varian_peralatan" placeholder="Nama Varian Peralatan"></dd>
+                            <dt>Nama Teknologi</dt>
+                            <dd><input type="text" class="form-control" name="nama_teknologi" placeholder="Nama Teknologi"></dd>
                         </div>
     
                        <div class="col-md-12 mt-4">
-                            <dt>Nama Sub Varian Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama_sub_varian_peralatan" placeholder="Nama Sub Varian Peralatan"></dd>
+                            <dt>Bidang Usaha</dt>
+                            <dd><input type="text" class="form-control" name="bidang_usaha" placeholder="Bidang Usaha"></dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
-                            <dt>Merk Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="merk_peralatan" placeholder="Merk Peralatan"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Jumlah Unit</dt>
-                            <dd><input type="number" class="form-control" name="jumlah_unit" placeholder="Jumlah Unit" min="0"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Surat Keterangan Memenuhi Syarat K3</dt>
-                            <dd><input type="text" class="form-control" name="surat_keterangan_k3" placeholder="SK Memenuhi Syarat K3"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Bukti Kepemilikan</dt>
-                            <dd><input type="text" class="form-control" name="bukti_kepemilikan" placeholder="Bukti Kepemilikan"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Pencatatan Dalam SIMPK</dt>
+                            <dt>Tercantum Dalam HAKI di Kemen KumHam </dt>
                             <dd>
-                                <select class="form-control" name="pencatatan_simpk">
+                                <select class="form-control" name="haki">
                                     <option value="Sudah">Sudah</option>
-                                    <option value="Belum">Belum</option>
+                                    <option value="Belum">Belum Tercantum</option>
                                 </select>
                             </dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
-                            <dt>Nomor Registrasi Pencatatan dalam SIMPK</dt>
-                            <dd><input type="text" class="form-control" name="nomor_registrasi_simpk" placeholder="Nomor Registrasi SIMPK"></dd>
+                            <dt>Nomor HAKI</dt>
+                            <dd><input type="text" class="form-control" name="no_haki" placeholder="Nomor HAKI"></dd>
                         </div>
 
                         <div class="modal-footer">
@@ -377,7 +332,7 @@
         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Detail Data Peralatan</h5>
+                <h5 class="modal-title">Detail Data Teknologi Konstruksi</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body">
@@ -385,14 +340,10 @@
                     <thead>
                         <tr>
                             <th>Aksi</th>
-                            <th>Nama Varian</th>
-                            <th>Sub Varian</th>
-                            <th>Merk</th>
-                            <th>Jumlah</th>
-                            <th>SK K3</th>
-                            <th>Bukti Kepemilikan</th>
-                            <th>SIMPK</th>
-                            <th>No. Registrasi</th>
+                            <th>Nama Teknologi</th>
+                            <th>Bidang Usaha</th>
+                            <th>Tercantum Dalam HAKI Kemen KumHam</th>
+                            <th>Nomor HAKI</th>
                         </tr>
                     </thead>
                     <tbody id="detail-tbody">
@@ -412,54 +363,34 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A3.updatedetail') }}" enctype="multipart/form-data">
+                    <form method="post" id="form-edit" action="{{ route('admin.monev.1A6.updatedetail') }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')  
                         <input type="hidden" name="id">
     
                         <div class="col-md-12 mt-4">
-                            <dt>Nama Varian Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama_varian_peralatan" placeholder="Nama Varian Peralatan"></dd>
+                            <dt>Nama Teknologi</dt>
+                            <dd><input type="text" class="form-control" name="nama_teknologi" placeholder="Nama Teknologi"></dd>
                         </div>
     
                        <div class="col-md-12 mt-4">
-                            <dt>Nama Sub Varian Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="nama_sub_varian_peralatan" placeholder="Nama Sub Varian Peralatan"></dd>
+                            <dt>Bidang Usaha</dt>
+                            <dd><input type="text" class="form-control" name="bidang_usaha" placeholder="Bidang Usaha"></dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
-                            <dt>Merk Peralatan</dt>
-                            <dd><input type="text" class="form-control" name="merk_peralatan" placeholder="Merk Peralatan"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Jumlah Unit</dt>
-                            <dd><input type="number" class="form-control" name="jumlah_unit" placeholder="Jumlah Unit" min="0"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Surat Keterangan Memenuhi Syarat K3</dt>
-                            <dd><input type="text" class="form-control" name="surat_keterangan_k3" placeholder="SK Memenuhi Syarat K3"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Bukti Kepemilikan</dt>
-                            <dd><input type="text" class="form-control" name="bukti_kepemilikan" placeholder="Bukti Kepemilikan"></dd>
-                        </div>
-
-                        <div class="col-md-12 mt-4">
-                            <dt>Pencatatan Dalam SIMPK</dt>
+                            <dt>Tercantum Dalam HAKI di Kemen KumHam </dt>
                             <dd>
-                                <select class="form-control" name="pencatatan_simpk">
+                                <select class="form-control" name="haki">
                                     <option value="Sudah">Sudah</option>
-                                    <option value="Belum">Belum</option>
+                                    <option value="Belum">Belum Tercantum</option>
                                 </select>
                             </dd>
                         </div>
 
                         <div class="col-md-12 mt-4">
-                            <dt>Nomor Registrasi Pencatatan dalam SIMPK</dt>
-                            <dd><input type="text" class="form-control" name="nomor_registrasi_simpk" placeholder="Nomor Registrasi SIMPK"></dd>
+                            <dt>Nomor HAKI</dt>
+                            <dd><input type="text" class="form-control" name="no_haki" placeholder="Nomor HAKI"></dd>
                         </div>
 
                         <div class="modal-footer">
@@ -510,7 +441,7 @@
             }
         }
     </script>
-    {{-- Datatambahdetail --}}
+    {{-- Modal Tambah Detail 1A6 --}}
     <script>
         $('#modal-detail-tambah').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Tombol yang diklik
@@ -520,11 +451,11 @@
             var id = button.data('id') || '';
         
             // Masukkan data ke dalam form modal
-          
-            modal.find('input[name="pengawasan_peralatan_id"]').val(id); // hidden input
+            modal.find('input[name="pengawasan_tek_konstruksi_id"]').val(id); // hidden input
         });
     </script>
-    {{-- Dataedit --}}
+
+    {{-- Modal Edit Data Utama 1A6 --}}
     <script>
         $('#modal-tambah-edit').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Tombol yang diklik
@@ -533,23 +464,21 @@
             // Ambil data dari tombol
             var id = button.data('id') || '';
             var nama = button.data('nama') || '';
-            var status = button.data('status') || '';
             var rawTanggal = button.data('tanggal_pengawasan') || '';
             var tgl = rawTanggal.substring(0, 10);
             var kepemilikan = button.data('kepemilikan_perizinan_berusaha') || '';
             var keabsahan = button.data('keabsahan_perizinan_berusaha') || '';
 
-
             // Isi form di dalam modal
             modal.find('input[name="id"]').val(id);
             modal.find('input[name="nama"]').val(nama);
-            modal.find('select[name="status"]').val(status);
             modal.find('input[name="tanggal_pengawasan"]').val(tgl);
             modal.find('select[name="kepemilikan_perizinan_berusaha"]').val(kepemilikan);
             modal.find('select[name="keabsahan_perizinan_berusaha"]').val(keabsahan);
         });
     </script>
-    {{-- Dataeditdetail --}}
+
+    {{-- Modal Edit Detail 1A6 --}}
     <script>
         $('#modal-detail-edit').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Tombol yang diklik
@@ -557,81 +486,64 @@
 
             // Ambil data dari tombol
             var id = button.data('id') || '';
-            var namaVarian = button.data('nama_varian') || '';
-            var namaSub = button.data('nama_sub') || '';
-            var merk = button.data('merk') || '';
-            var jumlah = button.data('jumlah') || '';
-            var keterangan = button.data('keterangan') || '';
-            var bukti = button.data('bukti') || '';
-            var pencatatan = button.data('pencatatan') || '';
-            var nomor = button.data('nomor') || '';
+            var namaTeknologi = button.data('nama_teknologi') || '';
+            var bidangUsaha = button.data('bidang_usaha') || '';
+            var haki = button.data('haki') || '';
+            var noHaki = button.data('no_haki') || '';
 
             // Isi form di dalam modal
             modal.find('input[name="id"]').val(id);
-            modal.find('input[name="nama_varian_peralatan"]').val(namaVarian);
-            modal.find('input[name="nama_sub_varian_peralatan"]').val(namaSub);
-            modal.find('input[name="merk_peralatan"]').val(merk);
-            modal.find('input[name="jumlah_unit"]').val(jumlah);
-            modal.find('input[name="surat_keterangan_k3"]').val(keterangan);
-            modal.find('input[name="bukti_kepemilikan"]').val(bukti);
-            modal.find('select[name="pencatatan_simpk"]').val(pencatatan);
-            modal.find('input[name="nomor_registrasi_simpk"]').val(nomor);
+            modal.find('input[name="nama_teknologi"]').val(namaTeknologi);
+            modal.find('input[name="bidang_usaha"]').val(bidangUsaha);
+            modal.find('input[name="haki"]').val(haki);
+            modal.find('input[name="no_haki"]').val(noHaki);
         });
     </script>
-    {{-- lihatdetail --}}
+
+    {{-- Load Tabel Detail 1A6 --}}
     <script>
         function loadDetailTable(pengawasanId) {
-        const tbody = document.getElementById('detail-tbody');
-        tbody.innerHTML = '<tr><td colspan="9" class="text-center">Memuat data...</td></tr>';
+            const tbody = document.getElementById('detail-tbody');
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center">Memuat data...</td></tr>';
 
-       fetch('/admin/pengawasan_peralatan/detail-data13A/' + pengawasanId)
-            .then(response => response.json())
-            .then(data => {
-                if (data.message) {
-                    // Jika response adalah pesan error (misalnya tidak ada data)
-                    tbody.innerHTML = `<tr><td colspan="9" class="text-center text-danger">${data.message}</td></tr>`;
-                    return;
-                }
+            fetch('/admin/pengawasan_teknologi/detail-data1A6/' + pengawasanId)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        tbody.innerHTML = `<tr><td colspan="5" class="text-center text-danger">${data.message}</td></tr>`;
+                        return;
+                    }
 
-                tbody.innerHTML = '';
-                
-                data.forEach(item => {
-                    tbody.innerHTML += `
-                        <tr>
-                            <td> 
-                                <button class="dropdown-item"
-                                    data-bs-toggle="modal"
+                    tbody.innerHTML = '';
+                    
+                    data.forEach(item => {
+                        tbody.innerHTML += `
+                            <tr>
+                                <td> 
+                                    <button class="dropdown-item"
+                                        data-bs-toggle="modal"
                                         data-bs-target="#modal-detail-edit"
                                         data-id="${item.id}"
-                                        data-nama_varian="${item.nama_varian_peralatan}"
-                                        data-nama_sub="${item.nama_sub_varian_peralatan}"
-                                        data-merk="${item.merk_peralatan}"
-                                        data-jumlah="${item.jumlah_unit}"
-                                        data-keterangan="${item.surat_keterangan_k3}"
-                                        data-bukti="${item.bukti_kepemilikan}"
-                                        data-pencatatan="${item.pencatatan_simpk}"
-                                        data-nomor="${item.nomor_registrasi_simpk}">
-                                    <i class="bx bx-pencil"> Edit</i>
-                                </button>
-                            </td>
-                            <td>${item.nama_varian_peralatan ?? '-'}</td>
-                            <td>${item.nama_sub_varian_peralatan ?? '-'}</td>
-                            <td>${item.merk_peralatan ?? '-'}</td>
-                            <td>${item.jumlah_unit ?? 0}</td>
-                            <td>${item.surat_keterangan_k3 ?? '-'}</td>
-                            <td>${item.bukti_kepemilikan ?? '-'}</td>
-                            <td>${item.pencatatan_simpk ?? '-'}</td>
-                            <td>${item.nomor_registrasi_simpk ?? '-'}</td>
-                        </tr>
-                    `;
+                                        data-nama_teknologi="${item.nama_teknologi}"
+                                        data-bidang_usaha="${item.bidang_usaha}"
+                                        data-haki="${item.haki}"
+                                        data-no_haki="${item.no_haki}">
+                                        <i class="bx bx-pencil"></i> Edit
+                                    </button>
+                                </td>
+                                <td>${item.nama_teknologi ?? '-'}</td>
+                                <td>${item.bidang_usaha ?? '-'}</td>
+                                <td>${item.haki ?? '-'}</td>
+                                <td>${item.no_haki ?? '-'}</td>
+                            </tr>
+                        `;
+                    });
+                })
+                .catch(error => {
+                    tbody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">Gagal memuat data.</td></tr>';
                 });
-            })
-            .catch(error => {
-                tbody.innerHTML = '<tr><td colspan="9" class="text-center text-danger">Gagal memuat data.</td></tr>';
-            });
         }
     </script>
-
 
     
     <script>
