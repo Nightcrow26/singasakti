@@ -69,15 +69,21 @@ Route::prefix('/admin')->group(function () {
         }
         );
 
-
-
         //Rekapitulasi
         Route::prefix('/k01a')->group(function () {
-            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01a'])->name('admin.monev.k01a.index');
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k01a'])->name('admin.monev.k01a.index');
+            Route::post('/insertDatak01a', [App\Http\Controllers\MonevController::class , 'insertDatak01a'])->name('admin.monev.k01a.insert');
+            Route::put('/updatek01a', [App\Http\Controllers\MonevController::class, 'updatek01a'])->name('admin.monev.k01a.update');
+            Route::delete('/admin/monev/k01a/{id}', [App\Http\Controllers\MonevController::class, 'destroyk01a'])->name('admin.monev.k01a.destroy');
+            Route::get('/downloadk01a', [App\Http\Controllers\MonevController::class, 'downloadk01a'])->name('admin.monev.k01a.download');
         }
         );
         Route::prefix('/k01b')->group(function () {
-            Route::get('/', [App\Http\Controllers\RekapitulasiController::class , 'k01b'])->name('admin.monev.k01b.index');
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'k01b'])->name('admin.monev.k01b.index');
+            Route::post('/insertDatak01b', [App\Http\Controllers\MonevController::class , 'insertDatak01b'])->name('admin.monev.k01b.insert');
+            Route::put('/updatek01b', [App\Http\Controllers\MonevController::class, 'updatek01b'])->name('admin.monev.k01b.update');
+            Route::delete('/admin/monev/k01b/{id}', [App\Http\Controllers\MonevController::class, 'destroyk01b'])->name('admin.monev.k01b.destroy');
+            Route::get('/downloadk01b', [App\Http\Controllers\MonevController::class, 'downloadk01b'])->name('admin.monev.k01b.download');
         });
         Route::prefix('/k02')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'k02'])->name('admin.monev.k02.index');
@@ -106,6 +112,19 @@ Route::prefix('/admin')->group(function () {
             Route::get('/downloadk04', [App\Http\Controllers\MonevController::class, 'downloadk04'])->name('admin.monev.k04.download');
         }
         );
+        //Rekapitulasi
+        Route::prefix('/pengawasan_peralatan')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A3'])->name('admin.monev.1A3.index');
+            Route::post('/insertData1A3', [App\Http\Controllers\MonevController::class , 'insertData1A3'])->name('admin.monev.1A3.insert');
+            Route::put('/insertDataDetail1A3', [App\Http\Controllers\MonevController::class , 'insertDataDetail1A3'])->name('admin.monev.1A3.tambahdetail');
+            Route::get('/detail-data13A/{pengawasanId}', [App\Http\Controllers\MonevController::class, 'getDetailData']);
+            Route::delete('/admin/monev/1A3/{id}', [App\Http\Controllers\MonevController::class, 'destroy1A3'])->name('admin.monev.1A3.destroy');
+            Route::put('/updateDataDetail1A3', [App\Http\Controllers\MonevController::class , 'updateDataDetail1A3'])->name('admin.monev.1A3.updatedetail');
+            Route::put('/updateData1A3', [App\Http\Controllers\MonevController::class , 'updateData1A3'])->name('admin.monev.1A3.update');
+
+        }
+        );
+        
 
         Route::get('/under-construction', function () {
             return view('admin.monev.under_construction.index');
@@ -203,23 +222,21 @@ Route::prefix('/excel')->group(function () {
 );
 // });
 
-Route::middleware('role:skpd')->group(function () {
-    Route::prefix('/skpd')->group(function () {
-            Route::get('home', [App\Http\Controllers\HomeController::class , 'indexskpd'])->name('home.skpd');
-
-            Route::prefix('/spbe')->group(function () {
-                    Route::get('/', [App\Http\Controllers\TrxJawabanController::class , 'indexspbe'])->name('spbe.index');
-                    Route::post('/store', [App\Http\Controllers\TrxJawabanController::class , 'storespbe'])->name('spbe.store');
-                    Route::post('/update', [App\Http\Controllers\TrxJawabanController::class , 'updatespbeskpd'])->name('spbe.update');
-                    Route::post('/add', [App\Http\Controllers\TrxJawabanController::class , 'addspbe'])->name('spbe.add');
-                    Route::post('/detail', [App\Http\Controllers\TrxJawabanController::class , 'detailspbe'])->name('spbe.detail');
-                    Route::post('/delete', [App\Http\Controllers\TrxJawabanController::class , 'deletespbe'])->name('spbe.delete');
-                    Route::post('/deleteupload', [App\Http\Controllers\TrxJawabanController::class , 'deleteupload'])->name('spbe.deleteupload');
-                    Route::post('/verif', [App\Http\Controllers\TrxJawabanController::class , 'verifspbeskpd'])->name('spbe.verif');
-                }
+    Route::middleware('role:skpd')->group(function () {
+        Route::prefix('/skpd')->group(function () {
+                        Route::get('home', [App\Http\Controllers\HomeController::class , 'indexskpd'])->name('home.skpd');
+                        Route::prefix('/spbe')->group(function () {
+                                Route::get('/', [App\Http\Controllers\TrxJawabanController::class , 'indexspbe'])->name('spbe.index');
+                                Route::post('/store', [App\Http\Controllers\TrxJawabanController::class , 'storespbe'])->name('spbe.store');
+                                Route::post('/update', [App\Http\Controllers\TrxJawabanController::class , 'updatespbeskpd'])->name('spbe.update');
+                                Route::post('/add', [App\Http\Controllers\TrxJawabanController::class , 'addspbe'])->name('spbe.add');
+                                Route::post('/detail', [App\Http\Controllers\TrxJawabanController::class , 'detailspbe'])->name('spbe.detail');
+                                Route::post('/delete', [App\Http\Controllers\TrxJawabanController::class , 'deletespbe'])->name('spbe.delete');
+                                Route::post('/deleteupload', [App\Http\Controllers\TrxJawabanController::class , 'deleteupload'])->name('spbe.deleteupload');
+                                Route::post('/verif', [App\Http\Controllers\TrxJawabanController::class , 'verifspbeskpd'])->name('spbe.verif');
+                        });
+                    }
                 );
-            }
-            );
-        });
+    });
 
 Route::any('logout', [App\Http\Controllers\Auth\LoginController::class , 'logout'])->name('logout');

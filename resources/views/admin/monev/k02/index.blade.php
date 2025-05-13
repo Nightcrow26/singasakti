@@ -222,7 +222,7 @@
                     <option value="">Pilih SOPD</option>
                     @foreach ($skpd as $skpd2)
                         <option value="{{ $skpd2->id }}" {{ $selectedSkpdId == $skpd2->id ? 'selected' : '' }}>
-                            {{ $skpd2->nama }}
+                            {{ $skpd2->name }}
                         </option>
                     @endforeach
                 </select>
@@ -609,7 +609,7 @@
                         @csrf
                         
                         <div>
-                            <input type="hidden" name="skpd_id" value="{{ auth()->user()->skpd_id }}">
+                            <input type="hidden" name="skpd_id" value="{{ auth()->user()->id }}">
                             
                             <div class="col-md-12 mt-4">
                                 <small class="text-light fw-semibold">Upload :</small>

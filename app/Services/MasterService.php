@@ -129,17 +129,34 @@ class MasterService
     }
 
     public static function storeMasterUser(array $data)
-    {
-        $trans = DB::transaction(function () use ($data) {
-            $user = User::create([
-                'username' => $data['name'],
-                'name' => $data['name'],
-                'skpd_id' => $data['skpd_id'],
-                'role' => 'skpd',
-                'password' => bcrypt($data['password']),
-                'tahun' => '2024',
-            ]);
-            $user->assignRole('skpd');
+    {   
+        $cek = $data['skpd_id'];
+        $find = Skpd::find($cek);
+
+        $trans = DB::transaction(function () use ($data,$find) {
+            if ($find->nama == 'penyedia' ){
+                $user = User::create([
+                    'username' => $data['name'],
+                    'name' => $data['name'],
+                    'skpd_id' => $data['skpd_id'],
+                    'role' => 'penyedia',
+                    'password' => bcrypt($data['password']),
+                    'tahun' => '2025',
+                ]);
+            
+                $user->assignRole('penyedia');
+            }else{
+                $user = User::create([
+                    'username' => $data['name'],
+                    'name' => $data['name'],
+                    'skpd_id' => $data['skpd_id'],
+                    'role' => 'skpd',
+                    'password' => bcrypt($data['password']),
+                    'tahun' => '2025',
+                ]);
+                $user->assignRole('skpd');
+
+            }
         });
         return true;
     }
