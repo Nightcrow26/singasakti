@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
-                        PENGAWASAN PRODUSEN PRODUK
+                        PENGAWASAN DISTRIBUTOR PRODUK
                         @if (auth()->user()->hasRole('admin'))
                         <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
                            
@@ -576,7 +576,7 @@
                                         data-sertifikat_tkdn="${item.sertifikat_tkdn}"
                                         data-sertifikat_sni="${item.sertifikat_sni}"
                                         data-pencatatan="${item.pencatatan_simpk}"
-                                        
+
                                     <i class="bx bx-pencil"> Edit</i>
                                 </button>
                             </td>
