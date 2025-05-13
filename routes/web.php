@@ -113,6 +113,30 @@ Route::prefix('/admin')->group(function () {
         }
         );
         //Rekapitulasi
+        Route::prefix('/pengawasan_produk')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A1'])->name('admin.monev.1A1.index');
+            Route::post('/insertData1A1', [App\Http\Controllers\MonevController::class , 'insertData1A1'])->name('admin.monev.1A1.insert');
+            Route::put('/insertDataDetail1A1', [App\Http\Controllers\MonevController::class , 'insertDataDetail1A1'])->name('admin.monev.1A1.tambahdetail');
+            Route::get('/detail-data1A1/{pengawasanId}', [App\Http\Controllers\MonevController::class, 'getDetailData1A1']);
+            Route::delete('/admin/monev/1A1/{id}', [App\Http\Controllers\MonevController::class, 'destroy1A1'])->name('admin.monev.1A1.destroy');
+            Route::put('/updateDataDetail1A1', [App\Http\Controllers\MonevController::class , 'updateDataDetail1A1'])->name('admin.monev.1A1.updatedetail');
+            Route::put('/updateData1A1', [App\Http\Controllers\MonevController::class , 'updateData1A1'])->name('admin.monev.1A1.update');
+
+        }
+        );
+
+        Route::prefix('/pengawasan_distributor')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A2'])->name('admin.monev.1A2.index');
+            Route::post('/insertData1A2', [App\Http\Controllers\MonevController::class , 'insertData1A2'])->name('admin.monev.1A2.insert');
+            Route::put('/insertDataDetail1A2', [App\Http\Controllers\MonevController::class , 'insertDataDetail1A2'])->name('admin.monev.1A2.tambahdetail');
+            Route::get('/detail-data1A2/{pengawasanId}', [App\Http\Controllers\MonevController::class, 'getDetailData1A2']);
+            Route::delete('/admin/monev/1A2/{id}', [App\Http\Controllers\MonevController::class, 'destroy1A2'])->name('admin.monev.1A2.destroy');
+            Route::put('/updateDataDetail1A2', [App\Http\Controllers\MonevController::class , 'updateDataDetail1A2'])->name('admin.monev.1A2.updatedetail');
+            Route::put('/updateData1A2', [App\Http\Controllers\MonevController::class , 'updateData1A2'])->name('admin.monev.1A2.update');
+
+        }
+        );
+
         Route::prefix('/pengawasan_peralatan')->group(function () {
             Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A3'])->name('admin.monev.1A3.index');
             Route::post('/insertData1A3', [App\Http\Controllers\MonevController::class , 'insertData1A3'])->name('admin.monev.1A3.insert');
