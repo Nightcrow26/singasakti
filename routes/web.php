@@ -148,6 +148,18 @@ Route::prefix('/admin')->group(function () {
 
         }
         );
+
+        Route::prefix('/pengawasan_teknologi')->group(function () {
+            Route::get('/', [App\Http\Controllers\MonevController::class , 'tertib1A6'])->name('admin.monev.1A6.index');
+            Route::post('/insertData1A6', [App\Http\Controllers\MonevController::class , 'insertData1A6'])->name('admin.monev.1A6.insert');
+            Route::put('/insertDataDetail1A6', [App\Http\Controllers\MonevController::class , 'insertDataDetail1A6'])->name('admin.monev.1A6.tambahdetail');
+            Route::get('/detail-data1A6/{pengawasanId}', [App\Http\Controllers\MonevController::class, 'getDetailData1A6']);
+            Route::delete('/admin/monev/1A6/{id}', [App\Http\Controllers\MonevController::class, 'destroy1A6'])->name('admin.monev.1A6.destroy');
+            Route::put('/updateDataDetail1A6', [App\Http\Controllers\MonevController::class , 'updateDataDetail1A6'])->name('admin.monev.1A6.updatedetail');
+            Route::put('/updateData1A6', [App\Http\Controllers\MonevController::class , 'updateData1A6'])->name('admin.monev.1A6.update');
+
+        }
+        );
         
 
         Route::get('/under-construction', function () {

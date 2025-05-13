@@ -31,6 +31,9 @@ use App\Models\K03;
 use App\Models\K04;
 use App\Models\PengawasanDistributor;
 use App\Models\PengawasanProduk;
+use App\Models\PengawasanTekKonstruksi;
+use App\Models\DetailPengawasanTekKonstruksi;
+
 
 class MonevController extends Controller
 {
@@ -1183,7 +1186,7 @@ class MonevController extends Controller
     public function k03(Request $request)
     {
         $selectedSkpdId = $request->input('skpd_id') ?? '';
-        $skpd = Skpd::all();
+        $skpd = User::where('role', 'penyedia')->get();
         // Mengambil semua data K03
         if (auth()->user()->hasRole('admin')){
             if($selectedSkpdId !=''){
@@ -1306,7 +1309,7 @@ class MonevController extends Controller
     public function k04(Request $request)
     {
         $selectedSkpdId = $request->input('skpd_id') ?? '';
-        $skpd = Skpd::all();
+        $skpd = User::where('role', 'penyedia')->get();
         // Mengambil semua data K04
         if (auth()->user()->hasRole('admin')){
             if($selectedSkpdId !=''){
@@ -1862,6 +1865,144 @@ class MonevController extends Controller
                 }
         
     }
+
+    public function tertib1A6(Request $request)
+    {  
+        $selectedSkpdId = $request->input('skpd_id') ?? '';
+        $skpd = User::where('role', 'penyedia')->get();
+
+        if (auth()->user()->hasRole('admin')) {
+            if ($selectedSkpdId) {
+                $data = PengawasanTekKonstruksi::where('skpd_id', $selectedSkpdId)->get();
+            } else {
+                $data = PengawasanTekKonstruksi::all();
+            }
+        } else {
+            $data = PengawasanTekKonstruksi::where('skpd_id', auth()->user()->id)->get();
+        }
+
+        return view('admin.monev.1A6.index', compact('data', 'skpd', 'selectedSkpdId'));
+    }
+
+    public function insertData1A6(Request $request)
+    {
+        $data = $request->validate([
+            'skpd_id' => 'required|integer',
+            'nama' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|date',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            PengawasanTekKonstruksi::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
+
+    public function insertDataDetail1A6(Request $request)
+    {
+        $data = $request->validate([
+            'pengawasan_tek_konstruksi_id' => 'required|integer',
+            'nama_teknologi' => 'required|string|max:255',
+            'bidang_usaha' => 'required|string|max:255',
+            'haki' => 'nullable|string|max:255',
+            'no_haki' => 'nullable|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            DetailPengawasanTekKonstruksi::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data detail berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Gagal menyimpan data detail: ' . $e->getMessage());
+        }
+    }
+
+    public function getDetailData1A6($pengawasanId)
+    {
+        $data = DetailPengawasanTekKonstruksi::where('pengawasan_tek_konstruksi_id', $pengawasanId)->get();
+
+        if ($data->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada data detail untuk ID pengawasan tersebut.'], 404);
+        }
+
+        return response()->json($data);
+    }
+
+    public function destroy1A6($id)
+    {
+        try {
+            $data = PengawasanTekKonstruksi::findOrFail($id);
+            $data->delete();
+            return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+        }
+    }
+
+    public function updateDataDetail1A6(Request $request)
+    {
+        $button = $request->input('button');
+
+        $data = $request->validate([
+            'id' => 'required|integer',
+            'nama_teknologi' => 'required|string|max:255',
+            'bidang_usaha' => 'required|string|max:255',
+            'haki' => 'nullable|string|max:255',
+            'no_haki' => 'nullable|string|max:255',
+        ]);
+
+        if ($button == "update") {
+            DB::beginTransaction();
+            try {
+                $item = DetailPengawasanTekKonstruksi::findOrFail($request->input('id'));
+                $item->update($data);
+                DB::commit();
+                return redirect()->back()->with('success', 'Data detail berhasil diperbarui');
+            } catch (\Exception $e) {
+                DB::rollBack();
+                return redirect()->back()->with('error', 'Gagal memperbarui data detail: ' . $e->getMessage());
+            }
+        } elseif ($button == "hapus") {
+            try {
+                $item = DetailPengawasanTekKonstruksi::findOrFail($request->input('id'));
+                $item->delete();
+                return redirect()->back()->with('success', 'Data detail berhasil dihapus!');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Gagal menghapus data detail: ' . $e->getMessage());
+            }
+        }
+    }
+
+    public function updateData1A6(Request $request)
+    {
+        $data = $request->validate([
+            'nama' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|date',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $item = PengawasanTekKonstruksi::findOrFail($request->input('id'));
+            $item->update($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data utama berhasil diperbarui');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Gagal memperbarui data utama: ' . $e->getMessage());
+        }
+    }
+
 
     // public function data(Request $request)
     // {

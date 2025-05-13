@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        if (!Schema::hasTable('pengawasan_tek_konstruksi')) {
+            Schema::create('pengawasan_tek_konstruksi', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('skpd_id');
+                $table->string('nama');
+                $table->date('tanggal_pengawasan');
+                $table->string('kepemilikan_perizinan_berusaha');
+                $table->string('keabsahan_perizinan_berusaha');
+                $table->timestamps();
+            });
+        }
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('pengawasan_tek_konstruksi');
+    }
+};
