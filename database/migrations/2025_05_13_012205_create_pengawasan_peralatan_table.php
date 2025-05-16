@@ -4,11 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengawasanPeralatanTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        if (!Schema::hasTable('pengawasan_peralatan')) {
             Schema::create('pengawasan_peralatan', function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('skpd_id');
@@ -19,11 +23,14 @@ class CreatePengawasanPeralatanTable extends Migration
                 $table->string('keabsahan_perizinan_berusaha');
                 $table->timestamps();
             });
-        }
     }
-
+      /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('pengawasan_peralatan');
     }
-}
+};
