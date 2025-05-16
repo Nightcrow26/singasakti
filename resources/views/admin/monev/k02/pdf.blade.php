@@ -99,13 +99,56 @@
                         <td style="white-space: nowrap;">{{ $k02->kegiatan_konstruksi }}</td>
                         <td style="white-space: nowrap;">{{ $k02->no_kontrak }}</td>
                         <td style="white-space: nowrap;">{{ $k02->nm_bujk }}</td>
-                        <td>{{ $k02->proses_pemilihan_penyedia_jasa }}</td>
-                        <td>{{ $k02->penerapan_standar_kontrak }}</td>
-                        <td>{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}</td>
-                        <td>{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}</td>
-                        <td>{{ $k02->ketersediaan_dokumen_standar_k4 }}</td>
-                        <td>{{ $k02->penerapan_smkk }}</td>
-                        <td>{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}</td>
+                        <td>
+                            @if($k02->proses_pemilihan_penyedia_jasa == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penerapan_standar_kontrak == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_tenaga_kerja_bersertifikat == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemberian_pekerjaan_utama_subpenyedia == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->ketersediaan_dokumen_standar_k4 == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penerapan_smkk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->kegiatan_antisipasi_kecelakaan_kerja == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                       
                     </tr>
                     @endforeach
                 </tbody>
@@ -143,13 +186,56 @@
                         <td style="white-space: nowrap;">{{ $k02->kegiatan_konstruksi }}</td>
                         <td style="white-space: nowrap;">{{ $k02->no_kontrak }}</td>
                         <td style="white-space: nowrap;">{{ $k02->nm_bujk }}</td>
-                        <td>{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}</td>
-                        <td>{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}</td>
-                        <td>{{ $k02->penggunaan_material_standar }}</td>
-                        <td>{{ $k02->penggunaan_produk_dalam_negeri }}</td>
-                        <td>{{ $k02->pemenuhan_standar_mutu_material }}</td>
-                        <td>{{ $k02->pemenuhan_standar_teknis_lingkungan }}</td>
-                        <td>{{ $k02->pemenuhan_standar_k3 }}</td>
+                        <td>
+                            @if($k02->penerapan_sistem_manajemen_mutu_konstruksi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_peralatan_pelaksanaan_proyek == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_material_standar == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_produk_dalam_negeri == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_mutu_material == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_teknis_lingkungan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_k3 == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
                     </tr>
                     @endforeach
                 </tbody>
@@ -188,13 +274,55 @@
                         <td style="white-space: nowrap;">Hulu Sungai Tengah</td>
                         <td style="white-space: nowrap;">{{ $k02->no_kontrak }}</td>
                         <td style="white-space: nowrap;">{{ $k02->nm_bujk }}</td>
-                        <td>{{ $k02->proses_pemilihan_penyedia_jasa }}</td>
-                        <td>{{ $k02->penerapan_standar_kontrak }}</td>
-                        <td>{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}</td>
-                        <td>{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}</td>
-                        <td>{{ $k02->ketersediaan_dokumen_standar_k4 }}</td>
-                        <td>{{ $k02->penerapan_smkk }}</td>
-                        <td>{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}</td>
+                         <td>
+                            @if($k02->proses_pemilihan_penyedia_jasa == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penerapan_standar_kontrak == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_tenaga_kerja_bersertifikat == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemberian_pekerjaan_utama_subpenyedia == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->ketersediaan_dokumen_standar_k4 == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penerapan_smkk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->kegiatan_antisipasi_kecelakaan_kerja == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -232,13 +360,56 @@
                         <td style="white-space: nowrap;">{{ $k02->kegiatan_konstruksi }}</td>
                         <td style="white-space: nowrap;">{{ $k02->no_kontrak }}</td>
                         <td style="white-space: nowrap;">{{ $k02->nm_bujk }}</td>
-                        <td>{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}</td>
-                        <td>{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}</td>
-                        <td>{{ $k02->penggunaan_material_standar }}</td>
-                        <td>{{ $k02->penggunaan_produk_dalam_negeri }}</td>
-                        <td>{{ $k02->pemenuhan_standar_mutu_material }}</td>
-                        <td>{{ $k02->pemenuhan_standar_teknis_lingkungan }}</td>
-                        <td>{{ $k02->pemenuhan_standar_k3 }}</td>
+                        <td>
+                            @if($k02->penerapan_sistem_manajemen_mutu_konstruksi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_peralatan_pelaksanaan_proyek == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_material_standar == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->penggunaan_produk_dalam_negeri == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_mutu_material == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_teknis_lingkungan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k02->pemenuhan_standar_k3 == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
                     </tr>
                     @endforeach
                 </tbody>

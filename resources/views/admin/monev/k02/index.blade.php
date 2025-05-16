@@ -204,13 +204,6 @@
                             </div>
                         </div>
                         @endif
-                        
-                        {{-- @if (auth()->user()->hasRole('admin'))
-                            <a href="{{ route('excel.rutin') }}" style="float: right;margin-right:10px;" type="button"
-                                class="btn btn-sm btn-success">
-                                Download Excel
-                            </a>
-                        @endif --}}
                     </div>
                 </div>
             </div>
@@ -254,13 +247,13 @@
                         @foreach ($dataK02 as $index => $k02)
                         @php
                             $statusAkhir = (
-                                $k02->proses_pemilihan_penyedia_jasa == 'Tertib' &&
-                                $k02->penerapan_standar_kontrak == 'Tertib' &&
-                                $k02->penggunaan_tenaga_kerja_bersertifikat == 'Tertib' &&
-                                $k02->pemberian_pekerjaan_utama_subpenyedia == 'Tertib' &&
-                                $k02->ketersediaan_dokumen_standar_k4 == 'Tertib' &&
-                                $k02->penerapan_smkk == 'Tertib' &&
-                                $k02->kegiatan_antisipasi_kecelakaan_kerja == 'Tertib'
+                                $k02->proses_pemilihan_penyedia_jasa != NULL &&
+                                $k02->penerapan_standar_kontrak != NULL &&
+                                $k02->penggunaan_tenaga_kerja_bersertifikat != NULL &&
+                                $k02->pemberian_pekerjaan_utama_subpenyedia != NULL &&
+                                $k02->ketersediaan_dokumen_standar_k4 != NULL &&
+                                $k02->penerapan_smkk != NULL &&
+                                $k02->kegiatan_antisipasi_kecelakaan_kerja != NULL
                             ) ? 'Tertib' : 'Tidak Tertib';
                         @endphp
                         <tr>
@@ -278,15 +271,7 @@
                                                 data-id="{{ $k02->id }}"
                                                 data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
                                                 data-no_kontrak="{{ $k02->no_kontrak }}"
-                                                data-nm_bujk="{{ $k02->nm_bujk }}"
-                                                data-proses_pemilihan_penyedia_jasa="{{ $k02->proses_pemilihan_penyedia_jasa }}"
-                                                data-penerapan_standar_kontrak="{{ $k02->penerapan_standar_kontrak }}"
-                                                data-penggunaan_tenaga_kerja_bersertifikat="{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}"
-                                                data-pemberian_pekerjaan_utama_subpenyedia="{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}"
-                                                data-ketersediaan_dokumen_standar_k4="{{ $k02->ketersediaan_dokumen_standar_k4 }}"
-                                                data-penerapan_smkk="{{ $k02->penerapan_smkk }}"
-                                                data-kegiatan_antisipasi_kecelakaan_kerja="{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}"
-                                                data-data_dukung="{{ $k02->data_dukung }}">
+                                                data-nm_bujk="{{ $k02->nm_bujk }}">
                                             <i class="bx bx-edit-alt"> Edit</i>
                                         </button>
                             
@@ -305,85 +290,99 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->no_kontrak }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->nm_bujk }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->proses_pemilihan_penyedia_jasa == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->proses_pemilihan_penyedia_jasa == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->proses_pemilihan_penyedia_jasa }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penerapan_standar_kontrak == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penerapan_standar_kontrak == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penerapan_standar_kontrak }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penggunaan_tenaga_kerja_bersertifikat == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penggunaan_tenaga_kerja_bersertifikat == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penggunaan_tenaga_kerja_bersertifikat }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->pemberian_pekerjaan_utama_subpenyedia == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->pemberian_pekerjaan_utama_subpenyedia == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->pemberian_pekerjaan_utama_subpenyedia }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->ketersediaan_dokumen_standar_k4 == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->ketersediaan_dokumen_standar_k4 == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->ketersediaan_dokumen_standar_k4 }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penerapan_smkk == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penerapan_smkk == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penerapan_smkk }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->kegiatan_antisipasi_kecelakaan_kerja == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->kegiatan_antisipasi_kecelakaan_kerja == NULL )
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->kegiatan_antisipasi_kecelakaan_kerja }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
@@ -435,13 +434,13 @@
                         @foreach ($dataK02 as $index => $k02)
                         @php
                             $statusAkhir2 = (
-                                $k02->penerapan_sistem_manajemen_mutu_konstruksi == 'Tertib' &&
-                                $k02->pemenuhan_peralatan_pelaksanaan_proyek == 'Tertib' &&
-                                $k02->penggunaan_material_standar == 'Tertib' &&
-                                $k02->penggunaan_produk_dalam_negeri == 'Tertib' &&
-                                $k02->pemenuhan_standar_mutu_material == 'Tertib' &&
-                                $k02->pemenuhan_standar_teknis_lingkungan == 'Tertib' &&
-                                $k02->pemenuhan_standar_k3 == 'Tertib'
+                                $k02->penerapan_sistem_manajemen_mutu_konstruksi != NULL &&
+                                $k02->pemenuhan_peralatan_pelaksanaan_proyek != NULL &&
+                                $k02->penggunaan_material_standar != NULL &&
+                                $k02->penggunaan_produk_dalam_negeri != NULL &&
+                                $k02->pemenuhan_standar_mutu_material != NULL &&
+                                $k02->pemenuhan_standar_teknis_lingkungan != NULL &&
+                                $k02->pemenuhan_standar_k3 != NULL
                             ) ? 'Tertib' : 'Tidak Tertib';
                         @endphp
 
@@ -461,15 +460,7 @@
                                                 data-id="{{ $k02->id }}"
                                                 data-kegiatan_konstruksi="{{ $k02->kegiatan_konstruksi }}"
                                                 data-no_kontrak="{{ $k02->no_kontrak }}"
-                                                data-nm_bujk="{{ $k02->nm_bujk }}"
-                                                data-penerapan_sistem_manajemen_mutu_konstruksi="{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}"
-                                                data-pemenuhan_peralatan_pelaksanaan_proyek="{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}"
-                                                data-penggunaan_material_standar="{{ $k02->penggunaan_material_standar }}"
-                                                data-penggunaan_produk_dalam_negeri="{{ $k02->penggunaan_produk_dalam_negeri }}"
-                                                data-pemenuhan_standar_mutu_material="{{ $k02->pemenuhan_standar_mutu_material }}"
-                                                data-pemenuhan_standar_teknis_lingkungan="{{ $k02->pemenuhan_standar_teknis_lingkungan }}"
-                                                data-pemenuhan_standar_k3="{{ $k02->pemenuhan_standar_k3 }}"
-                                                data-data_dukung="{{ $k02->data_dukung }}">
+                                                data-nm_bujk="{{ $k02->nm_bujk }}">
                                             <i class="bx bx-edit-alt"> Edit</i>
                                         </button>
                                         <form action="{{ route('admin.monev.k02.destroy', $k02->id) }}" method="POST" class="d-inline" id="delete-form-{{ $k02->id }}">
@@ -487,85 +478,99 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->no_kontrak }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k02->nm_bujk }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penerapan_sistem_manajemen_mutu_konstruksi == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penerapan_sistem_manajemen_mutu_konstruksi == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penerapan_sistem_manajemen_mutu_konstruksi }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->pemenuhan_peralatan_pelaksanaan_proyek == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->pemenuhan_peralatan_pelaksanaan_proyek == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->pemenuhan_peralatan_pelaksanaan_proyek }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penggunaan_material_standar == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penggunaan_material_standar == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penggunaan_material_standar }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->penggunaan_produk_dalam_negeri == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->penggunaan_produk_dalam_negeri == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->penggunaan_produk_dalam_negeri }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->pemenuhan_standar_mutu_material == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->pemenuhan_standar_mutu_material == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->pemenuhan_standar_mutu_material }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->pemenuhan_standar_teknis_lingkungan == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->pemenuhan_standar_teknis_lingkungan == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->pemenuhan_standar_teknis_lingkungan }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k02->pemenuhan_standar_k3 == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k02->pemenuhan_standar_k3 == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i>
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k02->pemenuhan_standar_k3 }}">
+                                            <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
@@ -630,7 +635,7 @@
                                 <dd><input type="text" class="form-control" name="nm_bujk" placeholder="Nama BUJK"></dd>
                             </div>
                     
-                            <div class="col-md-12 mt-4">
+                            {{-- <div class="col-md-12 mt-4">
                                 <dt>Proses Pemilihan Penyedia Jasa</dt>
                                 <dd>
                                     <select class="form-control" name="proses_pemilihan_penyedia_jasa">
@@ -788,7 +793,7 @@
                                 <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
                                 <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div>
-                    
+                            --}}
                         </div>
                     
                         <div class="modal-footer bg-whitesmoke br">
@@ -829,8 +834,27 @@
                             <dt>Nama BUJK</dt>
                             <dd><input type="text" class="form-control" name="nm_bujk" placeholder="Nama BUJK"></dd>
                         </div>
-    
+                        
                         <div class="col-md-12 mt-4">
+                            <dt>Pilih File Upload :</dt>
+                            <dd>
+                               <select class="form-control" name="field_tujuan" required>
+                                    <option value="">- Pilih -</option>
+                                    <option value="proses_pemilihan_penyedia_jasa">Proses Pemilihan Penyedia Jasa</option>
+                                    <option value="penerapan_standar_kontrak">Penerapan Standar Kontrak</option>
+                                    <option value="penggunaan_tenaga_kerja_bersertifikat">Penggunaan Tenaga Kerja Bersertifikat</option>
+                                    <option value="pemberian_pekerjaan_utama_subpenyedia">Pemberian Pekerjaan Utama Subpenyedia</option>
+                                    <option value="ketersediaan_dokumen_standar_k4">Ketersediaan Dokumen Standar K4</option>
+                                    <option value="penerapan_smkk">Penerapan SMKK</option>
+                                    <option value="kegiatan_antisipasi_kecelakaan_kerja">Kegiatan Antisipasi Kecelakaan Kerja</option>
+                                </select>
+                            </dd>
+                        </div>
+                         <div class="col-md-12 mt-4">
+                            <dt>Upload File <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dd><input type="file" class="form-control" name="file" accept=".pdf"></dd>
+                        </div>
+                        {{-- <div class="col-md-12 mt-4">
                             <dt>Proses Pemilihan Penyedia Jasa</dt>
                             <dd>
                                 <select class="form-control" name="proses_pemilihan_penyedia_jasa">
@@ -906,7 +930,7 @@
                         </div>
                         <div id="pdf-preview" style="margin-top: 20px;">
                             <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                        </div>
+                        </div> --}}
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -944,8 +968,27 @@
                             <dt>Nama BUJK</dt>
                             <dd><input type="text" class="form-control" name="nm_bujk" placeholder="Nama BUJK"></dd>
                         </div>
-    
                         <div class="col-md-12 mt-4">
+                            <dt>Pilih File Upload :</dt>
+                            <dd>
+                             <select class="form-control" name="field_tujuan" required>
+                                <option value="">- Pilih -</option>
+                                <option value="penerapan_sistem_manajemen_mutu_konstruksi">Penerapan Sistem Manajemen Mutu Konstruksi</option>
+                                <option value="pemenuhan_peralatan_pelaksanaan_proyek">Pemenuhan Peralatan Pelaksanaan Proyek</option>
+                                <option value="penggunaan_material_standar">Penggunaan Material Standar</option>
+                                <option value="penggunaan_produk_dalam_negeri">Penggunaan Produk Dalam Negeri</option>
+                                <option value="pemenuhan_standar_mutu_material">Pemenuhan Standar Mutu Material</option>
+                                <option value="pemenuhan_standar_teknis_lingkungan">Pemenuhan Standar Teknis Lingkungan</option>
+                                <option value="pemenuhan_standar_k3">Pemenuhan Standar K3</option>
+                            </select>
+
+                            </dd>
+                        </div>
+                         <div class="col-md-12 mt-4">
+                            <dt>Upload File <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dd><input type="file" class="form-control" name="file" accept=".pdf"></dd>
+                        </div>
+                        {{-- <div class="col-md-12 mt-4">
                             <dt>Penerapan Sistem Manajemen Mutu Konstruksi</dt>
                             <dd>
                                 <select class="form-control" name="penerapan_sistem_manajemen_mutu_konstruksi">
@@ -1021,7 +1064,7 @@
                         </div>
                         <div id="pdf-preview2" style="margin-top: 20px;">
                             <iframe id="pdf-frame2" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                        </div>
+                        </div> --}}
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -1031,8 +1074,22 @@
             </div>
         </div>
     </div>
-
-
+    {{-- Tampil PDF --}}
+    <div class="modal fade" role="dialog" id="modal-pdf" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">File Pendukung</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <div id="pdf-preview" style="margin-top: 20px;">
+                            <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('custom_js')
@@ -1080,37 +1137,14 @@
             var kegiatan_konstruksi = button.data('kegiatan_konstruksi') || '';
             var no_kontrak = button.data('no_kontrak') || '';
             var nm_bujk = button.data('nm_bujk') || '';
-            var proses_pemilihan_penyedia_jasa = button.data('proses_pemilihan_penyedia_jasa') || '';
-            var penerapan_standar_kontrak = button.data('penerapan_standar_kontrak') || '';
-            var penggunaan_tenaga_kerja_bersertifikat = button.data('penggunaan_tenaga_kerja_bersertifikat') || '';
-            var pemberian_pekerjaan_utama_subpenyedia = button.data('pemberian_pekerjaan_utama_subpenyedia') || '';
-            var ketersediaan_dokumen_standar_k4 = button.data('ketersediaan_dokumen_standar_k4') || '';
-            var penerapan_smkk = button.data('penerapan_smkk') || '';
-            var kegiatan_antisipasi_kecelakaan_kerja = button.data('kegiatan_antisipasi_kecelakaan_kerja') || '';
-            var file_pdf = button.data('data_dukung') ? '/uploads/data_dukung/' + button.data('data_dukung') : '';
 
         
             // Masukkan data ke dalam form modal
             modal.find('input[name="kegiatan_konstruksi"]').val(kegiatan_konstruksi);
             modal.find('input[name="no_kontrak"]').val(no_kontrak);
             modal.find('input[name="nm_bujk"]').val(nm_bujk);
-            modal.find('select[name="proses_pemilihan_penyedia_jasa"]').val(proses_pemilihan_penyedia_jasa);
-            modal.find('select[name="penerapan_standar_kontrak"]').val(penerapan_standar_kontrak);
-            modal.find('select[name="penggunaan_tenaga_kerja_bersertifikat"]').val(penggunaan_tenaga_kerja_bersertifikat);
-            modal.find('select[name="pemberian_pekerjaan_utama_subpenyedia"]').val(pemberian_pekerjaan_utama_subpenyedia);
-            modal.find('select[name="ketersediaan_dokumen_standar_k4"]').val(ketersediaan_dokumen_standar_k4);
-            modal.find('select[name="penerapan_smkk"]').val(penerapan_smkk);
-            modal.find('select[name="kegiatan_antisipasi_kecelakaan_kerja"]').val(kegiatan_antisipasi_kecelakaan_kerja);
             modal.find('input[name="id"]').val(id); // hidden input
         
-            // Tampilkan file PDF kalau ada
-            if(file_pdf !== ''){
-                $('#pdf-frame').attr('src', file_pdf);
-                $('#pdf-preview').show();
-            } else {
-                $('#pdf-frame').attr('src', '');
-                $('#pdf-preview').hide();
-            }
         });
     </script>
     {{-- Data Edit Tabel Bawah --}}
@@ -1124,39 +1158,30 @@
             var kegiatan_konstruksi = button.data('kegiatan_konstruksi') || '';
             var no_kontrak = button.data('no_kontrak') || '';
             var nm_bujk = button.data('nm_bujk') || '';
-            var penerapan_sistem_manajemen_mutu_konstruksi = button.data('penerapan_sistem_manajemen_mutu_konstruksi') || '';
-            var pemenuhan_peralatan_pelaksanaan_proyek = button.data('pemenuhan_peralatan_pelaksanaan_proyek') || '';
-            var penggunaan_material_standar = button.data('penggunaan_material_standar') || '';
-            var penggunaan_produk_dalam_negeri = button.data('penggunaan_produk_dalam_negeri') || '';
-            var pemenuhan_standar_mutu_material = button.data('pemenuhan_standar_mutu_material') || '';
-            var pemenuhan_standar_teknis_lingkungan = button.data('pemenuhan_standar_teknis_lingkungan') || '';
-            var pemenuhan_standar_k3 = button.data('pemenuhan_standar_k3') || '';
-            var file_pdf = button.data('data_dukung') ? '/uploads/data_dukung/' + button.data('data_dukung') : '';
-
         
             // Masukkan data ke dalam form modal
             modal.find('input[name="kegiatan_konstruksi"]').val(kegiatan_konstruksi);
             modal.find('input[name="no_kontrak"]').val(no_kontrak);
             modal.find('input[name="nm_bujk"]').val(nm_bujk);
-            modal.find('select[name="penerapan_sistem_manajemen_mutu_konstruksi"]').val(penerapan_sistem_manajemen_mutu_konstruksi);
-            modal.find('select[name="pemenuhan_peralatan_pelaksanaan_proyek"]').val(pemenuhan_peralatan_pelaksanaan_proyek);
-            modal.find('select[name="penggunaan_material_standar"]').val(penggunaan_material_standar);
-            modal.find('select[name="penggunaan_produk_dalam_negeri"]').val(penggunaan_produk_dalam_negeri);
-            modal.find('select[name="pemenuhan_standar_mutu_material"]').val(pemenuhan_standar_mutu_material);
-            modal.find('select[name="pemenuhan_standar_teknis_lingkungan"]').val(pemenuhan_standar_teknis_lingkungan);
-            modal.find('select[name="pemenuhan_standar_k3"]').val(pemenuhan_standar_k3);
             modal.find('input[name="id"]').val(id); // hidden input
-            // Tampilkan file PDF kalau ada
-            if(file_pdf !== ''){
-                $('#pdf-frame2').attr('src', file_pdf);
-                $('#pdf-preview2').show();
-            } else {
-                $('#pdf-frame2').attr('src', '');
-                $('#pdf-preview2').hide();
-            }
+            
         });
     </script>
-    
+    {{-- Tampil PDF --}}
+    <script>
+        $('#modal-pdf').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Tombol yang diklik
+            var modal = $(this);
+        
+            // Ambil data dari tombol
+            var file_pdf = button.data('data_dukung') ? '/uploads/data_dukung/' + button.data('data_dukung') : '';
+            $('#pdf-frame').attr('src', file_pdf);
+            $('#pdf-preview').show();
+            
+        
+        });
+    </script>
+    {{-- Delete --}}
     <script>
         function deleteData(id) {
             // Menggunakan SweetAlert untuk konfirmasi
