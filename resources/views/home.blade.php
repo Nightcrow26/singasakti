@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-sm-4 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-4">
-                            <img src="{{ asset('') }}sneat/assets/img/illustrations/a.png" height="140"
+                            <img src="{{ asset('') }}landing/assets/images/2.png" height="140"
                                 alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                 data-app-light-img="illustrations/man-with-laptop-light.png">
                         </div>
@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-
+    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
     <div class="row mb-4" style="overflow-y: auto;max-height:600px">
         <div class="col-md-6 col-lg-6 col-xl-6 order-0">
             <div class="card h-100">
@@ -222,10 +222,45 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+    @endif
 
+    {{-- Data K01-K04 --}}
+    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('penyedia'))
+         <div class="row mb-4" style="overflow-y: auto;max-height:600px">
+        <div class="col-md-4 col-lg-4 col-xl-4 order-0">
+            <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                    <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Pengawasan K02</h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body" style="overflow-y: auto;max-height:200px;min-height:200px">
+                    <div class="d-flex justify-content-between align-items-center mb-3" style="position: relative;">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                            <h2 class="mb-2">{{ $total_k02 }} </h2>
+                            <span>Total</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap-1">
+                            <h2 class="mb-2 text-success">{{ $total_lengkap_k02 }} </h2>
+                            <span class="text-success">Tertib</span>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center gap-1">
+                            <h2 class="mb-2 text-danger">{{ $total_tidaklengkap_k02 }} </h2>
+                            <span class="text-danger">Tidak Tertib</span>
+                        </div>
+
+                        <div id="chart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -253,7 +288,7 @@
             </div>
         </div>
     </div>
-
+    @endif
 
     {{-- @include('admin.master.skpd.form') --}}
 @endsection
