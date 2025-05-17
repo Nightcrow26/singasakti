@@ -31,6 +31,9 @@ use App\Models\K03;
 use App\Models\K04;
 use App\Models\PengawasanDistributor;
 use App\Models\PengawasanProduk;
+use App\Models\PengawasanTekKonstruksi;
+use App\Models\DetailPengawasanTekKonstruksi;
+
 
 class MonevController extends Controller
 {
@@ -958,41 +961,41 @@ class MonevController extends Controller
             'kegiatan_konstruksi' => 'required|string|max:255',
             'no_kontrak' => 'required|string|max:255',
             'nm_bujk' => 'required|string|max:255',
-            'proses_pemilihan_penyedia_jasa' => 'required|string',
-            'penerapan_standar_kontrak' => 'required|string',
-            'penggunaan_tenaga_kerja_bersertifikat' => 'required|string',
-            'pemberian_pekerjaan_utama_subpenyedia' => 'required|string',
-            'ketersediaan_dokumen_standar_k4' => 'required|string',
-            'penerapan_smkk' => 'required|string',
-            'kegiatan_antisipasi_kecelakaan_kerja' => 'required|string',
-            'penerapan_sistem_manajemen_mutu_konstruksi' => 'required|string',
-            'pemenuhan_peralatan_pelaksanaan_proyek' => 'required|string',
-            'penggunaan_material_standar' => 'required|string',
-            'penggunaan_produk_dalam_negeri' => 'required|string',
-            'pemenuhan_standar_mutu_material' => 'required|string',
-            'pemenuhan_standar_teknis_lingkungan' => 'required|string',
-            'pemenuhan_standar_k3' => 'required|string',
-            'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
+            'proses_pemilihan_penyedia_jasa' => 'nullable|string',
+            'penerapan_standar_kontrak' => 'nullable|string',
+            'penggunaan_tenaga_kerja_bersertifikat' => 'nullable|string',
+            'pemberian_pekerjaan_utama_subpenyedia' => 'nullable|string',
+            'ketersediaan_dokumen_standar_k4' => 'nullable|string',
+            'penerapan_smkk' => 'nullable|string',
+            'kegiatan_antisipasi_kecelakaan_kerja' => 'nullable|string',
+            'penerapan_sistem_manajemen_mutu_konstruksi' => 'nullable|string',
+            'pemenuhan_peralatan_pelaksanaan_proyek' => 'nullable|string',
+            'penggunaan_material_standar' => 'nullable|string',
+            'penggunaan_produk_dalam_negeri' => 'nullable|string',
+            'pemenuhan_standar_mutu_material' => 'nullable|string',
+            'pemenuhan_standar_teknis_lingkungan' => 'nullable|string',
+            'pemenuhan_standar_k3' => 'nullable|string',
+            'data_dukung' => 'nullable|file|mimes:pdf|max:5120', 
         ]);
         // Mulai transaksi
         DB::beginTransaction();
 
         try {
             // Upload file dulu
-            if ($request->hasFile('data_dukung')) {
-                $file = $request->file('data_dukung');
+            // if ($request->hasFile('data_dukung')) {
+            //     $file = $request->file('data_dukung');
             
-                // Bikin nama file unik
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            //     // Bikin nama file unik
+            //     $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
             
-                // Pindahkan file ke folder public/uploads/data_dukung
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
+            //     // Pindahkan file ke folder public/uploads/data_dukung
+            //     $file->move(public_path('uploads/data_dukung'), $namaFile);
             
-                // Simpan path untuk ke database (tanpa "public/")
-                $data['data_dukung'] = $namaFile;
-            } else {
-                $data['data_dukung'] = null;
-            }
+            //     // Simpan path untuk ke database (tanpa "public/")
+            //     $data['data_dukung'] = $namaFile;
+            // } else {
+            //     $data['data_dukung'] = null;
+            // }
             
 
             // Insert ke database
@@ -1009,65 +1012,62 @@ class MonevController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     } //DONE
-    public function updatek02(Request $request)
+   public function updatek02(Request $request)
     {
         try {
-            // Validasi form
+            // Validasi form data umum
             $data = $request->validate([
                 'id' => 'required|integer',
                 'kegiatan_konstruksi' => 'required|string|max:255',
                 'no_kontrak' => 'required|string|max:255',
-                'nm_bujk' => 'required|string|max:255',
-                'proses_pemilihan_penyedia_jasa' => 'required|string',
-                'penerapan_standar_kontrak' => 'required|string',
-                'penggunaan_tenaga_kerja_bersertifikat' => 'required|string',
-                'pemberian_pekerjaan_utama_subpenyedia' => 'required|string',
-                'ketersediaan_dokumen_standar_k4' => 'required|string',
-                'penerapan_smkk' => 'required|string',
-                'kegiatan_antisipasi_kecelakaan_kerja' => 'required|string',
-                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // Max 5MB
+                'nm_bujk' => 'required|string|max:255'
             ]);
 
-            DB::beginTransaction(); // Mulai transaksi database
+            // Validasi field upload
+            $request->validate([
+                'field_tujuan' => 'required|string|in:proses_pemilihan_penyedia_jasa,penerapan_standar_kontrak,penggunaan_tenaga_kerja_bersertifikat,pemberian_pekerjaan_utama_subpenyedia,ketersediaan_dokumen_standar_k4,penerapan_smkk,kegiatan_antisipasi_kecelakaan_kerja',
+                'file' => 'required|file|mimes:pdf|max:5120', // 5MB max
+            ]);
 
-            // Cari data lama berdasarkan ID
+            $field = $request->field_tujuan;
+
+            DB::beginTransaction(); // Mulai transaksi
+
+            // Cari data berdasarkan ID
             $item = K02::findOrFail($request->input('id'));
 
-            // Jika ada file baru di-upload
-            if ($request->hasFile('data_dukung')) {
-                // Hapus file lama jika ada
-                if ($item->data_dukung) {
-                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
-                    if (file_exists($oldFilePath)) {
-                        unlink($oldFilePath);
-                    }
+            // Jika sebelumnya ada file, hapus
+            if (!empty($item->$field)) {
+                $oldFilePath = public_path('uploads/data_dukung/' . $item->$field);
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
                 }
-
-                // Simpan file baru
-                $file = $request->file('data_dukung');
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
-
-                $data['data_dukung'] = $namaFile;
-            } else {
-                // Kalau tidak upload file baru, jangan timpa file lama
-                unset($data['data_dukung']);
             }
 
-            // Update data ke database
-            $item->update($data);
+            // Simpan file baru
+            $file = $request->file('file');
+            $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/data_dukung'), $namaFile);
 
-            DB::commit(); // Simpan transaksi
+            // Update data umum
+            $item->kegiatan_konstruksi = $data['kegiatan_konstruksi'];
+            $item->no_kontrak = $data['no_kontrak'];
+            $item->nm_bujk = $data['nm_bujk'];
 
-            // Redirect dengan pesan sukses
+            // Update nama file ke field tujuan yang dipilih
+            $item->$field = $namaFile;
+
+            $item->save(); // Simpan ke DB
+            DB::commit();  // Commit transaksi
+
             return redirect()->back()->with('success', 'Data berhasil diperbarui');
 
         } catch (\Exception $e) {
-            DB::rollBack(); // Gagal, rollback transaksi
-            // Redirect dengan pesan error
-            return redirect()->back()->with('error', 'Gagal memperbarui data.'. $e->getMessage());
+            DB::rollBack(); // Rollback jika gagal
+            return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
         }
     } //DONE
+
     public function updatek02bawah(Request $request)
     {
         try {
@@ -1076,45 +1076,41 @@ class MonevController extends Controller
                 'id' => 'required|integer',
                 'kegiatan_konstruksi' => 'required|string|max:255',
                 'no_kontrak' => 'required|string|max:255',
-                'nm_bujk' => 'required|string|max:255',	
-                'penerapan_sistem_manajemen_mutu_konstruksi' => 'required|string',
-                'pemenuhan_peralatan_pelaksanaan_proyek' => 'required|string',
-                'penggunaan_material_standar' => 'required|string',
-                'penggunaan_produk_dalam_negeri' => 'required|string',
-                'pemenuhan_standar_mutu_material' => 'required|string',
-                'pemenuhan_standar_teknis_lingkungan' => 'required|string',
-                'pemenuhan_standar_k3' => 'required|string',
-                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // Max 5MB
+                'nm_bujk' => 'required|string|max:255'
             ]);
+            $request->validate([
+                'field_tujuan' => 'required|string|in:penerapan_sistem_manajemen_mutu_konstruksi,pemenuhan_peralatan_pelaksanaan_proyek,penggunaan_material_standar,penggunaan_produk_dalam_negeri,pemenuhan_standar_mutu_material,pemenuhan_standar_teknis_lingkungan,pemenuhan_standar_k3',
+                'file' => 'required|file|mimes:pdf|max:5120', // 5MB max
+            ]);
+           $field = $request->field_tujuan;
 
-            DB::beginTransaction(); // Mulai transaksi database
+            DB::beginTransaction(); // Mulai transaksi
 
-            // Cari data lama berdasarkan ID
+            // Cari data berdasarkan ID
             $item = K02::findOrFail($request->input('id'));
 
-            // Jika ada file baru di-upload
-            if ($request->hasFile('data_dukung')) {
-                // Hapus file lama jika ada
-                if ($item->data_dukung) {
-                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
-                    if (file_exists($oldFilePath)) {
-                        unlink($oldFilePath);
-                    }
+            // Jika sebelumnya ada file, hapus
+            if (!empty($item->$field)) {
+                $oldFilePath = public_path('uploads/data_dukung/' . $item->$field);
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
                 }
-
-                // Simpan file baru
-                $file = $request->file('data_dukung');
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
-
-                $data['data_dukung'] = $namaFile;
-            } else {
-                // Kalau tidak upload file baru, jangan timpa file lama
-                unset($data['data_dukung']);
             }
 
-            // Update data ke database
-            $item->update($data);
+            // Simpan file baru
+            $file = $request->file('file');
+            $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/data_dukung'), $namaFile);
+
+            // Update data umum
+            $item->kegiatan_konstruksi = $data['kegiatan_konstruksi'];
+            $item->no_kontrak = $data['no_kontrak'];
+            $item->nm_bujk = $data['nm_bujk'];
+
+            // Update nama file ke field tujuan yang dipilih
+            $item->$field = $namaFile;
+
+            $item->save(); // Simpan ke DB
 
             DB::commit(); // Simpan transaksi
 
@@ -1132,15 +1128,33 @@ class MonevController extends Controller
         try {
             $k02 = K02::findOrFail($id); // Mencari data berdasarkan ID
 
-            // Cek apakah ada file yang terhubung dengan data ini
-            if ($k02->data_dukung) {
-                $filePath = public_path('uploads/data_dukung/' . $k02->data_dukung);
-                
-                // Jika file ada, hapus file tersebut
-                if (file_exists($filePath)) {
-                    unlink($filePath); // Menghapus file
+            // Hapus file jika ada di masing-masing field
+            $fields = [
+                'proses_pemilihan_penyedia_jasa',
+                'penerapan_standar_kontrak',
+                'penggunaan_tenaga_kerja_bersertifikat',
+                'pemberian_pekerjaan_utama_subpenyedia',
+                'ketersediaan_dokumen_standar_k4',
+                'penerapan_smkk',
+                'kegiatan_antisipasi_kecelakaan_kerja',
+                'penerapan_sistem_manajemen_mutu_konstruksi',
+                'pemenuhan_peralatan_pelaksanaan_proyek',
+                'penggunaan_material_standar',
+                'penggunaan_produk_dalam_negeri',
+                'pemenuhan_standar_mutu_material',
+                'pemenuhan_standar_teknis_lingkungan',
+                'pemenuhan_standar_k3',
+            ];
+
+            foreach ($fields as $field) {
+                if (!empty($k02->$field)) {
+                    $filePath = public_path('uploads/data_dukung/' . $k02->$field);
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                    }
                 }
             }
+
 
             // Hapus data jika ditemukan
             $k02->delete();
@@ -1165,7 +1179,7 @@ class MonevController extends Controller
             }
             
         }else{
-            $dataK02 = K02::where('skpd_id', auth()->user()->skpd_id)->get();
+            $dataK02 = K02::where('skpd_id', auth()->user()->id)->get();
         }
         $anggaran = $anggaran;
         $status = $request->query('status');
@@ -1177,13 +1191,13 @@ class MonevController extends Controller
 
         // Download langsung
         // return $pdf->stream('k02_skpd_'.$skpd_id.'.pdf');
-        return $pdf->download('k02_skpd_'.auth()->user()->skpd_id.'.pdf');
+        return $pdf->download('k02_skpd_'.auth()->user()->id.'.pdf');
     } //DONE
 
     public function k03(Request $request)
     {
         $selectedSkpdId = $request->input('skpd_id') ?? '';
-        $skpd = Skpd::all();
+        $skpd = User::where('role', 'penyedia')->get();
         // Mengambil semua data K03
         if (auth()->user()->hasRole('admin')){
             if($selectedSkpdId !=''){
@@ -1306,7 +1320,7 @@ class MonevController extends Controller
     public function k04(Request $request)
     {
         $selectedSkpdId = $request->input('skpd_id') ?? '';
-        $skpd = Skpd::all();
+        $skpd = User::where('role', 'penyedia')->get();
         // Mengambil semua data K04
         if (auth()->user()->hasRole('admin')){
             if($selectedSkpdId !=''){
@@ -1862,6 +1876,144 @@ class MonevController extends Controller
                 }
         
     }
+
+    public function tertib1A6(Request $request)
+    {  
+        $selectedSkpdId = $request->input('skpd_id') ?? '';
+        $skpd = User::where('role', 'penyedia')->get();
+
+        if (auth()->user()->hasRole('admin')) {
+            if ($selectedSkpdId) {
+                $data = PengawasanTekKonstruksi::where('skpd_id', $selectedSkpdId)->get();
+            } else {
+                $data = PengawasanTekKonstruksi::all();
+            }
+        } else {
+            $data = PengawasanTekKonstruksi::where('skpd_id', auth()->user()->id)->get();
+        }
+
+        return view('admin.monev.1A6.index', compact('data', 'skpd', 'selectedSkpdId'));
+    }
+
+    public function insertData1A6(Request $request)
+    {
+        $data = $request->validate([
+            'skpd_id' => 'required|integer',
+            'nama' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|date',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            PengawasanTekKonstruksi::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
+
+    public function insertDataDetail1A6(Request $request)
+    {
+        $data = $request->validate([
+            'pengawasan_tek_konstruksi_id' => 'required|integer',
+            'nama_teknologi' => 'required|string|max:255',
+            'bidang_usaha' => 'required|string|max:255',
+            'haki' => 'nullable|string|max:255',
+            'no_haki' => 'nullable|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            DetailPengawasanTekKonstruksi::create($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data detail berhasil disimpan!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Gagal menyimpan data detail: ' . $e->getMessage());
+        }
+    }
+
+    public function getDetailData1A6($pengawasanId)
+    {
+        $data = DetailPengawasanTekKonstruksi::where('pengawasan_tek_konstruksi_id', $pengawasanId)->get();
+
+        if ($data->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada data detail untuk ID pengawasan tersebut.'], 404);
+        }
+
+        return response()->json($data);
+    }
+
+    public function destroy1A6($id)
+    {
+        try {
+            $data = PengawasanTekKonstruksi::findOrFail($id);
+            $data->delete();
+            return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal menghapus data: ' . $e->getMessage());
+        }
+    }
+
+    public function updateDataDetail1A6(Request $request)
+    {
+        $button = $request->input('button');
+
+        $data = $request->validate([
+            'id' => 'required|integer',
+            'nama_teknologi' => 'required|string|max:255',
+            'bidang_usaha' => 'required|string|max:255',
+            'haki' => 'nullable|string|max:255',
+            'no_haki' => 'nullable|string|max:255',
+        ]);
+
+        if ($button == "update") {
+            DB::beginTransaction();
+            try {
+                $item = DetailPengawasanTekKonstruksi::findOrFail($request->input('id'));
+                $item->update($data);
+                DB::commit();
+                return redirect()->back()->with('success', 'Data detail berhasil diperbarui');
+            } catch (\Exception $e) {
+                DB::rollBack();
+                return redirect()->back()->with('error', 'Gagal memperbarui data detail: ' . $e->getMessage());
+            }
+        } elseif ($button == "hapus") {
+            try {
+                $item = DetailPengawasanTekKonstruksi::findOrFail($request->input('id'));
+                $item->delete();
+                return redirect()->back()->with('success', 'Data detail berhasil dihapus!');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Gagal menghapus data detail: ' . $e->getMessage());
+            }
+        }
+    }
+
+    public function updateData1A6(Request $request)
+    {
+        $data = $request->validate([
+            'nama' => 'required|string|max:255',
+            'tanggal_pengawasan' => 'required|date',
+            'kepemilikan_perizinan_berusaha' => 'required|string|max:255',
+            'keabsahan_perizinan_berusaha' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $item = PengawasanTekKonstruksi::findOrFail($request->input('id'));
+            $item->update($data);
+            DB::commit();
+            return redirect()->back()->with('success', 'Data utama berhasil diperbarui');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Gagal memperbarui data utama: ' . $e->getMessage());
+        }
+    }
+
 
     // public function data(Request $request)
     // {
