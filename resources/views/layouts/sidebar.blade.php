@@ -244,6 +244,12 @@
           @endif
           
           @if (Auth::user()->hasRole('penyedia'))
+          <li class="menu-item {{ set_active('home.admin') }}">
+                  <a href="{{ route('home.admin') }}" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                      <div data-i18n="Analytics">Dashboard</div>
+                  </a>
+              </li>
             <li class="menu-item {{ set_active('admin.monev.1A1.index') }}">
                   <a href="{{ route('admin.monev.1A1.index') }}" class="menu-link">
                       <i class="menu-icon tf-icons bx bx-collection"></i>

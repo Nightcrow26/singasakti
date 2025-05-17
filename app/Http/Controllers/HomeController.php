@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use App\Services\MasterService;
 use App\Models\tbl_master_kunci;
 use App\Models\trx_upload_berkas;
+use App\Models\K02;
+
 
 class HomeController extends Controller
 {
@@ -93,7 +95,6 @@ class HomeController extends Controller
                 })->count();
         }
         else {
-
             $data['total_tidak_lengkap'] = trx_mr::where('skpd_id', auth()->user()->skpd_id)->whereHas('berkas', function ($query) {
                 $query->where(function ($q) {
                         $q->whereNull('up_1')
@@ -157,8 +158,6 @@ class HomeController extends Controller
                 ->get();
         }
 
-
-
         if (auth()->user()->hasRole('admin')) {
             $data['realisasi'] = trx_mr::with(['realisasis' => function ($query) {
                 $query->orderBy('tgl_realisasi', 'desc');
@@ -174,7 +173,85 @@ class HomeController extends Controller
             $data['row_hitung'] = trx_mr::where('skpd_id', auth()->user()->skpd_id)->count();
         }
 
+        // data K02
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_k02'] = K02::count();
+        }
+        else {
+            $data['total_k02'] = K02::where('skpd_id', auth()->user()->id)->count();
+        }
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_lengkap_k02'] = K02::whereNotNull('proses_pemilihan_penyedia_jasa')
+            ->whereNotNull('penerapan_standar_kontrak')
+            ->whereNotNull('penggunaan_tenaga_kerja_bersertifikat')
+            ->whereNotNull('pemberian_pekerjaan_utama_subpenyedia')
+            ->whereNotNull('ketersediaan_dokumen_standar_k4')
+            ->whereNotNull('penerapan_smkk')
+            ->whereNotNull('kegiatan_antisipasi_kecelakaan_kerja')
+            ->whereNotNull('penerapan_sistem_manajemen_mutu_konstruksi')
+            ->whereNotNull('pemenuhan_peralatan_pelaksanaan_proyek')
+            ->whereNotNull('penggunaan_material_standar')
+            ->whereNotNull('penggunaan_produk_dalam_negeri')
+            ->whereNotNull('pemenuhan_standar_mutu_material')
+            ->whereNotNull('pemenuhan_standar_teknis_lingkungan')
+            ->whereNotNull('pemenuhan_standar_k3')
+            ->count();
 
+        }
+        else {
+            $data['total_lengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
+            ->whereNotNull('proses_pemilihan_penyedia_jasa')
+            ->whereNotNull('penerapan_standar_kontrak')
+            ->whereNotNull('penggunaan_tenaga_kerja_bersertifikat')
+            ->whereNotNull('pemberian_pekerjaan_utama_subpenyedia')
+            ->whereNotNull('ketersediaan_dokumen_standar_k4')
+            ->whereNotNull('penerapan_smkk')
+            ->whereNotNull('kegiatan_antisipasi_kecelakaan_kerja')
+            ->whereNotNull('penerapan_sistem_manajemen_mutu_konstruksi')
+            ->whereNotNull('pemenuhan_peralatan_pelaksanaan_proyek')
+            ->whereNotNull('penggunaan_material_standar')
+            ->whereNotNull('penggunaan_produk_dalam_negeri')
+            ->whereNotNull('pemenuhan_standar_mutu_material')
+            ->whereNotNull('pemenuhan_standar_teknis_lingkungan')
+            ->whereNotNull('pemenuhan_standar_k3')
+            ->count();        
+        }
+         if (auth()->user()->hasRole('admin')) {
+            $data['total_tidaklengkap_k02'] = K02::whereNull('proses_pemilihan_penyedia_jasa')
+            ->whereNull('penerapan_standar_kontrak')
+            ->whereNull('penggunaan_tenaga_kerja_bersertifikat')
+            ->whereNull('pemberian_pekerjaan_utama_subpenyedia')
+            ->whereNull('ketersediaan_dokumen_standar_k4')
+            ->whereNull('penerapan_smkk')
+            ->whereNull('kegiatan_antisipasi_kecelakaan_kerja')
+            ->whereNull('penerapan_sistem_manajemen_mutu_konstruksi')
+            ->whereNull('pemenuhan_peralatan_pelaksanaan_proyek')
+            ->whereNull('penggunaan_material_standar')
+            ->whereNull('penggunaan_produk_dalam_negeri')
+            ->whereNull('pemenuhan_standar_mutu_material')
+            ->whereNull('pemenuhan_standar_teknis_lingkungan')
+            ->whereNull('pemenuhan_standar_k3')
+            ->count();
+
+        }
+        else {
+            $data['total_tidaklengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
+            ->whereNull('proses_pemilihan_penyedia_jasa')
+            ->whereNull('penerapan_standar_kontrak')
+            ->whereNull('penggunaan_tenaga_kerja_bersertifikat')
+            ->whereNull('pemberian_pekerjaan_utama_subpenyedia')
+            ->whereNull('ketersediaan_dokumen_standar_k4')
+            ->whereNull('penerapan_smkk')
+            ->whereNull('kegiatan_antisipasi_kecelakaan_kerja')
+            ->whereNull('penerapan_sistem_manajemen_mutu_konstruksi')
+            ->whereNull('pemenuhan_peralatan_pelaksanaan_proyek')
+            ->whereNull('penggunaan_material_standar')
+            ->whereNull('penggunaan_produk_dalam_negeri')
+            ->whereNull('pemenuhan_standar_mutu_material')
+            ->whereNull('pemenuhan_standar_teknis_lingkungan')
+            ->whereNull('pemenuhan_standar_k3')
+            ->count();        
+        }
         return view('home', $data);
     }
 }
