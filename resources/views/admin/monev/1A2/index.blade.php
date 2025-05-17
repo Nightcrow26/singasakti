@@ -68,9 +68,8 @@
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                         
+
                         @endif
-                        
                     </div>
                 </div>
             </div>
@@ -149,7 +148,6 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->tanggal_pengawasan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->kepemilikan_perizinan_berusaha }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->keabsahan_perizinan_berusaha }}</td>
-                            
                         </tr>
                         @endforeach
 
