@@ -13,7 +13,8 @@ use App\Services\MasterService;
 use App\Models\tbl_master_kunci;
 use App\Models\trx_upload_berkas;
 use App\Models\K02;
-
+use App\Models\K03;
+use App\Models\K04;
 
 class HomeController extends Controller
 {
@@ -176,9 +177,13 @@ class HomeController extends Controller
         // data K02
         if (auth()->user()->hasRole('admin')) {
             $data['total_k02'] = K02::count();
+            $data['total_k03'] = K03::count();
+            $data['total_k04'] = K04::count();
         }
         else {
             $data['total_k02'] = K02::where('skpd_id', auth()->user()->id)->count();
+            $data['total_k03'] = K03::where('skpd_id', auth()->user()->id)->count();
+            $data['total_k04'] = K04::where('skpd_id', auth()->user()->id)->count();
         }
         if (auth()->user()->hasRole('admin')) {
             $data['total_lengkap_k02'] = K02::whereNotNull('proses_pemilihan_penyedia_jasa')
@@ -197,6 +202,15 @@ class HomeController extends Controller
             ->whereNotNull('pemenuhan_standar_k3')
             ->count();
 
+            $data['total_lengkap_k03'] = K03::whereNotNull('kesesuaian_fungsi')
+            ->whereNotNull('kesesuaian_lokasi')
+            ->whereNotNull('rencana_umur')
+            ->whereNotNull('kapasitas_beban')
+            ->whereNotNull('pemeliharaan_bangunan')
+            ->whereNotNull('program_pemeliharaan')
+            ->count();
+            $data['total_lengkap_k04'] = K04::whereNotNull('hasil')->count();
+
         }
         else {
             $data['total_lengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
@@ -214,7 +228,18 @@ class HomeController extends Controller
             ->whereNotNull('pemenuhan_standar_mutu_material')
             ->whereNotNull('pemenuhan_standar_teknis_lingkungan')
             ->whereNotNull('pemenuhan_standar_k3')
-            ->count();        
+            ->count(); 
+            
+            $data['total_lengkap_k03'] = K03::where('skpd_id', auth()->user()->id)
+            ->whereNotNull('kesesuaian_fungsi')
+            ->whereNotNull('kesesuaian_lokasi')
+            ->whereNotNull('rencana_umur')
+            ->whereNotNull('kapasitas_beban')
+            ->whereNotNull('pemeliharaan_bangunan')
+            ->whereNotNull('program_pemeliharaan')
+            ->count();
+
+            $data['total_lengkap_k04'] = K04::where('skpd_id', auth()->user()->id)->whereNotNull('hasil')->count();
         }
          if (auth()->user()->hasRole('admin')) {
             $data['total_tidaklengkap_k02'] = K02::whereNull('proses_pemilihan_penyedia_jasa')
@@ -233,6 +258,16 @@ class HomeController extends Controller
             ->whereNull('pemenuhan_standar_k3')
             ->count();
 
+            $data['total_tidaklengkap_k03'] = K03::whereNull('kesesuaian_fungsi')
+            ->whereNull('kesesuaian_lokasi')
+            ->whereNull('rencana_umur')
+            ->whereNull('kapasitas_beban')
+            ->whereNull('pemeliharaan_bangunan')
+            ->whereNull('program_pemeliharaan')
+            ->count();
+
+            $data['total_tidaklengkap_k04'] = K04::whereNull('hasil')->count();
+
         }
         else {
             $data['total_tidaklengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
@@ -250,7 +285,19 @@ class HomeController extends Controller
             ->whereNull('pemenuhan_standar_mutu_material')
             ->whereNull('pemenuhan_standar_teknis_lingkungan')
             ->whereNull('pemenuhan_standar_k3')
-            ->count();        
+            ->count();   
+            
+            $data['total_tidaklengkap_k03'] = K03::where('skpd_id', auth()->user()->id)
+            ->whereNull('kesesuaian_fungsi')
+            ->whereNull('kesesuaian_lokasi')
+            ->whereNull('rencana_umur')
+            ->whereNull('kapasitas_beban')
+            ->whereNull('pemeliharaan_bangunan')
+            ->whereNull('program_pemeliharaan')
+            ->count();
+
+            $data['total_tidaklengkap_k04'] = K04::where('skpd_id', auth()->user()->id)->whereNull('hasil')->count();
+
         }
         return view('home', $data);
     }

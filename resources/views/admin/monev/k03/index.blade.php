@@ -114,7 +114,7 @@
                     <option value="">Pilih SOPD</option>
                     @foreach ($skpd as $skpd2)
                         <option value="{{ $skpd2->id }}" {{ $selectedSkpdId == $skpd2->id ? 'selected' : '' }}>
-                            {{ $skpd2->nama }}
+                            {{ $skpd2->name }}
                         </option>
                     @endforeach
                 </select>
@@ -146,12 +146,12 @@
                         @foreach ($dataK03 as $index => $k03)
                         @php
                             $statusAkhir = (
-                                $k03->kesesuaian_fungsi == 'Tertib' &&
-                                $k03->kesesuaian_lokasi == 'Tertib' &&
-                                $k03->rencana_umur == 'Tertib' &&
-                                $k03->kapasitas_beban == 'Tertib' &&
-                                $k03->pemeliharaan_bangunan == 'Tertib' &&
-                                $k03->program_pemeliharaan == 'Tertib'
+                                $k03->kesesuaian_fungsi != NULL &&
+                                $k03->kesesuaian_lokasi != NULL &&
+                                $k03->rencana_umur != NULL &&
+                                $k03->kapasitas_beban != NULL &&
+                                $k03->pemeliharaan_bangunan != NULL &&
+                                $k03->program_pemeliharaan != NULL
                             ) ? 'Tertib' : 'Tidak Tertib';
                         @endphp
                         <!-- Example Row -->
@@ -165,7 +165,7 @@
                                        <i class="menu-icon tf-icons bx bx-cog"></i>
                                    </button>
                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
-                                       <button class="dropdown-item btn btn-sm btn-flat my-2" data-bs-toggle="modal" 
+                                       <button class="dropdown-item" data-bs-toggle="modal" 
                                             data-bs-target="#modal-edit" 
                                             data-id="{{ $k03->id }}"
                                             data-nama_bangunan="{{ $k03->nama_bangunan }}"
@@ -173,14 +173,7 @@
                                             data-lokasi="{{ $k03->lokasi }}"
                                             data-tgl_thn_pembangunan="{{ $k03->tgl_thn_pembangunan }}"
                                             data-tgl_thn_pemanfaatan="{{ $k03->tgl_thn_pemanfaatan }}"
-                                            data-umur_konstruksi="{{ $k03->umur_konstruksi }}"
-                                            data-kesesuaian_fungsi="{{ $k03->kesesuaian_fungsi }}"
-                                            data-kesesuaian_lokasi="{{ $k03->kesesuaian_lokasi }}"
-                                            data-rencana_umur="{{ $k03->rencana_umur }}"
-                                            data-kapasitas_beban="{{ $k03->kapasitas_beban }}"
-                                            data-pemeliharaan_bangunan="{{ $k03->pemeliharaan_bangunan }}"
-                                            data-program_pemeliharaan="{{ $k03->program_pemeliharaan }}"
-                                            data-data_dukung="{{ $k03->data_dukung }}">
+                                            data-umur_konstruksi="{{ $k03->umur_konstruksi }}">
                                            <i class="bx bx-edit-alt"> Edit</i>
                                        </button>
                            
@@ -202,72 +195,84 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->tgl_thn_pemanfaatan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k03->umur_konstruksi }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->kesesuaian_fungsi == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->kesesuaian_fungsi == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->kesesuaian_fungsi }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->kesesuaian_lokasi == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->kesesuaian_lokasi== NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                   <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->kesesuaian_lokasi }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->rencana_umur == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->rencana_umur == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                   <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->rencana_umur }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->kapasitas_beban == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->kapasitas_beban == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                     <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->kapasitas_beban }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->pemeliharaan_bangunan == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->pemeliharaan_bangunan == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->pemeliharaan_bangunan }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
                             
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">
-                                @if ($k03->program_pemeliharaan == 'Tidak Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
+                                @if ($k03->program_pemeliharaan == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
                                         <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k03->program_pemeliharaan }}">
                                         <i class='bx bx-check'></i>
                                     </button>
                                 @endif
@@ -311,7 +316,7 @@
                         @csrf
                         
                         <div>
-                            <input type="hidden" id="skpd_id_foto" name="skpd_id"value="{{ auth()->user()->skpd_id }}">
+                            <input type="hidden" id="skpd_id_foto" name="skpd_id"value="{{ auth()->user()->id }}">
                             
                             <div class="col-md-12 mt-4">
                                 <small class="text-light fw-semibold">Upload :</small>
@@ -340,7 +345,8 @@
                                 <dt>Umur Konstruksi</dt>
                                 <dd><input type="text" class="form-control" id="umur_konstruksi" name="umur_konstruksi" placeholder="Umur Konstruksi"></dd>
                             </div>
-                            <div class="col-md-12 mt-4">
+
+                            {{-- <div class="col-md-12 mt-4">
                                 <dt>Kesesuaian Fungsi</dt>
                                 <dd>
                                     <select type="text" class="form-control" id="kesesuaian_fungsi" name="kesesuaian_fungsi">
@@ -412,8 +418,9 @@
                                 <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
                                 <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div>
+                            --}}
                     
-                        </div>
+                        </div> 
                     
                         <div class="modal-footer bg-whitesmoke br">
                             <button type="submit" id="tombol" class="btn btn-primary">SIMPAN</button>
@@ -431,7 +438,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Edit</h5>
+                    <h5 class="modal-title">Edit Data</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -466,6 +473,26 @@
                             <dd><input type="text" class="form-control" id="edit-umur_konstruksi" name="umur_konstruksi" placeholder="Umur Konstruksi"></dd>
                         </div>
                         <div class="col-md-12 mt-4">
+                            <dt>Pilih File Upload :</dt>
+                            <dd>
+                               <select class="form-control" name="field_tujuan" required>
+                                    <option value="">- Pilih -</option>
+                                    <option value="kesesuaian_fungsi">Kesesuaian Fungsi</option>
+                                    <option value="kesesuaian_lokasi">Kesesuaian Lokasi</option>
+                                    <option value="rencana_umur">Rencana Umur</option>
+                                    <option value="kapasitas_beban">Kapasitas Beban</option>
+                                    <option value="pemeliharaan_bangunan">Pemeliharaan Bangunan</option>
+                                    <option value="program_pemeliharaan">Program Pemeliharaan</option>
+                                </select>
+                            </dd>
+                        </div>
+                         <div class="col-md-12 mt-4">
+                            <dt>Upload File <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dd><input type="file" class="form-control" name="file" accept=".pdf"></dd>
+                        </div>
+
+
+                        {{-- <div class="col-md-12 mt-4">
                             <dt>Kesesuaian Fungsi</dt>
                             <dd>
                                 <select class="form-control" id="edit-kesesuaian_fungsi" name="kesesuaian_fungsi">
@@ -529,14 +556,32 @@
                             <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
+                        
                         <div id="pdf-preview" style="margin-top: 20px;">
                             <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
                         </div>
+                        --}}
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Tampil PDF --}}
+    <div class="modal fade" role="dialog" id="modal-pdf" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">File Pendukung</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <div id="pdf-preview" style="margin-top: 20px;">
+                            <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                        </div>
                 </div>
             </div>
         </div>
@@ -577,7 +622,7 @@
         }
     </script>
 
-     <script>
+    <script>
     $('#modal-edit').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Tombol yang diklik
             var modal = $(this);
@@ -590,13 +635,7 @@
             var tgl_thn_pembangunan = button.data('tgl_thn_pembangunan') || '';
             var tgl_thn_pemanfaatan = button.data('tgl_thn_pemanfaatan') || '';
             var umur_konstruksi = button.data('umur_konstruksi') || '';
-            var kesesuaian_fungsi = button.data('kesesuaian_fungsi') || '';
-            var kesesuaian_lokasi = button.data('kesesuaian_lokasi') || '';
-            var rencana_umur = button.data('rencana_umur') || '';
-            var kapasitas_beban = button.data('kapasitas_beban') || '';
-            var pemeliharaan_bangunan = button.data('pemeliharaan_bangunan') || '';
-            var program_pemeliharaan = button.data('program_pemeliharaan') || '';
-            var data_dukung = button.data('data_dukung') || ''; // Untuk file PDF
+           
 
             // Masukkan data ke dalam form modal
             modal.find('input[name="nama_bangunan"]').val(nama_bangunan);
@@ -605,22 +644,22 @@
             modal.find('input[name="tgl_thn_pembangunan"]').val(tgl_thn_pembangunan);
             modal.find('input[name="tgl_thn_pemanfaatan"]').val(tgl_thn_pemanfaatan);
             modal.find('input[name="umur_konstruksi"]').val(umur_konstruksi);
-            modal.find('select[name="kesesuaian_fungsi"]').val(kesesuaian_fungsi);
-            modal.find('select[name="kesesuaian_lokasi"]').val(kesesuaian_lokasi);
-            modal.find('select[name="rencana_umur"]').val(rencana_umur);
-            modal.find('select[name="kapasitas_beban"]').val(kapasitas_beban);
-            modal.find('select[name="pemeliharaan_bangunan"]').val(pemeliharaan_bangunan);
-            modal.find('select[name="program_pemeliharaan"]').val(program_pemeliharaan);
             modal.find('input[name="id"]').val(id); // hidden input
+        });
+    </script>
 
-            // Tampilkan file PDF kalau ada
-            if (data_dukung !== '') {
-                $('#pdf-frame').attr('src', '/uploads/data_dukung/' + data_dukung); // Ganti dengan URL file yang sesuai
-                $('#pdf-preview').show(); // Menampilkan preview PDF
-            } else {
-                $('#pdf-frame').attr('src', '');
-                $('#pdf-preview').hide(); // Menyembunyikan preview PDF jika tidak ada
-            }
+    {{-- Tampil PDF --}}
+    <script>
+        $('#modal-pdf').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Tombol yang diklik
+            var modal = $(this);
+        
+            // Ambil data dari tombol
+            var file_pdf = button.data('data_dukung') ? '/uploads/data_dukung/' + button.data('data_dukung') : '';
+            $('#pdf-frame').attr('src', file_pdf);
+            $('#pdf-preview').show();
+            
+        
         });
     </script>
 
