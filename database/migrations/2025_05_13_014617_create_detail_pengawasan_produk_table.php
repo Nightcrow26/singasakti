@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('detail_pengawasan_produk')) {
         Schema::create('detail_pengawasan_produk', function (Blueprint $table) {
             $table->id();
 
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->foreign('pengawasan_produk_id')->references('id')->on('pengawasan_produk')->onDelete('cascade');
         });
     }
+}
 
     /**
      * Reverse the migrations.

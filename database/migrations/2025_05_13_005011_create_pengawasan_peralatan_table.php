@@ -13,16 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengawasan_peralatan', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('skpd_id');
-            $table->string('nama');
-            $table->string('status');
-            $table->date('tanggal_pengawasan');
-            $table->string('kepemilikan_perizinan_berusaha');
-            $table->string('keabsahan_perizinan_berusaha');
-            $table->timestamps();
-        });
+         if (!Schema::hasTable('pengawasan_peralatan')){
+            Schema::create('pengawasan_peralatan', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('skpd_id');
+                $table->string('nama');
+                $table->string('status');
+                $table->date('tanggal_pengawasan');
+                $table->string('kepemilikan_perizinan_berusaha');
+                $table->string('keabsahan_perizinan_berusaha');
+                $table->timestamps();
+            });
+         }
     }
 
     /**

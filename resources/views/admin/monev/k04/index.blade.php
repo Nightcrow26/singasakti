@@ -115,7 +115,7 @@
                     <option value="">Pilih SOPD</option>
                     @foreach ($skpd as $skpd2)
                         <option value="{{ $skpd2->id }}" {{ $selectedSkpdId == $skpd2->id ? 'selected' : '' }}>
-                            {{ $skpd2->nama }}
+                            {{ $skpd2->name }}
                         </option>
                     @endforeach
                 </select>
@@ -154,8 +154,7 @@
                                             data-nama_usaha="{{ $k04->nama_usaha }}"
                                             data-no_sertif="{{ $k04->no_sertif }}"
                                             data-alamat="{{ $k04->alamat }}"
-                                            data-hasil="{{ $k04->hasil }}"
-                                            data-data_dukung="{{ $k04->data_dukung }}">
+                                            data-hasil="{{ $k04->hasil }}">
                                            <i class="bx bx-edit-alt"> Edit</i>
                                        </button>
                            
@@ -175,13 +174,15 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k04->no_sertif }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $k04->alamat }}</td>
                             <td style="text-align:center;vertical-align: top;">
-                                @if ($k04->hasil == 'Tertib')
-                                    <button type="button" class="btn btn-sm rounded-pill btn-success">
-                                        <i class='bx bx-check'></i> {{ $k04->hasil }}
+                                 @if ($k04->hasil == NULL)
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon btn-danger">
+                                        <i class='bx bx-x'></i>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-sm rounded-pill btn-danger">
-                                        <i class='bx bx-x'></i> {{ $k04->hasil }}
+                                    <button type="button" class="btn btn-sm rounded-pill btn-icon  btn-success" data-bs-toggle="modal" 
+                                                data-bs-target="#modal-pdf" 
+                                                data-data_dukung="{{ $k04->data_dukung }}">
+                                        <i class='bx bx-check'></i>
                                     </button>
                                 @endif
                             </td>
@@ -213,7 +214,7 @@
                         @csrf
                         
                         <div>
-                            <input type="hidden" id="skpd_id_foto" name="skpd_id" value="{{ auth()->user()->skpd_id }}">
+                            <input type="hidden" id="skpd_id_foto" name="skpd_id" value="{{ auth()->user()->id }}">
                             
                             <div class="col-md-12 mt-4">
                                 <small class="text-light fw-semibold">Upload :</small>
@@ -235,20 +236,16 @@
                                 <dd><input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Hasil Pengawasan</dt>
-                                <dd>
-                                    <select type="text" class="form-control" id="hasil" name="hasil">
-                                        <option value="">- Pilih</option>
-                                        <option value="Tertib">Tertib</option>
-                                        <option value="Tidak Tertib">Tidak Tertib</option>
-                                    </select>
-
-                                </dd>
+                                <dt>Hasil Pengawasan<small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                 <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div>
-                            <div class="col-md-12 mt-4">
-                                <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
-                                <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
-                            </div>
+                            {{-- 
+                                <div class="col-md-12 mt-4">
+                                    <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                    <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
+                                </div>
+                            --}}
+                            
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
                             <button type="submit" id="tombol" class="btn btn-primary">SIMPAN</button>
@@ -298,19 +295,13 @@
                             <dd><input type="text" class="form-control" id="edit-alamat" name="alamat" placeholder="Alamat"></dd>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <dt>Hasil Pengawasan</dt>
-                            <dd>
-                                <select type="text" class="form-control" id="edit-hasil" name="hasil">
-                                    <option value="">- Pilih</option>
-                                    <option value="Tertib">Tertib</option>
-                                    <option value="Tidak Tertib">Tidak Tertib</option>
-                                </select>
-                            </dd>
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Hasil Pengawasan <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
+                        {{-- <div class="col-md-12 mt-4">
+                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
+                        </div> --}}
                         <div id="pdf-preview" style="margin-top: 20px;">
                             <iframe id="pdf-frame" src="" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
                         </div>
@@ -358,37 +349,35 @@
         }
     </script>
 
-     <script>
+    <script>
     $('#modal-edit').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); // Tombol yang diklik
-            var modal = $(this);
+        var button = $(event.relatedTarget);
+        var modal = $(this);
 
-            // Ambil data dari tombol
-            var id = button.data('id') || '';
-            var nib = button.data('nib') || '';
-            var nama_usaha = button.data('nama_usaha') || '';
-            var no_sertif = button.data('no_sertif') || '';
-            var alamat = button.data('alamat') || '';
-            var hasil = button.data('hasil') || '';
-            var data_dukung = button.data('data_dukung') || ''; // Untuk file PDF
+        var id = button.data('id') || '';
+        var nib = button.data('nib') || '';
+        var nama_usaha = button.data('nama_usaha') || '';
+        var no_sertif = button.data('no_sertif') || '';
+        var alamat = button.data('alamat') || '';
+        var hasil = button.data('hasil') || ''; // hasil = nama file PDF
 
-            // Masukkan data ke dalam form modal
-            modal.find('input[name="nib"]').val(nib);
-            modal.find('input[name="nama_usaha"]').val(nama_usaha);
-            modal.find('input[name="no_sertif"]').val(no_sertif);
-            modal.find('input[name="alamat"]').val(alamat);
-            modal.find('select[name="hasil"]').val(hasil);
-            modal.find('input[name="id"]').val(id); // hidden input
+        // Isi input form
+        modal.find('input[name="id"]').val(id);
+        modal.find('input[name="nib"]').val(nib);
+        modal.find('input[name="nama_usaha"]').val(nama_usaha);
+        modal.find('input[name="no_sertif"]').val(no_sertif);
+        modal.find('input[name="alamat"]').val(alamat);
 
-            // Tampilkan file PDF kalau ada
-            if (data_dukung !== '') {
-                $('#pdf-frame').attr('src', '/uploads/data_dukung/' + data_dukung); // Ganti dengan URL file yang sesuai
-                $('#pdf-preview').show(); // Menampilkan preview PDF
-            } else {
-                $('#pdf-frame').attr('src', '');
-                $('#pdf-preview').hide(); // Menyembunyikan preview PDF jika tidak ada
-            }
-        });
+        // Tampilkan PDF jika ada
+        if (hasil !== '') {
+            $('#pdf-frame').attr('src', '/uploads/data_dukung/' + hasil);
+            $('#pdf-preview').show();
+        } else {
+            $('#pdf-frame').attr('src', '');
+            $('#pdf-preview').hide();
+        }
+    });
+
     </script>
 
     <script>
