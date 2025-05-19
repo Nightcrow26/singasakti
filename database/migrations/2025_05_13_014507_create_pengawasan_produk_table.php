@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     
     {
-        Schema::create('pengawasan_produk', function (Blueprint $table) {
+        if (!Schema::hasTable('pengawasan_produk')) {
+            Schema::create('pengawasan_produk', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('skpd_id');
             $table->string('nama');
@@ -26,6 +27,8 @@ return new class extends Migration
             $table->enum('keabsahan_bahanbaku', ['Sah','Tidak Sah'])->default('Tidak Sah');
             $table->timestamps();
         });
+        }
+        
     }
 
     /**

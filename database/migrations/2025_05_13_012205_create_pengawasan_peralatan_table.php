@@ -13,6 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
+
+        if (!Schema::hasTable('pengawasan_peralatan')) {
             Schema::create('pengawasan_peralatan', function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('skpd_id');
@@ -23,6 +25,7 @@ return new class extends Migration
                 $table->string('keabsahan_perizinan_berusaha');
                 $table->timestamps();
             });
+        }
     }
       /**
      * Reverse the migrations.
