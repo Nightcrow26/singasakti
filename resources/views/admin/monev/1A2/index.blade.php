@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-primary" role="alert">
-                        PENGAWASAN PRODUSEN PRODUK
+                        PENGAWASAN DISTRIBUTOR PRODUK
                         @if (auth()->user()->hasRole('admin'))
                         <div class="btn-group" style="float: right; margin-right:10px;"  role="group">
                            
@@ -68,9 +68,8 @@
                             data-bs-target="#modal-tambah-foto" class="btn btn-sm btn-primary">
                             Tambah
                         </button>
-                         
+
                         @endif
-                        
                     </div>
                 </div>
             </div>
@@ -149,7 +148,6 @@
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->tanggal_pengawasan }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->kepemilikan_perizinan_berusaha }}</td>
                             <td style="color: rgb(0, 0, 0); text-align:center; vertical-align: top;">{{ $a->keabsahan_perizinan_berusaha }}</td>
-                            
                         </tr>
                         @endforeach
 
@@ -576,7 +574,7 @@
                                         data-sertifikat_tkdn="${item.sertifikat_tkdn}"
                                         data-sertifikat_sni="${item.sertifikat_sni}"
                                         data-pencatatan="${item.pencatatan_simpk}"
-                                        
+
                                     <i class="bx bx-pencil"> Edit</i>
                                 </button>
                             </td>
