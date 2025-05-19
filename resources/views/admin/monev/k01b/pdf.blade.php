@@ -106,15 +106,70 @@
                         <td>{{ $k01b->nib }}</td>
                         <td>{{ $k01b->nm_badan_usaha }}</td>
                         <td>{{ $k01b->pjbu }}</td>
-                        <td>{{ $k01b->jenis }}</td>
-                        <td>{{ $k01b->sifat }}</td>
-                        <td>{{ $k01b->klasifikasi }}</td>
-                        <td>{{ $k01b->layanan }}</td>
-                        <td>{{ $k01b->bentuk }}</td>
-                        <td>{{ $k01b->kualifikasi }}</td>
-                        <td>{{ $k01b->pm_sbu }}</td>
-                        <td>{{ $k01b->pm_nib }}</td>
-                        <td>{{ $k01b->pl_peng_usaha_berkelanjutan }}</td>
+
+                        <td>
+                            @if($k01b->jenis == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->sifat == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->klasifikasi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->layanan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->bentuk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->kualifikasi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pm_sbu == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pm_nib == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pl_peng_usaha_berkelanjutan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -152,19 +207,72 @@
                     @foreach ($dataK01b as $index => $k01b)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>Hulu Sungai Tengah</td>
                         <td>{{ $k01b->nib }}</td>
                         <td>{{ $k01b->nm_badan_usaha }}</td>
                         <td>{{ $k01b->pjbu }}</td>
-                        <td>{{ $k01b->jenis }}</td>
-                        <td>{{ $k01b->sifat }}</td>
-                        <td>{{ $k01b->klasifikasi }}</td>
-                        <td>{{ $k01b->layanan }}</td>
-                        <td>{{ $k01b->bentuk }}</td>
-                        <td>{{ $k01b->kualifikasi }}</td>
-                        <td>{{ $k01b->pm_sbu }}</td>
-                        <td>{{ $k01b->pm_nib }}</td>
-                        <td>{{ $k01b->pl_peng_usaha_berkelanjutan }}</td>
+                        <td>
+                            @if($k01b->jenis == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->sifat == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->klasifikasi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->layanan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->bentuk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->kualifikasi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pm_sbu == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pm_nib == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+                        <td>
+                            @if($k01b->pl_peng_usaha_berkelanjutan == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
