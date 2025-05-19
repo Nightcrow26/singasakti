@@ -228,7 +228,6 @@
     {{-- Data K01-K04 --}}
     @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('penyedia'))
     <div class="row mb-4" style="overflow-y: auto;max-height:600px">
-
         <div class="col-md-4 col-lg-4 col-xl-4 order-0">
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
@@ -259,8 +258,7 @@
                 </div>
             </div>
         </div>
-
-                <div class="col-md-4 col-lg-4 col-xl-4 order-0">
+        <div class="col-md-4 col-lg-4 col-xl-4 order-0">
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
@@ -290,8 +288,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="col-md-4 col-lg-4 col-xl-4 order-0">
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
@@ -315,14 +311,16 @@
                             <h2 class="mb-2 text-danger">{{ $total_tidaklengkap_k02 }} </h2>
                             <span class="text-danger">Tidak Tertib</span>
                         </div>
-
                         <div id="chart">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-lg-4 col-xl-4 order-0">
+    </div>
+
+    <div class="row mb-4" style="overflow-y: auto;max-height:600px">
+        <div class="col-md-6 col-lg-6 col-xl-6 order-0">
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
@@ -352,7 +350,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-lg-4 col-xl-4 order-0">
+        <div class="col-md-6 col-lg-6 col-xl-6 order-0">
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
