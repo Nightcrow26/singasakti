@@ -7,6 +7,8 @@ use App\Models\Tahun;
 use App\Models\Domain;
 use App\Models\trx_mr;
 use App\Models\Indikator;
+use App\Models\K01A;
+use App\Models\K01B;
 use App\Models\TrxJawaban;
 use Illuminate\Http\Request;
 use App\Services\MasterService;
@@ -250,6 +252,101 @@ class HomeController extends Controller
             ->whereNull('pemenuhan_standar_mutu_material')
             ->whereNull('pemenuhan_standar_teknis_lingkungan')
             ->whereNull('pemenuhan_standar_k3')
+            ->count();        
+        }
+
+        // data K01A
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_k01a'] = K01A::count();
+        }
+        else {
+            $data['total_k01a'] = K01A::where('skpd_id', auth()->user()->id)->count();
+        }
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_lengkap_k01a'] = K01A::whereNotNull('kep_keab_perizinan_berusaha')
+            ->whereNotNull('kep_keab_perizinan_teknologi')
+            ->whereNotNull('pencatatan_dalam_simpk')
+            ->count();
+
+        }
+        else {
+            $data['total_lengkap_k01a'] = K01A::where('skpd_id', auth()->user()->id)
+            ->whereNotNull('kep_keab_perizinan_berusaha')
+            ->whereNotNull('kep_keab_perizinan_teknologi')
+            ->whereNotNull('pencatatan_dalam_simpk')
+            ->count();        
+        }
+         if (auth()->user()->hasRole('admin')) {
+            $data['total_tidaklengkap_k01a'] = K01A::whereNull('kep_keab_perizinan_berusaha')
+            ->whereNull('kep_keab_perizinan_teknologi')
+            ->whereNull('pencatatan_dalam_simpk')
+            ->count();
+
+        }
+        else {
+            $data['total_tidaklengkap_k01a'] = K01A::where('skpd_id', auth()->user()->id)
+            ->whereNull('kep_keab_perizinan_berusaha')
+            ->whereNull('kep_keab_perizinan_teknologi')
+            ->whereNull('pencatatan_dalam_simpk')
+            ->count();        
+        }
+
+        // data K01B
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_k01b'] = K01B::count();
+        }
+        else {
+            $data['total_k01b'] = K01B::where('skpd_id', auth()->user()->id)->count();
+        }
+        if (auth()->user()->hasRole('admin')) {
+            $data['total_lengkap_k01b'] = K01B::whereNotNull('jenis')
+            ->whereNotNull('sifat')
+            ->whereNotNull('klasifikasi')
+            ->whereNotNull('layanan')
+            ->whereNotNull('bentuk')
+            ->whereNotNull('kualifikasi')
+            ->whereNotNull('pm_sbu')
+            ->whereNotNull('pm_nib')
+            ->whereNotNull('pl_peng_usaha_berkelanjutan')
+            ->count();
+
+        }
+        else {
+            $data['total_lengkap_k01b'] = K01B::where('skpd_id', auth()->user()->id)
+            ->whereNotNull('jenis')
+            ->whereNotNull('sifat')
+            ->whereNotNull('klasifikasi')
+            ->whereNotNull('layanan')
+            ->whereNotNull('bentuk')
+            ->whereNotNull('kualifikasi')
+            ->whereNotNull('pm_sbu')
+            ->whereNotNull('pm_nib')
+            ->whereNotNull('pl_peng_usaha_berkelanjutan')
+            ->count();        
+        }
+         if (auth()->user()->hasRole('admin')) {
+            $data['total_tidaklengkap_k01b'] = K01B::whereNull('jenis')
+            ->whereNull('sifat')
+            ->whereNull('klasifikasi')
+            ->whereNull('layanan')
+            ->whereNull('bentuk')
+            ->whereNull('kualifikasi')
+            ->whereNull('pm_sbu')
+            ->whereNull('pm_nib')
+            ->whereNull('pl_peng_usaha_berkelanjutan')
+            ->count();
+        }
+        else {
+            $data['total_tidaklengkap_k01b'] = K01B::where('skpd_id', auth()->user()->id)
+            ->whereNull('jenis')
+            ->whereNull('sifat')
+            ->whereNull('klasifikasi')
+            ->whereNull('layanan')
+            ->whereNull('bentuk')
+            ->whereNull('kualifikasi')
+            ->whereNull('pm_sbu')
+            ->whereNull('pm_nib')
+            ->whereNull('pl_peng_usaha_berkelanjutan')
             ->count();        
         }
         return view('home', $data);
