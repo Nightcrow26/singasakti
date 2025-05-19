@@ -56,19 +56,27 @@
                   </a>
               </li>
               
-              <li class="menu-item {{ set_active('admin.monev.1A3.index') }}">
-                  <a href="{{ route('admin.monev.1A3.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Peralatan</div>
-                  </a>
-              </li>
+                         <li class="menu-item {{ set_active(['admin.monev.1A1.index', 'admin.monev.1A2.index', 'admin.monev.1A3.index', 'admin.monev.1A6.index']) }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-category"></i>
+                    <div data-i18n="Monitoring & Evaluasi">Tertib Usaha</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ set_active('admin.monev.1A1.index') }}">
+                        <a href="{{ route('admin.monev.1A1.index') }}" class="menu-link">Pengawasan Produsen Material</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A2.index') }}">
+                        <a href="{{ route('admin.monev.1A2.index') }}" class="menu-link">Pengawasan Distributor Material</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A3.index') }}">
+                        <a href="{{ route('admin.monev.1A3.index') }}" class="menu-link">Pengawasan Peralatan</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A6.index') }}">
+                        <a href="{{ route('admin.monev.1A6.index') }}" class="menu-link">Pengawasan Teknologi</a>
+                    </li>
+                </ul>
+            </li>
 
-              <li class="menu-item {{ set_active('admin.monev.1A6.index') }}">
-                  <a href="{{ route('admin.monev.1A6.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Teknologi</div>
-                  </a>
-              </li>
 
               <li class="menu-item {{ set_active(['admin.monev.k01a.index', 'admin.monev.k01b.index', 'admin.monev.k02.index', 'admin.monev.k03.index', 'admin.monev.k04.index']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -250,32 +258,27 @@
                       <div data-i18n="Analytics">Dashboard</div>
                   </a>
               </li>
-            <li class="menu-item {{ set_active('admin.monev.1A1.index') }}">
-                  <a href="{{ route('admin.monev.1A1.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Produsen Material</div>
-                  </a>
+            <li class="menu-item {{ set_active(['admin.monev.1A1.index', 'admin.monev.1A2.index', 'admin.monev.1A3.index', 'admin.monev.1A6.index']) }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-category"></i>
+                    <div data-i18n="Monitoring & Evaluasi">Tertib Usaha</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item {{ set_active('admin.monev.1A1.index') }}">
+                        <a href="{{ route('admin.monev.1A1.index') }}" class="menu-link">Pengawasan Produsen Material</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A2.index') }}">
+                        <a href="{{ route('admin.monev.1A2.index') }}" class="menu-link">Pengawasan Distributor Material</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A3.index') }}">
+                        <a href="{{ route('admin.monev.1A3.index') }}" class="menu-link">Pengawasan Peralatan</a>
+                    </li>
+                    <li class="menu-item {{ set_active('admin.monev.1A6.index') }}">
+                        <a href="{{ route('admin.monev.1A6.index') }}" class="menu-link">Pengawasan Teknologi</a>
+                    </li>
+                </ul>
             </li>
-            <li class="menu-item {{ set_active('admin.monev.1A2.index') }}">
-                  <a href="{{ route('admin.monev.1A2.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Distributor Material</div>
-                  </a>
-            </li>
-            <li class="menu-item {{ set_active('admin.monev.1A3.index') }}">
-                  <a href="{{ route('admin.monev.1A3.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Peralatan</div>
-                  </a>
 
-              </li>
-            <li class="menu-item {{ set_active('admin.monev.1A6.index') }}">
-                  <a href="{{ route('admin.monev.1A6.index') }}" class="menu-link">
-                      <i class="menu-icon tf-icons bx bx-collection"></i>
-                      <div data-i18n="Analytics">Pengawasan Teknologi</div>
-                  </a>
-
-            </li>
             <li class="menu-item {{ set_active(['admin.monev.k01a.index', 'admin.monev.k01b.index', 'admin.monev.k02.index', 'admin.monev.k03.index', 'admin.monev.k04.index']) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-collection"></i>
