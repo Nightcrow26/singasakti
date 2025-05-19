@@ -601,9 +601,9 @@ class MonevController extends Controller
             'nib' => 'required|string|max:255',
             'nm_usaha_rantai_pasok' => 'required|string|max:255',
             'pjbu' => 'required|string|max:255',
-            'kep_keab_perizinan_berusaha' => 'required|string',
-            'kep_keab_perizinan_teknologi' => 'required|string',
-            'pencatatan_dalam_simpk' => 'required|string',
+            'kep_keab_perizinan_berusaha' => 'nullable|string',
+            'kep_keab_perizinan_teknologi' => 'nullable|string',
+            'pencatatan_dalam_simpk' => 'nullable|string',
             'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
         ]);
         // Mulai transaksi
@@ -611,20 +611,20 @@ class MonevController extends Controller
 
         try {
             // Upload file dulu
-            if ($request->hasFile('data_dukung')) {
-                $file = $request->file('data_dukung');
+            // if ($request->hasFile('data_dukung')) {
+            //     $file = $request->file('data_dukung');
             
-                // Bikin nama file unik
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            //     // Bikin nama file unik
+            //     $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
             
-                // Pindahkan file ke folder public/uploads/data_dukung
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
+            //     // Pindahkan file ke folder public/uploads/data_dukung
+            //     $file->move(public_path('uploads/data_dukung'), $namaFile);
             
-                // Simpan path untuk ke database (tanpa "public/")
-                $data['data_dukung'] = $namaFile;
-            } else {
-                $data['data_dukung'] = null;
-            }
+            //     // Simpan path untuk ke database (tanpa "public/")
+            //     $data['data_dukung'] = $namaFile;
+            // } else {
+            //     $data['data_dukung'] = null;
+            // }
             
 
             // Insert ke database
@@ -644,84 +644,92 @@ class MonevController extends Controller
 
     public function updatek01a(Request $request)
     {
-        try{
-        //Validasi Data
+        try {
+            // Validasi form data umum
             $data = $request->validate([
-                'skpd_id' => 'required|integer',
+                'id' => 'required|integer',
                 'nib' => 'required|string|max:255',
                 'nm_usaha_rantai_pasok' => 'required|string|max:255',
-                'pjbu' => 'required|string|max:255',
-                'kep_keab_perizinan_berusaha' => 'required|string',
-                'kep_keab_perizinan_teknologi' => 'required|string',
-                'pencatatan_dalam_simpk' => 'required|string',
-                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
+                'pjbu' => 'required|string|max:255'
             ]);
-            DB::beginTransaction(); // Mulai transaksi database
 
-            // Cari data lama berdasarkan ID
+            // Validasi field upload
+            $request->validate([
+                'field_tujuan' => 'required|string|in:kep_keab_perizinan_berusaha,kep_keab_perizinan_teknologi,pencatatan_dalam_simpk',
+                'file' => 'required|file|mimes:pdf|max:5120', // 5MB max
+            ]);
+
+            $field = $request->field_tujuan;
+
+            DB::beginTransaction(); // Mulai transaksi
+
+            // Cari data berdasarkan ID
             $item = K01A::findOrFail($request->input('id'));
 
-            // Jika ada file baru di-upload
-            if ($request->hasFile('data_dukung')) {
-                // Hapus file lama jika ada
-                if ($item->data_dukung) {
-                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
-                    if (file_exists($oldFilePath)) {
-                        unlink($oldFilePath);
-                    }
+            // Jika sebelumnya ada file, hapus
+            if (!empty($item->$field)) {
+                $oldFilePath = public_path('uploads/data_dukung/' . $item->$field);
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
                 }
-
-                // Simpan file baru
-                $file = $request->file('data_dukung');
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
-
-                $data['data_dukung'] = $namaFile;
-            } else {
-                // Kalau tidak upload file baru, jangan timpa file lama
-                unset($data['data_dukung']);
             }
 
-            // Update data ke database
-            $item->update($data);
+            // Simpan file baru
+            $file = $request->file('file');
+            $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/data_dukung'), $namaFile);
 
-            DB::commit(); // Simpan transaksi
+            // Update data umum
+            $item->nib = $data['nib'];
+            $item->nm_usaha_rantai_pasok = $data['nm_usaha_rantai_pasok'];
+            $item->pjbu = $data['pjbu'];
 
-            // Redirect dengan pesan sukses
+            // Update nama file ke field tujuan yang dipilih
+            $item->$field = $namaFile;
+
+            $item->save(); // Simpan ke DB
+            DB::commit();  // Commit transaksi
+
             return redirect()->back()->with('success', 'Data berhasil diperbarui');
 
         } catch (\Exception $e) {
-            DB::rollBack(); // Gagal, rollback transaksi
-            // Redirect dengan pesan error
-            return redirect()->back()->with('error', 'Gagal memperbarui data.'. $e->getMessage());
+            DB::rollBack(); // Rollback jika gagal
+            return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
         }
-    }
+    } //DONE
 
     public function destroyk01a($id)
     {
         try {
             $k01a = K01A::findOrFail($id); // Mencari data berdasarkan ID
 
-            // Cek apakah ada file yang terhubung dengan data ini
-            if ($k01a->data_dukung) {
-                $filePath = public_path('uploads/data_dukung/' . $k01a->data_dukung);
-                
-                // Jika file ada, hapus file tersebut
-                if (file_exists($filePath)) {
-                    unlink($filePath); // Menghapus file
+            // Hapus file jika ada di masing-masing field
+            $fields = [
+                'kep_keab_perizinan_berusaha',
+                'kep_keab_perizinan_teknologi',
+                'pencatatan_dalam_simpk',
+            ];
+
+            foreach ($fields as $field) {
+                if (!empty($k01a->$field)) {
+                    $filePath = public_path('uploads/data_dukung/' . $k01a->$field);
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                    }
                 }
             }
+
 
             // Hapus data jika ditemukan
             $k01a->delete();
 
             // Redirect dengan pesan sukses
-            return redirect()->back()->with('admin.monev.k01a.index')->with('success', 'Data berhasil dihapus!');
+            return redirect()->back()->with('admin.monev.k02.index')->with('success', 'Data berhasil dihapus!');
         } catch (\Exception $e) {
             // Jika terjadi kesalahan
             return redirect()->back()->with('admin.monev.k01a.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
-    }
+    } //DONE
 
     public function downloadk01a(Request $request)
     {
@@ -775,36 +783,36 @@ class MonevController extends Controller
             'nib' => 'required|string|max:255',
             'nm_badan_usaha' => 'required|string|max:255',
             'pjbu' => 'required|string|max:255',
-            'jenis' => 'required|string',
-            'sifat' => 'required|string',
-            'klasifikasi' => 'required|string',
-            'layanan' => 'required|string',
-            'bentuk' => 'required|string',
-            'kualifikasi' => 'required|string',
-            'pm_sbu' => 'required|string',
-            'pm_nib' => 'required|string',
-            'pl_peng_usaha_berkelanjutan' => 'required|string',
+            'jenis' => 'nullable|string',
+            'sifat' => 'nullable|string',
+            'klasifikasi' => 'nullable|string',
+            'layanan' => 'nullable|string',
+            'bentuk' => 'nullable|string',
+            'kualifikasi' => 'nullable|string',
+            'pm_sbu' => 'nullable|string',
+            'pm_nib' => 'nullable|string',
+            'pl_peng_usaha_berkelanjutan' => 'nullable|string',
             'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
         ]);
         // Mulai transaksi
         DB::beginTransaction();
 
         try {
-            // Upload file dulu
-            if ($request->hasFile('data_dukung')) {
-                $file = $request->file('data_dukung');
+            // // Upload file dulu
+            // if ($request->hasFile('data_dukung')) {
+            //     $file = $request->file('data_dukung');
             
-                // Bikin nama file unik
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            //     // Bikin nama file unik
+            //     $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
             
-                // Pindahkan file ke folder public/uploads/data_dukung
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
+            //     // Pindahkan file ke folder public/uploads/data_dukung
+            //     $file->move(public_path('uploads/data_dukung'), $namaFile);
             
-                // Simpan path untuk ke database (tanpa "public/")
-                $data['data_dukung'] = $namaFile;
-            } else {
-                $data['data_dukung'] = null;
-            }
+            //     // Simpan path untuk ke database (tanpa "public/")
+            //     $data['data_dukung'] = $namaFile;
+            // } else {
+            //     $data['data_dukung'] = null;
+            // }
             
 
             // Insert ke database
@@ -824,90 +832,92 @@ class MonevController extends Controller
 
     public function updatek01b(Request $request)
     {
-        try{
-        //Validasi Data
+        try {
+            // Validasi form data umum
             $data = $request->validate([
-                'skpd_id' => 'required|integer',
+                'id' => 'required|integer',
                 'nib' => 'required|string|max:255',
                 'nm_badan_usaha' => 'required|string|max:255',
-                'pjbu' => 'required|string|max:255',
-                'jenis' => 'required|string',
-                'sifat' => 'required|string',
-                'klasifikasi' => 'required|string',
-                'layanan' => 'required|string',
-                'bentuk' => 'required|string',
-                'kualifikasi' => 'required|string',
-                'pm_sbu' => 'required|string',
-                'pm_nib' => 'required|string',
-                'pl_peng_usaha_berkelanjutan' => 'required|string',
-                'data_dukung' => 'nullable|file|mimes:pdf|max:5120', // <<< di sini dibatasi maksimal 5MB
+                'pjbu' => 'required|string|max:255'
             ]);
-            DB::beginTransaction(); // Mulai transaksi database
 
-            // Cari data lama berdasarkan ID
+            // Validasi field upload
+            $request->validate([
+                'field_tujuan' => 'required|string|in:jenis,sifat,klasifikasi,layanan,bentuk,kualifikasi,pm_sbu,pm_nib,pl_peng_usaha_berkelanjutan',
+                'file' => 'required|file|mimes:pdf|max:5120', // 5MB max
+            ]);
+
+            $field = $request->field_tujuan;
+
+            DB::beginTransaction(); // Mulai transaksi
+
+            // Cari data berdasarkan ID
             $item = K01B::findOrFail($request->input('id'));
 
-            // Jika ada file baru di-upload
-            if ($request->hasFile('data_dukung')) {
-                // Hapus file lama jika ada
-                if ($item->data_dukung) {
-                    $oldFilePath = public_path('uploads/data_dukung/' . $item->data_dukung);
-                    if (file_exists($oldFilePath)) {
-                        unlink($oldFilePath);
-                    }
+            // Jika sebelumnya ada file, hapus
+            if (!empty($item->$field)) {
+                $oldFilePath = public_path('uploads/data_dukung/' . $item->$field);
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
                 }
-
-                // Simpan file baru
-                $file = $request->file('data_dukung');
-                $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads/data_dukung'), $namaFile);
-
-                $data['data_dukung'] = $namaFile;
-            } else {
-                // Kalau tidak upload file baru, jangan timpa file lama
-                unset($data['data_dukung']);
             }
 
-            // Update data ke database
-            $item->update($data);
+            // Simpan file baru
+            $file = $request->file('file');
+            $namaFile = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/data_dukung'), $namaFile);
 
-            DB::commit(); // Simpan transaksi
+            // Update data umum
+            $item->nib = $data['nib'];
+            $item->nm_badan_usaha = $data['nm_badan_usaha'];
+            $item->pjbu = $data['pjbu'];
 
-            // Redirect dengan pesan sukses
+            // Update nama file ke field tujuan yang dipilih
+            $item->$field = $namaFile;
+
+            $item->save(); // Simpan ke DB
+            DB::commit();  // Commit transaksi
+
             return redirect()->back()->with('success', 'Data berhasil diperbarui');
 
         } catch (\Exception $e) {
-            DB::rollBack(); // Gagal, rollback transaksi
-            // Redirect dengan pesan error
-            return redirect()->back()->with('error', 'Gagal memperbarui data.'. $e->getMessage());
+            DB::rollBack(); // Rollback jika gagal
+            return redirect()->back()->with('error', 'Gagal memperbarui data. ' . $e->getMessage());
         }
-    }
+    } //DONE
 
     public function destroyk01b($id)
     {
         try {
             $k01b = K01B::findOrFail($id); // Mencari data berdasarkan ID
 
-            // Cek apakah ada file yang terhubung dengan data ini
-            if ($k01b->data_dukung) {
-                $filePath = public_path('uploads/data_dukung/' . $k01a->data_dukung);
-                
-                // Jika file ada, hapus file tersebut
-                if (file_exists($filePath)) {
-                    unlink($filePath); // Menghapus file
+            // Hapus file jika ada di masing-masing field
+            $fields = [
+                'kep_keab_perizinan_berusaha',
+                'kep_keab_perizinan_teknologi',
+                'pencatatan_dalam_simpk',
+            ];
+
+            foreach ($fields as $field) {
+                if (!empty($k01a->$field)) {
+                    $filePath = public_path('uploads/data_dukung/' . $k01a->$field);
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                    }
                 }
             }
+
 
             // Hapus data jika ditemukan
             $k01b->delete();
 
             // Redirect dengan pesan sukses
-            return redirect()->back()->with('admin.monev.k01b.index')->with('success', 'Data berhasil dihapus!');
+            return redirect()->back()->with('admin.monev.k02.index')->with('success', 'Data berhasil dihapus!');
         } catch (\Exception $e) {
             // Jika terjadi kesalahan
             return redirect()->back()->with('admin.monev.k01b.index')->with('error', 'Gagal menghapus data: ' . $e->getMessage());
         }
-    }
+    } //DONE
 
     public function downloadk01b(Request $request)
     {

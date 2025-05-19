@@ -88,9 +88,29 @@
                         <td>{{ $k01a->nib }}</td>
                         <td>{{ $k01a->nm_usaha_rantai_pasok }}</td>
                         <td> {{$k01a->pjbu}} </td>
-                        <td> {{$k01a->kep_keab_perizinan_berusaha}} </td>
-                        <td> {{$k01a->kep_keab_perizinan_teknologi}} </td>
-                        <td> {{$k01a->pencatatan_dalam_simpk}} </td>
+                        <td>
+                            @if($k01a->kep_keab_perizinan_berusaha == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
+                        <td>
+                            @if($k01a->kep_keab_perizinan_teknologi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
+                        <td>
+                            @if($k01a->pencatatan_dalam_simpk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -123,9 +143,29 @@
                         <td>{{ $k01a->nib }}</td>
                         <td>{{ $k01a->nm_usaha_rantai_pasok }}</td>
                         <td> {{$k01a->pjbu}} </td>
-                        <td> {{$k01a->kep_keab_perizinan_berusaha}} </td>
-                        <td> {{$k01a->kep_keab_perizinan_teknologi}} </td>
-                        <td> {{$k01a->pencatatan_dalam_simpk}} </td>
+                        <td>
+                            @if($k01a->kep_keab_perizinan_berusaha == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
+                        <td>
+                            @if($k01a->kep_keab_perizinan_teknologi == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
+
+                        <td>
+                            @if($k01a->pencatatan_dalam_simpk == NULL)
+                                Tidak Tertib
+                            @else
+                                Tertib
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

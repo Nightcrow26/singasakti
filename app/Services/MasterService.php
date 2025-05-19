@@ -41,7 +41,7 @@ class MasterService
     function getDataUser($id = null)
     {
         if ($id === null) {
-            $data = User::with('skpd')->where('role', 'skpd')->get();
+            $data = User::with('skpd')->whereIn('role', ['skpd', 'penyedia'])->get();
         }
         else {
             $data = User::with('skpd')->where('id', $id)->first();

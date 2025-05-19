@@ -7,6 +7,8 @@ use App\Models\Tahun;
 use App\Models\Domain;
 use App\Models\trx_mr;
 use App\Models\Indikator;
+use App\Models\K01A;
+use App\Models\K01B;
 use App\Models\TrxJawaban;
 use Illuminate\Http\Request;
 use App\Services\MasterService;
@@ -174,46 +176,18 @@ class HomeController extends Controller
             $data['row_hitung'] = trx_mr::where('skpd_id', auth()->user()->skpd_id)->count();
         }
 
-        // data K02
-        if (auth()->user()->hasRole('admin')) {
-            $data['total_k02'] = K02::count();
-            $data['total_k03'] = K03::count();
-            $data['total_k04'] = K04::count();
-        }
-        else {
-            $data['total_k02'] = K02::where('skpd_id', auth()->user()->id)->count();
-            $data['total_k03'] = K03::where('skpd_id', auth()->user()->id)->count();
-            $data['total_k04'] = K04::where('skpd_id', auth()->user()->id)->count();
-        }
-        if (auth()->user()->hasRole('admin')) {
-            $data['total_lengkap_k02'] = K02::whereNotNull('proses_pemilihan_penyedia_jasa')
-            ->whereNotNull('penerapan_standar_kontrak')
-            ->whereNotNull('penggunaan_tenaga_kerja_bersertifikat')
-            ->whereNotNull('pemberian_pekerjaan_utama_subpenyedia')
-            ->whereNotNull('ketersediaan_dokumen_standar_k4')
-            ->whereNotNull('penerapan_smkk')
-            ->whereNotNull('kegiatan_antisipasi_kecelakaan_kerja')
-            ->whereNotNull('penerapan_sistem_manajemen_mutu_konstruksi')
-            ->whereNotNull('pemenuhan_peralatan_pelaksanaan_proyek')
-            ->whereNotNull('penggunaan_material_standar')
-            ->whereNotNull('penggunaan_produk_dalam_negeri')
-            ->whereNotNull('pemenuhan_standar_mutu_material')
-            ->whereNotNull('pemenuhan_standar_teknis_lingkungan')
-            ->whereNotNull('pemenuhan_standar_k3')
-            ->count();
+        $isAdmin = auth()->user()->hasRole('admin');
+        $userId = auth()->user()->id;
 
-            $data['total_lengkap_k03'] = K03::whereNotNull('kesesuaian_fungsi')
-            ->whereNotNull('kesesuaian_lokasi')
-            ->whereNotNull('rencana_umur')
-            ->whereNotNull('kapasitas_beban')
-            ->whereNotNull('pemeliharaan_bangunan')
-            ->whereNotNull('program_pemeliharaan')
-            ->count();
-            $data['total_lengkap_k04'] = K04::whereNotNull('hasil')->count();
+        // Total Semua
+        $data['total_k02']  = $isAdmin ? K02::count()  : K02::where('skpd_id', $userId)->count();
+        $data['total_k03']  = $isAdmin ? K03::count()  : K03::where('skpd_id', $userId)->count();
+        $data['total_k04']  = $isAdmin ? K04::count()  : K04::where('skpd_id', $userId)->count();
+        $data['total_k01a'] = $isAdmin ? K01A::count() : K01A::where('skpd_id', $userId)->count();
+        $data['total_k01b'] = $isAdmin ? K01B::count() : K01B::where('skpd_id', $userId)->count();
 
-        }
-        else {
-            $data['total_lengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
+        // Total Lengkap
+        $data['total_lengkap_k02'] = ($isAdmin ? K02::query() : K02::where('skpd_id', $userId))
             ->whereNotNull('proses_pemilihan_penyedia_jasa')
             ->whereNotNull('penerapan_standar_kontrak')
             ->whereNotNull('penggunaan_tenaga_kerja_bersertifikat')
@@ -228,9 +202,9 @@ class HomeController extends Controller
             ->whereNotNull('pemenuhan_standar_mutu_material')
             ->whereNotNull('pemenuhan_standar_teknis_lingkungan')
             ->whereNotNull('pemenuhan_standar_k3')
-            ->count(); 
-            
-            $data['total_lengkap_k03'] = K03::where('skpd_id', auth()->user()->id)
+            ->count();
+
+        $data['total_lengkap_k03'] = ($isAdmin ? K03::query() : K03::where('skpd_id', $userId))
             ->whereNotNull('kesesuaian_fungsi')
             ->whereNotNull('kesesuaian_lokasi')
             ->whereNotNull('rencana_umur')
@@ -239,66 +213,85 @@ class HomeController extends Controller
             ->whereNotNull('program_pemeliharaan')
             ->count();
 
-            $data['total_lengkap_k04'] = K04::where('skpd_id', auth()->user()->id)->whereNotNull('hasil')->count();
-        }
-         if (auth()->user()->hasRole('admin')) {
-            $data['total_tidaklengkap_k02'] = K02::whereNull('proses_pemilihan_penyedia_jasa')
-            ->whereNull('penerapan_standar_kontrak')
-            ->whereNull('penggunaan_tenaga_kerja_bersertifikat')
-            ->whereNull('pemberian_pekerjaan_utama_subpenyedia')
-            ->whereNull('ketersediaan_dokumen_standar_k4')
-            ->whereNull('penerapan_smkk')
-            ->whereNull('kegiatan_antisipasi_kecelakaan_kerja')
-            ->whereNull('penerapan_sistem_manajemen_mutu_konstruksi')
-            ->whereNull('pemenuhan_peralatan_pelaksanaan_proyek')
-            ->whereNull('penggunaan_material_standar')
-            ->whereNull('penggunaan_produk_dalam_negeri')
-            ->whereNull('pemenuhan_standar_mutu_material')
-            ->whereNull('pemenuhan_standar_teknis_lingkungan')
-            ->whereNull('pemenuhan_standar_k3')
+        $data['total_lengkap_k04'] = ($isAdmin ? K04::query() : K04::where('skpd_id', $userId))
+            ->whereNotNull('hasil')->count();
+
+        $data['total_lengkap_k01a'] = ($isAdmin ? K01A::query() : K01A::where('skpd_id', $userId))
+            ->whereNotNull('kep_keab_perizinan_berusaha')
+            ->whereNotNull('kep_keab_perizinan_teknologi')
+            ->whereNotNull('pencatatan_dalam_simpk')
             ->count();
 
-            $data['total_tidaklengkap_k03'] = K03::whereNull('kesesuaian_fungsi')
-            ->whereNull('kesesuaian_lokasi')
-            ->whereNull('rencana_umur')
-            ->whereNull('kapasitas_beban')
-            ->whereNull('pemeliharaan_bangunan')
-            ->whereNull('program_pemeliharaan')
+        $data['total_lengkap_k01b'] = ($isAdmin ? K01B::query() : K01B::where('skpd_id', $userId))
+            ->whereNotNull('jenis')
+            ->whereNotNull('sifat')
+            ->whereNotNull('klasifikasi')
+            ->whereNotNull('layanan')
+            ->whereNotNull('bentuk')
+            ->whereNotNull('kualifikasi')
+            ->whereNotNull('pm_sbu')
+            ->whereNotNull('pm_nib')
+            ->whereNotNull('pl_peng_usaha_berkelanjutan')
             ->count();
 
-            $data['total_tidaklengkap_k04'] = K04::whereNull('hasil')->count();
-
-        }
-        else {
-            $data['total_tidaklengkap_k02'] = K02::where('skpd_id', auth()->user()->id)
-            ->whereNull('proses_pemilihan_penyedia_jasa')
-            ->whereNull('penerapan_standar_kontrak')
-            ->whereNull('penggunaan_tenaga_kerja_bersertifikat')
-            ->whereNull('pemberian_pekerjaan_utama_subpenyedia')
-            ->whereNull('ketersediaan_dokumen_standar_k4')
-            ->whereNull('penerapan_smkk')
-            ->whereNull('kegiatan_antisipasi_kecelakaan_kerja')
-            ->whereNull('penerapan_sistem_manajemen_mutu_konstruksi')
-            ->whereNull('pemenuhan_peralatan_pelaksanaan_proyek')
-            ->whereNull('penggunaan_material_standar')
-            ->whereNull('penggunaan_produk_dalam_negeri')
-            ->whereNull('pemenuhan_standar_mutu_material')
-            ->whereNull('pemenuhan_standar_teknis_lingkungan')
-            ->whereNull('pemenuhan_standar_k3')
-            ->count();   
-            
-            $data['total_tidaklengkap_k03'] = K03::where('skpd_id', auth()->user()->id)
-            ->whereNull('kesesuaian_fungsi')
-            ->whereNull('kesesuaian_lokasi')
-            ->whereNull('rencana_umur')
-            ->whereNull('kapasitas_beban')
-            ->whereNull('pemeliharaan_bangunan')
-            ->whereNull('program_pemeliharaan')
+        // Total Tidak Lengkap (salah satu field kosong)
+        $data['total_tidaklengkap_k02'] = ($isAdmin ? K02::query() : K02::where('skpd_id', $userId))
+            ->where(function ($q) {
+                $q->whereNull('proses_pemilihan_penyedia_jasa')
+                ->orWhereNull('penerapan_standar_kontrak')
+                ->orWhereNull('penggunaan_tenaga_kerja_bersertifikat')
+                ->orWhereNull('pemberian_pekerjaan_utama_subpenyedia')
+                ->orWhereNull('ketersediaan_dokumen_standar_k4')
+                ->orWhereNull('penerapan_smkk')
+                ->orWhereNull('kegiatan_antisipasi_kecelakaan_kerja')
+                ->orWhereNull('penerapan_sistem_manajemen_mutu_konstruksi')
+                ->orWhereNull('pemenuhan_peralatan_pelaksanaan_proyek')
+                ->orWhereNull('penggunaan_material_standar')
+                ->orWhereNull('penggunaan_produk_dalam_negeri')
+                ->orWhereNull('pemenuhan_standar_mutu_material')
+                ->orWhereNull('pemenuhan_standar_teknis_lingkungan')
+                ->orWhereNull('pemenuhan_standar_k3');
+            })
             ->count();
 
-            $data['total_tidaklengkap_k04'] = K04::where('skpd_id', auth()->user()->id)->whereNull('hasil')->count();
+        $data['total_tidaklengkap_k03'] = ($isAdmin ? K03::query() : K03::where('skpd_id', $userId))
+            ->where(function ($q) {
+                $q->whereNull('kesesuaian_fungsi')
+                ->orWhereNull('kesesuaian_lokasi')
+                ->orWhereNull('rencana_umur')
+                ->orWhereNull('kapasitas_beban')
+                ->orWhereNull('pemeliharaan_bangunan')
+                ->orWhereNull('program_pemeliharaan');
+            })
+            ->count();
 
-        }
+        $data['total_tidaklengkap_k04'] = ($isAdmin ? K04::query() : K04::where('skpd_id', $userId))
+            ->whereNull('hasil')
+            ->count();
+
+        $data['total_tidaklengkap_k01a'] = ($isAdmin ? K01A::query() : K01A::where('skpd_id', $userId))
+            ->where(function ($q) {
+                $q->whereNull('kep_keab_perizinan_berusaha')
+                ->orWhereNull('kep_keab_perizinan_teknologi')
+                ->orWhereNull('pencatatan_dalam_simpk');
+            })
+            ->count();
+
+        $data['total_tidaklengkap_k01b'] = ($isAdmin ? K01B::query() : K01B::where('skpd_id', $userId))
+            ->where(function ($q) {
+                $q->whereNull('jenis')
+                ->orWhereNull('sifat')
+                ->orWhereNull('klasifikasi')
+                ->orWhereNull('layanan')
+                ->orWhereNull('bentuk')
+                ->orWhereNull('kualifikasi')
+                ->orWhereNull('pm_sbu')
+                ->orWhereNull('pm_nib')
+                ->orWhereNull('pl_peng_usaha_berkelanjutan');
+            })
+            ->count();
+
+
         return view('home', $data);
     }
 }
