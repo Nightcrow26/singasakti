@@ -415,7 +415,7 @@
                                 </dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                <dt>Upload Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                                 <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div>
                             --}}
@@ -487,7 +487,7 @@
                             </dd>
                         </div>
                          <div class="col-md-12 mt-4">
-                            <dt>Upload File <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Upload File <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="file" accept=".pdf"></dd>
                         </div>
 
@@ -553,7 +553,7 @@
                             </dd>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Update Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
                         

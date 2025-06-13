@@ -185,7 +185,6 @@ class HomeController extends Controller
         $data['total_k04']  = $isAdmin ? K04::count()  : K04::where('skpd_id', $userId)->count();
         $data['total_k01a'] = $isAdmin ? K01A::count() : K01A::where('skpd_id', $userId)->count();
         $data['total_k01b'] = $isAdmin ? K01B::count() : K01B::where('skpd_id', $userId)->count();
-
         // Total Lengkap
         $data['total_lengkap_k02'] = ($isAdmin ? K02::query() : K02::where('skpd_id', $userId))
             ->whereNotNull('proses_pemilihan_penyedia_jasa')
@@ -215,7 +214,6 @@ class HomeController extends Controller
 
         $data['total_lengkap_k04'] = ($isAdmin ? K04::query() : K04::where('skpd_id', $userId))
             ->whereNotNull('hasil')->count();
-
         $data['total_lengkap_k01a'] = ($isAdmin ? K01A::query() : K01A::where('skpd_id', $userId))
             ->whereNotNull('kep_keab_perizinan_berusaha')
             ->whereNotNull('kep_keab_perizinan_teknologi')
