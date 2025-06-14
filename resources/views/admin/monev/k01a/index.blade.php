@@ -140,7 +140,7 @@
                         @foreach ($dataK01a as $index => $k01a)
                         @php
                             $statusAkhir = (
-                                $k01a->pkep_keab_perizinan_berusaha != NULL &&
+                                $k01a->kep_keab_perizinan_berusaha != NULL &&
                                 $k01a->kep_keab_perizinan_teknologi != NULL &&
                                 $k01a->pencatatan_dalam_simpk != NULL
                             ) ? 'Tertib' : 'Tidak Tertib';
@@ -316,7 +316,7 @@
                             </div>
                     
                             <div class="col-md-12 mt-4">
-                                <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                <dt>Upload Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                                 <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div> --}}
                     
@@ -375,7 +375,7 @@
                             </dd>
                         </div>
                          <div class="col-md-12 mt-4">
-                            <dt>Upload File <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Upload File <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="file" accept=".pdf"></dd>
                         </div>
     
@@ -410,7 +410,7 @@
                         </div>
 
                         <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Update Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
                         <div id="pdf-preview" style="margin-top: 20px;">

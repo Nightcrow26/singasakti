@@ -236,12 +236,12 @@
                                 <dd><input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat"></dd>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <dt>Hasil Pengawasan<small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                <dt>Hasil Pengawasan<small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                                  <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                             </div>
                             {{-- 
                                 <div class="col-md-12 mt-4">
-                                    <dt>Upload Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                                    <dt>Upload Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                                     <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                                 </div>
                             --}}
@@ -295,11 +295,11 @@
                             <dd><input type="text" class="form-control" id="edit-alamat" name="alamat" placeholder="Alamat"></dd>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <dt>Hasil Pengawasan <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Hasil Pengawasan <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div>
                         {{-- <div class="col-md-12 mt-4">
-                            <dt>Update Data Dukung <small style="color: red">*maks 5MB (Wajib PDF)</small></dt>
+                            <dt>Update Data Dukung <small style="color: red">*maks 2MB (Wajib PDF)</small></dt>
                             <dd><input type="file" class="form-control" name="data_dukung" accept=".pdf"></dd>
                         </div> --}}
                         <div id="pdf-preview" style="margin-top: 20px;">
