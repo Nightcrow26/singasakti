@@ -363,6 +363,9 @@ class MasterService
                 $toward =
                 [
                     'username' => $data['username'],
+                    'address' => $data['address'],
+                    'latitude' => $data['latitude'],    
+                    'longitude' => $data['longitude'],
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];
@@ -372,6 +375,9 @@ class MasterService
                 [
                     'username' => $data['username'],
                     'password' => bcrypt($data['password']),
+                    'address' => $data['address'],
+                    'latitude' => $data['latitude'],
+                    'longitude' => $data['longitude'],
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];

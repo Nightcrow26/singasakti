@@ -17,6 +17,7 @@ use App\Models\trx_upload_berkas;
 use App\Models\K02;
 use App\Models\K03;
 use App\Models\K04;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -291,5 +292,47 @@ class HomeController extends Controller
 
 
         return view('home', $data);
+    }
+    
+    public function getProviderMarkers(Request $request)
+    {
+        $query = User::whereHas('roles', function($q) {
+            $q->where('name', 'penyedia');
+        })
+        ->whereNotNull('latitude')
+        ->whereNotNull('longitude')
+        ->select('id', 'name', 'address', 'latitude', 'longitude');
+
+        // Filter berdasarkan role
+        if (auth()->user()->hasRole('admin')) {
+            if ($request->penyedia_id) {
+                $query->where('id', $request->penyedia_id);
+            }
+        } elseif (auth()->user()->hasRole('skpd')) {
+            if ($request->penyedia_id) {
+                $query->where('id', $request->penyedia_id);
+            }
+        } elseif (auth()->user()->hasRole('penyedia')) {
+            $query->where('id', $request->user_id);
+        }
+
+        return response()->json($query->get());
+    }
+
+    public function getPenyediaList()
+    {
+        $penyedia = User::whereHas('roles', function($q) {
+            $q->where('name', 'penyedia');
+        })
+        ->select('id', 'name')
+        ->get()
+        ->map(function($user) {
+            return [
+                'id' => $user->id,
+                'nama_perusahaan' => $user->name // atau field lain yang sesuai
+            ];
+        });
+
+        return response()->json($penyedia);
     }
 }
