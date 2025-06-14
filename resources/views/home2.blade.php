@@ -32,6 +32,7 @@
             /* The height is 400 pixels */
         }
 
+
         #chart {
             max-width: 250px;
             padding-left: 20px;
@@ -40,31 +41,6 @@
         #chartdiv {
             width: 100%;
             height: 400px;
-        }
-
-        /* Style untuk filter penyedia */
-        .map-filters {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 15px;
-            align-items: end;
-            flex-wrap: wrap;
-        }
-
-        .filter-item {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 10px;
         }
     </style>
 @endsection
@@ -123,7 +99,40 @@
 
                         <div id="chart">
                         </div>
+
+
                     </div>
+                    {{-- <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                            <div class="avatar flex-shrink-0 me-3">
+                                <span class="avatar-initial rounded bg-label-success"><i
+                                        class="bx bx-mobile-alt"></i></span>
+                            </div>
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <h6 class="mb-0">Lengkap</h6>
+                                    <small class="text-muted">Paket Pekerjaan</small>
+                                </div>
+                                <div class="user-progress">
+                                    <small class="fw-semibold">{{ $total_lengkap }}</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex pb-1">
+                            <div class="avatar flex-shrink-0 me-3">
+                                <span class="avatar-initial rounded bg-label-danger"><i class="bx bx-closet"></i></span>
+                            </div>
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <h6 class="mb-0">Tidak Lengkap</h6>
+                                    <small class="text-muted">Paket Pekerjaan</small>
+                                </div>
+                                <div class="user-progress">
+                                    <small class="fw-semibold">{{ $total_tidak_lengkap }}</small>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> --}}
                 </div>
                 <div class="card-body" style="overflow-y: auto;max-height:400px;min-height:400px">
                     <div class="table-responsive" style="overflow-y: auto;">
@@ -152,6 +161,10 @@
 
         <div class="col-md-6 col-lg-6 col-xl-6 order-0">
             <div class="card h-100">
+                {{-- <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Statistik Realisasi</h5>
+                </div>
+                <hr> --}}
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
                         <h5 class="m-0 me-2">Statistik Realisasi</h5>
@@ -369,9 +382,7 @@
         </div>
     </div>
     @endif
-
-    {{-- Peta untuk semua role yang memiliki akses --}}
-    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd') || auth()->user()->hasRole('penyedia'))
+    @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -382,62 +393,18 @@
                 </div>
             </div>
         </div>
-        <div class="card-body">
-            {{-- Filter untuk berbagai role --}}
-            <div class="map-filters">
-                <div class="filter-group">
-                    @if (auth()->user()->hasRole('admin'))
-                        <div class="filter-item">
-                            <label for="skpdFilter">Filter SOPD:</label>
-                            <select id="skpdFilter" class="form-control select2">
-                                <option value="">Semua SOPD</option>
-                                @foreach ($skpd2 as $skpd2)
-                                    <option value="{{ $skpd2->id }}">{{ $skpd2->nama }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="filter-item">
-                            <label for="penyediaFilter">Filter Penyedia:</label>
-                            <select id="penyediaFilter" class="form-control select2">
-                                <option value="">Semua Penyedia</option>
-                                {{-- Data penyedia akan dimuat via AJAX --}}
-                            </select>
-                        </div>
-                    @endif
-
-                    @if (auth()->user()->hasRole('skpd'))
-                        <div class="filter-item">
-                            <label for="penyediaFilter">Filter Penyedia:</label>
-                            <select id="penyediaFilter" class="form-control select2">
-                                <option value="">Semua Penyedia</option>
-                                {{-- Data penyedia akan dimuat via AJAX --}}
-                            </select>
-                        </div>
-                    @endif
-
-                    @if (auth()->user()->hasRole('penyedia'))
-                        <div class="filter-item">
-                            <label>Status Proyek:</label>
-                            <select id="statusFilter" class="form-control">
-                                <option value="">Semua Status</option>
-                                <option value="ongoing">Sedang Berjalan</option>
-                                <option value="completed">Selesai</option>
-                                <option value="delayed">Terlambat</option>
-                            </select>
-                        </div>
-                    @endif
-
-                    <div class="filter-buttons">
-                        <button type="button" class="btn btn-primary btn-sm" onclick="applyFilters()">
-                            <i class="bx bx-filter"></i> Terapkan Filter
-                        </button>
-                        <button type="button" class="btn btn-secondary btn-sm" onclick="resetFilters()">
-                            <i class="bx bx-refresh"></i> Reset
-                        </button>
-                    </div>
+        <div class="card-body ">
+            @if (auth()->user()->hasRole('admin'))
+                <div>
+                    <label for="skpdFilter">Filter SOPD:</label>
+                    <select id="skpdFilter" class="form-control select2 my-3">
+                        <option value="">Pilih SOPD</option>
+                        @foreach ($skpd2 as $skpd2)
+                            <option value="{{ $skpd2->id }}">{{ $skpd2->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
-            </div>
-
+            @endif
             <div class="col-md-12 mb-3">
                 <div id="leafletMap-registration2"></div>
             </div>
@@ -445,6 +412,7 @@
     </div>
     @endif
 
+    {{-- @include('admin.master.skpd.form') --}}
 @endsection
 
 @section('custom_js')
@@ -465,17 +433,17 @@
         $(document).ready(function() {
             $('#table').DataTable();
             $('#range').daterangepicker();
-            
-            // Load data penyedia untuk filter
-            loadPenyediaOptions();
         });
 
         function hanyaAngka(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode
             if (charCode > 31 && (charCode < 48 || charCode > 57))
+
                 return false;
             return true;
         }
+
+
 
         function hanyaAngka() {
             const regex = /[^\d.]|\.(?=.*\.)/g;
@@ -485,8 +453,10 @@
                 const str = this.value;
                 const result = str.replace(regex, subst);
                 this.value = result;
+
             });
         }
+
 
         var desa_latitude = `-2.587393559456695`
         var desa_longitude = `115.37534573108255`
@@ -505,86 +475,31 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(leafletMap2);
 
-        // Function untuk load data penyedia
-        function loadPenyediaOptions() {
-            @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
-            axios.get('/admin/monev/penyedia-list')
-                .then(response => {
-                    const penyediaSelect = document.getElementById('penyediaFilter');
-                    if (penyediaSelect) {
-                        // Clear existing options except the first one
-                        while (penyediaSelect.children.length > 1) {
-                            penyediaSelect.removeChild(penyediaSelect.lastChild);
-                        }
-                        
-                        // Add new options
-                        response.data.forEach(penyedia => {
-                            const option = document.createElement('option');
-                            option.value = penyedia.id;
-                            option.textContent = penyedia.nama_perusahaan;
-                            penyediaSelect.appendChild(option);
-                        });
+        const projectLayer = L.layerGroup().addTo(leafletMap2);
+        const penyediaLayer = L.layerGroup().addTo(leafletMap2);
+
+        function loadMarkers(skpdId = '') {
+            axios.get('/admin/monev/marker', {
+                    params: {
+                        skpd_id: skpdId
                     }
                 })
-                .catch(error => {
-                    console.error('Error loading penyedia options:', error);
-                });
-            @endif
-        }
-
-        function loadMarkers(skpdId = '', penyediaId = '', status = '') {
-            // Clear existing markers first
-            leafletMap2.eachLayer(function(layer) {
-                if (!!layer.toGeoJSON) {
-                    leafletMap2.removeLayer(layer);
-                }
-            });
-
-            // Re-add tile layer
-            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(leafletMap2);
-
-            // Load project markers
-            loadProjectMarkers(skpdId, penyediaId, status);
-            
-            // Load provider markers
-            loadProviderMarkers(penyediaId);
-        }
-
-        function loadProjectMarkers(skpdId = '', penyediaId = '', status = '') {
-            // Tentukan endpoint berdasarkan role
-            let endpoint = '/admin/monev/marker';
-            let params = {};
-
-            @if(auth()->user()->hasRole('admin'))
-                params = {
-                    skpd_id: skpdId,
-                    penyedia_id: penyediaId,
-                    status: status
-                };
-            @elseif(auth()->user()->hasRole('skpd'))
-                params = {
-                    penyedia_id: penyediaId,
-                    status: status
-                };
-            @elseif(auth()->user()->hasRole('penyedia'))
-                params = {
-                    status: status,
-                    user_id: {{ auth()->user()->id }} // Hanya proyek milik penyedia ini
-                };
-            @endif
-
-            axios.get(endpoint, { params })
                 .then(response => {
                     const markers = response.data;
 
-                    // Add project markers
+                    // Clear existing markers
+                    projectLayer.clearLayers();
+
+                    // Add new markers
                     markers.forEach(marker => {
                         var newMarker = L.marker([marker.latitude, marker.longitude]);
+                        var currentMonth = new Date().getMonth();
+
 
                         var fisik = parseInt(marker.realisasi.realisasi_fisik);
+
                         var keuangan = parseInt(marker.realisasi.realisasi);
+
                         var pagu = marker.pagu;
                         var pagu_kontrak = marker.pagu_kontrak;
                         var fisikNumber = parseInt(fisik);
@@ -602,8 +517,18 @@
                         var today = moment(new Date()).format('YYYY-MM-DD');
                         var tgl_akhir = moment(marker.tgl_akhir).format('YYYY-MM-DD');
 
-                        // Tentukan warna marker berdasarkan status dan role
-                        var iconUrl = getProjectMarkerIcon(fisik, today, tgl_akhir, marker);
+
+                        var iconUrl =
+                            'https://maps.google.com/mapfiles/ms/icons/green-dot.png'; // Default color
+                        if (fisik < 50) {
+                            iconUrl = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                        } else if (fisik < 80) {
+                            iconUrl = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+                        } else if (fisik < 100 && today > tgl_akhir) {
+                            iconUrl = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                        } else if (fisik == 100) {
+                            iconUrl = 'https://cdn-icons-png.flaticon.com/512/8029/8029509.png';
+                        }
 
                         // Buat popup untuk menampilkan detail marker
                         var tgl_mulai_string = marker.tgl_mulai;
@@ -615,12 +540,36 @@
                         var tgl_mulai_diff = moment(tgl_mulai_string);
                         var tgl_akhir_diff = moment(tgl_akhir_string);
                         var selisihHari = tgl_akhir_diff.diff(tgl_mulai_diff, 'days') + 1;
-
-                        // Buat popup content berdasarkan role
-                        var popupContent = createProjectPopupContent(marker, fisikTanpaKoma, keuanganTanpaKoma, 
-                                                                    paguTanpaKoma, pagu_kontrakNumber, 
-                                                                    tgl_kontrak, tgl_mulai, tgl_akhir, selisihHari);
-
+                        var popupContent = `
+                <p>
+                    SKPD : ${marker.skpd.nama}
+                     <br>
+                    Paket : ${marker.paket}
+                     <br>
+                     Nama Perusahaan : ${marker.nama_perusahaan}
+                      <br>
+                      Sumber Dana : ${marker.sumber_dana}
+                      <br>
+                       Pagu : Rp. ${paguTanpaKoma}
+                     <br>
+                      Pagu Kontrak : Rp. ${pagu_kontrakNumber}
+                     <br>
+                     Realisasi Fisik : ${fisikTanpaKoma}%
+                     <br>
+                     Realisasi Keuangan : Rp. ${keuanganTanpaKoma}
+                     <br>
+                     Tgl Kontrak : ${tgl_kontrak}
+                      <br>
+                     Tgl Mulai : ${tgl_mulai}
+                      <br>
+                     Tgl Selesai : ${tgl_akhir}
+                     <br>
+                     Waktu Pengerjaan : ${selisihHari} Hari
+                     <br>
+                       <a href="/admin/monev/detail/${marker.id}"class="btn btn-sm btn-outline-success">Detail</a>
+                </p>
+                <!-- Tambahkan detail lainnya sesuai kebutuhan -->
+            `;
                         newMarker.bindPopup(popupContent);
 
                         newMarker.setIcon(L.icon({
@@ -632,244 +581,92 @@
                     });
                 })
                 .catch(error => {
-                    console.error('Error fetching project markers:', error);
+                    console.error('Error fetching markers:', error);
                 });
         }
 
-        function loadProviderMarkers(penyediaId = '') {
-            let endpoint = '/admin/monev/provider-markers';
-            let params = {};
-
-            @if(auth()->user()->hasRole('admin'))
-                params = {
-                    penyedia_id: penyediaId
-                };
-            @elseif(auth()->user()->hasRole('skpd'))
-                params = {
-                    penyedia_id: penyediaId
-                };
-            @elseif(auth()->user()->hasRole('penyedia'))
-                params = {
-                    user_id: {{ auth()->user()->id }} // Hanya data penyedia ini
-                };
-            @endif
-
-            axios.get(endpoint, { params })
-                .then(response => {
-                    const providers = response.data;
-
-                    // Add provider markers
-                    providers.forEach(provider => {
-                        // Pastikan ada koordinat
-                        if (provider.latitude && provider.longitude) {
-                            var providerMarker = L.marker([provider.latitude, provider.longitude]);
-
-                            // Icon khusus untuk penyedia (building/company icon)
-                            var providerIconUrl = 'https://img.icons8.com/?size=100&id=ZUdYNxR6ddlu&format=png&color=000000';
-                            
-                            // Popup content untuk penyedia
-                            var providerPopupContent = createProviderPopupContent(provider);
-
-                            providerMarker.bindPopup(providerPopupContent);
-
-                            providerMarker.setIcon(L.icon({
-                                iconUrl: providerIconUrl,
-                                iconSize: [32, 32]
-                            }));
-
-                            providerMarker.addTo(leafletMap2);
-                        }
+        // 4. Load marker penyedia
+        function loadPenyediaMarkers(skpdId = '') {
+            axios.get('{{ route("admin.penyedia.markers") }}', { params: { skpd_id: skpdId } })
+                .then(res => {
+                    penyediaLayer.clearLayers();
+                    res.data.forEach(u => {
+                        if (!u.latitude || !u.longitude) return;
+                        L.marker([u.latitude, u.longitude], {
+                            icon: L.icon({
+                                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                iconSize: [32,32]
+                            })
+                        })
+                        .bindPopup(`<strong>${u.name}</strong><br>${u.address}`)
+                        .addTo(penyediaLayer);
                     });
-                })
-                .catch(error => {
-                    console.error('Error fetching provider markers:', error);
                 });
         }
 
-        // Function untuk menentukan icon marker proyek
-        function getProjectMarkerIcon(fisik, today, tgl_akhir, marker) {
-            var iconUrl = 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'; // Default untuk penyedia
-            
-            @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
-                // Logic untuk admin dan SKPD (seperti sebelumnya)
-                iconUrl = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png';
-                if (fisik < 50) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
-                } else if (fisik < 80) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
-                } else if (fisik < 100 && today > tgl_akhir) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
-                } else if (fisik == 100) {
-                    iconUrl = 'https://cdn-icons-png.flaticon.com/512/8029/8029509.png';
-                }
-            @elseif(auth()->user()->hasRole('penyedia'))
-                // Logic khusus untuk penyedia
-                if (fisik == 100) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'; // Selesai
-                } else if (today > tgl_akhir) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'; // Terlambat
-                } else if (fisik >= 50) {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'; // On track
-                } else {
-                    iconUrl = 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'; // Baru mulai
-                }
-            @endif
-
-            return iconUrl;
-        }
-
-        // Function untuk membuat popup content proyek
-        function createProjectPopupContent(marker, fisikTanpaKoma, keuanganTanpaKoma, paguTanpaKoma, 
-                                   pagu_kontrakNumber, tgl_kontrak, tgl_mulai, tgl_akhir, selisihHari) {
-            var content = `<div class="marker-popup">`;
-            content += `<h6 style="color: #007bff; margin-bottom: 10px;"><i class="bx bx-building"></i> PROYEK</h6>`;
-            
-            @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
-                content += `
-                    <p><strong>SKPD:</strong> ${marker.skpd.nama}</p>
-                    <p><strong>Paket:</strong> ${marker.paket}</p>
-                    <p><strong>Nama Perusahaan:</strong> ${marker.nama_perusahaan}</p>
-                    <p><strong>Sumber Dana:</strong> ${marker.sumber_dana}</p>
-                    <p><strong>Pagu:</strong> Rp. ${paguTanpaKoma}</p>
-                    <p><strong>Pagu Kontrak:</strong> Rp. ${pagu_kontrakNumber}</p>
-                    <p><strong>Realisasi Fisik:</strong> ${fisikTanpaKoma}%</p>
-                    <p><strong>Realisasi Keuangan:</strong> Rp. ${keuanganTanpaKoma}</p>
-                    <p><strong>Tgl Kontrak:</strong> ${tgl_kontrak}</p>
-                    <p><strong>Tgl Mulai:</strong> ${tgl_mulai}</p>
-                    <p><strong>Tgl Selesai:</strong> ${tgl_akhir}</p>
-                    <p><strong>Waktu Pengerjaan:</strong> ${selisihHari} Hari</p>
-                    <a href="/admin/monev/detail/${marker.id}" class="btn btn-sm btn-outline-success">Detail</a>
-                `;
-            @elseif(auth()->user()->hasRole('penyedia'))
-                content += `
-                    <p><strong>Paket Pekerjaan:</strong> ${marker.paket}</p>
-                    <p><strong>SKPD:</strong> ${marker.skpd.nama}</p>
-                    <p><strong>Progress Fisik:</strong> ${fisikTanpaKoma}%</p>
-                    <p><strong>Realisasi Keuangan:</strong> Rp. ${keuanganTanpaKoma}</p>
-                    <p><strong>Nilai Kontrak:</strong> Rp. ${pagu_kontrakNumber}</p>
-                    <p><strong>Periode:</strong> ${tgl_mulai} - ${tgl_akhir}</p>
-                    <p><strong>Durasi:</strong> ${selisihHari} Hari</p>
-                    <a href="/penyedia/proyek/detail/${marker.id}" class="btn btn-sm btn-outline-primary">Detail Proyek</a>
-                `;
-            @endif
-            
-            content += `</div>`;
-            return content;
-        }
-
-        // Function untuk membuat popup content penyedia
-        function createProviderPopupContent(provider) {
-            var content = `<div class="marker-popup">`;
-            content += `<h6 style="color: #28a745; margin-bottom: 10px;"><i class="bx bx-store"></i> PENYEDIA JASA</h6>`;
-            
-            content += `
-                <p><strong>Nama:</strong> ${provider.name}</p>
-                <p><strong>Alamat:</strong> ${provider.address || '-'}</p>
-            `;
-
-        
-            
-            content += `</div>`;
-            return content;
-        }
-
-        // Function untuk apply filters
-        function applyFilters() {
-            var skpdId = document.getElementById('skpdFilter') ? document.getElementById('skpdFilter').value : '';
-            var penyediaId = document.getElementById('penyediaFilter') ? document.getElementById('penyediaFilter').value : '';
-            var status = document.getElementById('statusFilter') ? document.getElementById('statusFilter').value : '';
-            
-            loadMarkers(skpdId, penyediaId, status);
-        }
-
-        // Function untuk reset filters
-        function resetFilters() {
-            if (document.getElementById('skpdFilter')) document.getElementById('skpdFilter').value = '';
-            if (document.getElementById('penyediaFilter')) document.getElementById('penyediaFilter').value = '';
-            if (document.getElementById('statusFilter')) document.getElementById('statusFilter').value = '';
-            
-            loadMarkers();
-        }
-
-        // Initial load
+        // 5. Initial load tanpa filter
         loadMarkers();
+        loadPenyediaMarkers();
 
-        // Event listeners untuk filter (hanya untuk admin)
-        @if (auth()->user()->hasRole('admin'))
-            document.getElementById('skpdFilter').addEventListener('change', function() {
-                applyFilters();
-            });
-            
-            if (document.getElementById('penyediaFilter')) {
-                document.getElementById('penyediaFilter').addEventListener('change', function() {
-                    applyFilters();
-                });
-            }
+        // 6. Terpadu: Filter SOPD memanggil keduanya
+        @if(auth()->user()->hasRole('admin'))
+        document.getElementById('skpdFilter').addEventListener('change', e => {
+            const id = e.target.value;
+            loadMarkers(id);
+            loadPenyediaMarkers(id);
+        });
         @endif
 
-        @if (auth()->user()->hasRole('skpd'))
-            if (document.getElementById('penyediaFilter')) {
-                document.getElementById('penyediaFilter').addEventListener('change', function() {
-                    applyFilters();
-                });
-            }
-        @endif
-
-        @if (auth()->user()->hasRole('penyedia'))
-            if (document.getElementById('statusFilter')) {
-                document.getElementById('statusFilter').addEventListener('change', function() {
-                    applyFilters();
-                });
-            }
-        @endif
-
-        // Legend yang disesuaikan berdasarkan role
         var legend = L.control({
             position: 'topright'
         });
 
         legend.onAdd = function(map) {
             var div = L.DomUtil.create('div', 'legend');
-            div.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            div.style.padding = '12px';
-            div.style.borderRadius = '8px';
-            div.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-            div.style.fontSize = '12px';
-            div.style.lineHeight = '1.5';
-            div.style.maxWidth = '250px';
-
-            @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('skpd'))
-                div.innerHTML += '<h6 style="margin: 0 0 8px 0; font-weight: bold; color: #333;">Legenda Peta:</h6>';
-                
-                // Project markers
-                div.innerHTML += '<div style="margin-bottom: 8px;"><strong style="color: #007bff;">📍 Status Proyek:</strong></div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: red; width: 15px; height: 15px; margin-right: 8px;"></div>Terlambat / < 50%</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: yellow; width: 15px; height: 15px; margin-right: 8px;"></div>Progress 50-80%</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: green; width: 15px; height: 15px; margin-right: 8px;"></div>On Track > 80%</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 8px;"><img src="https://cdn-icons-png.flaticon.com/512/8029/8029509.png" style="width: 15px; height: 15px; margin-right: 8px;">Selesai 100%</div>';
-                
-                // Provider markers
-                div.innerHTML += '<div style="margin-bottom: 8px;"><strong style="color: #28a745;">🏢 Lokasi Penyedia:</strong></div>';
-                div.innerHTML += '<div style="display: flex; align-items: center;"><img src="https://img.icons8.com/?size=100&id=ZUdYNxR6ddlu&format=png&color=000000" style="width: 15px; height: 15px; margin-right: 8px;">Kantor Penyedia Jasa</div>';
-                
-            @elseif(auth()->user()->hasRole('penyedia'))
-                div.innerHTML += '<h6 style="margin: 0 0 8px 0; font-weight: bold; color: #333;">Status Proyek Anda:</h6>';
-                
-                // Project markers for provider
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: blue; width: 15px; height: 15px; margin-right: 8px;"></div>Baru Mulai</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: yellow; width: 15px; height: 15px; b; margin-right: 8px;"></div>Sedang Berjalan</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 3px;"><div style="background-color: red; width: 15px; height: 15px; margin-right: 8px;"></div>Terlambat</div>';
-                div.innerHTML += '<div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="background-color: green; width: 15px; height: 15px; margin-right: 8px;"></div>Selesai</div>';
-                
-                // Provider marker for self
-                div.innerHTML += '<div style="margin-bottom: 5px;"><strong style="color: #28a745;">Lokasi Anda:</strong></div>';
-                div.innerHTML += '<div style="display: flex; align-items: center;"><img src="https://img.icons8.com/?size=100&id=ZUdYNxR6ddlu&format=png&color=000000" style="width: 15px; height: 15px; margin-right: 8px;">Kantor Anda</div>';
-            @endif
-            
+            div.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Atur warna latar belakang legenda
+            div.innerHTML +=
+                '<div style="background-color: red; width: 20px; height: 20px; display: inline-block; margin-right: 5px;"></div>Priode pengerjaan melewati batas waktu<br>';
+            div.innerHTML +=
+                '<div style="background-color: red; width: 20px; height: 20px; display: inline-block; margin-right: 5px;"></div>Realiasi Fisik Kurang dari 50%<br>';
+            div.innerHTML +=
+                '<div style="background-color: yellow; width: 20px; height: 20px; display: inline-block; margin-right: 5px;"></div>Realiasi Fisik  Kurang dari 80%<br>';
+            div.innerHTML +=
+                '<div style="background-color: green; width: 20px; height: 20px; display: inline-block; margin-right: 5px;"></div>Realiasi Fisik  80% atau lebih<br>';
+            div.innerHTML +=
+                '<img src="https://cdn-icons-png.flaticon.com/512/8029/8029509.png" style="width: 20px; height: 20px; margin-right: 5px;">Realiasi Fisik 100%<br>';
             return div;
         };
 
         legend.addTo(leafletMap2);
+
+        var latitudeInput = document.getElementById('Latitude');
+        var longitudeInput = document.getElementById('Longitude');
+
+        // latitudeInput.addEventListener('input', updateMarker);
+        // longitudeInput.addEventListener('input', updateMarker);
+
+        function updateMarker() {
+            var latitude = parseFloat(latitudeInput.value);
+            var longitude = parseFloat(longitudeInput.value);
+
+            if (isNaN(latitude) || isNaN(longitude)) {
+                return;
+            }
+
+            if (marker) {
+                marker.setLatLng([latitude, longitude]);
+            } else {
+                marker = L.marker([latitude, longitude]).addTo(map);
+            }
+
+            map.setView([latitude, longitude], 13);
+        }
+
+
+
+
+
+
 
         @if (auth()->user()->hasRole('admin'))
             $(document).ready(function() {
@@ -882,7 +679,9 @@
             });
         @endif
 
-        // Chart code (existing)
+
+
+
         var options = {
             series: [{{ $total_lengkap }}, {{ $total_tidak_lengkap }}],
             labels: ['Lengkap', 'Tidak Lengkap'],
@@ -891,7 +690,7 @@
             },
             colors: ['#00FF00', '#FF0000'],
             legend: {
-                show: false
+                show: false // Mengatur properti show menjadi false untuk menyembunyikan legend
             },
             responsive: [{
                 breakpoint: 480,
@@ -909,11 +708,23 @@
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
-        // AmCharts code (existing)
-        am5.ready(function() {
-            var root = am5.Root.new("chartdiv");
-            root.setThemes([am5themes_Animated.new(root)]);
 
+        am5.ready(function() {
+
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+
+
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/radar-chart/
             var chart = root.container.children.push(am5radar.RadarChart.new(root, {
                 panX: false,
                 panY: false,
@@ -923,9 +734,18 @@
                 layout: root.verticalLayout
             }));
 
-            var colors = am5.ColorSet.new(root, { step: 2 });
 
+            // Colors
+            var colors = am5.ColorSet.new(root, {
+                step: 2
+            });
+
+
+            // Measurement #1
+
+            // Axis
             var color1 = colors.next();
+
             var axisRenderer1 = am5radar.AxisRendererCircular.new(root, {
                 radius: -10,
                 stroke: color1,
@@ -934,7 +754,10 @@
                 inside: true
             });
 
-            axisRenderer1.grid.template.setAll({ forceHidden: true });
+            axisRenderer1.grid.template.setAll({
+                forceHidden: true
+            });
+
             axisRenderer1.ticks.template.setAll({
                 stroke: color1,
                 visible: true,
@@ -956,6 +779,8 @@
                 renderer: axisRenderer1
             }));
 
+
+            // Label
             var label1 = chart.seriesContainer.children.push(am5.Label.new(root, {
                 fill: am5.color(0xffffff),
                 x: 0,
@@ -971,6 +796,7 @@
                 })
             }));
 
+            // Add clock hand
             var axisDataItem1 = xAxis1.makeDataItem({
                 value: 0,
                 fill: color1,
@@ -983,25 +809,40 @@
                 bottomWidth: 10
             });
 
-            clockHand1.pin.setAll({ fill: color1 });
-            clockHand1.hand.setAll({ fill: color1 });
+            clockHand1.pin.setAll({
+                fill: color1
+            });
+
+            clockHand1.hand.setAll({
+                fill: color1
+            });
 
             var bullet1 = axisDataItem1.set("bullet", am5xy.AxisBullet.new(root, {
                 sprite: clockHand1
             }));
 
             xAxis1.createAxisRange(axisDataItem1);
+
             axisDataItem1.get("grid").set("forceHidden", true);
             axisDataItem1.get("tick").set("forceHidden", true);
 
+
+            // Measurement #2
+
+            // Axis
             var color2 = colors.next();
+
             var axisRenderer2 = am5radar.AxisRendererCircular.new(root, {
+                //innerRadius: -40,
                 stroke: color2,
                 strokeOpacity: 1,
                 strokeWidth: 6
             });
 
-            axisRenderer2.grid.template.setAll({ forceHidden: true });
+            axisRenderer2.grid.template.setAll({
+                forceHidden: true
+            });
+
             axisRenderer2.ticks.template.setAll({
                 stroke: color2,
                 visible: true,
@@ -1009,7 +850,9 @@
                 strokeOpacity: 1
             });
 
-            axisRenderer2.labels.template.setAll({ radius: 15 });
+            axisRenderer2.labels.template.setAll({
+                radius: 15
+            });
 
             var xAxis2 = chart.xAxes.push(am5xy.ValueAxis.new(root, {
                 maxDeviation: 0,
@@ -1019,6 +862,8 @@
                 renderer: axisRenderer2
             }));
 
+
+            // Label
             var label2 = chart.seriesContainer.children.push(am5.Label.new(root, {
                 fill: am5.color(0xffffff),
                 x: 0,
@@ -1034,6 +879,8 @@
                 })
             }));
 
+
+            // Add clock hand
             var axisDataItem2 = xAxis2.makeDataItem({
                 value: 0,
                 fill: color2,
@@ -1046,23 +893,33 @@
                 bottomWidth: 10
             });
 
-            clockHand2.pin.setAll({ fill: color2 });
-            clockHand2.hand.setAll({ fill: color2 });
+            clockHand2.pin.setAll({
+                fill: color2
+            });
+
+            clockHand2.hand.setAll({
+                fill: color2
+            });
 
             var bullet2 = axisDataItem2.set("bullet", am5xy.AxisBullet.new(root, {
                 sprite: clockHand2
             }));
 
             xAxis2.createAxisRange(axisDataItem2);
+
             axisDataItem2.get("grid").set("forceHidden", true);
             axisDataItem2.get("tick").set("forceHidden", true);
 
+
+            // Legend
             var legend = chart.children.push(am5.Legend.new(root, {
                 x: am5.p50,
                 centerX: am5.p50
             }));
             legend.data.setAll([axisDataItem1, axisDataItem2])
 
+
+            // Animate values
             setInterval(function() {
                 var value1 = {{ isset($persen) ? $persen : 0 }};
                 axisDataItem1.animate({
@@ -1085,7 +942,76 @@
                 label2.set("text", value2);
             }, 1)
 
+            // chart.bulletsContainer.set("mask", undefined);
+
+
+            // // Create axis ranges bands
+            // // https://www.amcharts.com/docs/v5/charts/radar-chart/gauge-charts/#Bands
+            // var bandsData = [{
+            // title: "Unsustainable",
+            // color: "#ee1f25",
+            // lowScore: -40,
+            // highScore: -20
+            // }, {
+            // title: "Volatile",
+            // color: "#f04922",
+            // lowScore: -20,
+            // highScore: 0
+            // }, {
+            // title: "Foundational",
+            // color: "#fdae19",
+            // lowScore: 0,
+            // highScore: 20
+            // }, {
+            // title: "Developing",
+            // color: "#f3eb0c",
+            // lowScore: 20,
+            // highScore: 40
+            // }, {
+            // title: "Maturing",
+            // color: "#b0d136",
+            // lowScore: 40,
+            // highScore: 60
+            // }, {
+            // title: "Sustainable",
+            // color: "#54b947",
+            // lowScore: 60,
+            // highScore: 80
+            // }, {
+            // title: "High Performing",
+            // color: "#0f9747",
+            // lowScore: 80,
+            // highScore: 100
+            // }];
+
+            // am5.array.each(bandsData, function (data) {
+            // var axisRange = xAxis.createAxisRange(xAxis.makeDataItem({}));
+
+            // axisRange.setAll({
+            // value: data.lowScore,
+            // endValue: data.highScore
+            // });
+
+            // axisRange.get("axisFill").setAll({
+            // visible: true,
+            // fill: am5.color(data.color),
+            // fillOpacity: 0.8
+            // });
+
+            // axisRange.get("label").setAll({
+            // text: data.title,
+            // inside: true,
+            // radius: 15,
+            // fontSize: "0.9em",
+            // fill: root.interfaceColors.get("background")
+            // });
+            // });
+
+
+            // Make stuff animate on load
             chart.appear(1000, 100);
-        });
+
+        }); // end am5.ready()
     </script>
+    {{-- <script src="{{ asset('js/master/skpd/main.js') }}"></script> --}}
 @endsection

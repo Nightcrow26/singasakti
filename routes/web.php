@@ -37,6 +37,9 @@ Route::prefix('/admin')->group(function () {
             Route::post('/deletefile', [App\Http\Controllers\MonevController::class , 'deletefile'])->name('admin.monev.deletefile');
             Route::post('/deleterealisasi', [App\Http\Controllers\MonevController::class , 'deleterealisasi'])->name('admin.monev.deleterealisasi');
             Route::any('/marker', [App\Http\Controllers\MonevController::class , 'marker'])->name('admin.monev.marker');
+            //Route::get('/admin/penyedia/markers', [UserController::class, 'getPenyediaMarkers'])->name('admin.penyedia.markers');
+            Route::get('/provider-markers', [App\Http\Controllers\HomeController::class, 'getProviderMarkers']);
+            Route::get('/penyedia-list', [App\Http\Controllers\HomeController::class, 'getPenyediaList']);
         }
         );
 
