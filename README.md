@@ -4,10 +4,10 @@ repository for singasakti
 How to run in local:
 
 - Clone your project
-- Create empty database `si_akre`
+- Create empty database `monevpro`
 - Go to the folder application using cd command on your cmd or terminal 
 
-    Run `cd si-akre`
+    Run `cd singasakti`
 - Run `composer install` on your cmd or terminal
 - Copy `.env.example` file to `.env` on the root folder. 
 
